@@ -1,0 +1,35 @@
+client > src
+	index
+	app (redirct to login)
+
+client > src > components
+	loginForm (login page, link from header)
+	signUpForm (signup page)
+	jumbotron (global)
+	navCard (my bed page...)
+	header (global)
+	footer (global)
+	surveyQuestion (survey page)
+	datePicker (survey page, journal page)
+	calendar (stats page, journal page)
+	journalForm (journal page)
+	journalEntry (journal page)
+	button (global)
+	charts (stats)
+	recommendation (stats)
+	meditations (tools)
+	audioPlayer (tools)
+	videoPlayer (tools)
+	resourceCard (resources)
+	forumPost (community) / videoChat (community)
+    
+client > src > pages
+	login (link to signup)
+	signup
+	my bed
+	survey
+	journal
+	tools
+	stats
+	resources
+	community
