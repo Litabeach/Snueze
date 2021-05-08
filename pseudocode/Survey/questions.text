@@ -1,0 +1,6 @@
+1) Choose Date (dropwdown? input?)
+2) What time did you go to sleep last night (input)
+3) What time did you wake up this morning? (input)
+4) How was your quality of sleep? (rating 1-5)
+5) How are you feeling today? (rating 1-5)
+6) Write any notes about your day that might affect this night's sleep (input, textarea)
