@@ -60,7 +60,6 @@ router.post("/", async (req, res) => {
             process.env.JWT_SECRET
         );
 
-        console.log(token);
 
         //send the token in an HTTP only cookie
         res.cookie("token", token, {
