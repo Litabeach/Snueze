@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /0-Book App Reference/client/node_modules
+/0-Book App Reference/node_modules
 
 
 # testing
