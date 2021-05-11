@@ -1,8 +1,8 @@
-import surveyAPI from "../../utils/journalAPI";
+import surveyAPI from "../../utils/surveyAPI";
 
 function Survey() {
     // Setting our component's initial state
-    const [survey, setSurvey] = useState([])
+    const [survey, setSurveys] = useState([])
     const [formObject, setFormObject] = useState({
       date: "",
       bedtime: "",
