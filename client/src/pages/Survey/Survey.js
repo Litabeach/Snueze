@@ -24,13 +24,7 @@ function Survey() {
         )
         .catch(err => console.log(err));
     };
-  
-    // Handles updating component state when the user types into the input field
-    function handleInputChange(event) {
-      const { name, value } = event.target;
-      setFormObject({...formObject, [name]: value})
-    };
-  
+    
     // When the form is submitted, use the API.saveSurvey method to save the survey data
     // Then reload surveys from the database
     function handleFormSubmit(event) {
