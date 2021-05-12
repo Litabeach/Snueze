@@ -63,6 +63,7 @@ function Journal() {
 
     return (
         <div>
+          <h1>Journal Page</h1>
 <SpeechToText />
         </div>
     )
