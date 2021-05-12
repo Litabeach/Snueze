@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Jumbotron from "../../components/Jumbotron";
+import Journal from "../../components/Journal";
 import JournalEntry from "../../components/JournalEntry";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import journalAPI from "../../utils/journalAPI";
@@ -84,7 +85,12 @@ function Journal() {
               Submit Dream
             </FormBtn>
           </form>
-          <JournalEntry />
+          <Journal>
+          <JournalEntry key={journal.id}>
+           
+          </JournalEntry>
+          </Journal>
+          <Footer />
         </div>
     )
 
