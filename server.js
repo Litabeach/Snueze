@@ -25,6 +25,7 @@ app.use(routes);
 
 
 //routes for video chat. Storing here until we can test and find best route.
+app.use(pino);
 const sendTokenResponse = (token, res) => {
   res.set('Content-Type', 'application/json');
   res.send(
