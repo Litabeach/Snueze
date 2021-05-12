@@ -1,9 +1,7 @@
 import surveyAPI from "../../utils/surveyAPI";
-import { useState, useEffect } from "react";
-import  React from "react";
 import React, { useEffect, useState } from 'react';
 import DateFnsUtils from '@date-io/date-fns'; // choose your lib
-import { DatePicker, TimePicker, DateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+// import { DatePicker, TimePicker, DateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 
 
 function Survey() {
@@ -100,11 +98,11 @@ function Survey() {
         <div>
 
           <h1>Survey Page</h1>
-          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <DatePicker value={selectedDate} onChange={handleDateChange} />
             <TimePicker value={selectedDate} onChange={handleDateChange} />
             <DateTimePicker value={selectedDate} onChange={handleDateChange} />
-          </MuiPickersUtilsProvider>
+          </MuiPickersUtilsProvider> */}
         </div>
     )
 
