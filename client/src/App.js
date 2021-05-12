@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/mybed">
             <MyBed />
           </Route>
-          <Route exact path={["/", "/login"]}>
+          <Route path="/login">
             <Login />
           </Route>
           <Route exact path="/signup">
