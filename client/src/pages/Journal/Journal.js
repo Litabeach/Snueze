@@ -1,4 +1,9 @@
+import React, { useEffect, useState } from "react";
+import Jumbotron from "../../components/Jumbotron";
+import JournalEntry from "../../components/JournalEntry";
+import { Input, TextArea, FormBtn } from "../../components/Form";
 import journalAPI from "../../utils/journalAPI";
+import { TextArea } from "../../components/Form/Form";
 
 
 function Journal() {
@@ -59,7 +64,27 @@ function Journal() {
 
     return (
         <div>
-
+          <Header />
+          <Jumbotron />
+          <form>
+            <Input
+            name="title"
+            placeholder="Title (required)"
+            value={formObject.title}
+            />
+            <TextArea
+            name="body"
+            placeholder="What did you dream about?"
+            value={formObject.body}
+            />
+            <FormBtn
+            disabled={!(formObject.title && formObject.body)}
+            onClick={handleFormSubmit}
+            >
+              Submit Dream
+            </FormBtn>
+          </form>
+          <JournalEntry />
         </div>
     )
 
