@@ -57,7 +57,10 @@ router.post("/", async (req, res) => {
             {
                 user: savedUser._id
             },
-            process.env.JWT_SECRET
+            process.env.JWT_SECRET,
+            {
+                expiresIn: 7200
+            }
         );
 
 
@@ -104,11 +107,15 @@ router.post("/login", async (req, res) => {
                 });
         
         //sign the token
+        //"expires in" is currently set to two hours
         const token = jwt.sign(
             {
                 user: existingUser._id
             },
-            process.env.JWT_SECRET
+            process.env.JWT_SECRET,
+            {
+                expiresIn: 7200
+            }
         );
 
         //send the token in an HTTP only cookie
