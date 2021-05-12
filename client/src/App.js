@@ -45,7 +45,6 @@ function App() {
           <Route exact path="/tools">
             <Tools />
           </Route>
-         
         </Switch>
       </div>
     </Router>

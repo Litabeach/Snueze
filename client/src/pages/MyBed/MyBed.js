@@ -1,14 +1,16 @@
-import React from "react"
+
+import React from "react";
+import Jumbotron from "../../components/Jumbotron";
 
 function MyBed() {
 
-
     return (
-        <div>
-            <h1>MyBed Page</h1>
-        </div>
-    )
+        <Jumbotron>
+            <h1>My Bed</h1>
+        </Jumbotron>
+    );
+  }
 
-};
 
 export default MyBed;
+
