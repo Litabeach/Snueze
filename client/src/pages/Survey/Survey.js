@@ -1,10 +1,15 @@
 import surveyAPI from "../../utils/surveyAPI";
 import { useState, useEffect } from "react";
 import  React from "react";
+import React, { useEffect, useState } from 'react';
+import DateFnsUtils from '@date-io/date-fns'; // choose your lib
+import { DatePicker, TimePicker, DateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+
 
 function Survey() {
     // Setting our component's initial state
     const [survey, setSurveys] = useState([])
+    const [selectedDate, handleDateChange] = useState(new Date());
     const [formObject, setFormObject] = useState({
       date: "",
       bedtime: "",
@@ -12,8 +17,8 @@ function Survey() {
       sleepquality: "",
       mood: "",
       notes: "",
-    })
-  
+    });
+    
     var surveyQuestions = [
       {
         question: "Choose date:",
@@ -51,12 +56,12 @@ function Survey() {
         question: "Write any notes about your day that might affect tonight's sleep.",
         answers: "text area", //replace with text area
       },
-    ]
+    ];
 
     // Load all surveys and store them with setSurveys
     useEffect(() => {
       loadSurveys()
-    }, [])
+    }, []);
   
     // Loads all surveys and sets them to surveys
     function loadSurveys() {
@@ -93,7 +98,13 @@ function Survey() {
 
     return (
         <div>
+
           <h1>Survey Page</h1>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <DatePicker value={selectedDate} onChange={handleDateChange} />
+            <TimePicker value={selectedDate} onChange={handleDateChange} />
+            <DateTimePicker value={selectedDate} onChange={handleDateChange} />
+          </MuiPickersUtilsProvider>
         </div>
     )
 
