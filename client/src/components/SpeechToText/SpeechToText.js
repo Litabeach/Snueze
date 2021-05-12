@@ -7,7 +7,8 @@ import microPhoneIcon from "./microphone.png";
 
 
 function SpeechToText() {
-  const { transcript, resetTranscript } = useSpeechRecognition();
+  const { transcript } = useSpeechRecognition();
+  const { resetTranscript } = useSpeechRecognition();
   const [isListening, setIsListening] = useState(false);
   const microphoneRef = useRef(null);
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
@@ -52,14 +53,15 @@ function SpeechToText() {
           </button>
         )}
       </div>
-      {transcript && (
+        {transcript && (
         <div className="microphone-result-container">
           <div className="microphone-result-text">{transcript}</div>
           <button className="microphone-reset btn" onClick={handleReset}>
             Reset
           </button>
         </div>
-      )}
+      )
+      }
     </div>
   );
 }
