@@ -1,4 +1,6 @@
 import surveyAPI from "../../utils/surveyAPI";
+import { useState, useEffect } from "react";
+import  React from "react";
 
 function Survey() {
     // Setting our component's initial state

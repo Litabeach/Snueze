@@ -1,4 +1,8 @@
 import journalAPI from "../../utils/journalAPI";
+import SpeechToText from "../../components/SpeechToText/SpeechToText"
+import { useState, useEffect } from "react";
+import  React  from "react";
+
 
 
 function Journal() {
@@ -59,7 +63,7 @@ function Journal() {
 
     return (
         <div>
-
+<SpeechToText />
         </div>
     )
 

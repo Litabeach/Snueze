@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Journal from "./pages/Journal";
-import Community from "./pages/Community";
-import Login from "./pages/Login";
-import MyBed from "./pages/MyBed";
-import Resources from "./pages/Resources";
-import Stats from "./pages/Stats";
-import Survey from "./pages/Survey";
-import Tools from "./pages/Tools";
-import Signup from "./pages/Signup";
-import Nav from "./components/Nav";
+import Journal from "./pages/Journal/Journal";
+// import Community from "./pages/Community/Community";
+// import Login from "./pages/Login/Login";
+// import MyBed from "./pages/MyBed/MyBed";
+// import Resources from "./pages/Resources/Resources";
+// import Stats from "./pages/Stats/Stats";
+// import Survey from "./pages/Survey/Survey";
+// import Tools from "./pages/Tools/Tools";
+// import Signup from "./pages/Signup/Signup";
+import Nav from "./components/Nav/Nav";
 
 function App() {
   return (
@@ -21,13 +21,13 @@ function App() {
           <Route exact path="journal">
             <Journal />
           </Route>
-          <Route exact path="/community">
+          {/* <Route exact path="/community">
             <Community />
           </Route>
           <Route exact path="/mybed">
             <MyBed />
-          </Route>
-          <Route exact path={["/", "/login"]}>
+          </Route> */}
+          {/* <Route exact path={["/", "/login"]}>
             <Login />
           </Route>
           <Route exact path="signup">
@@ -38,19 +38,19 @@ function App() {
           </Route>
           <Route exact path="/stats">
             <Stats />
-          </Route>
-          <Route exact path="/survey">
+          </Route> */}
+          {/* <Route exact path="/survey">
             <Survey />
           </Route>
           <Route exact path="/tools">
             <Tools />
-          </Route>
+          </Route> */}
          
         </Switch>
       </div>
     </Router>
   );
-}
+};
 
 export default App;
 
