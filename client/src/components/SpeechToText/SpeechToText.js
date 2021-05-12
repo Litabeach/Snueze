@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import React from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import "./style.css";
-import microPhoneIcon from "./microphone.png";
+import microPhoneIcon from "../../images/microphone.png";
 
 
 
