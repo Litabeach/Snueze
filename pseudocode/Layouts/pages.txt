@@ -1,0 +1,43 @@
+central component theme: bootstrap
+additional component styling: material-ui
+fonts: google fonts or fontawesome
+color themes: tbd
+
+login page "/"
+- no header
+
+header: not displayed on login/sign up page
+logo??
+list button - [myBed] > sleep, journal, stats, tools
+button - resources
+button - community
+button - logout
+
+myBed:
+navcard - sleep (revisit flow)
+navcard - journal ()
+navcard - stats (charts and ??)
+navcard - tools
+
+footer: always displayed
+- content???
+
+sleep:
+- react survey
+- what else???
+
+dream journal:
+- new dream form with submit button
+- list of dreams (research styling techniques for lists)
+
+stats: 
+- charts - research material-ui dashboard?
+- recommendations? - link to resources
+
+tools:
+- meditation (create as separate page?)
+- sleep sounds (merge into meditations??)
+- sleep videos (display as small/med embedded videos (1x2 or 1x3)) maybe a carousel???
+
+resources:
+- categorized list (by sleep problem) with resource title, description, url(s), etc.
