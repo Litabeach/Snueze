@@ -7,11 +7,13 @@ const Participant = ({ participant }) => {
   const videoRef = useRef();
   const audioRef = useRef();
 
+  // maps from TrackPublications to Tracks and filters out any that are null.
   const trackpubsToTracks = (trackMap) =>
     Array.from(trackMap.values())
       .map((publication) => publication.track)
       .filter((track) => track !== null);
 
+  // Sets the video and audio tracks in the state and set up listeners to the participant object for when tracks are added or removed. 
   useEffect(() => {
     setVideoTracks(trackpubsToTracks(participant.videoTracks));
     setAudioTracks(trackpubsToTracks(participant.audioTracks));
@@ -42,6 +44,7 @@ const Participant = ({ participant }) => {
     };
   }, [participant]);
 
+  //attaches video tracks to the DOM
   useEffect(() => {
     const videoTrack = videoTracks[0];
     if (videoTrack) {
@@ -52,6 +55,7 @@ const Participant = ({ participant }) => {
     }
   }, [videoTracks]);
 
+  //attaches audio tracks to the DOM
   useEffect(() => {
     const audioTrack = audioTracks[0];
     if (audioTrack) {
