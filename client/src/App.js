@@ -1,30 +1,30 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-// import Journal from "./pages/Journal";
+import Journal from "./pages/Journal";
 import Community from "./pages/Community";
-// import Login from "./pages/Login";
-// import MyBed from "./pages/MyBed";
-// import Resources from "./pages/Resources";
-// import Stats from "./pages/Stats";
-// import Survey from "./pages/Survey";
-// import Tools from "./pages/Tools";
-// import Signup from "./pages/Signup";
-// import Nav from "./components/Nav";
+import Login from "./pages/Login";
+import MyBed from "./pages/MyBed";
+import Resources from "./pages/Resources";
+import Stats from "./pages/Stats";
+import Survey from "./pages/Survey";
+import Tools from "./pages/Tools";
+import Signup from "./pages/Signup";
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <Router>
       <div>
-        {/* <Nav />
+        <Nav />
         <Switch>
           <Route exact path="journal">
             <Journal />
-          </Route> */}
+          </Route>
           <Route exact path="/community">
             <Community />
           </Route>
-          {/* <Route exact path="/mybed">
+          <Route exact path="/mybed">
             <MyBed />
           </Route>
           <Route exact path={["/", "/login"]}>
@@ -44,8 +44,8 @@ function App() {
           </Route>
           <Route exact path="/tools">
             <Tools />
-          </Route> */}
-        {/* </Switch> */}
+          </Route> 
+        </Switch>
       </div>
     </Router>
   );
