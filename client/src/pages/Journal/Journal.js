@@ -5,6 +5,7 @@ import JournalEntry from "../../components/JournalEntry";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import journalAPI from "../../utils/journalAPI";
 import { TextArea } from "../../components/Form/Form";
+import DeleteBtn from "../../components/DeleteBtn";
 
 
 function Journal() {
@@ -85,11 +86,24 @@ function Journal() {
               Submit Dream
             </FormBtn>
           </form>
+          {entries.length ? (
           <Journal>
-          <JournalEntry key={journal.id}>
-           
-          </JournalEntry>
+            {entries.map(entry=> {
+              return (
+                <JournalEntry key={entry._id}>
+                  <h2>{entry.title}</h2>
+                  <br />
+                  <p>{entry.body}</p>
+                  <br />
+                  <p>{entry.date}</p>
+                  <DeleteBtn onClick={() =>deleteEntry(entry._id)} />
+                </JournalEntry>
+              )
+            })}
           </Journal>
+          ) : (
+            <h3>No dreams have been recorded yet</h3>
+          )}
           <Footer />
         </div>
     )
