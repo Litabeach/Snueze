@@ -4,8 +4,7 @@ import "./style.css";
 
 function Nav() {
   return (
-    //this has bootstrap styling, will need to install bootstrap and link it in index.js if we choose to use this styling
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-dark">
       <a className="navbar-brand" href="/">
         Sleepify Snooze Slumber
       </a>
