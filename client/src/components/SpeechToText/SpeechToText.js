@@ -7,7 +7,37 @@ import microPhoneIcon from "../../images/microphone.png";
 
 
 function SpeechToText() {
-  const { transcript, resetTranscript } = useSpeechRecognition();
+
+  const commands = [
+    {
+      command: "open *",
+      callback: (website) => {
+        window.open("http://" + website.split(" ").join(""));
+      },
+    },
+    {
+      command: "change background colour to *",
+      callback: (color) => {
+        document.body.style.background = color;
+      },
+    },
+    {
+      command: "reset",
+      callback: () => {
+        handleReset();
+      },
+    },
+    ,
+    {
+      command: "reset background colour",
+      callback: () => {
+        document.body.style.background = `rgba(0, 0, 0, 0.8)`;
+      },
+    },
+  ];
+
+  const { transcript, resetTranscript } = useSpeechRecognition({ commands });
+  // const { transcript, resetTranscript } = useSpeechRecognition();
   const [isListening, setIsListening] = useState(false);
   const microphoneRef = useRef(null);
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
