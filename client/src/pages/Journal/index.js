@@ -1,1 +1,1 @@
-export { default } from "./Journal.js";
+export { default } from "./Journal"

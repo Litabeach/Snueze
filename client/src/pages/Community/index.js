@@ -1,1 +1,1 @@
-export { default } from "./Community.js";
+export { default } from "./Community";

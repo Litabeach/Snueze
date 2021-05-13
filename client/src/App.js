@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Journal from "./pages/Journal";
-import Community from "./pages/Community";
 import Login from "./pages/Login";
-import MyBed from "./pages/MyBed";
-import Resources from "./pages/Resources";
-import Stats from "./pages/Stats";
-import Survey from "./pages/Survey";
-import Tools from "./pages/Tools";
 import Signup from "./pages/Signup";
 import Header from "./components/Header";
+import MyBed from "./pages/MyBed";
+import Survey from "./pages/Survey";
+import Journal from "./pages/Journal";
+import Stats from "./pages/Stats";
+import Tools from "./pages/Tools";
+import Community from "./pages/Community";
+import Resources from "./pages/Resources";
 
 function App() {
   return (
@@ -18,37 +18,37 @@ function App() {
       <div>
         <Header />
         <Switch>
-          <Route exact path="journal">
-            <Journal />
+          <Route exact path={["/", "/login"]}>
+            <Login />
           </Route>
-          <Route exact path="/community">
-            <Community />
+          <Route exact path="/signup">
+            <Signup />
           </Route>
           <Route exact path="/mybed">
             <MyBed />
           </Route>
-          <Route exact path={["/", "/login"]}>
-            <Login />
+          <Route exact path="/survey">
+            <Survey />
           </Route>
-          <Route exact path="signup">
-            <Signup />
-          </Route>
-          <Route exact path="/resources">
-            <Resources />
+          <Route exact path="/journal">
+            <Journal />
           </Route>
           <Route exact path="/stats">
             <Stats />
           </Route>
-          <Route exact path="/survey">
-            <Survey />
-          </Route>
           <Route exact path="/tools">
             <Tools />
+          </Route>
+          <Route exact path="/community">
+            <Community />
+          </Route>
+          <Route exact path="/resources">
+            <Resources />
           </Route>
         </Switch>
       </div>
     </Router>
-  );
+  )
 }
 
 export default App;
