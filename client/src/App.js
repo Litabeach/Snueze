@@ -10,13 +10,13 @@ import Stats from "./pages/Stats";
 import Survey from "./pages/Survey";
 import Tools from "./pages/Tools";
 import Signup from "./pages/Signup";
-import Nav from "./components/Nav";
+import Header from "./components/Header";
 
 function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Header />
         <Switch>
           <Route exact path="journal">
             <Journal />

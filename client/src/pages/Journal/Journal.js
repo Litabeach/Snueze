@@ -1,5 +1,5 @@
 import journalAPI from "../../utils/journalAPI";
-
+import React, { useState, useEffect } from "react";
 
 function Journal() {
     // Setting our component's initial state
