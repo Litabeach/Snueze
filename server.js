@@ -1,17 +1,16 @@
 //connections for Video chat. Will find best place at a later time.
+const dotenv = require("dotenv");
+dotenv.config();
+
 const config = require("./utils/config");
 const pino = require('express-pino-logger')();
 const { videoToken } = require('./utils/tokens');
-
 
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const dotenv = require("dotenv");
-
-dotenv.config();
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -20,8 +19,7 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
-app.use(routes);
+
 
 
 //routes for video chat. Storing here until we can test and find best route.
@@ -54,6 +52,8 @@ app.post('/video/token', (req, res) => {
   const token = videoToken(identity, room, config);
   sendTokenResponse(token, res);
 });
+// Add routes, both API and view
+app.use(routes);
 
 
 // Connect to the Mongo DB
