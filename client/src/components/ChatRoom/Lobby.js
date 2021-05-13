@@ -1,5 +1,6 @@
 import React from "react";
 
+// This component doesn't need to store any data as it will pass all events up to its parent, the VideoChat component. 
 const Lobby = ({
   username,
   handleUsernameChange,

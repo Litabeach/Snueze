@@ -6,15 +6,19 @@ const Room = ({ roomName, token, handleLogout }) => {
   const [room, setRoom] = useState(null);
   const [participants, setParticipants] = useState([]);
 
+  //connects to video service on load.
   useEffect(() => {
+    //listens for new participants
     const participantConnected = participant => {
       setParticipants((prevParticipants) => [...prevParticipants, participant]);
     };
+    //listens for particpants leaving
     const participantDisconnected = participant => {
       setParticipants(prevParticipants =>
         prevParticipants.filter(p => p !== participant)
       );
     };
+    //video connection
     Video.connect(token, {
       name: roomName
     }).then(room => {
@@ -24,6 +28,7 @@ const Room = ({ roomName, token, handleLogout }) => {
       room.participants.forEach(participantConnected);
     });
     return () => {
+      //mostly used to run disconnnect method. Basically cleans up effect before it is run again.
       setRoom(currentRoom => {
         if (currentRoom && currentRoom.localParticipant.state === 'connected') {
           currentRoom.localParticipant.tracks.forEach(function(trackPublication) {

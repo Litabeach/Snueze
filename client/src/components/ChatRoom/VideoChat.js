@@ -7,15 +7,18 @@ const VideoChat = () => {
   const [roomName, setRoomName] = useState("");
   const [token, setToken] = useState("");
 
-
+//sets the username to the value from Lobby
   const handleUsernameChange = useCallback((event) => {
     setUsername(event.target.value);
   }, []);
 
+//sets the roomName to the value from Lobby
   const handleRoomNameChange = useCallback((event) => {
     setRoomName(event.target.value);
   }, []);
 
+
+// API call to send the data as JSON to the endpoint, receive and parse the response. setToken stores the token in our state. Dependent on username and roomName
   const handleSubmit = useCallback(async event => {
     event.preventDefault();
     const data = await fetch('/video/token', {
@@ -31,6 +34,7 @@ const VideoChat = () => {
     setToken(data.token);
   }, [username, roomName]);
 
+  //sends user back to lobby after logout
   const handleLogout = useCallback(event => {
     setToken(null);
   }, []);
