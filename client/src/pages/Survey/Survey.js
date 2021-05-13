@@ -1,8 +1,9 @@
 import surveyAPI from "../../utils/surveyAPI";
 import React, { useEffect, useState } from 'react';
-import DateFnsUtils from '@date-io/date-fns'; // choose your lib
-// import { DatePicker, TimePicker, DateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 
+import Jumbotron from "../../components/Jumbotron";
+// import DateFnsUtils from '@date-io/date-fns'; // choose your lib
+// import { DatePicker, TimePicker, DateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 
 function Survey() {
     // Setting our component's initial state
@@ -92,20 +93,21 @@ function Survey() {
           .then(() => loadSurveys())
           .catch(err => console.log(err));
       }
-    };
+    }
 
     return (
-        <div>
 
-          <h1>Survey Page</h1>
-          {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <DatePicker value={selectedDate} onChange={handleDateChange} />
-            <TimePicker value={selectedDate} onChange={handleDateChange} />
-            <DateTimePicker value={selectedDate} onChange={handleDateChange} />
-          </MuiPickersUtilsProvider> */}
-        </div>
+      <Jumbotron>
+      <h1>Survey</h1>
+  </Jumbotron>
     )
 
-};
+}
 
 export default Survey;
+
+{/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
+<DatePicker value={selectedDate} onChange={handleDateChange} />
+<TimePicker value={selectedDate} onChange={handleDateChange} />
+<DateTimePicker value={selectedDate} onChange={handleDateChange} />
+</MuiPickersUtilsProvider> */}

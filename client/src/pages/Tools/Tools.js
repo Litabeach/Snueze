@@ -1,14 +1,16 @@
-import React from "react"
+
+import React from "react";
+import Jumbotron from "../../components/Jumbotron";
 
 function Tools() {
 
-
     return (
-        <div>
-            <h1>Tools Page</h1>
-        </div>
-    )
+        <Jumbotron>
+            <h1>Tools</h1>
+        </Jumbotron>
+    );
+  }
 
-};
 
 export default Tools;
+

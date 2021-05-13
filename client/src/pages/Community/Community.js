@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ChatRoom from '../../components/ChatRoom';
 
@@ -16,3 +15,4 @@ const Community = () => {
 };
 
 export default Community;
+
