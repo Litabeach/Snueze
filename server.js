@@ -2,6 +2,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
+//assets for video chat routes
 const config = require("./utils/config");
 const pino = require('express-pino-logger')();
 const { videoToken } = require('./utils/tokens');
@@ -20,9 +21,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
-
-//routes for video chat. Storing here until we can test and find best route.
+//routes for video chat. 
 app.use(pino);
 const sendTokenResponse = (token, res) => {
   res.set('Content-Type', 'application/json');
@@ -52,6 +51,8 @@ app.post('/video/token', (req, res) => {
   const token = videoToken(identity, room, config);
   sendTokenResponse(token, res);
 });
+
+
 // Add routes, both API and view
 app.use(routes);
 
