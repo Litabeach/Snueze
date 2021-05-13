@@ -1,13 +1,17 @@
-import React from "react"
 
-function Community() {
+import React from 'react';
+import ChatRoom from '../../components/ChatRoom';
 
-
-    return (
-        <div>
-            <h1>Community Page</h1>
-        </div>
-    )
+const Community = () => {
+  return (
+   
+     
+      <main>
+        <ChatRoom />
+      </main>
+      
+   
+  );
 
 };
 

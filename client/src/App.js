@@ -44,7 +44,7 @@ function App() {
           </Route>
           <Route exact path="/tools">
             <Tools />
-          </Route>
+          </Route> 
         </Switch>
       </div>
     </Router>
