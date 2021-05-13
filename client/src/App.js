@@ -11,6 +11,7 @@ import Stats from "./pages/Stats";
 import Tools from "./pages/Tools";
 import Community from "./pages/Community";
 import Resources from "./pages/Resources";
+import NoMatch from "./pages/NoMatch";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <div>
         <Header />
         <Switch>
-          <Route exact path={["/", "/login"]}>
+          <Route exact path="/">
             <Login />
           </Route>
           <Route exact path="/signup">
@@ -44,6 +45,9 @@ function App() {
           </Route>
           <Route exact path="/resources">
             <Resources />
+          </Route>
+          <Route>
+            <NoMatch />
           </Route>
         </Switch>
       </div>

@@ -1,5 +1,6 @@
 import surveyAPI from "../../utils/surveyAPI";
 import React, { useEffect, useState } from 'react';
+import Jumbotron from "../../components/Jumbotron";
 // import DateFnsUtils from '@date-io/date-fns'; // choose your lib
 // import { DatePicker, TimePicker, DateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 
@@ -94,9 +95,9 @@ function Survey() {
     }
 
     return (
-        <div>
-         
-        </div>
+      <Jumbotron>
+      <h1>Survey</h1>
+  </Jumbotron>
     )
 
 }
