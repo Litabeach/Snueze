@@ -16,6 +16,15 @@ function SpeechToText() {
       },
     },
     {
+      command: 'Hello',
+      callback: () => alert('You just said hi!!'),
+      matchInterim: true
+    },
+    // {
+    //   command: 'I would like to order *',
+    //   callback: (food) => setMessage(`Your order is for: ${food}`)
+    // },
+    {
       command: "change background colour to *",
       callback: (color) => {
         document.body.style.background = color;
