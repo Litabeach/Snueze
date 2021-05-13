@@ -1,6 +1,8 @@
 import journalAPI from "../../utils/journalAPI";
-import React, { useState, useEffect } from "react";
-import Jumbotron from "../../components/Jumbotron";
+
+import SpeechToText from "../../components/SpeechToText/SpeechToText"
+import { useState, useEffect } from "react";
+import  React  from "react";
 
 function Journal() {
     // Setting our component's initial state
@@ -59,9 +61,10 @@ function Journal() {
     };
 
     return (
-      <Jumbotron>
-      <h1>Journal</h1>
-  </Jumbotron>
+        <div>
+          <h1>Journal Page</h1>
+<SpeechToText />
+        </div>
     )
 
 };

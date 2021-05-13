@@ -1,14 +1,14 @@
-import React from "react";
-import Jumbotron from "../../components/Jumbotron";
+import React from "react"
 
 function Resources() {
 
-    return (
-        <Jumbotron>
-            <h1>Resources</h1>
-        </Jumbotron>
-    );
-  }
 
+    return (
+        <div>
+            <h1>Resources Page</h1>
+        </div>
+    )
+
+};
 
 export default Resources;

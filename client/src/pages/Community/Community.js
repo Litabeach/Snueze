@@ -1,14 +1,18 @@
-import React from "react";
-import Jumbotron from "../../components/Jumbotron";
+import React from 'react';
+import ChatRoom from '../../components/ChatRoom';
 
-function Community() {
+const Community = () => {
+  return (
+   
+     
+      <main>
+        <ChatRoom />
+      </main>
+      
+   
+  );
 
-    return (
-        <Jumbotron>
-            <h1>Comunity</h1>
-        </Jumbotron>
-    );
-  }
-
+};
 
 export default Community;
+

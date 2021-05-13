@@ -1,14 +1,14 @@
-import React from "react";
-import Jumbotron from "../../components/Jumbotron";
+import React from "react"
 
 function Signup() {
 
-    return (
-        <Jumbotron>
-            <h1>Signup</h1>
-        </Jumbotron>
-    );
-  }
 
+    return (
+        <div>
+            <h1>Signup Page</h1>
+        </div>
+    )
+
+};
 
 export default Signup;

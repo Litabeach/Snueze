@@ -1,14 +1,14 @@
-import React from "react";
-import Jumbotron from "../../components/Jumbotron";
+import React from "react"
 
 function Stats() {
 
-    return (
-        <Jumbotron>
-            <h1>Stats</h1>
-        </Jumbotron>
-    );
-  }
 
+    return (
+        <div>
+            <h1>Stats Page</h1>
+        </div>
+    )
+
+};
 
 export default Stats;
