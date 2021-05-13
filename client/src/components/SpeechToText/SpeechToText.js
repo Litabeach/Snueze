@@ -12,18 +12,9 @@ function SpeechToText() {
     {
       command: "open *",
       callback: (website) => {
-        window.open("http://" + website.split(" ").join(""));
+        window.location.replace("http://localhost:3000/" + website.split(" ").join(""));
       },
     },
-    {
-      command: 'Hello',
-      callback: () => alert('You just said hi!!'),
-      matchInterim: true
-    },
-    // {
-    //   command: 'I would like to order *',
-    //   callback: (food) => setMessage(`Your order is for: ${food}`)
-    // },
     {
       command: "change background colour to *",
       callback: (color) => {
