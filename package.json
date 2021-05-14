@@ -26,6 +26,7 @@
     "@material-ui/pickers": "^3.3.10",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
+    "chart.js": "^3.2.1",
     "date-fns": "^2.21.3",
     "dotenv": "^9.0.2",
     "express": "^4.16.3",
@@ -37,6 +38,7 @@
     "mongoose": "^5.3.16",
     "popper.js": "^1.16.1",
     "react-bootstrap": "^1.6.0",
+    "react-chartjs-2": "^3.0.3",
     "twilio": "^3.62.0",
     "twilio-video": "^2.14.0"
   }

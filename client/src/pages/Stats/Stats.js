@@ -1,4 +1,5 @@
 import React from "react"
+import LineChart from "../../components/Chart/LineChart"
 
 function Stats() {
 
@@ -6,6 +7,7 @@ function Stats() {
     return (
         <div>
             <h1>Stats Page</h1>
+            <LineChart />
         </div>
     )
 
