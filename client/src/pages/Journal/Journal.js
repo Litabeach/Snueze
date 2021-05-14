@@ -1,8 +1,7 @@
+import React, { useEffect, useState } from "react";
 import journalAPI from "../../utils/journalAPI";
-
+import DeleteBtn from "../../components/DeleteBtn";
 import SpeechToText from "../../components/SpeechToText/SpeechToText"
-import { useState, useEffect } from "react";
-import  React  from "react";
 
 function Journal() {
     // Setting our component's initial state
@@ -62,8 +61,49 @@ function Journal() {
 
     return (
         <div>
+          <div>
           <h1>Journal Page</h1>
-<SpeechToText />
+          <br />
+            <input
+            onChange={handleInputChange}
+            name="title"
+            placeholder="Title (required)"
+            value={formObject.title}
+            />
+            <br />
+            <textarea
+            onChange={handleInputChange}
+            name="body"
+            placeholder="What did you dream about?"
+            value={formObject.body}
+            />
+            <br />
+            <button
+            disabled={!(formObject.title && formObject.body)}
+            onClick={handleFormSubmit}
+            >
+              Submit Dream
+            </button>
+          </div>
+          {Journal.length ? (
+          <div>
+            {Journal.map(entry=> {
+              return (
+                <ul key={entry._id}>
+                  <h2>{entry.title}</h2>
+                  <br />
+                  <p>{entry.body}</p>
+                  <br />
+                  <p>{entry.date}</p>
+                  <DeleteBtn onClick={() =>deleteEntry(entry._id)} />
+                </ul>
+              )
+            })}
+          </div>
+          ) : (
+            <h3>No dreams have been recorded yet</h3>
+          )}
+      <SpeechToText />
         </div>
     )
 

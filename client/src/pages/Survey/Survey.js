@@ -102,19 +102,22 @@ function Survey() {
 
       <Jumbotron>
       <h1>Survey</h1> 
-<h2>Select the date</h2>
+<h2>What day are we talking about?</h2>
   <MuiPickersUtilsProvider utils={MomentUtils}>
    <DatePicker value={selectedDate} onChange={handleDateChange} />
-   <TimePicker value={selectedDate} onChange={handleDateChange} />
-   <DateTimePicker value={selectedDate} onChange={handleDateChange} />
   </MuiPickersUtilsProvider>
-  <h2>Question 1</h2>
-
-  <h2>Question 1</h2>
-
-  <h2>Question 1</h2>
-
-  <h2>Question 1</h2>
+  <h2>When did you go to bed last night?</h2>
+  <MuiPickersUtilsProvider utils={MomentUtils}>
+  <TimePicker value={selectedDate} onChange={handleDateChange} />
+ </MuiPickersUtilsProvider>
+  <h2>What time did you wake up this morning?</h2>
+  <MuiPickersUtilsProvider utils={MomentUtils}>
+  <TimePicker value={selectedDate} onChange={handleDateChange} />
+ </MuiPickersUtilsProvider>
+  <h2>How was your quality of sleep?</h2>
+      <p>Rating 1-5</p>
+  <h2>How are you feeling right now?</h2>
+  <p>Rating 1-5</p>
   <button onClick={handleFormSubmit}>Submit</button>
   </Jumbotron>
     )
