@@ -15,7 +15,7 @@ function Journal() {
   
     // Load all journal entries and store them with setEntries
     useEffect(() => {
-      loadEntries()
+      // loadEntries()
     }, [])
   
     // Loads all journal entries and sets them to entries
