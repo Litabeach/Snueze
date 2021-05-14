@@ -1,5 +1,7 @@
 import React from "react";
 import { Nav, NavDropdown} from 'react-bootstrap';
+import SpeechToTextNav from "../SpeechToTextNav/SpeechToTextNav";
+import "./style.css"
 
 function Header() {
    return (
@@ -28,6 +30,9 @@ function Header() {
         <Nav.Link href="/logout" title="Logout">
           Logout
         </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <SpeechToTextNav />
       </Nav.Item>
     </Nav>
   )
