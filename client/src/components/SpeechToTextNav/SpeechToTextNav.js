@@ -41,10 +41,6 @@ function SpeechToTextNav() {
     microphoneRef.current.classList.remove("listening");
     SpeechRecognition.stopListening();
   };
-  // const handleReset = () => {
-  //   stopHandle();
-  //   resetTranscript();
-  // };
   return (
     <div className="microphone-wrapper-nav">
       <div className="mircophone-container-nav">
@@ -55,9 +51,7 @@ function SpeechToTextNav() {
         >
           <img src={microPhoneIcon} className="microphone-icon-nav" />
         </div>
-        {/* <div className="microphone-status">
-          {isListening ? "Listening........." : "Click to start Listening"}
-        </div> */}
+    
         {isListening && (
 
           <img src={stopButton} className="microphone-stop-nav" onClick={stopHandle} />
@@ -65,15 +59,6 @@ function SpeechToTextNav() {
         )}
       </div>
 
-        {/* {transcript && (
-        <div className="microphone-result-container">
-          <div className="microphone-result-text">{transcript}</div>
-          <button className="microphone-reset btn" onClick={handleReset}>
-            Reset
-          </button>
-        </div>
-      )
-      } */}
     </div>
   );
 }
