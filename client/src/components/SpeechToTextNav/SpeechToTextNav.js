@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import React from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
-
+import "./speechnav.css"
 import microPhoneIcon from "../../images/microphone.png";
 
 
@@ -23,7 +23,7 @@ function SpeechToTextNav() {
   const microphoneRef = useRef(null);
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return (
-      <div className="mircophone-container">
+      <div className="mircophone-container-nav">
         Browser does not Support Speech Recognition.
       </div>
     );
@@ -45,23 +45,23 @@ function SpeechToTextNav() {
   //   resetTranscript();
   // };
   return (
-    <div className="microphone-wrapper">
-      <div className="mircophone-container">
+    <div className="microphone-wrapper-nav">
+      <div className="mircophone-container-nav">
         <div
-          className="microphone-icon-container"
+          className="microphone-icon-container-nav"
           ref={microphoneRef}
           onClick={handleListing}
         >
-          <img src={microPhoneIcon} className="microphone-icon" />
+          <img src={microPhoneIcon} className="microphone-icon-nav" />
         </div>
         {/* <div className="microphone-status">
           {isListening ? "Listening........." : "Click to start Listening"}
         </div> */}
-        {isListening && (
-          <button className="microphone-stop btn" onClick={stopHandle}>
+        {/* {isListening && (
+          <button className="microphone-stop-nav btn" onClick={stopHandle}>
             Stop
           </button>
-        )}
+        )} */}
       </div>
 
         {/* {transcript && (
