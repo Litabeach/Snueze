@@ -7,6 +7,9 @@ import journalAPI from "../../utils/journalAPI";
 import { TextArea } from "../../components/Form/Form";
 import DeleteBtn from "../../components/DeleteBtn";
 
+import SpeechToText from "../../components/SpeechToText/SpeechToText"
+import { useState, useEffect } from "react";
+import  React  from "react";
 
 function Journal() {
     // Setting our component's initial state
@@ -105,6 +108,8 @@ function Journal() {
             <h3>No dreams have been recorded yet</h3>
           )}
           <Footer />
+          <h1>Journal Page</h1>
+<SpeechToText />
         </div>
     )
 
