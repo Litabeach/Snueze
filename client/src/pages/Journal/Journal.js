@@ -1,4 +1,11 @@
+import React, { useEffect, useState } from "react";
+import Jumbotron from "../../components/Jumbotron";
+import Journal from "../../components/Journal";
+import JournalEntry from "../../components/JournalEntry";
+import { Input, TextArea, FormBtn } from "../../components/Form";
 import journalAPI from "../../utils/journalAPI";
+import { TextArea } from "../../components/Form/Form";
+import DeleteBtn from "../../components/DeleteBtn";
 
 import SpeechToText from "../../components/SpeechToText/SpeechToText"
 import { useState, useEffect } from "react";
@@ -35,10 +42,10 @@ function Journal() {
     }
   
     // Handles updating component state when the user types into the input field
-    function handleInputChange(event) {
-      const { name, value } = event.target;
-      setFormObject({...formObject, [name]: value})
-    };
+    // function handleInputChange(event) {
+    //   const { name, value } = event.target;
+    //   setFormObject({...formObject, [name]: value})
+    // };
   
     // When the form is submitted, use the API.saveEntry method to save the journal entry data
     // Then reload entries from the database
@@ -62,6 +69,45 @@ function Journal() {
 
     return (
         <div>
+          <Header />
+          <Jumbotron />
+          <form>
+            <Input
+            name="title"
+            placeholder="Title (required)"
+            value={formObject.title}
+            />
+            <TextArea
+            name="body"
+            placeholder="What did you dream about?"
+            value={formObject.body}
+            />
+            <FormBtn
+            disabled={!(formObject.title && formObject.body)}
+            onClick={handleFormSubmit}
+            >
+              Submit Dream
+            </FormBtn>
+          </form>
+          {entries.length ? (
+          <Journal>
+            {entries.map(entry=> {
+              return (
+                <JournalEntry key={entry._id}>
+                  <h2>{entry.title}</h2>
+                  <br />
+                  <p>{entry.body}</p>
+                  <br />
+                  <p>{entry.date}</p>
+                  <DeleteBtn onClick={() =>deleteEntry(entry._id)} />
+                </JournalEntry>
+              )
+            })}
+          </Journal>
+          ) : (
+            <h3>No dreams have been recorded yet</h3>
+          )}
+          <Footer />
           <h1>Journal Page</h1>
 <SpeechToText />
         </div>
