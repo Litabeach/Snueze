@@ -1,6 +1,7 @@
 import React from "react"
 import LineChart from "./LineChart"
 import BarChart from "./BarChart"
+import Doughnut from "./DoughnutChart"
 
 function Chart() {
 
@@ -9,6 +10,7 @@ function Chart() {
         <div>
             <LineChart />
             <BarChart />
+            <Doughnut />
         </div>
     )
 
