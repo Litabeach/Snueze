@@ -67,3 +67,9 @@
   color: white;
   width: fit-content;
 }
+
+.microphone-stop-nav {
+  width:30px;
+  height:30px;
+  margin:5px;
+}

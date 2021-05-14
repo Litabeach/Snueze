@@ -3,6 +3,7 @@ import React from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import "./speechnav.css"
 import microPhoneIcon from "../../images/microphone.png";
+import stopButton from "../../images/stopbutton.png";
 
 
 
@@ -57,11 +58,11 @@ function SpeechToTextNav() {
         {/* <div className="microphone-status">
           {isListening ? "Listening........." : "Click to start Listening"}
         </div> */}
-        {/* {isListening && (
-          <button className="microphone-stop-nav btn" onClick={stopHandle}>
-            Stop
-          </button>
-        )} */}
+        {isListening && (
+
+          <img src={stopButton} className="microphone-stop-nav" onClick={stopHandle} />
+          
+        )}
       </div>
 
         {/* {transcript && (
