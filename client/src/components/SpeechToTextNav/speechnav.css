@@ -3,27 +3,25 @@
   padding: 0;
   box-sizing: border-box;
 }
-.mircophone-container {
+
+.mircophone-container-nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 50vh;
 }
-.microphone-icon-container {
-  width: 100px;
-  height: 100px;
+
+.microphone-icon-container-nav {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-image: linear-gradient(128deg, #ffffff, #647c88);
-  padding: 20px;
-  margin-right: 20px;
+  margin-top: 5px;
+  padding: 5px;
   position: relative;
   cursor: pointer;
 }
-.microphone-icon-container.listening::before {
+.microphone-icon-container-nav.listening::before {
   content: "";
-  width: 100px;
-  height: 100px;
+  width: 30px;
+  height: 30px;
   background-color: #ffffff81;
   position: absolute;
   top: 50%;
@@ -42,16 +40,17 @@
     transform: translate(-50%, -50%) scale(1.4);
   }
 }
-.microphone-icon {
-  width: 100%;
-  height: 100%;
+.microphone-icon-nav {
+  width: 20px;
+  height:  20px;
+  margin-bottom: 10px;
 }
-.microphone-status {
+.microphone-status-nav {
   font-size: 22px;
   margin-right: 20px;
   min-width: 215px;
 }
-.btn {
+.btn-nav {
   border: none;
   padding: 10px 30px;
   margin-right: 10px;
@@ -61,25 +60,16 @@
   border-radius: 25px;
   box-shadow: 0px 0px 10px 5px #ffffff1a;
 }
-.microphone-result-container {
-  text-align: center;
-  height: 50vh;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 30px;
-
-}
-.microphone-result-text {
-  margin-bottom: 30px;
-  width: 70vw;
-  overflow-y: auto;
-}
-.microphone-reset {
+.microphone-reset-nav {
   border: 1px solid #fff;
   background: none;
   color: white;
   width: fit-content;
+}
+
+.microphone-stop-nav {
+  width:30px;
+  height:30px;
+  margin:5px;
 }
