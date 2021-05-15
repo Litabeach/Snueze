@@ -103,7 +103,7 @@ function Journal() {
           ) : (
             <h3>No dreams have been recorded yet</h3>
           )}
-      <SpeechToText />
+     <SpeechToText />
         </div>
     )
 
