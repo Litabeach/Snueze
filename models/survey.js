@@ -7,6 +7,11 @@ const surveySchema = new Schema({
   wakeuptime: { type: String, required: true },
   sleepquality: { type: String, required: true },
   mood: { type: String, required: true },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+}
   
 });
 
