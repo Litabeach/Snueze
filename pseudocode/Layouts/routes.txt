@@ -1,0 +1,26 @@
+Sleep data
+- create/post route
+- get all (on stats page)
+-find by id
+
+Journal data
+-create/post
+-get all
+-find by id
+-delete
+-update 
+
+User data w/ incription
+-post route
+-get by id
+
+Community forum data
+-create/post
+-get all
+-find by id
+-update
+-delete
+-comment
+
+Page navigation
+-react router
