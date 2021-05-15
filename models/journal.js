@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const journalSchema = new Schema({
-  title: { type: String, required: true },
+  title: { type: String },
   body: { type: String, required: true },
   date: { type: Date, default: Date.now },
   user: {

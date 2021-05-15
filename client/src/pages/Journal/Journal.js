@@ -99,7 +99,7 @@ function Journal() {
           onChange={handleInputChange}
           name="title"
           placeholder="Title (required)"
-          value={formObject.title}
+          value={formObject.title, transcript}
         />
         <br />
         <textarea
@@ -111,7 +111,7 @@ function Journal() {
         />
         <br />
         <button
-          disabled={!(formObject.title && formObject.body)}
+          disabled={!(formObject.body)}
           onClick={handleFormSubmit}
         >
           Submit Dream
