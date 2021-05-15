@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import journalAPI from "../../utils/journalAPI";
 import DeleteBtn from "../../components/DeleteBtn";
+import { List, ListItem } from "../../components/List";
 import SpeechToText from "../../components/SpeechToText/SpeechToText"
 
 function Journal() {
     // Setting our component's initial state
-    const [entries, setEntries] = useState([])
+    const [entries, setEntries] = useState([""])
     const [formObject, setFormObject] = useState({
       title: "",
       body: "",
@@ -25,7 +26,6 @@ function Journal() {
         )
         .catch(err => console.log(err));
     };
-  
     // Deletes an entry from the database with a given id, then reloads entries from the db
     function deleteEntry(id) {
       journalAPI.deleteEntry(id)
@@ -49,11 +49,11 @@ function Journal() {
           body: formObject.body,
           date: formObject.date
         })
-          .then(() => setFormObject({
-            title: "",
-            body: "",
-            date: ""
-          }))
+        .then(() => setFormObject({
+          title: "",
+          body: "",
+          date: ""
+        }))
           .then(() => loadEntries())
           .catch(err => console.log(err));
       }
@@ -68,14 +68,12 @@ function Journal() {
             onChange={handleInputChange}
             name="title"
             placeholder="Title (required)"
-            value={formObject.title}
             />
             <br />
             <textarea
             onChange={handleInputChange}
             name="body"
             placeholder="What did you dream about?"
-            value={formObject.body}
             />
             <br />
             <button
@@ -85,21 +83,19 @@ function Journal() {
               Submit Dream
             </button>
           </div>
-          {Journal.length ? (
-          <div>
-            {Journal.map(entry=> {
-              return (
-                <ul key={entry._id}>
+          {entries.length ? (
+          <List>
+            {entries.map(entry => (
+                <ListItem key={entry._id}>
                   <h2>{entry.title}</h2>
                   <br />
                   <p>{entry.body}</p>
                   <br />
                   <p>{entry.date}</p>
                   <DeleteBtn onClick={() =>deleteEntry(entry._id)} />
-                </ul>
-              )
-            })}
-          </div>
+                </ListItem>
+            ))}
+          </List>
           ) : (
             <h3>No dreams have been recorded yet</h3>
           )}
