@@ -2,11 +2,6 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
-//assets for video chat routes
-const config = require("./utils/config");
-const pino = require('express-pino-logger')();
-const { videoToken } = require('./utils/tokens');
-
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
@@ -21,8 +16,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+//assets for video chat routes
+const config = require("./utils/config");
+const { videoToken } = require('./utils/tokens');
+
 //routes for video chat. 
-app.use(pino);
 const sendTokenResponse = (token, res) => {
   res.set('Content-Type', 'application/json');
   res.send(
@@ -61,13 +59,16 @@ app.use(routes);
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/sleep", 
   {
+    useCreateIndex: true,
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
   },
    (err) => {
     if(err) return console.error(err);
     console.log("Connected to MongoDB");
   }
+
 );
 
 // Start the API server
