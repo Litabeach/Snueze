@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import axios from 'axios';
 import API from "../../utils/API";
+import surveyAPI from "../../utils/surveyAPI";
 
 function LineChart() {
 
-  
-   
+  useEffect(() => {
+    getChartData();
+  }, [])
+
+  //need to comment out process.env.MONGODB_URI in server.js to use seed data.
+  async function getChartData() {
+    surveyAPI.getSurveys()
+    .then(res => {
+      console.log(res)
+    })
+      .catch(err => console.log(err));
+  }
 
 const data = {
   labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
