@@ -7,6 +7,7 @@ function Tools() {
     return (
         <Jumbotron>
             <h1>Tools</h1>
+            
         </Jumbotron>
     );
   }

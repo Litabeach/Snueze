@@ -5,7 +5,7 @@ import Sound from 'react-sound'
 import SoundComponent from './playSound'
 import StyledSlider from './StyledSlider';
 import 'react-circular-progressbar/dist/styles.css'
-import './App.css'
+import './Meditation.css'
 
 const playButton = 'svg/play.svg'
 const pauseButton = 'svg/pause.svg'
@@ -26,7 +26,7 @@ const parkImg = 'img/park.jpg'
 const streamImg = 'img/stream.jpg'
 const wavesImg = 'img/waves.jpg'
 
-class App extends Component {
+class Meditation extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -181,4 +181,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default Meditation
