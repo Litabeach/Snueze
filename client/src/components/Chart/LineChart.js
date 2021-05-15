@@ -1,7 +1,13 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
+import axios from 'axios';
+import API from "../../utils/API";
 
 function LineChart() {
+
+  
+   
+
 const data = {
   labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
   datasets: [

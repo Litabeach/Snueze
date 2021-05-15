@@ -61,13 +61,16 @@ app.use(routes);
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/sleep", 
   {
+    useCreateIndex: true,
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
   },
    (err) => {
     if(err) return console.error(err);
     console.log("Connected to MongoDB");
   }
+
 );
 
 // Start the API server
