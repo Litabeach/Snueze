@@ -1,14 +1,12 @@
 
 import React from "react";
-import Jumbotron from "../../components/Jumbotron";
+
+import Meditation from "../../components/Meditation"
 
 function Tools() {
 
     return (
-        <Jumbotron>
-            <h1>Tools</h1>
-            
-        </Jumbotron>
+        <Meditation/>
     );
   }
 

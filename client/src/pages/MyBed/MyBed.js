@@ -10,28 +10,18 @@ function MyBed() {
         <Jumbotron>
             <h1>My Bed</h1>
             <div>
-            <Link to="/Journal"><button>
-              Journal
-            </button>
+            <Link to="/Journal">Journal<a href = "https:// placeholder.com"><img src = "https:/via.placeholder.com/150"></img></a>
             </Link>
           
-            <Link to="/Resources"><button>
-              Resources
-            </button>
+            <Link to="/Resources">Resources<a href = "https:// placeholder.com"><img src = "https:/via.placeholder.com/150"></img></a>
             </Link>
-            <Link to="/Stats"><button>
-              Stats
-            </button>
+           
+            <Link to="/Stats">Stats<a href = "https:// placeholder.com"><img src = "https:/via.placeholder.com/150"></img></a>
             </Link>
           
-            <Link to="/Tools"><button>
-             Tools
-            </button>
+            <Link to="/Tools">Tools<a href = "https:// placeholder.com"><img src = "https:/via.placeholder.com/150"></img></a>
             </Link>
-            <Link to="/Community"><button>
-             Community
-            </button>
-            </Link>
+            
           </div>
             
           
