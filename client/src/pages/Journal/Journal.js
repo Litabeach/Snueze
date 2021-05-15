@@ -6,13 +6,13 @@ import SpeechToText from "../../components/SpeechToText/SpeechToText"
 
 function Journal() {
     // Setting our component's initial state
-    const [entries, setEntries] = useState([""])
+    let [entries, setEntries] = useState([""])
     const [formObject, setFormObject] = useState({
       title: "",
       body: "",
       date: ""
     })
-  
+
     // Load all journal entries and store them with setEntries
     useEffect(() => {
       loadEntries()
@@ -21,11 +21,15 @@ function Journal() {
     // Loads all journal entries and sets them to entries
     function loadEntries() {
       journalAPI.getEntries()
-        .then(res => 
+        .then(res => {
           setEntries(res.data)
+          console.log("entries", res.data)
+        }
+          // setEntries(res.data)
         )
         .catch(err => console.log(err));
     };
+
     // Deletes an entry from the database with a given id, then reloads entries from the db
     function deleteEntry(id) {
       journalAPI.deleteEntry(id)
@@ -59,6 +63,7 @@ function Journal() {
       }
     };
 
+    console.log(entries);
     return (
         <div>
           <div>
@@ -85,6 +90,7 @@ function Journal() {
           </div>
           {entries.length ? (
           <List>
+            <h3>Your Journal Entries</h3>
             {entries.map(entry => (
                 <ListItem key={entry._id}>
                   <h2>{entry.title}</h2>
