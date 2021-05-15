@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Line } from "react-chartjs-2";
+import { Line, Chart } from "react-chartjs-2";
 import axios from 'axios';
 import API from "../../utils/API";
 import surveyAPI from "../../utils/surveyAPI";
@@ -59,6 +59,11 @@ const data =
   
 }
 
+const testLine = new Chart (React.createRef(), {
+  type: "line",
+  data: data
+})
+
 // const options = {
 //   scales: {
 //       yAxes: [{
@@ -81,6 +86,7 @@ const data =
       <Line data={data}
       // options={options} 
       />
+      <testLine />
     </div>
   );
 }
