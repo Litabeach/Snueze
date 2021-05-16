@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Line } from "react-chartjs-2";
+import { Line, Chart } from "react-chartjs-2";
 import axios from 'axios';
 import API from "../../utils/API";
 import surveyAPI from "../../utils/surveyAPI";
@@ -17,7 +17,6 @@ function LineChart() {
   function getChartData() {
     let wakeupArray = []
     let dateArray = [];
-
 
     surveyAPI.getSurveys()
     .then(res => {
@@ -41,12 +40,12 @@ function LineChart() {
 
   
 const data = 
-{
+{ 
   labels: dates,
   datasets: [
     {
       label: "First dataset",
-      data: [1, 2, 3, 4, 5],
+      data: [1.00, 2.00, 3.00, 4.05, 5],
       fill: true,
       backgroundColor: "rgba(75,192,192,0.2)",
       borderColor: "rgba(75,192,192,1)"
@@ -57,13 +56,17 @@ const data =
       fill: false,
       borderColor: "#742774"
     }
-  ]
+  ],
   
 };
 
+//attempts to customize
+
 // const testLine = new Chart (React.createRef(), {
 //   type: "line",
-//   data: data
+//   data: data,
+//   options: options,
+//   legend: legend,
 // })
 
 // const yLabels = {
@@ -85,35 +88,36 @@ const data =
 //       }]
 //   }
 // }
-const legend = {
-  display: true,
-  position: "bottom",
-  labels: {
-    fontColor: "#323130",
-    fontSize: 14
-  }
-};
+// const legend = {
+//   display: true,
+//   position: "bottom",
+//   labels: {
+//     fontColor: "#323130",
+//     fontSize: 14
+//   }
+// };
 
-const options = {
-  title: {
-    display: true,
-    text: "Chart Title"
-  },
-  scales: {
-    yAxes: [
-      {
-        ticks: {
-          suggestedMin: 0,
-          suggestedMax: 100
-        }
-      }
-    ]
-  }
-};
+// const options = {
+//   title: {
+//     display: true,
+//     text: "Chart Title"
+//   },
+//   scales: {
+//     yAxes: [
+//       {
+//         ticks: {
+//           suggestedMin: 0,
+//           suggestedMax: 100
+//         }
+//       }
+//     ]
+//   }
+// };
 
   return (
     <div className="App" style={{ backgroundColor: "white" }}>
-      <Line data={data} />
+     
+      <Line data={data}/>
       
     </div>
   );

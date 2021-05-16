@@ -11,8 +11,8 @@ function Chart() {
         <div>
             <LineChart />
             {/* <BarChart />
-            <Doughnut />
-            <Pie /> */}
+            <Doughnut /> */}
+            <Pie /> 
         </div>
     )
 
