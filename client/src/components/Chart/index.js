@@ -10,9 +10,9 @@ function Chart() {
     return (
         <div>
             <LineChart />
-            <BarChart />
+            {/* <BarChart />
             <Doughnut />
-            <Pie />
+            <Pie /> */}
         </div>
     )
 

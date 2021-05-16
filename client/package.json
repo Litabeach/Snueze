@@ -10,11 +10,8 @@
     "axios": "^0.18.0",
     "chart.js": "^3.2.1",
     "date-fns": "^2.0.0-beta.5",
-
     "rc-slider": "^9.5.4",
-
     "moment": "^2.29.1",
-
     "react": "^16.13.1",
     "react-circular-progressbar": "^1.0.0",
     "react-bootstrap": "^1.6.0",
