@@ -62,7 +62,7 @@ function PieChart() {
       };
 
   return (
-    <div className="App">
+    <div className="App" style={{ marginTop: "200px" }}>
       <Pie data={data} />
     </div>
   );
