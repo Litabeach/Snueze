@@ -5,7 +5,7 @@ import API from "../../utils/API";
 import surveyAPI from "../../utils/surveyAPI";
 
 function LineChart() {
-  const [wakeUp, setWakeUp] = useState([]);
+  const [hours, setHours] = useState([]);
   const [dates, setDates] = useState([]);
 
 
@@ -15,7 +15,7 @@ function LineChart() {
 
   //need to comment out process.env.MONGODB_URI in server.js to use seed data.
   function getChartData() {
-    let wakeupArray = []
+    let hoursArray = []
     let dateArray = [];
 
     surveyAPI.getSurveys()
@@ -28,11 +28,11 @@ function LineChart() {
         let date = entry.date
         let newDate = new Date(date).toLocaleDateString()
         dateArray.push(newDate)
-        wakeupArray.push(entry.wakeuptime)
+        hoursArray.push(entry.hoursslept)
       })
 
-      console.log(wakeupArray)
-      setWakeUp(wakeupArray);
+      console.log(hoursArray)
+      setHours(hoursArray);
       setDates(dateArray)
     })
       .catch(err => console.log(err));
@@ -44,18 +44,20 @@ const data =
   labels: dates,
   datasets: [
     {
-      label: "First dataset",
-      data: [1.00, 2.00, 3.00, 4.05, 5],
+      label: "Hours Slept",
+      data: hours,
       fill: true,
       backgroundColor: "rgba(75,192,192,0.2)",
       borderColor: "rgba(75,192,192,1)"
     },
-    {
-      label: "Second dataset",
-      data: wakeUp,
-      fill: false,
-      borderColor: "#742774"
-    }
+    
+  
+    // {
+    //   label: "Second dataset",
+    //   data: wakeUp,
+    //   fill: false,
+    //   borderColor: "#742774"
+    // }
   ],
   
 };
@@ -113,11 +115,46 @@ const data =
 //     ]
 //   }
 // };
+// const options = {
+//   scales: {
+//     xAxes: [{
+//       scaleLabel: {
+//         display: true,
+//         labelString: 'Years'
+//       }
+//     }],
+//     yAxes: [{
+//       ticks: {
+//           beginAtZero: true,
+//       }
+//     }],
+//   }     
+// }
+
+const options = {
+  scales: {
+    x: {
+      title: {
+        display: true,
+        text: "Dates"
+      }
+  },
+
+      y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: "Hours"
+          }
+      }
+    }
+  }
+
 
   return (
-    <div className="App" style={{ backgroundColor: "white" }}>
+    <div style={{ backgroundColor: "white" }}>
      
-      <Line data={data}/>
+      <Line data={ data } options={ options }/>
       
     </div>
   );
