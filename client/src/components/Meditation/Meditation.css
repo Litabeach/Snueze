@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .bg {
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .bg-overlay {
+    background-color: #0f0f0f99;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    position: absolute;
+  }
+  
+  .bg img {
+    width: 100%;
+    background-position: center bottom;
+  }
+  
+  button {
+    background: none;
+    border: 2px #ffffffcc solid;
+    padding: 16px;
+    width: 130px;
+    /* box-shadow: #000000fa 1px 1px 2px 0; */
+    border-radius: 2%;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    box-shadow: none;
+    color: #000;
+    background-color: #ffffffcc;
+    border: none;
+    width: 140px;
+    padding: 24px;
+    font-size: 17px;
+  }
+  
+  button .active {
+    box-shadow: none;
+    color: #000;
+    background-color: #ffffffcc;
+    border: none;
+    width: 140px;
+    padding: 24px;
+    font-size: 17px;
+  }
+  
+  .active {
+    box-shadow: none;
+    color: #000;
+    background-color: #ffffffcc;
+    border: none;
+    width: 140px;
+    padding: 24px;
+    font-size: 17px;
+  }
+  
+  .App {
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .time-menu,
+  .player-container,
+  .audio-menu {
+    flex: 1;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+
+  
+  .player-container {
+    /* background-color: #afafff; */
+    position: relative;
+  }
+  
+  .player-container .play,
+  .player-container .audioSeek {
+    position: absolute;
+  }
+  
+  .player-container .timer {
+    position: absolute;
+    bottom: 10%;
+  }
+  
+
+  
+  .playPause {
+    width: 40px;
+    z-index: 10;
+  }
+  
+  .audioSeek {
+    width: 60%;
+  }
+  
+  .volume-control {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0%;
+  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    color: white;
+  }
+  
+  .volume-slider {
+    width: 100%;
+  }
+  
+  .volume-icon {
+    filter: invert(100%);
+  }
+  
+  .timer {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    color: white;
+  }

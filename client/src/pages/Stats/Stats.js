@@ -1,4 +1,6 @@
 import React from "react"
+import Chart from "../../components/Chart"
+
 
 function Stats() {
 
@@ -6,6 +8,7 @@ function Stats() {
     return (
         <div>
             <h1>Stats Page</h1>
+            <Chart />
         </div>
     )
 

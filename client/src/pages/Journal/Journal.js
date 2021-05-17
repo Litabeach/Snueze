@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import journalAPI from "../../utils/journalAPI";
 import DeleteBtn from "../../components/DeleteBtn";
 import { List, ListItem } from "../../components/List";
@@ -86,7 +86,19 @@ function Journal() {
             onClick={handleFormSubmit}
             >
               Submit Dream
+
             </button>
+      </div>
+
+      {/* <SpeechToText /> */}
+      <div className="microphone-wrapper">
+        <div className="mircophone-container-nav">
+          <div
+            className="microphone-icon-container-nav"
+            ref={microphoneRef}
+            onClick={handleListing}
+          >
+            <img src={microPhoneIcon} className="microphone-icon-nav" />
           </div>
           {entries.length ? (
           <List>
@@ -105,9 +117,9 @@ function Journal() {
           ) : (
             <h3>No dreams have been recorded yet</h3>
           )}
-      <SpeechToText />
-        </div>
-    )
+    </div>
+    
+  )
 
 };
 

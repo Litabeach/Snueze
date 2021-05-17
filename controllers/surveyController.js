@@ -4,8 +4,11 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.Survey
-      .find(req.query)
-      .sort({ date: -1 })
+      .find({
+        //needs to be modified to search for logged in user
+        // user: 1,
+      })
+      // .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
