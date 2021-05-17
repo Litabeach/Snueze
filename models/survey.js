@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const surveySchema = new Schema({
   date: { type: Date, default: Date.now },
+  hoursslept: { type: Number, required: true },
   bedtime: { type: String, required: true },
   wakeuptime: { type: String, required: true },
   sleepquality: { type: String, required: true },
