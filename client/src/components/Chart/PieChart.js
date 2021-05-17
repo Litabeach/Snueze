@@ -83,7 +83,6 @@ function PieChart() {
             'rgb(255, 205, 86)',
             'rgb(72, 151, 33)',
             'rgb(209, 20, 10)',
-            
           ],
           hoverOffset: 4
         }]
