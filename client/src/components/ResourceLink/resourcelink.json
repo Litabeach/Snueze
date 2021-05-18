@@ -23,30 +23,6 @@
         "image1": "https://cdn2.iconfinder.com/data/icons/people-79/100/Snore-01-512.png",
         "alt1": "icon of a person sleeping",
         "link": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/natural-sleep-aids-home-remedies-to-help-you-sleep"
-    },
-    {
-        "id": 11,
-        "title": "Narcolepsy Network",
-        "description": "Patient network for those who may be experiencing narcolepsy",
-        "image1": "https://cdn2.iconfinder.com/data/icons/people-79/100/Snore-01-512.png",
-        "alt1": "icon of a person sleeping",
-        "link": "https://narcolepsynetwork.org/"
-    },
-    {
-        "id": 9,
-        "title": "Sleep Apnea Self-Evaluation",
-        "description": "This Harvard self-evaluation can be the first step to getting diagnosed with obstructive sleep apnea.",
-        "image1": "https://cdn2.iconfinder.com/data/icons/people-79/100/Snore-01-512.png",
-        "alt1": "icon of a person sleeping",
-        "link": "https://healthysleep.med.harvard.edu/sleep-apnea/diagnosing-osa/self-evaluation"
-    },
-    {
-        "id": 9,
-        "title": "Sleep Disorders",
-        "description": "Resource from the American Academy of Sleep Medicine for the latest sleep disorder news and info",
-        "image1": "https://cdn2.iconfinder.com/data/icons/people-79/100/Snore-01-512.png",
-        "alt1": "icon of a person sleeping",
-        "link": "https://sleepeducation.org/sleep-disorders/"
     }
 ]
 

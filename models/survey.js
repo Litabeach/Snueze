@@ -11,8 +11,7 @@ const surveySchema = new Schema({
   notes: { type: String, required: false },
   user: {
     type: Schema.Types.ObjectId,
-    ref: "User",
-    required: true
+    ref: "User"
 }
   
 });

@@ -8,13 +8,28 @@
 }
 
 .resourceh1{
+    margin: 20px;
     text-align: center;
 }
 
+.resourceh3{
+    text-align: center;
+    margin-top:2%;
+}
+
 .resource-card{
+    background-color: rgb(56, 72, 58);
+    width:75%;
+    margin-left: 14%;
+    padding:3%;
+    border-radius:5%
+}
+
+.resourcecontainer {
     background-color: rgb(124, 156, 129);
     width:75%;
     margin-left: 14%;
+    margin-bottom: 10%;
     padding:3%;
     border-radius:5%
 }
