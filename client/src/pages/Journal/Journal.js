@@ -5,6 +5,7 @@ import { List, ListItem } from "../../components/List";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import microPhoneIcon from "../../images/microphone.png";
 import stopButton from "../../images/stopbutton.png";
+import Jumbotron from "../../components/Jumbotron/Jumbotron";
 
 function Journal() {
   // Setting our component's initial state
@@ -100,7 +101,9 @@ function Journal() {
   return (
     <div>
       <div>
-        <h1>Journal Page</h1>
+        <Jumbotron >
+        Dream Journal
+        </Jumbotron>
         <br />
         <input
           onChange={handleInputChange}
