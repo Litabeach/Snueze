@@ -62,7 +62,19 @@ function Journal() {
   console.log(entries);
 
   //speech to text
-  const { transcript, resetTranscript } = useSpeechRecognition({});
+
+  const commands = [
+    {
+      command: 'reset',
+      callback: () => resetTranscript()
+    },
+    {
+      command: 'clear',
+      callback: () => resetTranscript()
+    }
+  ]
+
+  const { transcript, resetTranscript } = useSpeechRecognition({ commands });
   const [isListening, setIsListening] = useState(false);
   const microphoneRef = useRef(null);
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
