@@ -91,7 +91,7 @@ function Journal() {
       </div>
 
       {/* <SpeechToText /> */}
-      <div className="microphone-wrapper">
+      {/* <div className="microphone-wrapper">
         <div className="mircophone-container-nav">
           <div
             className="microphone-icon-container-nav"
@@ -99,7 +99,7 @@ function Journal() {
             onClick={handleListing}
           >
             <img src={microPhoneIcon} className="microphone-icon-nav" />
-          </div>
+          </div> */}
           {entries.length ? (
           <List>
             <h3>Your Journal Entries</h3>
