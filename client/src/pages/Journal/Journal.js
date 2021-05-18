@@ -5,6 +5,7 @@ import { List, ListItem } from "../../components/List";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import microPhoneIcon from "../../images/microphone.png";
 import stopButton from "../../images/stopbutton.png";
+import Jumbotron from "../../components/Jumbotron/Jumbotron";
 
 function Journal() {
   // Setting our component's initial state
@@ -62,7 +63,19 @@ function Journal() {
   console.log(entries);
 
   //speech to text
-  const { transcript, resetTranscript } = useSpeechRecognition({});
+
+  const commands = [
+    {
+      command: 'reset',
+      callback: () => resetTranscript()
+    },
+    {
+      command: 'clear',
+      callback: () => resetTranscript()
+    }
+  ]
+
+  const { transcript, resetTranscript } = useSpeechRecognition({ commands });
   const [isListening, setIsListening] = useState(false);
   const microphoneRef = useRef(null);
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
@@ -88,7 +101,9 @@ function Journal() {
   return (
     <div>
       <div>
-        <h1>Journal Page</h1>
+        <Jumbotron >
+        Dream Journal
+        </Jumbotron>
         <br />
         <input
           onChange={handleInputChange}
