@@ -1,9 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import journalAPI from "../../utils/journalAPI";
 import DeleteBtn from "../../components/DeleteBtn";
 import { List, ListItem } from "../../components/List";
 import SpeechToText from "../../components/SpeechToText/SpeechToText"
-
 function Journal() {
     // Setting our component's initial state
     let [entries, setEntries] = useState([""])
@@ -12,12 +11,10 @@ function Journal() {
       body: "",
       date: ""
     })
-
     // Load all journal entries and store them with setEntries
     useEffect(() => {
       loadEntries()
     }, [])
-  
     // Loads all journal entries and sets them to entries
     function loadEntries() {
       journalAPI.getEntries()
@@ -29,20 +26,17 @@ function Journal() {
         )
         .catch(err => console.log(err));
     };
-
     // Deletes an entry from the database with a given id, then reloads entries from the db
     function deleteEntry(id) {
       journalAPI.deleteEntry(id)
         .then(res => loadEntries())
         .catch(err => console.log(err));
     }
-  
     // Handles updating component state when the user types into the input field
     function handleInputChange(event) {
       const { name, value } = event.target;
       setFormObject({...formObject, [name]: value})
     };
-  
     // When the form is submitted, use the API.saveEntry method to save the journal entry data
     // Then reload entries from the database
     function handleFormSubmit(event) {
@@ -62,7 +56,6 @@ function Journal() {
           .catch(err => console.log(err));
       }
     };
-
     console.log(entries);
     return (
         <div>
@@ -86,20 +79,8 @@ function Journal() {
             onClick={handleFormSubmit}
             >
               Submit Dream
-
             </button>
-      </div>
-
-      {/* <SpeechToText /> */}
-      {/* <div className="microphone-wrapper">
-        <div className="mircophone-container-nav">
-          <div
-            className="microphone-icon-container-nav"
-            ref={microphoneRef}
-            onClick={handleListing}
-          >
-            <img src={microPhoneIcon} className="microphone-icon-nav" />
-          </div> */}
+          </div>
           {entries.length ? (
           <List>
             <h3>Your Journal Entries</h3>
@@ -117,10 +98,8 @@ function Journal() {
           ) : (
             <h3>No dreams have been recorded yet</h3>
           )}
-    </div>
-    
-  )
-
+      <SpeechToText />
+        </div>
+    )
 };
-
 export default Journal;
