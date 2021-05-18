@@ -10,8 +10,7 @@ const surveySchema = new Schema({
   mood: { type: String, required: true },
   user: {
     type: Schema.Types.ObjectId,
-    ref: "User",
-    required: true
+    ref: "User"
 }
   
 });

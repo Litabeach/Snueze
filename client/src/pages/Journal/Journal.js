@@ -122,7 +122,7 @@ function Journal() {
 
         </div>
         <button
-          disabled={!(formObject.body)}
+          disabled={!(formObject.body && formObject.title)}
           onClick={handleFormSubmit}
         >
           Submit Dream
