@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css"
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Register from "./components/Auth/Register";
 import Header from "./components/Header";
 import MyBed from "./pages/MyBed";
 import Survey from "./pages/Survey";
@@ -24,8 +24,8 @@ function App() {
           <Route exact path="/">
             <Login />
           </Route>
-          <Route exact path="/signup">
-            <Signup />
+          <Route exact path="/register">
+            <Register />
           </Route>
           <Route exact path="/mybed">
             <MyBed />
