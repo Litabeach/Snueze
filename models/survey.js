@@ -13,7 +13,7 @@ const surveySchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User"
 }
-  
+
 });
 
 const Survey = mongoose.model("Survey", surveySchema);

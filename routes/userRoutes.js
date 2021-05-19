@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
         const { username, email, password, passwordVerify } = req.body;
 
         //validation
-
+console.log(req.body)
         if (!username || !email || !password || !passwordVerify)
             return res
                 .status(400)
@@ -90,7 +90,7 @@ router.post("/login", async (req, res) => {
                     errorMessage: "Please enter all required fields."
                 });
 
-        const existingUser = await User.findOne({ email })
+        const existingUser = await User.findOne({ email }).populate("surveys")
         if (!existingUser)
             return res
                 .status(401)
@@ -110,7 +110,8 @@ router.post("/login", async (req, res) => {
         //"expires in" is currently set to two hours
         const token = jwt.sign(
             {
-                user: existingUser._id
+                user: existingUser._id,
+                surveys: existingUser.surveys
             },
             process.env.JWT_SECRET,
             {
@@ -130,6 +131,21 @@ router.post("/login", async (req, res) => {
         res.status(500).send()
     }
 });
+
+router.get("/surveys", (req, res) => {
+    const authHeader = req.headers.cookie;
+      if (authHeader) {
+          const token = authHeader.split('=')[1];
+          jwt.verify(token, process.env.JWT_SECRET, (err, {surveys}) => {
+              if (err) {
+                  return res.sendStatus(403);
+              }
+              res.json(surveys);  
+          });
+      } else {
+          res.sendStatus(401);
+      }
+})
 
 //logout
 router.get("/logout", (req, res) => {
