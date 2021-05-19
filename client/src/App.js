@@ -12,6 +12,7 @@ import Tools from "./pages/Tools";
 import Community from "./pages/Community";
 import Resources from "./pages/Resources";
 import NoMatch from "./pages/NoMatch";
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   )
