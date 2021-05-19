@@ -12,7 +12,7 @@ function Register() {
     async function register(e){
         e.preventDefault();
 
-        // try{
+        try{
             const registerData = {
                username, 
                email, 
@@ -22,9 +22,9 @@ function Register() {
 
             await axios.post("http://localhost:3001/auth", registerData);
 
-        // }catch(err){
-        //     console.error(err);
-        // }
+        }catch(err){
+            console.error(err);
+        }
     }
 
     return (
