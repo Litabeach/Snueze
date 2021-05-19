@@ -42,10 +42,12 @@
   
   .speech-transcript {
     position:absolute;
-    top:517px;
-    left:339px;
+    top:513px;
+    left:338px;
     background:transparent;
     font-size:1em;
     line-height:1em;
-    width:50%
+    width:50%;
+    height:150px;
+    
     }
