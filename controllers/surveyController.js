@@ -31,9 +31,7 @@ module.exports = {
               .create(req.body)
               .then(({_id}) => db.User.findByIdAndUpdate(user, {$push: {surveys: _id}}))
               .then(userDoc => res.json(userDoc))
-              
               .catch(err => {console.log(err); res.status(422).json(err)});
-              
           });
       } else {
           res.sendStatus(401);
