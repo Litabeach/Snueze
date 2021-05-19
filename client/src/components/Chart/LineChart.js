@@ -7,7 +7,7 @@ import surveyAPI from "../../utils/surveyAPI";
 function LineChart() {
   const [hours, setHours] = useState([]);
   const [dates, setDates] = useState([]);
-
+  const [rec, setRec] = useState([]);
 
   useEffect(() => {
     getChartData();
@@ -17,6 +17,7 @@ function LineChart() {
   function getChartData() {
     let hoursArray = []
     let dateArray = [];
+    let eightArray = [];
 
     surveyAPI.getSurveys()
     .then(res => {
@@ -27,13 +28,16 @@ function LineChart() {
       data.forEach(entry => {
         let date = entry.date
         let newDate = new Date(date).toLocaleDateString()
+        eightArray.push(8)
         dateArray.push(newDate)
         hoursArray.push(entry.hoursslept)
       })
 
       console.log(hoursArray)
+      console.log(eightArray)
       setHours(hoursArray);
-      setDates(dateArray)
+      setDates(dateArray);
+      setRec(eightArray);
     })
       .catch(err => console.log(err));
   }
@@ -51,13 +55,13 @@ const data =
       borderColor: "rgba(75,192,192,1)"
     },
     
-  
-    // {
-    //   label: "Second dataset",
-    //   data: wakeUp,
-    //   fill: false,
-    //   borderColor: "#742774"
-    // }
+  //get an array of 8's for each day
+    {
+      label: "Recommended Hours",
+      data: rec,
+      fill: false,
+      borderColor: "#742774"
+    }
   ],
   
 };

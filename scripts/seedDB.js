@@ -1,3 +1,5 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const mongoose = require("mongoose");
 const db = require("../models");
 
@@ -6,17 +8,17 @@ const db = require("../models");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sleep"
 );
 
+
 // const surveySchema = new Schema({
 //   date: { type: Date, default: Date.now },
 //   hoursslept: { type: Number, required: true },
 //   bedtime: { type: String, required: true },
-//   wakeuptime: { type: String, required: true },
 //   sleepquality: { type: String, required: true },
 //   mood: { type: String, required: true },
+//   notes: { type: String, required: false },
 //   user: {
 //     type: Schema.Types.ObjectId,
-//     ref: "User",
-//     required: true
+//     ref: "User"
 // }
 
 // sleep quality = 1)I was up all night 2) I tossed and turned 3) I wokeup a couple of times 4) I got a decent night's sleep 5) I slept like a baby.
@@ -27,46 +29,46 @@ const surveySeed = [
   {
     date: new Date(Date.now()),
     hoursslept: 11,
-    bedtime: "10:22pm",
-    wakeuptime: "9:00am",
+    bedtime: "22:20",
     sleepquality: "I wokeup a couple of times",
     mood: "I feel great",
+    notes: "I ate a burrito for dinner",
     user: 1
   },
   {
     date: new Date(Date.now()),
     hoursslept: 9,
-    bedtime: "11:32pm",
-    wakeuptime: "8:00am",
+    bedtime: "13:32",
     sleepquality: "I wokeup a couple of times",
     mood: "I just feel okay",
+    notes: "I worked out for an hour today.",
     user: 1
   },
   {
     date: new Date(Date.now()),
     hoursslept: 4,
-    bedtime: "2:02am",
-    wakeuptime: "6:00am",
+    bedtime: "02:02",
     sleepquality: "I tossed and turned",
     mood: "I'm not in the best mood",
+    notes: "I worked out for an hour today",
     user: 1
   },
   {
     date: new Date(Date.now()),
     hoursslept: 4,
-    bedtime: "3:02am",
-    wakeuptime: "7:00am",
+    bedtime: "03:02",
     sleepquality: "I tossed and turned",
     mood: "I'm not in the best mood",
+    notes: "I had a work party today.",
     user: 1
   },
   {
     date: new Date(Date.now()),
     hoursslept: 12,
-    bedtime: "10:02pm",
-    wakeuptime: "10:00am",
+    bedtime: "22:02",
     sleepquality: "I slept like a baby",
     mood: "I feel great",
+    notes: "I had the day off.",
     user: 1
   }
 ];

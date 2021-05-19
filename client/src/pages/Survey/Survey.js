@@ -59,7 +59,9 @@ function Survey() {
 
   function changeHandler(event) {
     const { name, value } = event.target;
+
     setFormObject({ ...formObject, [name]: value })
+
   }
 
   return (
