@@ -26,7 +26,7 @@
     background-position: center bottom;
   }
   
-  button {
+  .medBtn {
     background: none;
     border: 2px #ffffffcc solid;
     padding: 16px;
@@ -38,7 +38,7 @@
     transition: all 0.3s ease;
   }
   
-  button:hover {
+  .medBtn:hover {
     box-shadow: none;
     color: #000;
     background-color: #ffffffcc;
@@ -48,7 +48,7 @@
     font-size: 17px;
   }
   
-  button .active {
+  .medBtn .active {
     box-shadow: none;
     color: #000;
     background-color: #ffffffcc;

@@ -48,19 +48,9 @@ function PieChart() {
               five++;
               break;
           }
-
-          // if (entry.mood == "good") {
-          //   good++
-          // } else if (entry.mood == "bad") {
-          //   bad++
-          // } else {
-          //   okay++
-          // }
         })
   
         moodArray.push(one, two, three, four, five);
-        // moodArray.push(bad);
-        // moodArray.push(okay);
         console.log(moodArray)
         setMood(moodArray)
       })

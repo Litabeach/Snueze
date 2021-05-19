@@ -123,7 +123,11 @@ function Journal() {
           placeholder="What did you dream about?"
           value={formObject.body}
         />
+
         {/* <textarea class="speech-transcript">{transcript}</textarea> */}
+
+        <p class="speech-transcript">{transcript}</p>
+
         <div className="microphone-wrapper-nav">
           <div className="mircophone-container-journal">
             <div
