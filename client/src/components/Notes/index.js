@@ -1,9 +1,8 @@
 import { CollectionsBookmarkRounded } from "@material-ui/icons";
 import React, { useState } from "react";
-// import surveyAPI from "../../utils/surveyAPI";
 import surveyAPI from "../../utils/surveyAPI";
 
-//change to bubble
+
 function Notes() {
 
    
@@ -14,7 +13,6 @@ function Notes() {
         const { value } = event.target;
         console.log("Handle change" + value);
         setSearchDate(value);
-        // console.log("Search Date" + searchDate)
     };
 
    

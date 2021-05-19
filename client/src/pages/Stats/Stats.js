@@ -9,8 +9,8 @@ function Stats() {
     return (
         <div>
             <h1>Stats Page</h1>
-            {/* <Chart /> */}
             <Notes />
+            <Chart />
         </div>
     )
 

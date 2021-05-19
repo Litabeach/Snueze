@@ -10,17 +10,10 @@ function Chart() {
 
     return (
         <div>
-              <Bubble /> 
-             <LineChart /> 
-
-           
-            
-                <Doughnut />
-            
-                <Pie /> 
-            
-               
-            
+            <Bubble />
+            <LineChart />
+            <Doughnut />
+            <Pie />
         </div>
     )
 

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Line, Chart } from "react-chartjs-2";
-import axios from 'axios';
-import API from "../../utils/API";
+import { Line } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
 
 function LineChart() {
@@ -13,7 +11,6 @@ function LineChart() {
     getChartData();
   }, [])
 
-  //need to comment out process.env.MONGODB_URI in server.js to use seed data.
   function getChartData() {
     let hoursArray = []
     let dateArray = [];
@@ -66,7 +63,7 @@ const data =
   
 };
 
-//attempts to customize
+//attempts to customize. Keeping until charts are finalized.
 
 // const testLine = new Chart (React.createRef(), {
 //   type: "line",

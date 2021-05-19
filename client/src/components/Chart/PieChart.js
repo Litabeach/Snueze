@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
-import axios from 'axios';
-import API from "../../utils/API";
 import surveyAPI from "../../utils/surveyAPI";
-
-// mood = 1)I feel lousy. 2) I'm not in the best mood. 3) I just feel okay. 4) I feel pretty good 5) I feel great.
 
 function PieChart() {
     const [mood, setMood] = useState([]);
@@ -14,7 +10,7 @@ function PieChart() {
       getChartData();
     }, [])
   
-    //need to comment out process.env.MONGODB_URI in server.js to use seed data.
+  
     function getChartData() {
       let moodArray = []
 
