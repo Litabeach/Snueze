@@ -1,0 +1,51 @@
+.dreamform {
+    margin-left:25%;
+}
+
+
+.journal-title {
+    margin-bottom: 2%;
+}
+
+.journal-body{
+    height:150px;
+    width:50%
+    
+}
+
+.journal-date {
+    margin-left:24%
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .mircophone-container-journal {
+    display: flex;
+    margin-left: 25%
+  }
+
+  .dreamjournalh3{
+      text-align: center;
+      margin-bottom:30px;
+  }
+
+  .dream-submit{
+    margin-left: 25%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .speech-transcript {
+    position:absolute;
+    top:517px;
+    left:339px;
+    background:transparent;
+    font-size:1em;
+    line-height:1em;
+    width:50%
+    }

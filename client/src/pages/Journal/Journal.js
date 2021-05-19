@@ -6,6 +6,8 @@ import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognitio
 import microPhoneIcon from "../../images/microphone.png";
 import stopButton from "../../images/stopbutton.png";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
+import "./style.css"
+import dateFormat from 'dateformat';
 
 function Journal() {
   // Setting our component's initial state
@@ -103,17 +105,19 @@ function Journal() {
     <div>
       <div>
         <Jumbotron >
-        Dream Journal
+       <h1> Dream Journal </h1>
         </Jumbotron>
         <br />
-        <input
+        <h3 class="dreamjournalh3">Write a Dream</h3>
+        <input className="dreamform journal-title"
           onChange={handleInputChange}
           name="title"
           placeholder="Title (required)"
           value={formObject.title}
         />
+        <input type="date" name="date" className="dreamform journal-date" onChange={handleInputChange} value={formObject.title}/>
         <br />
-        <textarea
+        <textarea className="dreamform journal-body"
           onChange={handleInputChange}
           name="body"
           placeholder="What did you dream about?"
@@ -121,7 +125,7 @@ function Journal() {
         />
         <p class="speech-transcript">{transcript}</p>
         <div className="microphone-wrapper-nav">
-          <div className="mircophone-container-nav">
+          <div className="mircophone-container-journal">
             <div
               className="microphone-icon-container-nav"
               ref={microphoneRef}
@@ -138,7 +142,7 @@ function Journal() {
           </div>
 
         </div>
-        <button
+        <button className="dream-submit"
           disabled={!(formObject.body && formObject.title)}
           onClick={handleFormSubmit}
         >
@@ -154,7 +158,7 @@ function Journal() {
               <br />
               <p>{entry.body}</p>
               <br />
-              <p>{entry.date}</p>
+              <p>{dateFormat(entry.date).slice(0, 16)}</p>
               <DeleteBtn onClick={() => deleteEntry(entry._id)} />
             </ListItem>
           ))}
