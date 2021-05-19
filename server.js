@@ -21,7 +21,7 @@ app.use(
     // origin: [
     //   "http://localhost:3000/"
     // ],
-    // credentials: true,
+    credentials: true
   })
 );
 // Serve up static assets (usually on heroku)
