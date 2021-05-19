@@ -13,6 +13,26 @@ function Header() {
       My Bed
     </Nav.Link>
   </Nav.Item>
+  <Nav.Item>
+    <Nav.Link href="/survey" title="Survey">
+      Reflect
+    </Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link href="/journal" title="Journal">
+      Dream
+    </Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link href="/stats" title="Stats">
+      Retrospect
+    </Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link href="/tools" title="Tools">
+      Relax
+    </Nav.Link>
+  </Nav.Item>
       <Nav.Item>
         <Nav.Link href="/resources" title="Resources">
           Resources
