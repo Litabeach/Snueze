@@ -96,6 +96,7 @@ function Journal() {
     setIsListening(false);
     microphoneRef.current.classList.remove("listening");
     SpeechRecognition.stopListening();
+    setFormObject({ ...formObject, body: transcript })
   };
 
   return (
@@ -109,15 +110,16 @@ function Journal() {
           onChange={handleInputChange}
           name="title"
           placeholder="Title (required)"
+          value={formObject.title}
         />
         <br />
         <textarea
           onChange={handleInputChange}
           name="body"
           placeholder="What did you dream about?"
-          // value={transcript}
+          value={formObject.body}
         />
-        <br />
+        <p class="speech-transcript">{transcript}</p>
         <div className="microphone-wrapper-nav">
           <div className="mircophone-container-nav">
             <div
