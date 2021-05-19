@@ -60,19 +60,6 @@ function BubbleChart() {
           19 : '19:00', 20 : '20:00', 21: '21:00',  22 : '22:00', 23 : '23:00', 24: "24:00"
         }
         
-    //     const options = {
-    //       scales: {
-    //           yAxes: [{
-    //               ticks: {
-    //                   callback: function(value, index, values ) {
-    //                       // for a value (tick) equals to 8
-    //                       return yLabels[value];
-    //                       // 'junior-dev' will be returned instead and displayed on your chart
-    //                   }
-    //               }
-    //           }]
-    //       }
-    //     }
     
     
     const options = {
