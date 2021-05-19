@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
 
+//change to bubble
 function BarChart() {
   const [wakeup, setWakeup] = useState([]);
   const [bedtime, setBedtime] = useState([]);
@@ -14,6 +15,7 @@ function BarChart() {
   }, [])
 
   //need to comment out process.env.MONGODB_URI in server.js to use seed data.
+  // Here we can either use getHours or getMinutes if its a time stamp, otherwise we can do (hours * 30 + minutes) after splitting string at colon.
   function getChartData() {
     let wakeArray = []
     let bedArray = []

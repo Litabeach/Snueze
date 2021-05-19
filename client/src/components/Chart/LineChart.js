@@ -51,13 +51,13 @@ const data =
       borderColor: "rgba(75,192,192,1)"
     },
     
-  
-    // {
-    //   label: "Second dataset",
-    //   data: wakeUp,
-    //   fill: false,
-    //   borderColor: "#742774"
-    // }
+  //get an array of 8's for each day
+    {
+      label: "Recommended Hours",
+      data: [8, 8, 8, 8, 8],
+      fill: false,
+      borderColor: "#742774"
+    }
   ],
   
 };
