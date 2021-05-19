@@ -10,7 +10,6 @@ router.post("/", async (req, res) => {
         const { username, email, password, passwordVerify } = req.body;
 
         //validation
-console.log(req.body)
         if (!username || !email || !password || !passwordVerify)
             return res
                 .status(400)
@@ -43,7 +42,6 @@ console.log(req.body)
         //hash the password
         const salt = await bcrypt.genSalt();
         const passwordHash = await bcrypt.hash(password, salt)
-        console.log(passwordHash)
 
         //create new user account 
         const newUser = new User({
@@ -155,6 +153,8 @@ router.get("/logout", (req, res) => {
     })
     .send();
 });
+
+
 
 
 module.exports = router;
