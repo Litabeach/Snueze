@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
+.navbar-brand {
+    font-family: Pattaya;
+    font-size: 3rem;
+}
