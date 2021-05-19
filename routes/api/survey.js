@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const surveyController = require("../../controllers/surveyController");
+const auth = require("../../utils/auth")
 
 // Matches with "/api/survey"
 router.route("/")
