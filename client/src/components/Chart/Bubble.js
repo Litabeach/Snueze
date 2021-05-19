@@ -1,119 +1,113 @@
 import React, { useEffect, useState } from "react";
 import { Bubble } from "react-chartjs-2";
-import axios from 'axios';
-import API from "../../utils/API";
 import surveyAPI from "../../utils/surveyAPI";
 
+//change to bubble
 function BubbleChart() {
-  const [hours, setHours] = useState([]);
-  const [dates, setDates] = useState([]);
-  const [rec, setRec] = useState([]);
+  
+  const [bedtime, setBedtime] = useState([]);
+
+  // const [hours, setHours] = useState([]);
+
 
   useEffect(() => {
     getChartData();
   }, [])
 
   //need to comment out process.env.MONGODB_URI in server.js to use seed data.
+  // Here we can either use getHours or getMinutes if its a time stamp, otherwise we can do (hours * 30 + minutes) after splitting string at colon.
   function getChartData() {
-    let hoursArray = []
-    let dateArray = [];
-    let eightArray = [];
+    let bubbleArray = []
+ 
 
     surveyAPI.getSurveys()
-    .then(res => {
-      console.log(res.data)
+      .then(res => {
+        console.log(res.data)
 
-      let data = res.data
+        let data = res.data
 
-      data.forEach(entry => {
-        let date = entry.date
-        let newDate = new Date(date).toLocaleDateString()
-        eightArray.push(8)
-        dateArray.push(newDate)
-        hoursArray.push(entry.hoursslept)
+        data.forEach(entry => {
+          let time = entry.bedtime.replace(":", ".")
+          let timeFloat = parseFloat(time)
+          
+          bubbleArray.push({ x: entry.hoursslept, y: timeFloat, r: 15 })
+        })
+
+        console.log(bubbleArray)
+        setBedtime(bubbleArray);
+        // setDates(dateArray)
       })
-
-      console.log(hoursArray)
-      console.log(eightArray)
-      setHours(hoursArray);
-      setDates(dateArray);
-      setRec(eightArray);
-    })
       .catch(err => console.log(err));
   }
 
-const arrOne = [{
-    x: 11,
-    y: 0,
-    r: 15
-  }, {
-    x: 0,
-    y: 10
-  }, {
-    x: 10,
-    y: 5
-  }, {
-    x: 0.5,
-    y: 5.5
-  }]
 
-  const arrTwo = [{
-    x: 6,
-    y: 0
-  }, {
-    x: 7,
-    y: 10
-  }, {
-    x: 8,
-    y: 4
-  }, {
-    x: 3,
-    y: 9
-  }]
+    
+      const data = {
+        datasets: [
+            {
+          label: 'Bed Time Vs Hours Slept',
+          data: bedtime,
+          backgroundColor: 'rgb(255, 99, 132)'
+        },
+    ],
+      };
 
-  const data = {
-    datasets: [
-        {
-      label: 'Scatter Dataset',
-      data: arrOne,
-      backgroundColor: 'rgb(255, 99, 132)'
-    },
-
-{
-    label: 'Second Data',
-    data: arrTwo,
-    backgroundColor: 'black' 
-}
-],
-  };
-
-
-const options = {
-  scales: {
-    x: {
-      title: {
-        beginAtZero : true,
-        display: true,
-        text: "Dates"
-      }
-  },
-
-      y: {
-          beginAtZero: true,
+      const yLabels = {
+          0 : '00:00', 1 : '01:00', 2 : '02:00', 3 : '03:00', 4 : '04:00',
+          5 : '05:00', 6 : '06:00', 7 : '07:00', 8 : '08:00',
+          9 : '09:00', 10 : '10:00',  11 : '11:00', 12 : '12:00', 13 : '13:00', 14 : '14:00',
+          15 : '15:00', 16 : '16:00', 17 : '17:00', 18 : '18:00',
+          19 : '19:00', 20 : '20:00', 21: '21:00',  22 : '22:00', 23 : '23:00', 24: "24:00"
+        }
+        
+    //     const options = {
+    //       scales: {
+    //           yAxes: [{
+    //               ticks: {
+    //                   callback: function(value, index, values ) {
+    //                       // for a value (tick) equals to 8
+    //                       return yLabels[value];
+    //                       // 'junior-dev' will be returned instead and displayed on your chart
+    //                   }
+    //               }
+    //           }]
+    //       }
+    //     }
+    
+    
+    const options = {
+      scales: {
+        x: {
           title: {
+            beginAtZero : true,
             display: true,
-            text: "Hours"
+            text: "Hours of Sleep"
           }
+      },
+    
+          y: {
+              title: {
+                display: true,
+                text: "Bed Time in Military Time",
+              },
+              ticks: {
+                                  callback: function(value, index, values ) {
+                                      // for a value (tick) equals to 8
+                                      return yLabels[value];
+                                      // 'junior-dev' will be returned instead and displayed on your chart
+                                  }
+                              }
+          }
+        }
       }
-    }
-  }
+
+
+
 
 
   return (
-    <div style={{ backgroundColor: "white" }}>
-     
-      <Bubble data={ data } options={options}/>
-      
+    <div className="App" style={{ backgroundColor: "white" }}>
+      <Bubble data={data} options={options}/>
     </div>
   );
 }
