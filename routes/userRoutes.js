@@ -103,7 +103,7 @@ router.post("/login", async (req, res) => {
                 .json({
                     errorMessage: "Wrong email or password."
                 });
-        
+
         //sign the token
         //"expires in" is currently set to two hours
         const token = jwt.sign(
@@ -132,29 +132,43 @@ router.post("/login", async (req, res) => {
 
 router.get("/surveys", (req, res) => {
     const authHeader = req.headers.cookie;
-      if (authHeader) {
-          const token = authHeader.split('=')[1];
-          jwt.verify(token, process.env.JWT_SECRET, (err, {surveys}) => {
-              if (err) {
-                  return res.sendStatus(403);
-              }
-              res.json(surveys);  
-          });
-      } else {
-          res.sendStatus(401);
-      }
+    if (authHeader) {
+        const token = authHeader.split('=')[1];
+        jwt.verify(token, process.env.JWT_SECRET, (err, { surveys }) => {
+            if (err) {
+                return res.sendStatus(403);
+            }
+            res.json(surveys);
+        });
+    } else {
+        res.sendStatus(401);
+    }
 })
 
 //logout
 router.get("/logout", (req, res) => {
-    res.cookie("token", "",{
-    httpOnly: true,
-    expires: new Date(0)
+    res.cookie("token", "", {
+        httpOnly: true,
+        expires: new Date(0)
     })
-    .send();
+        .send();
 });
 
 
+router.get("./loggedIn", (req, res) => {
+    try {
+        const token = req.cookies.token;
+        if (!token) return res.json(false);
+
+        jwt.verify(token, process.env.JWT_SECRET);
+
+        res.send(true)
+
+    } catch (err) {
+        res.json(false);
+    }
+}
+)
 
 
 module.exports = router;
