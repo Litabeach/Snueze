@@ -7,13 +7,13 @@ import AuthContext from "../../context/AuthContext"
 function Header() {
 
   const { loggedIn } = useContext(AuthContext);
-  console.log(loggedIn)
+ 
 
    return (
     <div className="nav">
     <Nav variant="pills" activeKey="1" >
     <a className="navbar-brand" href="/">Snüze</a>
-    {loggedIn && ( 
+    {loggedIn === true && ( 
           <>
           <Nav.Item>
           <Nav.Link href="/mybed" title="My Bed">
@@ -40,7 +40,7 @@ function Header() {
             </Nav.Item>
             </>
     )}
-        {!loggedIn && 
+        {loggedIn === false && 
         <>
            <Nav.Item>
               <Nav.Link href="/" title="Login">
