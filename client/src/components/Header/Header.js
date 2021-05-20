@@ -1,18 +1,19 @@
 import React, { useContext } from "react";
 import { Nav } from 'react-bootstrap';
 import SpeechToTextNav from "../SpeechToTextNav/SpeechToTextNav";
-import "./style.css";
 import AuthContext from "../../context/AuthContext";
 import LogoutBtn from "../LogoutBtn/LogoutBtn";
 import "./header.css";
 
-function Header() {
 
- const { loggedIn } = useContext(AuthContext);
 
 
 function Header() {
+
+  const { loggedIn } = useContext(AuthContext);
+
   return (
+    
     <div className="nav">
       <Nav variant="pills" activeKey="1" >
         <a className="navbar-brand" href="/">Snüze</a>
@@ -78,7 +79,10 @@ function Header() {
         <Nav.Item>
           <SpeechToTextNav />
         </Nav.Item>
-
+        </Nav>
+        </div>
+  )
+}
 
 
 export default Header;

@@ -12,7 +12,6 @@ function Login() {
     const history = useHistory();
 
     async function login(e){
-
         e.preventDefault();
 
         try {
