@@ -24,8 +24,8 @@ function Header() {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/stats" title="Retrospect">
-            Retrospect
+          <Nav.Link href="/stats" title="Analyze">
+            Analyze
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
