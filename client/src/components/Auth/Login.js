@@ -22,7 +22,7 @@ function Login() {
             };
 
             await axios.post("http://localhost:3001/auth/login", loginData);
-            // await getLoggedIn();
+            await getLoggedIn();
             history.push("/")
 
         }catch(err){

@@ -25,7 +25,7 @@ function Register() {
             };
 
             await axios.post("http://localhost:3001/auth", registerData);
-            // await getLoggedIn();
+            await getLoggedIn();
             history.push("/");
 
         }catch(err){
