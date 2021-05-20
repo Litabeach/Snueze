@@ -14,7 +14,7 @@ import Resources from "./pages/Resources";
 import NoMatch from "./pages/NoMatch";
 import Footer from './components/Footer/Footer';
 import axios from 'axios';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 axios.defaults.withCredentials = true;
 
