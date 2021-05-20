@@ -3,23 +3,8 @@ dotenv.config();
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
-
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sleep"
 );
-
-
-// const surveySchema = new Schema({
-//   date: { type: Date, default: Date.now },
-//   hoursslept: { type: Number, required: true },
-//   bedtime: { type: String, required: true },
-//   sleepquality: { type: String, required: true },
-//   mood: { type: String, required: true },
-//   notes: { type: String, required: false },
-//   user: {
-//     type: Schema.Types.ObjectId,
-//     ref: "User"
-// }
 
 // sleep quality = 1)I was up all night 2) I tossed and turned 3) I wokeup a couple of times 4) I got a decent night's sleep 5) I slept like a baby.
 
