@@ -84,3 +84,42 @@ db.Survey
     console.error(err);
     process.exit(1);
   });
+
+  const journalSeed = [
+    {
+      title: "The Great Chase",
+      body: "I was being chased by this great dane and I could barely move. My feet felt like they were covered in cement, and when I looked down I realized I was covered in pieces of bologna.",
+      date: new Date(Date.now()),
+      user: 1
+    },
+    {
+      title: "OH NO!",
+      body: "I logged in to class as usual to find my group already in the middle of our final presentation. I had absolutely no idea what to say when it was my turn so I just froze!",
+      date: new Date(Date.now()),
+      user: 1
+    },
+    {
+      title: "Flying",
+      body: "Last night I dreamed that I could fly! Not super high though, I could just kind of float about 6 feet off the ground so I had to dodge people's heads and lift my feet up so I didn't accidentally kick them.",
+      date: new Date(Date.now()),
+      user: 1
+    },
+    {
+      title: "",
+      body: "",
+      date: new Date(Date.now()),
+      user: 1
+    },
+  ];
+  
+  db.Journal
+    .remove({})
+    .then(() => db.Journal.collection.insertMany(journalSeed))
+    .then(data => {
+      console.log(data.result.n + " records inserted!");
+      process.exit(0);
+    })
+    .catch(err => {
+      console.error(err);
+      process.exit(1);
+    });
