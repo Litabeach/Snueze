@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css"
-import Login from "./pages/Login";
 import Register from "./components/Auth/Register";
+import Login from "./components/Auth/Login";
 import Header from "./components/Header";
 import MyBed from "./pages/MyBed";
 import Survey from "./pages/Survey";
@@ -13,6 +13,9 @@ import Community from "./pages/Community";
 import Resources from "./pages/Resources";
 import NoMatch from "./pages/NoMatch";
 import Footer from './components/Footer/Footer';
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (

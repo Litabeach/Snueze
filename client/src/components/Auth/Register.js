@@ -1,21 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react';
+import axios from 'axios';
+
 
 function Register() {
 
-    const[userName, setUserName] = useState("");
+    const[username, setUserName] = useState("");
     const[email, setEmail] = useState("");
     const[password, setPassword] = useState("");
     const[passwordVerify, setPasswordVerify] = useState("");
 
+    async function register(e){
+        e.preventDefault();
+
+        try{
+            const registerData = {
+               username, 
+               email, 
+               password, 
+               passwordVerify,
+            };
+
+            await axios.post("http://localhost:3001/auth", registerData);
+
+        }catch(err){
+            console.error(err);
+        }
+    }
+
     return (
         <div>
             <h1> Register a new account</h1>
-            <form>
+            <form onSubmit={register}>
                 <input 
-                // type="username" 
                 placeholder="Username"
                 onChange={(e) => setUserName(e.target.value)}
-                value={userName}
+                value={username}
                 />
                 <br />
                 <input 
