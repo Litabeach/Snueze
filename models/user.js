@@ -8,6 +8,10 @@ const userSchema = new Schema({
     surveys: [{
         type: Schema.Types.ObjectId,
         ref: "Survey"
+    }],
+    journals: [{
+        type: Schema.Types.ObjectId,
+        ref: "Journal"
     }]
 });
  
