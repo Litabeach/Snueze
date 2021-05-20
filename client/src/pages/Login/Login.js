@@ -1,11 +1,12 @@
 import React from "react"
+import Auth from "../../components/Auth/Login"
 
 function Login() {
 
 
     return (
         <div>
-            <h1>Login Page</h1>
+            <Auth />
         </div>
     )
 

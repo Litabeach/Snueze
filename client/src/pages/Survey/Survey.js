@@ -1,5 +1,6 @@
 import surveyAPI from "../../utils/surveyAPI";
 import React, { useEffect, useState } from 'react';
+import { InputGroup, FormControl } from "react-bootstrap";
 
 function Survey() {
   // Setting our component's initial state
@@ -65,55 +66,75 @@ function Survey() {
   }
 
   return (
-    <form className="survey">
+    <div>
       <h1>Record Sleep</h1>
-      <div><h3>Sleep date</h3>
-        <input type="date" name="date" onChange={changeHandler}></input>
-      </div>
       <div>
+        <h3>Sleep date</h3>
+        <InputGroup className="mb-3">
+          <InputGroup.Prepend>
+            <input type="date" name="date" onChange={changeHandler}></input>
+          </InputGroup.Prepend>
+        </InputGroup>
+
         <h3>How many hours did you sleep last night?</h3>
-        <input type="text" name="hoursslept" onChange={changeHandler}></input>
-      </div>
-      <div>
+        <InputGroup className="mb-3">
+          <InputGroup.Append>
+            <input type="text" name="hoursslept" onChange={changeHandler}></input>
+          </InputGroup.Append>
+        </InputGroup>
+
         <h3>How was your quality of sleep?</h3>
-        <select type="rating" name="sleepquality" onChange={changeHandler} defaultValue="">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-      <div>
+        <InputGroup className="mb-3">
+          <InputGroup.Prepend>
+            <select type="rating" name="sleepquality" onChange={changeHandler} defaultValue="">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </InputGroup.Prepend>
+        </InputGroup>
+
         <h3>How are you feeling right now?</h3>
-        <select type="rating" name="mood" onChange={changeHandler} defaultValue="">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+        <InputGroup className="mb-3">
+          <InputGroup.Prepend>
+            <select type="rating" name="mood" onChange={changeHandler} defaultValue="">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </InputGroup.Prepend>
+        </InputGroup>
+
+        <InputGroup>
+          <InputGroup.Prepend>
+            <InputGroup.Text>Notes</InputGroup.Text>
+          </InputGroup.Prepend>
+          <FormControl as="textarea" type="text" name="notes" onChange={changeHandler} aria-label="With textarea" />
+        </InputGroup>
+
+        <h3>When is your bedtime?</h3>
+        <InputGroup>
+          <InputGroup.Prepend>
+            <input type="time" name="bedtime" onChange={changeHandler}></input>
+          </InputGroup.Prepend>
+        </InputGroup>
+
+        <h3>Submit</h3>
+        <InputGroup>
+          <InputGroup.Prepend>
+            <button className="submitBtn" onClick={handleFormSubmit}>Submit</button>
+          </InputGroup.Prepend>
+        </InputGroup>
       </div>
-      <div>
-        <h3>Additional thoughts...</h3>
-        <textarea type="text" name="notes" onChange={changeHandler}></textarea>
-      </div>
-      <div><h3>When is your bedtime?</h3>
-        <input type="time" name="bedtime" onChange={changeHandler}></input>
-      </div>
-      <div>
-        <button className="submitBtn" onClick={handleFormSubmit}>Submit</button>
-      </div>
-    </form>
+    </div>
   )
 
 }
 
 export default Survey;
 
-
-
-      // <div><h3>What time did you wake up this morning?</h3>
-      //   <input type="time" name="wakeuptime" onChange={changeHandler}></input>
-      // </div>
 

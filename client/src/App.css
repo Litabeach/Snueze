@@ -1,6 +1,6 @@
 body {
-  background-color: rgb(174, 214, 166);
-  background-image: url(./images/gradient.jpg);
+  background-color: black;
+  background-image: url(/img/gradient.jpg);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
 }
@@ -46,4 +46,5 @@ body {
 
 .wrapper {
   padding: 20px;
+  color: white;
 }

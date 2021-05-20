@@ -1,0 +1,11 @@
+img {
+    max-width: 375px;
+    height: auto;
+    padding: 10px;
+}
+
+.card {
+    background-color: transparent !important;
+    color: #EB6864;
+    text-align: center;
+}

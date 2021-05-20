@@ -3,8 +3,6 @@ import journalAPI from "../../utils/journalAPI";
 import DeleteBtn from "../../components/DeleteBtn";
 import { List, ListItem } from "../../components/List";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
-import microPhoneIcon from "../../images/microphone.png";
-import stopButton from "../../images/stopbutton.png";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import "./style.css"
 import dateFormat from 'dateformat';
@@ -135,12 +133,12 @@ function Journal() {
               ref={microphoneRef}
               onClick={handleListing}
             >
-              <img src={microPhoneIcon} className="microphone-icon-nav" />
+              <img src="img/microphone.png" className="microphone-icon-nav" />
             </div>
 
             {isListening && (
 
-              <img src={stopButton} className="microphone-stop-nav" onClick={stopHandle} />
+              <img src="img/stopbutton.png" className="microphone-stop-nav" onClick={stopHandle} />
 
             )}
           </div>
