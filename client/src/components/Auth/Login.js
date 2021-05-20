@@ -3,11 +3,10 @@ import axios from 'axios';
 import AuthContext from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
 
-
 function Login() {
 
-    const[email, setEmail] = useState("");
-    const[password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     const {getLoggedIn} = useContext(AuthContext);
     const history = useHistory();
@@ -15,42 +14,34 @@ function Login() {
     async function login(e){
         e.preventDefault();
 
-        try{
+        try {
             const loginData = {
-               email, 
-               password, 
+                email,
+                password,
             };
 
             await axios.post("http://localhost:3001/auth/login", loginData);
             await getLoggedIn();
             history.push("/")
 
-        }catch(err){
+        } catch (err) {
             console.error(err);
         }
     }
 
     return (
-        <div>
+        <div className="wrapper">
             <h1> Log in to your account</h1>
-            <form onSubmit={login}>
-                
-                <input 
-                type="email" 
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                />
-                <br />
-                <input 
-                type="password" 
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-                />
-                <br />
-            
-                <button type="submit">Log in</button>
+            <form  className="login-form">
+                <div className="form-group" onSubmit={login}>
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}
+                                value={email}/>
+                </div>
+                <div className="form-group">
+                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" onChange={(e) => setPassword(e.target.value)}
+                                value={password}/>
+                </div>
+                <button type="submit" className="btn btn-primary">Login</button>
             </form>
         </div>
 

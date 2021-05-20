@@ -2,10 +2,6 @@ import { useRef, useState } from "react";
 import React from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import "./speechnav.css"
-import microPhoneIcon from "../../images/microphone.png";
-import stopButton from "../../images/stopbutton.png";
-
-
 
 function SpeechToTextNav() {
 
@@ -49,12 +45,12 @@ function SpeechToTextNav() {
           ref={microphoneRef}
           onClick={handleListing}
         >
-          <img src={microPhoneIcon} className="microphone-icon-nav" />
+          <img src="img/microphone.png" className="microphone-icon-nav" />
         </div>
     
         {isListening && (
 
-          <img src={stopButton} className="microphone-stop-nav" onClick={stopHandle} />
+          <img src="img/stopbutton.png" className="microphone-stop-nav" onClick={stopHandle} />
           
         )}
       </div>
