@@ -13,13 +13,14 @@ import Community from "./pages/Community";
 import Resources from "./pages/Resources";
 import NoMatch from "./pages/NoMatch";
 import Footer from './components/Footer/Footer';
+import { AuthContextProvider } from './context/AuthContext'
 import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
 function App() {
   return (
-    
+    <AuthContextProvider>
     <Router>
       <div className="wrapper">
         <Header />
@@ -58,6 +59,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </AuthContextProvider>
   )
 }
 
