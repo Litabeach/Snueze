@@ -52,12 +52,13 @@ function Notes() {
 
     return (
         <div>
+            <h3>Search Past Notes</h3>
             <div className="form-group">
             <input type="date" name="date" onChange={handleInputChange}></input>
                
             </div>
             <button className="submitBtn" onClick={() => handleNoteSearch(searchDate)}>Submit</button>
-            <h1>{note}</h1>
+            <h4>{note}</h4>
         </div>
     );
 }
