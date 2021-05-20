@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sleep"
 
 const surveySeed = [
   {
-    date: new Date(Date.now()),
+    date: "2021-05-15",
     hoursslept: 11,
     bedtime: "22:20",
     sleepquality: "I wokeup a couple of times",
@@ -21,7 +21,7 @@ const surveySeed = [
     user: 1
   },
   {
-    date: new Date(Date.now()),
+    date: "2021-05-16",
     hoursslept: 9,
     bedtime: "13:32",
     sleepquality: "I wokeup a couple of times",
@@ -30,7 +30,7 @@ const surveySeed = [
     user: 1
   },
   {
-    date: new Date(Date.now()),
+    date: "2021-05-17",
     hoursslept: 4,
     bedtime: "02:02",
     sleepquality: "I tossed and turned",
@@ -39,7 +39,7 @@ const surveySeed = [
     user: 1
   },
   {
-    date: new Date(Date.now()),
+    date: "2021-05-18",
     hoursslept: 4,
     bedtime: "03:02",
     sleepquality: "I tossed and turned",
@@ -48,7 +48,7 @@ const surveySeed = [
     user: 1
   },
   {
-    date: new Date(Date.now()),
+    date: "2021-05-19",
     hoursslept: 12,
     bedtime: "22:02",
     sleepquality: "I slept like a baby",
