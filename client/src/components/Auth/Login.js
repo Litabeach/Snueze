@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import AuthContext from "../../context/AuthContext";
 
 
 function Login() {
 
     const[email, setEmail] = useState("");
     const[password, setPassword] = useState("");
+
+    const {getLoggedIn} = useContext(AuthContext);
 
     async function login(e){
         e.preventDefault();
@@ -17,6 +20,7 @@ function Login() {
             };
 
             await axios.post("http://localhost:3001/auth/login", loginData);
+            getLoggedIn();
 
         }catch(err){
             console.error(err);

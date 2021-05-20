@@ -36,7 +36,6 @@ function ReactRouter() {
                         </Route>
                     }
 
-
                     {loggedIn === true &&
 
                         <Route exact path="/">

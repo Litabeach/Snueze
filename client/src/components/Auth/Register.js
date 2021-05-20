@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
-
+import AuthContext from "../../context/AuthContext";
 
 function Register() {
 
@@ -8,6 +8,8 @@ function Register() {
     const[email, setEmail] = useState("");
     const[password, setPassword] = useState("");
     const[passwordVerify, setPasswordVerify] = useState("");
+
+    const {getLoggedIn} = useContext(AuthContext);
 
     async function register(e){
         e.preventDefault();
@@ -21,6 +23,7 @@ function Register() {
             };
 
             await axios.post("http://localhost:3001/auth", registerData);
+            getLoggedIn();
 
         }catch(err){
             console.error(err);
