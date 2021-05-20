@@ -105,8 +105,8 @@ db.Survey
       user: 1
     },
     {
-      title: "",
-      body: "",
+      title: "Dreamception",
+      body: "I had a dream that I woke up from a nap and everything seemed a little off. The sky looked like it does when it's about to storm. But then my alarm went off IRL and I didn't quite trust that I wasn't still dreaming.",
       date: new Date(Date.now()),
       user: 1
     },
@@ -123,3 +123,43 @@ db.Survey
       console.error(err);
       process.exit(1);
     });
+
+    const userSeed = [
+      {
+        username: "BedHeadDeb",
+        email: "debs@gmail.com",
+        passwordHash: "password1234",
+      },
+      {
+        username: "runningOnZzz",
+        email: "sleeper@yahoo.com",
+        passwordHash: "password1234",
+      },
+      {
+        username: "SleeplessDreamer",
+        email: "countingsheep@gmail.com",
+        passwordHash: "password1234",
+      },
+      {
+        username: "Dreameaver",
+        email: "dreamweaver@aol.com",
+        passwordHash: "password1234",
+      },
+      {
+        username: "Snorezilla",
+        email: "iSnore@gmail.com",
+        passwordHash: "password1234",
+      },
+    ];
+    
+    db.User
+      .remove({})
+      .then(() => db.User.collection.insertMany(userSeed))
+      .then(data => {
+        console.log(data.result.n + " records inserted!");
+        process.exit(0);
+      })
+      .catch(err => {
+        console.error(err);
+        process.exit(1);
+      });
