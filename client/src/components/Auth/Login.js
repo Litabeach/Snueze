@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./style.css";
 import AuthContext from "../../context/AuthContext";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -35,7 +35,8 @@ function Login() {
 
   return (
     <div className="wrapper">
-        <Form onSubmit={login}>
+    <Container>
+        <Form className="login-form mx-auto" onSubmit={login}>
         <h4>Log into Snüze</h4>
     <Form.Group controlId="formBasicEmail">
         <Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />
@@ -50,6 +51,7 @@ function Login() {
         Don't have a login? Click <a href="/register">here</a> to register.
         </Form.Text>
     </Form>
+    </Container>
     </div>
   )
 }

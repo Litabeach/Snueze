@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import SpeechToTextNav from "../SpeechToTextNav/SpeechToTextNav";
 import AuthContext from "../../context/AuthContext";
 import LogoutBtn from "../LogoutBtn/LogoutBtn";
@@ -10,16 +10,16 @@ function Header() {
   const { loggedIn } = useContext(AuthContext);
 
   return (
-<Container>
-    <Navbar bg="#EB6864" expand="lg" sticky="top">
+    <Navbar bg="#EB6864" expand="lg" sticky="top-0">
         <Navbar.Brand href="/" className="d-inline-block">Snüze</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar-nav"><span class="material-icons yellow">
+        {loggedIn === true && (
+          <>
+        <Navbar.Toggle aria-controls="navbar-nav"><span className="material-icons yellow">
         menu
         </span></Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
-            {loggedIn === true && (
-              <>
+        
                 <Nav.Item>
                   <Nav.Link href="/mybed" title="My Bed">
                     My Bed
@@ -67,13 +67,12 @@ function Header() {
                 <Nav.Item>
                   <SpeechToTextNav />
                 </Nav.Item>
-              </>
-            )}
+
           </Nav>
         </Navbar.Collapse>
+        </>
+        )}
     </Navbar>
-    </Container>
-
   )
 }
 
