@@ -7,6 +7,8 @@ import surveyAPI from "../../utils/surveyAPI";
 function DoughnutChart() {
 
   const [quality, setQuality] = useState([]);
+  const [userRes, setRes] = useState();
+
 
   useEffect(() => {
     getChartData();
@@ -25,23 +27,27 @@ function DoughnutChart() {
       .then(res => {
         console.log(res.data)
 
+        if (!res.data) {
+          setRes("none")
+       } else {
+
         let data = res.data
 
         data.forEach(entry => {
           switch (entry.sleepquality) {
-            case 1:
+            case "1":
               one++;
               break;
-            case 2:
+            case "2":
               two++;
               break;
-            case 3:
+            case "3":
               three++;
               break;
-            case 4:
+            case "4":
               four++;
               break;
-            case 5:
+            case "5":
               five++;
               break;
           }
@@ -50,7 +56,7 @@ function DoughnutChart() {
         qualityArray.push(one, two, three, four, five);
         console.log(qualityArray)
         setQuality(qualityArray)
-      })
+      }})
       .catch(err => console.log(err));
   }
 
@@ -77,11 +83,18 @@ function DoughnutChart() {
     }]
   };
 
+  if (userRes === "none") {
+    return (
+       <p></p>
+    )
+} else {
+
   return (
     <div className="App" style={{ marginTop: "200px" }}>
       <Doughnut data={data} />
     </div>
   );
+}
 }
 
 

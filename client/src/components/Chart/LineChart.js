@@ -6,7 +6,8 @@ function LineChart() {
   const [hours, setHours] = useState([]);
   const [dates, setDates] = useState([]);
   const [rec, setRec] = useState([]);
-
+  const [userRes, setRes] = useState();
+  
   useEffect(() => {
     getChartData();
   }, [])
@@ -19,6 +20,10 @@ function LineChart() {
     surveyAPI.getSurveys()
     .then(res => {
       console.log(res.data)
+
+      if (!res.data) {
+        setRes("none")
+     } else {
 
       let data = res.data
 
@@ -35,7 +40,7 @@ function LineChart() {
       setHours(hoursArray);
       setDates(dateArray);
       setRec(eightArray);
-    })
+    }})
       .catch(err => console.log(err));
   }
 
@@ -151,6 +156,11 @@ const options = {
     }
   }
 
+  if (userRes == "none") {
+    return (
+        <p></p>
+    )
+} else {
 
   return (
     <div style={{ backgroundColor: "white" }}>
@@ -159,6 +169,7 @@ const options = {
       
     </div>
   );
+}
 }
 
 
