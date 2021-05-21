@@ -133,7 +133,7 @@ function Journal() {
               ref={microphoneRef}
               onClick={handleListing}
             >
-              <img src="img/microphone.png" className="microphone-icon-nav" />
+              <img src="../../public/img/microphone.png" className="microphone-icon-nav" />
             </div>
 
             {isListening && (
