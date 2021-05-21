@@ -1,15 +1,11 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import Jumbotron from "../../components/Jumbotron";
-import Card from "react-bootstrap/Card";
-import { CardGroup, Image, Container } from "react-bootstrap";
+import { Card, CardGroup, Image, Container } from "react-bootstrap";
 import "./MyBed.css";
 
 function MyBed() {
 
   return (
-    <div className="wrapper">
       <Container>
         <CardGroup>
           <Card className="card">
@@ -28,8 +24,8 @@ function MyBed() {
               </Card.ImgOverlay>
             </Link>
           </Card>
-        </CardGroup>
-        <CardGroup>
+          </CardGroup>
+          <CardGroup>
           <Card className="card">
             <Link to="/stats">
               <Card.Img as={Image} className="cardImg" variant="top" src="img/analyze.jpg" alt="Chart Image" />
@@ -38,7 +34,6 @@ function MyBed() {
               </Card.ImgOverlay>
             </Link>
           </Card>
-
           <Card className="card">
             <Link to="/tools">
               <Card.Img as={Image} className="cardImg" variant="top" src="img/reflect.jpg" alt="Reflect Image" />
@@ -49,8 +44,6 @@ function MyBed() {
           </Card>
         </CardGroup>
       </Container>
-    </div>
-
   );
 }
 

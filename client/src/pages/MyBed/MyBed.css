@@ -1,8 +1,3 @@
-img {
-    max-width: 100%;
-    height: 300px;
-}
-
 .card {
     background-color: transparent !important;
     text-align: center;
@@ -14,3 +9,12 @@ img {
     font-size: 2rem;
     position: bottom;
 }
+
+/* @media screen and (min-width: 992px) {
+    .card-group {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    }
+  } */
