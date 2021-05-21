@@ -9,9 +9,24 @@ router.route("/")
 
 // Matches with "/api/journal/:id"
 router
-  .route("/:id")
+  .route("/user")
   .get(auth, journalController.findById)
   .put(auth, journalController.update)
   .delete(auth, journalController.remove);
 
+router.get("/journals", (req, res) => {
+  const authHeader = req.headers.cookie;
+  if (authHeader) {
+      const token = authHeader.split('=')[1];
+      jwt.verify(token, process.env.JWT_SECRET, (err, { journals }) => {
+          if (err) {
+              return res.sendStatus(403);
+          }
+          res.json(journals);
+      });
+  } else {
+      res.sendStatus(401);
+  }
+})
+  
 module.exports = router;

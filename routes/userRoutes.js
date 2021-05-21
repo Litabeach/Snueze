@@ -130,20 +130,20 @@ router.post("/login", async (req, res) => {
     }
 });
 
-router.get("/surveys", (req, res) => {
-    const authHeader = req.headers.cookie;
-    if (authHeader) {
-        const token = authHeader.split('=')[1];
-        jwt.verify(token, process.env.JWT_SECRET, (err, { surveys }) => {
-            if (err) {
-                return res.sendStatus(403);
-            }
-            res.json(surveys);
-        });
-    } else {
-        res.sendStatus(401);
-    }
-})
+// router.get("/surveys", (req, res) => {
+//     const authHeader = req.headers.cookie;
+//     if (authHeader) {
+//         const token = authHeader.split('=')[1];
+//         jwt.verify(token, process.env.JWT_SECRET, (err, { surveys, journals }) => {
+//             if (err) {
+//                 return res.sendStatus(403);
+//             }
+//             res.json(surveys, journals);
+//         });
+//     } else {
+//         res.sendStatus(401);
+//     }
+// })
 
 //logout
 router.get("/logout", (req, res) => {
