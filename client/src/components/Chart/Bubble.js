@@ -5,6 +5,8 @@ import surveyAPI from "../../utils/surveyAPI";
 function BubbleChart() {
 
   const [bedtime, setBedtime] = useState([]);
+  const [userRes, setRes] = useState();
+
 
   useEffect(() => {
     getChartData();
@@ -17,6 +19,10 @@ function BubbleChart() {
       .then(res => {
         console.log(res.data)
 
+        if (!res.data) {
+          setRes("none")
+       } else {
+
         let data = res.data
 
         data.forEach(entry => {
@@ -28,7 +34,7 @@ function BubbleChart() {
 
         console.log(bubbleArray)
         setBedtime(bubbleArray);
-      })
+      }})
       .catch(err => console.log(err));
   }
 
@@ -82,13 +88,18 @@ function BubbleChart() {
 
 
 
-
+  if (userRes == "none") {
+    return (
+        <h3>No data to show yet! Keep tracking your sleep to see your patterns and insights to your sleep behavior</h3>
+    )
+} else {
 
   return (
     <div className="App" style={{ backgroundColor: "white" }}>
       <Bubble data={data} options={options} />
     </div>
   );
+}
 }
 
 

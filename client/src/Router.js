@@ -75,10 +75,11 @@ function ReactRouter() {
                             <Resources />
                         </Route>
                     }
-                    <Route>
+                   <Route>
                         <NoMatch />
                     </Route>
                 </Switch>
+                 
                 <Footer />
             </div>
         </Router>

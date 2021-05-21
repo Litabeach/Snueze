@@ -4,7 +4,7 @@ import surveyAPI from "../../utils/surveyAPI";
 
 function PieChart() {
     const [mood, setMood] = useState([]);
- 
+    const [userRes, setRes] = useState();
   
     useEffect(() => {
       getChartData();
@@ -23,6 +23,10 @@ function PieChart() {
       surveyAPI.getSurveys()
       .then(res => {
         console.log(res.data)
+
+        if (!res.data) {
+          setRes("none")
+       } else {
   
         let data = res.data
   
@@ -49,7 +53,7 @@ function PieChart() {
         moodArray.push(one, two, three, four, five);
         console.log(moodArray)
         setMood(moodArray)
-      })
+      }})
         .catch(err => console.log(err));
     }
     const data = {
@@ -74,11 +78,18 @@ function PieChart() {
         }]
       };
 
+      if (userRes == "none") {
+        return (
+            <h3>No data to show yet! Keep tracking your sleep to see your patterns and insights to your sleep behavior</h3>
+        )
+    } else {
+
   return (
     <div className="App" style={{ marginTop: "200px" }}>
       <Pie data={data} />
     </div>
   );
+    }
 }
 
 
