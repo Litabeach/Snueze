@@ -88,9 +88,9 @@ function BubbleChart() {
 
 
 
-  if (userRes == "none") {
+  if (userRes === "none") {
     return (
-        <h3>No data to show yet! Keep tracking your sleep to see your patterns and insights to your sleep behavior</h3>
+        <p></p>
     )
 } else {
 

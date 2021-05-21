@@ -5,6 +5,7 @@ import Pie from "./PieChart"
 import Bubble from "./Bubble"
 import surveyAPI from "../../utils/surveyAPI";
 import Notes from "../Notes"
+import { Link } from "react-router-dom"
 
 function Chart() {
     const [avgHours, setAvgHours] = useState();
@@ -61,15 +62,20 @@ function Chart() {
                 setAvgBedtime(bedDuplicates);
                 console.log(hourDuplicates)
                 setAvgHours(hourDuplicates);
+                setRes("success")
             }})
         
     }
 
-    if (!userRes || userRes == "none") {
+    if (!userRes) {
         return (
-            <h3>No data to show yet! Keep tracking your sleep to see your patterns and insights to your sleep behavior</h3>
+            <p></p>
         )
-    } else {
+    } else if (userRes === "none") {
+        return (
+            <h3>No data to show yet! Keep tracking your sleep to see your patterns and insights to your sleep behavior.</h3>
+        )
+    } else if (userRes === "success") {
 
     return (
         <div>  
@@ -78,10 +84,10 @@ function Chart() {
             <h4>You're sleeping great! Keep up the good rest.</h4>
             : <p></p>}
             {avgHours <= 5 ?
-            <h4>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the second section of our Resource page for some helpful links for your sleep health!</h4>
+            <h4>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the second section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
            : <p></p>}   
            {avgBedtime >= 22 || avgBedtime <= 12 ?
-            <h4>Looks like you are consistently going to bed late. Check out the first section of our Resource page for some helpful links for your sleep health!</h4>
+            <h4>Looks like you are going to bed late. Check out the first section of our <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
             : <p></p>}  
             <Notes />
             <Bubble />
