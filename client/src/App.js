@@ -3,7 +3,7 @@ import ReactRouter from "./Router";
 import "./App.css"
 import { AuthContextProvider } from './context/AuthContext'
 import axios from 'axios';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 axios.defaults.withCredentials = true;

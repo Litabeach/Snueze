@@ -5,9 +5,6 @@ import AuthContext from "../../context/AuthContext";
 import LogoutBtn from "../LogoutBtn/LogoutBtn";
 import "./header.css";
 
-
-
-
 function Header() {
 
   const { loggedIn } = useContext(AuthContext);

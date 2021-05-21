@@ -37,9 +37,10 @@ function Register() {
     return (
         <div>
             <h1> Register a new account</h1>
-            <form onSubmit={register}>
+            <form className="login-form" onSubmit={register}>
                 <input 
                 placeholder="Username"
+                className="form-control"
                 onChange={(e) => setUserName(e.target.value)}
                 value={username}
                 />
@@ -47,6 +48,7 @@ function Register() {
                 <input 
                 type="email" 
                 placeholder="Email"
+                className="form-control"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 />
@@ -54,6 +56,7 @@ function Register() {
                 <input 
                 type="password" 
                 placeholder="Password"
+                className="form-control"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 />
@@ -61,11 +64,12 @@ function Register() {
                 <input 
                 type="password" 
                 placeholder="Verify Your Password"
+                className="form-control"
                 onChange={(e) => setPasswordVerify(e.target.value)}
                 value={passwordVerify}
                 />
                 <br />
-                <button type="submit">Register</button>
+                <button className="btn btn-primary" type="submit">Register</button>
             </form>
         </div>
 
