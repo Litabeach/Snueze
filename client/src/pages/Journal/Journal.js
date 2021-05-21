@@ -6,6 +6,8 @@ import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognitio
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import "./style.css"
 import dateFormat from 'dateformat';
+import microphoneicon from './microphone.png';
+import micstopicon from './stopbutton.png';
 
 function Journal() {
   // Setting our component's initial state
@@ -91,19 +93,23 @@ function Journal() {
     SpeechRecognition.startListening({
       continuous: true,
     });
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
   };
   const stopHandle = () => {
     setIsListening(false);
     microphoneRef.current.classList.remove("listening");
     SpeechRecognition.stopListening();
     setFormObject({ ...formObject, body: transcript })
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("hide");
   };
 
   return (
     <div>
       <div>
         <Jumbotron >
-       <h1> Dream Journal </h1>
+          <h1> Dream Journal </h1>
         </Jumbotron>
         <br />
         <h3 className="dreamjournalh3">Write a Dream</h3>
@@ -113,7 +119,7 @@ function Journal() {
           placeholder="Title (required)"
           value={formObject.title}
         />
-        <input type="date" name="date" className="dreamform journal-date" onChange={handleInputChange} value={formObject.title}/>
+        <input type="date" name="date" className="dreamform journal-date" onChange={handleInputChange} value={formObject.title} />
         <br />
         <textarea className="dreamform journal-body"
           onChange={handleInputChange}
@@ -122,28 +128,26 @@ function Journal() {
           value={formObject.body}
         />
 
-        {/* <textarea class="speech-transcript">{transcript}</textarea> */}
-
-        <p className="speech-transcript">{transcript}</p>
-
-        <div className="microphone-wrapper-nav">
+    <br />
+        <div className="microphone-wrapper-nav popup">
           <div className="mircophone-container-journal">
+          <span className="popuptext" id="myPopup">{transcript}</span>
             <div
               className="microphone-icon-container-nav"
               ref={microphoneRef}
               onClick={handleListing}
             >
-              <img src="../../public/img/microphone.png" className="microphone-icon-nav" />
+              <img src={microphoneicon} className="microphone-icon-nav" />
             </div>
 
             {isListening && (
 
-              <img src="img/stopbutton.png" className="microphone-stop-nav" onClick={stopHandle} />
+              <img src={micstopicon} className="microphone-stop-nav" onClick={stopHandle} />
 
             )}
           </div>
-
         </div>
+        <br />
         <button className="dream-submit"
           disabled={!(formObject.body && formObject.title)}
           onClick={handleFormSubmit}
@@ -151,6 +155,8 @@ function Journal() {
           Submit Dream
             </button>
       </div>
+
+
       {entries.length ? (
         <List>
           <h3>Your Journal Entries</h3>
@@ -168,7 +174,7 @@ function Journal() {
       ) : (
         <h3>No dreams have been recorded yet</h3>
       )}
-     
+
     </div>
   )
 };
