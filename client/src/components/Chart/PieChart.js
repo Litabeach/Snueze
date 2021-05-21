@@ -28,19 +28,19 @@ function PieChart() {
   
         data.forEach(entry => {
           switch (entry.mood) {
-            case "I feel lousy":
+            case 1:
               one++;
               break;
-            case "I'm not in the best mood":
+            case 2:
               two++;
               break;
-            case "I just feel okay":
+            case 3:
               three++;
               break;
-            case "I feel pretty good":
+            case 4:
               four++;
               break;
-            case "I feel great":
+            case 5:
               five++;
               break;
           }
