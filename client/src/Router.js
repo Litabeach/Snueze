@@ -8,7 +8,7 @@ import Stats from "./pages/Stats";
 import Tools from "./pages/Tools";
 import Community from "./pages/Community";
 import Resources from "./pages/Resources";
-import NoMatch from "./pages/NoMatch";
+// import NoMatch from "./pages/NoMatch";
 import Footer from './components/Footer/Footer';
 import AuthContext from "./context/AuthContext"
 import React, { useContext } from "react";
@@ -75,9 +75,9 @@ function ReactRouter() {
                             <Resources />
                         </Route>
                     }
-                    <Route>
+                    {/* <Route>
                         <NoMatch />
-                    </Route>
+                    </Route> */}
                 </Switch>
                 <Footer />
             </div>

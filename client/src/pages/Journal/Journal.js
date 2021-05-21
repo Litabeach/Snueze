@@ -6,6 +6,8 @@ import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognitio
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import "./style.css"
 import dateFormat from 'dateformat';
+import microphoneicon from './microphone.png';
+import micstopicon from './stopbutton.png';
 
 function Journal() {
   // Setting our component's initial state
@@ -103,17 +105,18 @@ function Journal() {
     <div>
       <div>
         <Jumbotron >
-       <h1> Dream Journal </h1>
+          <h1> Dream Journal </h1>
         </Jumbotron>
         <br />
         <h3 class="dreamjournalh3">Write a Dream</h3>
+
         <input className="dreamform journal-title"
           onChange={handleInputChange}
           name="title"
           placeholder="Title (required)"
           value={formObject.title}
         />
-        <input type="date" name="date" className="dreamform journal-date" onChange={handleInputChange} value={formObject.title}/>
+        <input type="date" name="date" className="dreamform journal-date" onChange={handleInputChange} value={formObject.title} />
         <br />
         <textarea className="dreamform journal-body"
           onChange={handleInputChange}
@@ -122,9 +125,9 @@ function Journal() {
           value={formObject.body}
         />
 
-        {/* <textarea class="speech-transcript">{transcript}</textarea> */}
-
-        <p class="speech-transcript">{transcript}</p>
+        <div class="popup" onclick="myFunction()">Click me!
+  <span class="popuptext" id="myPopup">Popup text...</span>
+        </div>
 
         <div className="microphone-wrapper-nav">
           <div className="mircophone-container-journal">
@@ -133,16 +136,15 @@ function Journal() {
               ref={microphoneRef}
               onClick={handleListing}
             >
-              <img src="../../public/img/microphone.png" className="microphone-icon-nav" />
+              <img src={microphoneicon} className="microphone-icon-nav" />
             </div>
 
             {isListening && (
 
-              <img src="img/stopbutton.png" className="microphone-stop-nav" onClick={stopHandle} />
+              <img src={micstopicon} className="microphone-stop-nav" onClick={stopHandle} />
 
             )}
           </div>
-
         </div>
         <button className="dream-submit"
           disabled={!(formObject.body && formObject.title)}
@@ -151,6 +153,8 @@ function Journal() {
           Submit Dream
             </button>
       </div>
+
+
       {entries.length ? (
         <List>
           <h3>Your Journal Entries</h3>
@@ -168,7 +172,7 @@ function Journal() {
       ) : (
         <h3>No dreams have been recorded yet</h3>
       )}
-     
+
     </div>
   )
 };
