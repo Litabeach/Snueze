@@ -34,16 +34,18 @@ function Login() {
   return (
     <div>
       <h1>Log in to your account</h1>
-      <form onSubmit={login}>
+      <form className="login-form" onSubmit={login}>
         <input
           type="email"
           placeholder="Email"
+          className="form-control"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
         <input
           type="password"
           placeholder="Password"
+          className="form-control"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
