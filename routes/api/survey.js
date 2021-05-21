@@ -4,12 +4,12 @@ const auth = require("../../utils/auth")
 
 // Matches with "/api/survey"
 router.route("/")
-  .get(surveyController.findAll)
-  .post(surveyController.create);
+  .get(auth, surveyController.findAll)
+  .post(auth, surveyController.create);
 
 // Matches with "/api/survey/:id"
 router
   .route("/:id")
-  .get(surveyController.findById);
+  .get(auth, surveyController.findById);
 
 module.exports = router;
