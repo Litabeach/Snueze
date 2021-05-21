@@ -29,19 +29,19 @@ function DoughnutChart() {
 
         data.forEach(entry => {
           switch (entry.sleepquality) {
-            case 1:
+            case "1":
               one++;
               break;
-            case 2:
+            case "2":
               two++;
               break;
-            case 3:
+            case "3":
               three++;
               break;
-            case 4:
+            case "4":
               four++;
               break;
-            case 5:
+            case "5":
               five++;
               break;
           }

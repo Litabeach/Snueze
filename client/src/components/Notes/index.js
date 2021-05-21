@@ -40,7 +40,7 @@ function Notes() {
 
                 let fake = ["You didn't write any notes on this day!"]
                 console.log(notes)
-                if (notes.length == 0){
+                if (notes.length == 0 || notes[0].length === 0){
                     setNote(fake);
                 } else {
                     setNote(notes)
