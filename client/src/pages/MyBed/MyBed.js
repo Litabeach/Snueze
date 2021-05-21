@@ -10,7 +10,6 @@ function MyBed() {
 
   return (
     <div>
-
       <Jumbotron>
         My Bed
       </Jumbotron>
