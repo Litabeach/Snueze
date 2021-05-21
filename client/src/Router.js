@@ -8,7 +8,7 @@ import Stats from "./pages/Stats";
 import Tools from "./pages/Tools";
 import Community from "./pages/Community";
 import Resources from "./pages/Resources";
-// import NoMatch from "./pages/NoMatch";
+import NoMatch from "./pages/NoMatch";
 import Footer from './components/Footer/Footer';
 import AuthContext from "./context/AuthContext"
 import React, { useContext } from "react";
@@ -23,61 +23,73 @@ function ReactRouter() {
     return (
         <Router>
             <div className="wrapper">
-                <Header />
                 <Switch>
                     {loggedIn === false &&
                         <Route exact path="/">
-                            <Login />
+                        <Header />
+                        <Login />
                         </Route>
                     }
                     {loggedIn === false &&
                         <Route exact path="/register">
-                            <Register />
+                        <Header />
+                        <Register />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route exact path="/">
+                            <Header />
                             <MyBed />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route exact path="/mybed">
+                            <Header />
                             <MyBed />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route exact path="/survey">
+                            <Header />
                             <Survey />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route exact path="/journal">
-                            <Journal />
+                        <Header />
+                        <Journal />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route exact path="/stats">
+                        <Header />
                             <Stats />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route exact path="/tools">
+                        <Header />
                             <Tools />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route exact path="/community">
+                        <Header />
                             <Community />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route exact path="/resources">
+                        <Header />
                             <Resources />
                         </Route>
                     }
-                    {/* <Route>
-                        <NoMatch />
-                    </Route> */}
+                    {loggedIn === true &&
+                        <Route>
+                        <Header />
+                            <NoMatch />
+                        </Route>
+                    }
                 </Switch>
                 <Footer />
             </div>
