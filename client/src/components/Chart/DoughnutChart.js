@@ -29,19 +29,19 @@ function DoughnutChart() {
 
         data.forEach(entry => {
           switch (entry.sleepquality) {
-            case "I was up all night":
+            case 1:
               one++;
               break;
-            case "I tossed and turned":
+            case 2:
               two++;
               break;
-            case "I wokeup a couple of times":
+            case 3:
               three++;
               break;
-            case "I got a decent night's sleep":
+            case 4:
               four++;
               break;
-            case "I slept like a baby":
+            case 5:
               five++;
               break;
           }
