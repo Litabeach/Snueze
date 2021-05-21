@@ -19,15 +19,6 @@ function Login() {
         password,
       };
 
-      const response = await fetch('/login', login)
-      if (response.ok) {
-          const json = await response.json()
-          this.setState({adresses: json})
-      } else {
-          alert('Could not find the domain.')
-          return
-      }
-
       await axios.post("http://localhost:3001/auth/login", loginData);
       await getLoggedIn();
       history.push("/");
