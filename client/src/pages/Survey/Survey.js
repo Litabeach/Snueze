@@ -94,35 +94,35 @@ function Survey() {
             <Col sm={10}>
               <Form.Check
                 type="radio"
-                label="1"
+                label="I was up all night"
                 value="1"
                 name="sleepquality"
                 id="formHorizontalRadios1"
               />
               <Form.Check
                 type="radio"
-                label="2"
+                label="I tossed and turned"
                 value="2"
                 name="sleepquality"
                 id="formHorizontalRadios2"
               />
               <Form.Check
                 type="radio"
-                label="3"
+                label="I woke up a couple of times"
                 value="3"
                 name="sleepquality"
                 id="formHorizontalRadios3"
               />
               <Form.Check
                 type="radio"
-                label="4"
+                label="I got a decent night's sleep"
                 value="4"
                 name="sleepquality"
                 id="formHorizontalRadios3"
               />
               <Form.Check
                 type="radio"
-                label="5"
+                label="I slept like a baby"
                 value="5"
                 name="sleepquality"
                 id="formHorizontalRadios3"
@@ -139,35 +139,35 @@ function Survey() {
             <Col sm={10}>
               <Form.Check
                 type="radio"
-                label="1"
+                label="I feel lousy"
                 value="1"
                 name="mood"
                 id="formHorizontalRadios1"
               />
               <Form.Check
                 type="radio"
-                label="2"
+                label="I'm not in the best mood"
                 value="2"
                 name="mood"
                 id="formHorizontalRadios2"
               />
               <Form.Check
                 type="radio"
-                label="3"
+                label="I just feel okay"
                 value="3"
                 name="mood"
                 id="formHorizontalRadios3"
               />
               <Form.Check
                 type="radio"
-                label="4"
+                label="I feel pretty good"
                 value="4"
                 name="mood"
                 id="formHorizontalRadios3"
               />
               <Form.Check
                 type="radio"
-                label="5"
+                label="I feel wonderful"
                 value="5"
                 name="mood"
                 id="formHorizontalRadios3"
