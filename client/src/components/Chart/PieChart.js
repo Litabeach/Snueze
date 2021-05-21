@@ -4,7 +4,7 @@ import surveyAPI from "../../utils/surveyAPI";
 
 function PieChart() {
     const [mood, setMood] = useState([]);
- 
+    const [userRes, setRes] = useState();
   
     useEffect(() => {
       getChartData();
@@ -23,24 +23,28 @@ function PieChart() {
       surveyAPI.getSurveys()
       .then(res => {
         console.log(res.data)
+
+        if (!res.data) {
+          setRes("none")
+       } else {
   
         let data = res.data
   
         data.forEach(entry => {
           switch (entry.mood) {
-            case 1:
+            case "1":
               one++;
               break;
-            case 2:
+            case "2":
               two++;
               break;
-            case 3:
+            case "3":
               three++;
               break;
-            case 4:
+            case "4":
               four++;
               break;
-            case 5:
+            case "5":
               five++;
               break;
           }
@@ -49,7 +53,7 @@ function PieChart() {
         moodArray.push(one, two, three, four, five);
         console.log(moodArray)
         setMood(moodArray)
-      })
+      }})
         .catch(err => console.log(err));
     }
     const data = {
@@ -74,11 +78,18 @@ function PieChart() {
         }]
       };
 
+      if (userRes === "none") {
+        return (
+           <p></p>
+        )
+    } else {
+
   return (
     <div className="App" style={{ marginTop: "200px" }}>
       <Pie data={data} />
     </div>
   );
+    }
 }
 
 

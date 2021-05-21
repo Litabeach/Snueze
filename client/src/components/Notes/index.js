@@ -31,7 +31,7 @@ function Notes() {
                     let splitDate = dateData.date.split("T")
                     let justDate = splitDate[0]
                     
-                    if (justDate == date){
+                    if (justDate === date){
                         let noteTest = dateData.notes
                         console.log("NOTES" + noteTest)
                         notes.push(dateData.notes);
@@ -40,7 +40,7 @@ function Notes() {
 
                 let fake = ["You didn't write any notes on this day!"]
                 console.log(notes)
-                if (notes.length == 0){
+                if (notes.length === 0 || notes[0].length === 0){
                     setNote(fake);
                 } else {
                     setNote(notes)
