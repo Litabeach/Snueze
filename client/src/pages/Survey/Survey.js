@@ -8,7 +8,6 @@ function Survey() {
   const [formObject, setFormObject] = useState({
     date: "",
     hoursslept: "",
-    // wakeuptime: "",
     sleepquality: "",
     mood: "",
     notes: "",
@@ -17,7 +16,7 @@ function Survey() {
 
   // Load all surveys and store them with setSurveys
   useEffect(() => {
-    loadSurveys()
+    loadSurveys();
   }, []);
 
   // Loads all surveys and sets them to surveys
@@ -28,17 +27,14 @@ function Survey() {
       )
       .catch(err => console.log(err));
   }
-
   // When the form is submitted, use the API.saveSurvey method to save the survey data
   // Then reload surveys from the database
   function handleFormSubmit(event) {
-    event.preventDefault()
-    if (formObject.date && formObject.bedtime && formObject.sleepquality && formObject.mood) {
-      console.log("formObject");
+    if (formObject.date && formObject.bedtime && formObject.hoursslept && formObject.sleepquality && formObject.mood) {
+      console.log("formObject-START");
       surveyAPI.saveSurvey({
         date: formObject.date,
         hoursslept: formObject.hoursslept,
-        // wakeuptime: formObject.wakeuptime,
         sleepquality: formObject.sleepquality,
         mood: formObject.mood,
         notes: formObject.notes,
@@ -47,20 +43,19 @@ function Survey() {
         .then(() => setFormObject({
           date: "",
           hoursslept: "",
-          // wakeuptime: "",
           sleepquality: "",
           mood: "",
           notes: "",
           bedtime: "",
         }))
-        .then(() => loadSurveys())
+        .then(() => loadSurveys(), alert("Sleep recorded!"))
         .catch(err => console.log(err));
     }
   }
 
   function changeHandler(event) {
     const { name, value } = event.target;
-
+    console.log(value);
     setFormObject({ ...formObject, [name]: value })
 
   }
@@ -123,6 +118,8 @@ function Survey() {
           </InputGroup.Prepend>
         </InputGroup>
 
+        
+        
         <h3>Submit</h3>
         <InputGroup>
           <InputGroup.Prepend>

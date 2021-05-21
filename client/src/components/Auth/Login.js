@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import AuthContext from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
+import "./style.css";
 
 function Login() {
 
@@ -31,7 +32,6 @@ function Login() {
 
     return (
         <div className="wrapper">
-            <h1> Log in to your account</h1>
             <form  className="login-form">
                 <div className="form-group" onSubmit={login}>
                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}
