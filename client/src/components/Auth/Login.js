@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./style.css";
 import AuthContext from "../../context/AuthContext";
+import { Form, Button } from "react-bootstrap";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -33,27 +34,25 @@ function Login() {
   }
 
   return (
-    <div>
-      <h1>Log in to your account</h1>
-      <form className="login-form" onSubmit={login}>
-        <input
-          type="email"
-          placeholder="Email"
-          className="form-control"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          className="form-control"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-        <button className="btn btn-primary" type="submit">Log in</button>
-      </form>
+    <div className="wrapper">
+        <Form onSubmit={login}>
+    <Form.Group controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />
+    </Form.Group>
+    <Form.Group controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} />
+    </Form.Group>
+    <Button variant="primary" type="submit">
+        Submit
+    </Button>
+    <Form.Text className="text-muted">
+        Don't have a login? Click <a href="/register">here</a> to register.
+        </Form.Text>
+    </Form>
     </div>
-  );
+  )
 }
 
 export default Login;
