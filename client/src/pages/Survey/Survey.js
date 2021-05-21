@@ -87,11 +87,11 @@ function Survey() {
         <InputGroup className="mb-3">
           <InputGroup.Prepend>
             <select type="rating" name="sleepquality" onChange={changeHandler} defaultValue="">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+              <option value="1">I was up all night.</option>
+              <option value="2">I tossed and turned.</option>
+              <option value="3">I woke up a couple of times.</option>
+              <option value="4">I got a decent night's sleep.</option>
+              <option value="5">I slept like a baby!</option>
             </select>
           </InputGroup.Prepend>
         </InputGroup>
@@ -100,11 +100,11 @@ function Survey() {
         <InputGroup className="mb-3">
           <InputGroup.Prepend>
             <select type="rating" name="mood" onChange={changeHandler} defaultValue="">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+              <option value="1">I feel lousy.</option>
+              <option value="2">I'm not in the best mood.</option>
+              <option value="3">I just feel okay.</option>
+              <option value="4">I feel pretty good.</option>
+              <option value="5">I feel great!</option>
             </select>
           </InputGroup.Prepend>
         </InputGroup>
