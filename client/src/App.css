@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
 body {
   background-color: black;
   background-image: url(/img/gradient.jpg);
@@ -21,7 +24,7 @@ body {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,3 +51,4 @@ body {
   padding: 20px;
   color: white;
 }
+

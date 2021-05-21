@@ -32,22 +32,23 @@ function Notes() {
                     let justDate = splitDate[0]
                     
                     if (justDate == date){
+                        let noteTest = dateData.notes
+                        console.log("NOTES" + noteTest)
                         notes.push(dateData.notes);
                     } 
                 })
 
+                let fake = ["You didn't write any notes on this day!"]
                 console.log(notes)
-                setNote(notes);
-               
-               
+                if (notes.length == 0){
+                    setNote(fake);
+                } else {
+                    setNote(notes)
+                }
               
             })
             .catch(err => console.log(err));
     }
-
-
-
-
 
 
     return (

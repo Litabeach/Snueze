@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
+import { Nav } from 'react-bootstrap';
 
 function LogOutBtn() {
   const { getLoggedIn } = useContext(AuthContext);
@@ -15,7 +16,13 @@ function LogOutBtn() {
     history.push("/");
   }
 
-  return <button onClick={logOut}>Log out</button>;
+  return (
+    <Nav.Item>
+      <Nav.Link title="Logout">
+        <p onClick={logOut}>Logout</p>
+      </Nav.Link>
+    </Nav.Item>
+  )
 }
 
 export default LogOutBtn;

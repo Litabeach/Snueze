@@ -35,9 +35,7 @@ function ReactRouter() {
                             <Register />
                         </Route>
                     }
-
                     {loggedIn === true &&
-
                         <Route exact path="/">
                             <MyBed />
                         </Route>

@@ -1,0 +1,37 @@
+Login
+* needs styling/spacing
+* needs error handling
+
+Register
+* needs error handling
+* needs styling
+
+MyBed
+* needs styling
+* needs text
+
+Sleep
+* update quality of sleep and mood fields
+* update form layout
+
+Dream
+* update microphone image
+* update form layout
+* pull logged-in user dreams
+
+Analyze
+* pull logged-in user data
+* update form layout
+
+Reflect
+* update form layout
+* update background
+
+resources
+* update form layout
+* update styling
+* update resource group types
+
+Community
+* update form layout
+* update styling
