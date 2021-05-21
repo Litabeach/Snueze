@@ -93,13 +93,22 @@ function Journal() {
     SpeechRecognition.startListening({
       continuous: true,
     });
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
   };
   const stopHandle = () => {
     setIsListening(false);
     microphoneRef.current.classList.remove("listening");
     SpeechRecognition.stopListening();
     setFormObject({ ...formObject, body: transcript })
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("hide");
   };
+
+  // const speechToTextPopUp = () => {
+  //   var popup = document.getElementById("myPopup");
+  //   popup.classList.toggle("show");
+  // }
 
   return (
     <div>
@@ -124,15 +133,10 @@ function Journal() {
           value={formObject.body}
         />
 
-        <div class="popup" onclick="myFunction()">Click me!
-  <span class="popuptext" id="myPopup">Popup text...</span>
-        </div>
-        {/* <textarea class="speech-transcript">{transcript}</textarea> */}
-
-        <p className="speech-transcript">{transcript}</p>
-
-        <div className="microphone-wrapper-nav">
+    <br />
+        <div className="microphone-wrapper-nav popup">
           <div className="mircophone-container-journal">
+          <span className="popuptext" id="myPopup">{transcript}</span>
             <div
               className="microphone-icon-container-nav"
               ref={microphoneRef}
@@ -148,6 +152,7 @@ function Journal() {
             )}
           </div>
         </div>
+        <br />
         <button className="dream-submit"
           disabled={!(formObject.body && formObject.title)}
           onClick={handleFormSubmit}
