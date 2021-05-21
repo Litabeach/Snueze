@@ -3,81 +3,55 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Jumbotron from "../../components/Jumbotron";
 import Card from "react-bootstrap/Card";
-import { CardGroup, Image } from "react-bootstrap";
+import { CardGroup, Image, Container } from "react-bootstrap";
 import "./MyBed.css";
 
 function MyBed() {
 
   return (
-    <div>
-      <Jumbotron>
-        My Bed
-      </Jumbotron>
-      <div>
-      <CardGroup>
-        <Card className="card">
-          <Link to="/survey">Sleep
-          <Card.Img as={Image} className="cardImg" variant="top" src="img/sleep.jpeg" />
-          </Link>
-          <Card.Body>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk
-              of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-
-        <Card className="card">
-          <Link to="/journal">Dream
-            <Card.Img as={Image} className="cardImg" variant="top" src="img/dream.png" />
-          </Link>
-          <Card.Body>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk
-              of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-</CardGroup>
-<CardGroup>
-        <Card className="card">
-          <Link to="/stats">Analyze
-            <Card.Img  as={Image} className="cardImg" variant="top" src="img/analyze.jpg" />
-          </Link>
-          <Card.Body>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk
-              of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-
-        <Card className="card">
-          <Link to="/tools">Reflect
-            <Card.Img  as={Image} className="cardImg" variant="top" src="img/reflect.jpg" />
-          </Link>
-          <Card.Body>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk
-              of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
+    <div className="wrapper">
+      <Container>
+        <CardGroup>
+          <Card className="card">
+            <Link to="/survey">
+              <Card.Img as={Image} className="cardImg" variant="top" src="img/sleep.jpeg" alt="Sleep Image" />
+              <Card.ImgOverlay>
+                <Card.Title>Record your sleep</Card.Title>
+              </Card.ImgOverlay>
+            </Link>
+          </Card>
+          <Card className="card">
+            <Link to="/journal">
+              <Card.Img as={Image} className="cardImg" variant="top" src="img/dream.png" alt="Dream Image" />
+              <Card.ImgOverlay>
+                <Card.Title>Log your dreams</Card.Title>
+              </Card.ImgOverlay>
+            </Link>
+          </Card>
         </CardGroup>
-      </div>
+        <CardGroup>
+          <Card className="card">
+            <Link to="/stats">
+              <Card.Img as={Image} className="cardImg" variant="top" src="img/analyze.jpg" alt="Chart Image" />
+              <Card.ImgOverlay>
+                <Card.Title>Analyze your sleep habits</Card.Title>
+              </Card.ImgOverlay>
+            </Link>
+          </Card>
+
+          <Card className="card">
+            <Link to="/tools">
+              <Card.Img as={Image} className="cardImg" variant="top" src="img/reflect.jpg" alt="Reflect Image" />
+              <Card.ImgOverlay>
+                <Card.Title>Reflect and relax</Card.Title>
+              </Card.ImgOverlay>
+            </Link>
+          </Card>
+        </CardGroup>
+      </Container>
     </div>
 
   );
 }
 
-
 export default MyBed;
-
-// <Link to="/Survey">Sleep<a href="/survey"><img src="https:/via.placeholder.com/150"></img></a>
-// </Link>
-// </div>
-// <div className="col-xs-4">
-// <Link to="/Journal">Journal<a href="https:// placeholder.com"><img src="https:/via.placeholder.com/150"></img></a>
-// </Link>
-// </div>
-// </div >
