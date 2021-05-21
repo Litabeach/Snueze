@@ -14,7 +14,7 @@ function Header() {
         <Navbar.Brand href="/" className="d-inline-block">Snüze</Navbar.Brand>
         {loggedIn === true && (
           <>
-        <Navbar.Toggle aria-controls="navbar-nav"><span class="material-icons yellow">
+        <Navbar.Toggle aria-controls="navbar-nav"><span className="material-icons yellow">
         menu
         </span></Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">

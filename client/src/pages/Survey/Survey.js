@@ -36,7 +36,8 @@ function Survey() {
   // Then reload surveys from the database
   function handleFormSubmit(event) {
     console.log("formObject-START");
-      surveyAPI.saveSurvey({
+      if(formObject.date && formObject.hoursslept && formObject.sleepquality && formObject.mood && formObject.bedtime) {
+        surveyAPI.saveSurvey({
         date: formObject.date,
         hoursslept: formObject.hoursslept,
         sleepquality: formObject.sleepquality,
@@ -54,6 +55,7 @@ function Survey() {
         }))
         .then(() => loadSurveys(), alert("Sleep recorded!"))
         .catch(err => console.log(err));    
+      }
   }
 
   function changeHandler(event) {

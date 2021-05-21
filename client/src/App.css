@@ -55,3 +55,9 @@ body {
   align-items: center;
 }
 
+.btn {
+  background-color: #ebe264;
+  border: 1px solid white;
+  color: rgb(0, 51, 44);
+}
+
