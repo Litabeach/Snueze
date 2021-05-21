@@ -17,7 +17,7 @@ class Resources extends Component {
       <div>
       {/* <h1 className="resourceh1">Resources</h1> */}
       <Jumbotron>Resources</Jumbotron>
-      <div class="resourcecontainer">
+      <div className="resourcecontainer">
         <h3 className="resourceh3">Resource Type #1</h3>
         {this.state.resources.map(resources => (
           <div key={resources.id}>
@@ -36,7 +36,7 @@ class Resources extends Component {
         ))}
       </div>
 
-      <div class="resourcecontainer">
+      <div className="resourcecontainer">
         <h3 className="resourceh3">Resource Type #2</h3>
         {this.state.resources2.map(resources2 => (
           <div key={resources2.id}>

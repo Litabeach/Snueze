@@ -106,7 +106,7 @@ function Journal() {
        <h1> Dream Journal </h1>
         </Jumbotron>
         <br />
-        <h3 class="dreamjournalh3">Write a Dream</h3>
+        <h3 className="dreamjournalh3">Write a Dream</h3>
         <input className="dreamform journal-title"
           onChange={handleInputChange}
           name="title"
@@ -124,7 +124,7 @@ function Journal() {
 
         {/* <textarea class="speech-transcript">{transcript}</textarea> */}
 
-        <p class="speech-transcript">{transcript}</p>
+        <p className="speech-transcript">{transcript}</p>
 
         <div className="microphone-wrapper-nav">
           <div className="mircophone-container-journal">
