@@ -80,15 +80,12 @@ function Chart() {
     return (
         <div>  
             <h3>Insights</h3>
-            {avgHours >= 8 && avgBedtime <= 22 && avgBedtime >= 5 ?
-            <h4>You're sleeping great! Keep up the good rest.</h4>
-            : <p></p>}
             {avgHours <= 5 ?
             <h4>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the second section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
-           : <p></p>}   
+           : <h4>You are sleeping enough hours a night! Great work!</h4>}   
            {avgBedtime >= 22 || avgBedtime <= 12 ?
             <h4>Looks like you are going to bed late. Check out the first section of our <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
-            : <p></p>}  
+            : <h4>Your bedtimes are right on time. Nighty night!</h4>}  
             <Notes />
             <Bubble />
             <LineChart />
