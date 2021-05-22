@@ -23,6 +23,9 @@ body {
   }
 }
 
+.form-label {
+  font-family: KoHo;
+}
 /* .App-header {
   background-color: white;
   min-height: 100vh;

@@ -1,0 +1,24 @@
+.quoteDisplay {
+    font-size: 1.5rem;
+    display: flex;
+    margin: 50px;
+    padding: 50px;
+    text-align: center;
+}
+
+.container-fluid {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.survey-form {
+    align-items: right;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #EBE264;
+    text-align: center;
+}
