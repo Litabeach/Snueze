@@ -26,19 +26,6 @@ module.exports = {
       }
     },
 
-  //   db.Journal
-  //     .findById(req.params.id)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
-  // create: function(req, res) {
-  //   db.Journal
-  //     .create(req.body)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
-
-
 create: function(req, res) {
   // console.log(req.body);
   const authHeader = req.headers.cookie;
