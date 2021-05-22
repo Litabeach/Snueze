@@ -8,9 +8,10 @@ function AuthContextProvider(props) {
   const [loggedIn, setLoggedIn] = useState(undefined);
 
   async function getLoggedIn() {
-    const loggedInRes = await axios.get("https://snueze.herokuapp.com/auth/loggedIn");
-    // const loggedInRes = await axios.get("http://localhost:3001/auth/loggedIn");
+    // const loggedInRes = await axios.get("https://snueze.herokuapp.com/auth/loggedIn");
+    const loggedInRes = await axios.get("http://localhost:3001/auth/loggedIn");
     setLoggedIn(loggedInRes.data);
+    // console.log(loggedInRes)
   }
 
   useEffect(() => {
