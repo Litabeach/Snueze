@@ -56,7 +56,7 @@ function Register() {
             <Form.Control type="password" placeholder="Re-enter your password" onChange={(e) => setPasswordVerify(e.target.value)} value={passwordVerify} />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button type="submit">
             Register
         </Button>
     

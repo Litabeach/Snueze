@@ -62,31 +62,31 @@ function ReactRouter() {
                     }
                     {loggedIn === true &&
                         <Route exact path="/stats">
-                        <Header />
+                            <Header />
                             <Stats />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route exact path="/tools">
-                        <Header />
+                            <Header />
                             <Tools />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route exact path="/community">
-                        <Header />
+                            <Header />
                             <Community />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route exact path="/resources">
-                        <Header />
+                            <Header />
                             <Resources />
                         </Route>
                     }
                     {loggedIn === true &&
                         <Route>
-                        <Header />
+                            <Header />
                             <NoMatch />
                         </Route>
                     }
