@@ -20,7 +20,7 @@ app.use(
   cors({
     origin: [
       'https://snueze.herokuapp.com/',
-      'http://localhost:3000'
+      // 'http://localhost:3000'
     ],
     credentials: true
   })
