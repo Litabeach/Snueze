@@ -33,7 +33,6 @@ function Register() {
                 alert("passwords do not match")
             }
 
-
             await axios.post("http://localhost:3001/auth", registerData);
             // await axios.post("https://snueze.herokuapp.com/auth", registerData);
             await getLoggedIn();
