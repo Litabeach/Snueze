@@ -2,19 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=KoHo&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-.nav-link:hover {
-    color: #27acf8 !important;
-    text-decoration: none;
-}
-
-.nav-link {
-    color: #ebe264 !important;
-    font-family: KoHo;
-    font-size: 1em;
-    font-weight:300;
-    text-align: center;
-}
-
 .navbar-brand {
     font-family: Pattaya !important;
     font-size: 3rem !important;
