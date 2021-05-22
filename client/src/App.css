@@ -103,8 +103,11 @@ a:hover {
   font-family: KoHo;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: KoHo;
+h1 {
+    font-family: KoHo;
+    color: #EBE264;
+    text-align: center;
+    padding-bottom: 50px;
 }
  /* Stryling the text and giving it gradiant */
 
