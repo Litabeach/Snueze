@@ -30,10 +30,10 @@ function Login() {
   }
 
   return (
-    <div className="wrapper">
+    
     <Container>
         <Form className="login-form mx-auto" onSubmit={login}>
-        <h4>Log into Snüze</h4>
+        <h5>Log into Snüze</h5>
     <Form.Group controlId="formBasicEmail">
         <Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />
     </Form.Group>
@@ -48,7 +48,7 @@ function Login() {
         </Form.Text>
     </Form>
     </Container>
-    </div>
+    
   )
 }
 
