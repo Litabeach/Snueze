@@ -88,7 +88,7 @@ router.post("/login", async (req, res) => {
                     errorMessage: "Please enter all required fields."
                 });
 
-        const existingUser = await User.findOne({ email }).populate("surveys")
+        const existingUser = await (await User.findOne({ email }).populate("journals").populate("surveys"))
         if (!existingUser)
             return res
                 .status(401)
@@ -109,7 +109,8 @@ router.post("/login", async (req, res) => {
         const token = jwt.sign(
             {
                 user: existingUser._id,
-                surveys: existingUser.surveys
+                surveys: existingUser.surveys,
+                journals: existingUser.journals
             },
             process.env.JWT_SECRET,
             {
