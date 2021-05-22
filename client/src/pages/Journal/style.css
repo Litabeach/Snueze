@@ -1,62 +1,59 @@
-.dreamform {
-    margin-left:25%;
-}
-
-
-.journal-title {
-    margin-bottom: 2%;
-}
-
-.journal-body{
-    height:150px;
-    width:50%
-    
-}
-
-.journal-date {
-    margin-left:24%
-}
-
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .mircophone-container-journal {
-    display: flex;
-    margin-left: 25%
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .dreamjournalh3{
-      text-align: center;
-      margin-bottom:30px;
-  }
+.container-fluid {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 
-  .dream-submit{
-    margin-left: 25%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  
-  .speech-transcript {
-    position:absolute;
-    top:513px;
-    left:338px;
-    background:transparent;
-    font-size:1em;
-    line-height:1em;
-    width:50%;
-    height:150px;
-    
-    }
+.mircophone-container-journal {
+  display: flex;
+  padding: 10px;
+}
+
+.microphone-label {
+  padding: 10px;
+}
+
+.dream-journal-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dream-list-header {
+  text-align: center;
+}
+
+.dream-list {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px !important;
+}
+
+.dream-submit {
+  margin: 15px 0px 15px 0px;
+}
+
+.speech-transcript {
+  position: absolute;
+  top: 513px;
+  left: 338px;
+  background: transparent;
+  font-size: 1em;
+  line-height: 1em;
+  width: 50%;
+  height: 150px;
+}
 
 
-    /* Popup container */
+/* Popup container */
 .popup {
-  margin-left: 25%;
   position: relative;
+  padding: 10px;
   display: inline-block;
   cursor: pointer;
 }
@@ -65,8 +62,8 @@
 .popup .popuptext {
   visibility: hidden;
   width: 160px;
-  background-color: #555;
-  color: #fff;
+  background-color: #EBE264;
+  color: grey;
   text-align: center;
   border-radius: 6px;
   padding: 8px 0;
@@ -86,7 +83,7 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: transparent;
 }
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
@@ -97,18 +94,28 @@
 }
 
 .hide {
-  display:none;
+  display: none;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
 }
 
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

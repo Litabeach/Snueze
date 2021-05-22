@@ -3,19 +3,19 @@ import journalAPI from "../../utils/journalAPI";
 import DeleteBtn from "../../components/DeleteBtn";
 import { List, ListItem } from "../../components/List";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
-import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import "./style.css"
 import dateFormat from 'dateformat';
 import microphoneicon from './microphone.png';
 import micstopicon from './stopbutton.png';
+import { Container, Form, Col, Row, InputGroup, Button, FormControl } from "react-bootstrap";
 
 function Journal() {
   // Setting our component's initial state
   let [entries, setEntries] = useState([""])
   const [formObject, setFormObject] = useState({
+    date: "",
     title: "",
-    body: "",
-    date: ""
+    body: ""
   })
   // Load all journal entries and store them with setEntries
   useEffect(() => {
@@ -58,7 +58,7 @@ function Journal() {
           body: "",
           date: ""
         }))
-        .then(() => loadEntries())
+        .then(() => loadEntries(alert("Dream saved!")))
         .catch(err => console.log(err));
     }
   };
@@ -82,10 +82,10 @@ function Journal() {
   const microphoneRef = useRef(null);
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return (
-      <div className="mircophone-container-nav">
+      <Container className="mircophone-container-nav">
         Browser does not Support Speech Recognition.
-      </div>
-    );
+      </Container>
+    )
   }
   const handleListing = () => {
     setIsListening(true);
@@ -106,76 +106,92 @@ function Journal() {
   };
 
   return (
-    <div>
-      <div>
-        <Jumbotron >
-          <h1> Dream Journal </h1>
-        </Jumbotron>
-        <br />
-        <h3 className="dreamjournalh3">Write a Dream</h3>
-        <input className="dreamform journal-title"
-          onChange={handleInputChange}
-          name="title"
-          placeholder="Title (required)"
-          value={formObject.title}
-        />
-        <input type="date" name="date" className="dreamform journal-date" onChange={handleInputChange} value={formObject.title} />
-        <br />
-        <textarea className="dreamform journal-body"
-          onChange={handleInputChange}
-          name="body"
-          placeholder="What did you dream about?"
-          value={formObject.body}
-        />
+    <Container fluid>
+      <h1> Dream Journal </h1>
+      <Row>
+        <Col sm={4}>
+          <h4 className="dream-journal-header">Write a Dream</h4>
+          
+          <Form.Group as={Row} controlId="formHorizontalDate">
+            <Form.Label column sm={8}>
+              <h4>Date</h4>
+            </Form.Label>
+            <Col sm={8}>
+              <Form.Control required type="date" className="dreamform journal-date" name="date" onChange={handleInputChange} value={formObject.date} />
+            </Col>
+          </Form.Group>
 
-    <br />
-        <div className="microphone-wrapper-nav popup">
-          <div className="mircophone-container-journal">
-          <span className="popuptext" id="myPopup">{transcript}</span>
-            <div
-              className="microphone-icon-container-nav"
-              ref={microphoneRef}
-              onClick={handleListing}
-            >
-              <img src={microphoneicon} className="microphone-icon-nav" />
-            </div>
+          <Form.Group as={Row} controlId="formHorizontalPassword">
+            <Form.Label column sm={12}>
+              <h4>Title</h4>
+            </Form.Label>
+            <Col sm={12}>
+              <Form.Control className="dreamform journal-title" name="title" required type="text" onChange={handleInputChange} value={formObject.title} />
+            </Col>
+          </Form.Group>
 
-            {isListening && (
+          <Form.Group as={Row} controlId="formHorizontalPassword">
+            <Form.Label column sm={12}>
+              <h4>What was your dream about?</h4>
+            </Form.Label>
+            <Col sm={12}>
+              <Form.Control as="textarea" type="text" name="body" className="dreamform journal-body" onChange={handleInputChange} value={formObject.body} />
+            </Col>
+          </Form.Group>
+          <Row>
+            <Col sm={6}>
+              <div className="microphone-wrapper-nav popup">
+                <div className="mircophone-container-journal">
+                  <p className="microphone-label">Record Dream</p>
+                  <span className="popuptext" id="myPopup">{transcript}</span>
+                  <div
+                    className="microphone-icon-container-nav"
+                    ref={microphoneRef}
+                    onClick={handleListing} >
+                    <img src={microphoneicon} className="microphone-icon-nav" />
+                  </div>
 
-              <img src={micstopicon} className="microphone-stop-nav" onClick={stopHandle} />
+                  {isListening && (
+                    <img src={micstopicon} className="microphone-stop-nav" onClick={stopHandle} />
+                  )}
+                </div>
+              </div>
+            </Col>
+            <Col sm={6}>
+              <Button className="dream-submit"
+                disabled={!(formObject.body && formObject.title)}
+                onClick={handleFormSubmit}
+              > Save
+              </Button>
+            </Col>
+          </Row>
+        </Col>
 
-            )}
-          </div>
-        </div>
-        <br />
-        <button className="dream-submit"
-          disabled={!(formObject.body && formObject.title)}
-          onClick={handleFormSubmit}
-        >
-          Submit Dream
-            </button>
-      </div>
-
-
-      {entries.length ? (
-        <List>
-          <h3>Your Journal Entries</h3>
-          {entries.map(entry => (
-            <ListItem key={entry._id}>
-              <h2>{entry.title}</h2>
-              <br />
-              <p>{entry.body}</p>
-              <br />
-              <p>{dateFormat(entry.date).slice(0, 16)}</p>
-              <DeleteBtn onClick={() => deleteEntry(entry._id)} />
-            </ListItem>
-          ))}
-        </List>
-      ) : (
-        <h3>No dreams have been recorded yet</h3>
-      )}
-
-    </div>
+        <Col sm={8} >
+          {entries.length ? (
+            <Form.Group className="dream-list">
+                <List>
+              <h4 className="dream-list-header">Past Dreams</h4>
+              {entries.map(entry => (
+                <ListItem key={entry._id}>
+                  <h5>{entry.title}</h5>
+                  <br />
+                  <p>{entry.body}</p>
+                  <br />
+                  <p>{dateFormat(entry.date).slice(0, 16)}</p>
+                  <DeleteBtn onClick={() => deleteEntry(entry._id)} />
+                </ListItem>
+              ))}
+            </List>
+            </Form.Group>
+          
+          ) : (
+            <h4>No dreams have been recorded yet</h4>
+          )}
+          
+        </Col>
+      </Row>
+    </Container>
   )
 };
 export default Journal;
