@@ -27,12 +27,14 @@ router.post("/", async (req, res) => {
                     errorMessage: "Please enter the same password twice."
                 });
         const existingUser = await User.findOne({ email });
-        if (existingUser)
+        if (existingUser) {
+            // console.log(res)
             return res
                 .status(400)
-                .json({
+                .send({
                     errorMessage: "An account with this email already exists."
                 });
+            }
         //hash the password
         const salt = await bcrypt.genSalt();
         const passwordHash = await bcrypt.hash(password, salt)
@@ -73,13 +75,16 @@ router.post("/login", async (req, res) => {
                 .json({
                     errorMessage: "Please enter all required fields."
                 });
-        const existingUser = await User.findOne({ email }).populate("journals").populate("surveys")
-        if (!existingUser)
+
+        const existingUser = await (await User.findOne({ email }).populate("journals").populate("surveys"))
+        if (!existingUser){
+    
             return res
                 .status(401)
                 .json({
                     errorMessage: "Wrong email or password."
                 });
+            }
         const passwordCorrect = await bcrypt.compare(password, existingUser.passwordHash)
         if (!passwordCorrect)
             return res
