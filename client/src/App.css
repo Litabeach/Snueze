@@ -23,7 +23,10 @@ body {
   }
 }
 
-.App-header {
+.form-label {
+  font-family: KoHo;
+}
+/* .App-header {
   background-color: white;
   min-height: 100vh;
   display: flex;
@@ -32,10 +35,31 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+a {
+  background-color: transparent;
+  color: #ebe264 !important;
+  font-family: KoHo;
+  font-size: 1em;
+  font-weight:400;
+  text-align: center;
 }
 
-.App-link {
-  color: #fa6e6ee5;
+a:visited {
+  background-color: transparent !important;
+}
+
+
+a:hover {
+  background-color: transparent !important;
+  color: #fa6e6ee5 !important;
+}
+
+a:active {
+  background-color: transparent !important;
+  color: #fa6e6ee5 !important;
+
 }
 
 @keyframes App-logo-spin {
