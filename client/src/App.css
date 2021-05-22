@@ -4,7 +4,7 @@
 body {
   /* background-color: black;
   background-image: url(/img/gradient.jpg); */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: KoHo;
   color: white;
 }
 
@@ -35,7 +35,7 @@ body {
 }
 
 .App-link {
-  color: #61dafb;
+  color: #fa6e6ee5;
 }
 
 @keyframes App-logo-spin {
@@ -49,18 +49,39 @@ body {
 
 .wrapper {
   padding: 20px;
-  color: white;
+  color: #dfdfdf;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .btn {
+  font-family: KoHo;
   background-color: #ebe264;
-  border: 1px solid white;
+  border: 1px solid grey;
   color: rgb(0, 51, 44);
 }
 
+.btn:hover {
+  background-color: #fa6e6ee5;
+  color: black;
+}
+
+a {
+  color: #ebe264;
+}
+
+a:hover {
+  color: #fa6e6ee5;
+}
+
+.form-text {
+  font-family: KoHo;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: KoHo;
+}
  /* Stryling the text and giving it gradiant */
 
 
@@ -75,13 +96,13 @@ body {
 }
 
 .stars, .twinkling, .clouds {
-position:absolute;
+position: absolute;
 top:0;
 left:0;
 right:0;
 bottom:0;
 width: 100%;
-height:200vh;
+height: 200vh;
 display:block;
 z-index: 3;
 }

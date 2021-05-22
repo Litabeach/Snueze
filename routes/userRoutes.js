@@ -75,6 +75,7 @@ router.post("/", async (req, res) => {
     }
 });
 
+
 //login
 router.post("/login", async (req, res) => {
     try {
@@ -88,7 +89,7 @@ router.post("/login", async (req, res) => {
                     errorMessage: "Please enter all required fields."
                 });
 
-        const existingUser = await User.findOne({ email }).populate("surveys")
+        const existingUser = await (await User.findOne({ email }).populate("journals").populate("surveys"))
         if (!existingUser)
             return res
                 .status(401)
@@ -109,7 +110,8 @@ router.post("/login", async (req, res) => {
         const token = jwt.sign(
             {
                 user: existingUser._id,
-                surveys: existingUser.surveys
+                surveys: existingUser.surveys,
+                journals: existingUser.journals
             },
             process.env.JWT_SECRET,
             {
@@ -130,20 +132,6 @@ router.post("/login", async (req, res) => {
     }
 });
 
-router.get("/surveys", (req, res) => {
-    const authHeader = req.headers.cookie;
-    if (authHeader) {
-        const token = authHeader.split('=')[1];
-        jwt.verify(token, process.env.JWT_SECRET, (err, { surveys }) => {
-            if (err) {
-                return res.sendStatus(403);
-            }
-            res.json(surveys);
-        });
-    } else {
-        res.sendStatus(401);
-    }
-})
 
 //logout
 router.get("/logout", (req, res) => {
