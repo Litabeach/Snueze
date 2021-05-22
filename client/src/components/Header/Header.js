@@ -11,7 +11,7 @@ function Header() {
 
   return (
     <Navbar bg="#EB6864" expand="lg" sticky="top-0">
-        <Navbar.Brand href="/" className="d-inline-block">Snüze</Navbar.Brand>
+        <Navbar.Brand href="/" className="d-inline-block snuzeshade">Snüze</Navbar.Brand>
         {loggedIn === true && (
           <>
         <Navbar.Toggle aria-controls="navbar-nav"><span className="material-icons yellow">

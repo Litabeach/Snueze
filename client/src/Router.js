@@ -84,13 +84,16 @@ function ReactRouter() {
                             <Resources />
                         </Route>
                     }
+
                     {loggedIn === true &&
                         <Route>
                             <Header />
                             <NoMatch />
                         </Route>
                     }
+
                 </Switch>
+                 
                 <Footer />
             </div>
         </Router>

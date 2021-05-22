@@ -150,7 +150,7 @@ class Meditation extends Component {
     );
 
     return (
-      <div className="App">
+      <div className="MedApp">
         <div className="bg-overlay"></div>
         <div className="bg" style={{ backgroundImage: `url(${this.state.bgImg})` }} />
         <div className="time-menu">{timeOptions}</div>

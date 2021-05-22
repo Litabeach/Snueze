@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
 
 body {
-  background-color: black;
-  background-image: url(/img/gradient.jpg);
+  /* background-color: black;
+  background-image: url(/img/gradient.jpg); */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
 }
@@ -61,3 +61,45 @@ body {
   color: rgb(0, 51, 44);
 }
 
+ /* Stryling the text and giving it gradiant */
+
+
+@keyframes move-twink-back {
+ from {background-position:0 0;}
+ to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+ from {background-position:0 0;}
+ to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+width: 100%;
+height:200vh;
+display:block;
+z-index: 3;
+}
+
+.stars {
+background:#000 url(../src/stars.png) repeat top center;
+z-index:0;
+}
+
+.twinkling{
+background:transparent url(../src/twinkling.png) repeat top center;
+z-index:2;
+animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+ background:transparent url(../src/clouds.png) repeat top center;
+ z-index:2;
+ opacity: 1;
+ animation:move-clouds-back 200s linear infinite;
+}
