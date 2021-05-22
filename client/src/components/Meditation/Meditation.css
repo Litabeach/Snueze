@@ -22,18 +22,18 @@
   }
   
   .bg img {
-    width: 100%;
-    background-position: center bottom;
+    width: 100vh;
+    background-position: absolute;
   }
   
   .medBtn {
     background: none;
-    border: 2px #ffffffcc solid;
+    border: 5px  solid;
     padding: 16px;
     width: 130px;
     /* box-shadow: #000000fa 1px 1px 2px 0; */
     border-radius: 2%;
-    color: #fff;
+    color: #ebe264;
     font-size: 14px;
     transition: all 0.3s ease;
   }
@@ -41,10 +41,10 @@
   .medBtn:hover {
     box-shadow: none;
     color: #000;
-    background-color: #ffffffcc;
+    background-color: #ebe264;
     border: none;
-    width: 140px;
-    padding: 24px;
+    /* width: 140px; */
+    /* padding: 24px; */
     font-size: 17px;
   }
   
@@ -53,8 +53,8 @@
     color: #000;
     background-color: #ffffffcc;
     border: none;
-    width: 140px;
-    padding: 24px;
+    /* width: 140px; */
+    /* padding: 24px; */
     font-size: 17px;
   }
   
@@ -63,12 +63,12 @@
     color: #000;
     background-color: #ffffffcc;
     border: none;
-    width: 140px;
-    padding: 24px;
+    /* width: 140px; */
+    /* padding: 24px; */
     font-size: 17px;
   }
   
-  .App {
+  .MedApp {
     height: 100vh;
     display: flex;
     justify-content: space-evenly;
@@ -78,8 +78,9 @@
   .time-menu,
   .player-container,
   .audio-menu {
+    padding: 100px;
     flex: 1;
-    height: 90%;
+    height: 70%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -95,7 +96,7 @@
   
   .player-container .play,
   .player-container .audioSeek {
-    position: absolute;
+    position: center;
   }
   
   .player-container .timer {
@@ -121,7 +122,7 @@
     position: absolute;
     bottom: 0%;
   
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 32px;
     color: white;
   }
