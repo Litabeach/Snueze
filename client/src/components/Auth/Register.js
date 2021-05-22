@@ -26,8 +26,16 @@ function Register() {
                 passwordVerify,
             };
 
-            // await axios.post("http://localhost:3001/auth", registerData);
-            await axios.post("https://snueze.herokuapp.com/auth", registerData);
+            if (password.length < 8){
+                alert("password needs to be at least 8 characters")
+            }
+            if (password !== passwordVerify){
+                alert("passwords do not match")
+            }
+
+
+            await axios.post("http://localhost:3001/auth", registerData);
+            // await axios.post("https://snueze.herokuapp.com/auth", registerData);
             await getLoggedIn();
             history.push("/");
 
