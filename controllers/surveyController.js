@@ -6,15 +6,15 @@ const { isValidObjectId } = require("mongoose");
 module.exports = {
   findAll: function(req, res) {
     db.User
-      .find({
-      })
-      .sort({ date: 1 })
+      .find({})
+      .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
     if (req.cookies.userId) {
         db.User.find({"_id": req.cookies.userId}).then(data => db.Survey.find({"_id": {$in: data[0].surveys}})
+        .sort({ date: 1 })
         .then(data => res.json(data)))
     } else {
         res.sendStatus(401);
