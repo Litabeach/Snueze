@@ -2,13 +2,11 @@ const router = require("express").Router();
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken")
-
-
+// export const userId = React.createContext
 //register
 router.post("/", async (req, res) => {
     try {
         const { username, email, password, passwordVerify } = req.body;
-
         //validation
         if (!username || !email || !password || !passwordVerify)
             return res
@@ -16,21 +14,18 @@ router.post("/", async (req, res) => {
                 .json({
                     errorMessage: "Please enter all required fields."
                 });
-
         if (password.length < 8)
             return res
                 .status(400)
                 .json({
                     errorMessage: "Please enter a password with at least 8 characters."
                 });
-
         if (password !== passwordVerify)
             return res
                 .status(400)
                 .json({
                     errorMessage: "Please enter the same password twice."
                 });
-
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             // console.log(res)
@@ -43,14 +38,12 @@ router.post("/", async (req, res) => {
         //hash the password
         const salt = await bcrypt.genSalt();
         const passwordHash = await bcrypt.hash(password, salt)
-
         //create new user account 
         const newUser = new User({
             username, email, passwordHash
         })
         //save new user to database 
         const savedUser = await newUser.save()
-
         //sign the token
         const token = jwt.sign(
             {
@@ -61,27 +54,20 @@ router.post("/", async (req, res) => {
                 expiresIn: 7200
             }
         );
-
-
         //send the token in an HTTP only cookie
         res.cookie("token", token, {
             httpOnly: true
         })
             .send();
-
-
     } catch (err) {
         console.error(err)
         res.status(500).send()
     }
 });
-
-
 //login
 router.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;
-
         //validate 
         if (!email || !password)
             return res
@@ -106,7 +92,6 @@ router.post("/login", async (req, res) => {
                 .json({
                     errorMessage: "Wrong email or password."
                 });
-
         //sign the token
         //"expires in" is currently set to two hours
         const token = jwt.sign(
@@ -120,21 +105,17 @@ router.post("/login", async (req, res) => {
                 expiresIn: 7200
             }
         );
-
         //send the token in an HTTP only cookie
         res.cookie("token", token, {
             httpOnly: true
         })
-            .send();
-
-
+        res.cookie("userId", existingUser._id)
+        res.send();
     } catch (err) {
         console.error(err)
         res.status(500).send()
     }
 });
-
-
 //logout
 router.get("/logout", (req, res) => {
     res.cookie("token", "", {
@@ -143,20 +124,19 @@ router.get("/logout", (req, res) => {
     })
         .send();
 });
-
-
 router.get("/loggedIn", (req, res) => {
     try {
       const token = req.cookies.token;
       if (!token) return res.json(false);
-  
       jwt.verify(token, process.env.JWT_SECRET);
-  
       res.send(true);
     } catch (err) {
       res.json(false);
     }
   });
-
-
 module.exports = router;
+
+
+
+
+
