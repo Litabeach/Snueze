@@ -1,12 +1,14 @@
 .card {
+    height: 300px;
+    width: 300px;
     background-color: transparent !important;
     text-align: center;
-    margin: 50px;
+    margin: 10px;
 }
 
 .card-title {
-    color: white;
-    font-size: 2rem;
+    color: #eee;
+    font-size: 1.5rem;
     position: bottom;
 }
 
@@ -18,3 +20,15 @@
     flex-flow: row wrap;
     }
   } */
+
+  .cardImg{
+      height: 250px;
+      width: 250px;
+    
+  }
+
+  .cardImg:hover{
+
+opacity: .3;
+border: 1px solid #eee
+  }
