@@ -23,7 +23,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-sound": "^1.2.0",
-    "react-speech-recognition": "^3.8.0"
+    "react-speech-recognition": "^3.8.0",
+    "react-tooltip": "^4.2.19"
   },
   "scripts": {
     "start": "react-scripts start",

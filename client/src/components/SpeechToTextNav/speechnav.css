@@ -45,7 +45,12 @@
   width: 20px;
   height:  20px;
   margin-bottom: 10px;
-  
+}
+
+.microphone-icon-nav:hover {
+  width: 20px;
+  height:  20px;
+  margin-bottom: 10px;
 }
 
 
@@ -81,3 +86,5 @@
 .speech-transcript {
   color:black
 }
+
+
