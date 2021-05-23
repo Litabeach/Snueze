@@ -21,6 +21,10 @@ function Login() {
         password,
       };
 
+
+      if (!email || !password){
+        alert("Please enter you email and password")
+      }
       await axios.post("http://localhost:3001/auth/login", loginData);
       // await axios.post("https://snueze.herokuapp.com/auth/login", loginData);
       await getLoggedIn();
