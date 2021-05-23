@@ -7,7 +7,7 @@ function Stats() {
 
     return (
         <div>
-            <h1>Stats Page</h1>
+            <h1>Insights</h1>
             <Chart />
         </div>
     )

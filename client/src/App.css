@@ -71,12 +71,18 @@ a:active {
   }
 }
 
+.quoteDisplay {
+  padding: 0px 0px 25px 0px;
+  color: grey;
+}
+
 .wrapper {
   padding: 20px;
   color: #dfdfdf;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
 }
 
 .btn {
@@ -107,7 +113,7 @@ h1 {
     font-family: KoHo;
     color: #EBE264;
     text-align: center;
-    padding-bottom: 50px;
+    padding: 25px;
 }
  /* Stryling the text and giving it gradiant */
 

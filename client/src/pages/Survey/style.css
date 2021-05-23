@@ -1,8 +1,6 @@
 .quoteDisplay {
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: flex;
-    margin: 50px;
-    padding: 50px;
     text-align: center;
 }
 
@@ -13,7 +11,14 @@
 }
 
 .survey-form {
-    align-items: right;
+    align-items: center;
     display: flex;
     flex-direction: column;
+}
+
+.surveyCol {
+    margin: auto;
+    padding: 20px;
+    align-self: center;
+    display: block;
 }

@@ -107,50 +107,46 @@ function Survey() {
   // }
 
   return (
-    
+
     <Container fluid>
-    <h1>Record Your Sleep</h1>
-       
-      <Row>
-      <Col sm={6}>
-          <Form.Label id="quoteDisplay1" className="quoteDisplay">
-            "You miss 100% of the naps you don't take. — Unknown"
+      <Form.Label id="quoteDisplay1" className="quoteDisplay">
+        "You miss 100% of the naps you don't take. — Unknown"
        </Form.Label>
-       <Form.Label id="quoteDisplay2" className="quoteDisplay">
-       "No day is so bad it can't be fixed with a nap. — Carrie Snow, American Stand-Up Comic"
-       </Form.Label>
-       <Form.Label id="quoteDisplay3" className="quoteDisplay">
-       "I don't need a hairstylist, my pillow gives me a new hairstyle every morning. — Unknown"
-       </Form.Label>
-       <Form.Label id="quoteDisplay4" className="quoteDisplay">
-       "I already want to take a nap tomorrow. — Anonymous"
-       </Form.Label>
-        </Col>
-        <Col sm={3}>
-          <Form className="survey-form">
-            <Form.Group as={Row} controlId="formHorizontalDate">
-              <Form.Label column sm={6}>
+      <h1>Record Your Sleep</h1>
+      <Form className="survey-form">
+        <Row>
+          <Col sm={6} className="surveyCol">
+            <Form.Group as={Row} controlId="formDate">
+              <Form.Label column sm={12}>
                 <h4>Date</h4>
-    </Form.Label>
-              <Col sm={8}>
+              </Form.Label>
+              <Col sm={12}>
                 <Form.Control required type="date" name="date" onChange={changeHandler} />
               </Col>
             </Form.Group>
-
-            <Form.Group as={Row} controlId="formHorizontalPassword">
+            <Form.Group as={Row}  className="formBedtime">
               <Form.Label column sm={12}>
-                <h4>How many hours did you sleep last night?</h4>
-    </Form.Label>
-              <Col sm={4}>
+                <h4>Bedtime</h4>
+              </Form.Label>
+              <Col sm={12}>
+                <Form.Control required type="time" name="bedtime" onChange={changeHandler} />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row}  className="formHours">
+              <Form.Label column sm={12}>
+                <h4>Hours slept</h4>
+              </Form.Label>
+              <Col sm={12}>
                 <Form.Control min={0} max={24} name="hoursslept" required type="number" maxLength="2" onChange={changeHandler} />
               </Col>
             </Form.Group>
-
+          </Col>
+          <Col sm={6} className="surveyCol">
             <fieldset>
-              <Form.Group as={Row} onChange={changeHandler}>
+              <Form.Group as={Row} className="formQuality" onChange={changeHandler}>
                 <Form.Label as="legend" column sm={12} required>
                   <h4>How was your quality of sleep?</h4>
-      </Form.Label>
+                </Form.Label>
                 <Col sm={10}>
                   <Form.Check
                     type="radio"
@@ -191,10 +187,10 @@ function Survey() {
               </Form.Group>
             </fieldset>
             <fieldset>
-              <Form.Group as={Row} required onChange={changeHandler}>
+              <Form.Group as={Row} className="formMood" required onChange={changeHandler}>
                 <Form.Label as="legend" column sm={12}>
-                  <h4>How are you feeling right now?</h4>
-    </Form.Label>
+                  <h4>Your mood the next day</h4>
+                </Form.Label>
                 <Col sm={10}>
                   <Form.Check
                     type="radio"
@@ -234,34 +230,30 @@ function Survey() {
                 </Col>
               </Form.Group>
             </fieldset>
-
-            <Form.Group as={Row} controlId="formHorizontalPassword">
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12} className="surveyCol">
+            <Form.Group as={Row} controlId="formNotes">
               <Form.Label column sm={12}>
                 <h4>Was there anything about your day that may have affected your sleep? (optional)</h4>
-    </Form.Label>
+              </Form.Label>
               <Col sm={12}>
                 <Form.Control as="textarea" type="text" name="notes" onChange={changeHandler} />
               </Col>
             </Form.Group>
-
-            <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Form.Label column sm={12}>
-                <h4>When do you plan to go to bed tonight?</h4>
-    </Form.Label>
-              <Col sm={8}>
-                <Form.Control required type="time" name="bedtime" onChange={changeHandler} />
-              </Col>
-            </Form.Group>
-
-            <Form.Group as={Row}>
-              <Col sm={{ span: 10 }}>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12} className="surveyCol">
+            <Form.Group as={Row} className="formSubmit">
+              <Col sm={{ span: 12 }}>
                 <Button type="submit" onClick={handleFormSubmit}>Submit</Button>
               </Col>
             </Form.Group>
-          </Form>
-        </Col>
-        
-      </Row>
+          </Col>
+        </Row>
+      </Form>
     </Container>
   )
 
@@ -270,3 +262,12 @@ function Survey() {
 export default Survey;
 
 
+// <Form.Label id="quoteDisplay2" className="quoteDisplay">
+// "No day is so bad it can't be fixed with a nap. — Carrie Snow, American Stand-Up Comic"
+// </Form.Label>
+// <Form.Label id="quoteDisplay3" className="quoteDisplay">
+// "I don't need a hairstylist, my pillow gives me a new hairstyle every morning. — Unknown"
+// </Form.Label>
+// <Form.Label id="quoteDisplay4" className="quoteDisplay">
+// "I already want to take a nap tomorrow. — Anonymous"
+// </Form.Label>
