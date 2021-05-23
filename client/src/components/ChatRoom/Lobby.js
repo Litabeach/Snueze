@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Form } from 'react-bootstrap';
+import "./style.css"
 // This component doesn't need to store any data as it will pass all events up to its parent, the VideoChat component. 
 const Lobby = ({
   username,
@@ -9,8 +10,9 @@ const Lobby = ({
   handleSubmit,
 }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Enter a room</h2>
+    <Form onSubmit={handleSubmit}>
+    <Form.Group>
+    <h2>Enter a room</h2>
       <div>
         <label htmlFor="name">Name:</label>
         <input
@@ -21,8 +23,8 @@ const Lobby = ({
           required
         />
       </div>
-
-      <div>
+    </Form.Group>
+    <Form.Group>
         <label htmlFor="room">Room name:</label>
         <select id="room" value={roomName} onChange={handleRoomNameChange} required>
             <option selected> Select</option>
@@ -38,10 +40,11 @@ const Lobby = ({
           onChange={handleRoomNameChange}
           required
         /> */}
-      </div>
+      </Form.Group>
+      <Form.Group>
       <button type="submit">Submit</button>
-    </form>
+      </Form.Group>  
+    </Form>
   );
 };
-
 export default Lobby;

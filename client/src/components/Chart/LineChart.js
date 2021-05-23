@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
+import { MDBContainer } from "mdbreact"
 
 function LineChart() {
   const [hours, setHours] = useState([]);
@@ -163,11 +164,11 @@ const options = {
 } else {
 
   return (
-    <div style={{ backgroundColor: "white" }}>
+    <MDBContainer style={{ backgroundColor: "white" }}>
      
       <Line data={ data } options={ options }/>
       
-    </div>
+    </MDBContainer>
   );
 }
 }

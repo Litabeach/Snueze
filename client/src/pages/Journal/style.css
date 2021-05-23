@@ -10,13 +10,16 @@
   flex-direction: column;
 }
 
+.journal-form {
+  margin: auto;
+  padding: 20px;
+}
+
 .mircophone-container-journal {
   display: flex;
   padding: 10px;
-}
-
-.microphone-label {
-  padding: 10px;
+  margin: auto;
+  align-items: center;
 }
 
 .dream-journal-header {

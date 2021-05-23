@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Bubble } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
+import { MDBContainer } from "mdbreact"
 
 function BubbleChart() {
 
@@ -95,9 +96,9 @@ function BubbleChart() {
 } else {
 
   return (
-    <div className="App" style={{ backgroundColor: "white" }}>
+    <MDBContainer style={{ backgroundColor: "white" }}>
       <Bubble data={data} options={options} />
-    </div>
+    </MDBContainer>
   );
 }
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
+import {MDBContainer} from "mdbreact"
 
 function PieChart() {
     const [mood, setMood] = useState([]);
@@ -85,9 +86,9 @@ function PieChart() {
     } else {
 
   return (
-    <div className="App" style={{ marginTop: "200px" }}>
+    <MDBContainer style={{ marginTop: "200px" }}>
       <Pie data={data} />
-    </div>
+    </MDBContainer>
   );
     }
 }

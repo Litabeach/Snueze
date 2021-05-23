@@ -1,15 +1,17 @@
 import React from "react"
 import Chart from "../../components/Chart"
-
+import Quote from "../../components/Quote"
+import { Container } from 'react-bootstrap'
 
 function Stats() {
 
 
     return (
-        <div>
-            <h1>Stats Page</h1>
-            <Chart />
-        </div>
+        <Container>
+            <Quote />
+            <h1>Insights</h1>
+                <Chart />
+        </Container>
     )
 
 };
