@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
+import { MDBContainer } from "mdbreact"
 
 // sleep quality = 1)I was up all night 2) I tossed and turned 3) I wokeup a couple of times 4) I got a decent night's sleep 5) I slept like a baby.
 
@@ -90,9 +91,9 @@ function DoughnutChart() {
 } else {
 
   return (
-    <div className="App" style={{ marginTop: "200px" }}>
+    <MDBContainer style={{ marginTop: "200px" }}>
       <Doughnut data={data} />
-    </div>
+    </MDBContainer>
   );
 }
 }

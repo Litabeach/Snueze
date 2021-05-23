@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import LineChart from "./LineChart"
 import Doughnut from "./DoughnutChart"
 import Pie from "./PieChart"
@@ -6,12 +6,14 @@ import Bubble from "./Bubble"
 import surveyAPI from "../../utils/surveyAPI";
 import Notes from "../Notes"
 import { Link } from "react-router-dom"
+import { Form, Container, Row, Col } from 'react-bootstrap'
+import { MDBContainer } from 'mdbreact'
+import "./style.css"
 
 function Chart() {
     const [avgHours, setAvgHours] = useState();
     const [avgBedtime, setAvgBedtime] = useState();
     const [userRes, setRes] = useState();
-
 
     useEffect(() => {
         getHourData();
@@ -26,45 +28,46 @@ function Chart() {
             .then(res => {
 
                 if (!res.data) {
-                   setRes("none")
+                    setRes("none")
                 } else {
 
-                let data = res.data
-                data.forEach(entry => {
-                    hoursArray.push(entry.hoursslept)
-                    let time = entry.bedtime.replace(":", ".")
-                    let timeInt = parseInt(time)
-                    bedArray.push(timeInt)
-                  })
+                    let data = res.data
+                    data.forEach(entry => {
+                        hoursArray.push(entry.hoursslept)
+                        let time = entry.bedtime.replace(":", ".")
+                        let timeInt = parseInt(time)
+                        bedArray.push(timeInt)
+                    })
 
-                let bedDuplicates = []
+                    let bedDuplicates = []
 
-                const tempBedArray = [...bedArray].sort()
+                    const tempBedArray = [...bedArray].sort()
 
-                for (let i = 0; i < tempBedArray.length; i++) {
-                    if (tempBedArray[i + 1] === tempBedArray[i]) {
-                        bedDuplicates.push(tempBedArray[i])
+                    for (let i = 0; i < tempBedArray.length; i++) {
+                        if (tempBedArray[i + 1] === tempBedArray[i]) {
+                            bedDuplicates.push(tempBedArray[i])
+                        }
                     }
-                }
-                
 
-                let hourDuplicates = []
 
-                const tempArray = [...hoursArray].sort()
+                    let hourDuplicates = []
 
-                for (let i = 0; i < tempArray.length; i++) {
-                    if (tempArray[i + 1] === tempArray[i]) {
-                        hourDuplicates.push(tempArray[i])
+                    const tempArray = [...hoursArray].sort()
+
+                    for (let i = 0; i < tempArray.length; i++) {
+                        if (tempArray[i + 1] === tempArray[i]) {
+                            hourDuplicates.push(tempArray[i])
+                        }
                     }
+                    console.log(bedArray)
+                    console.log(bedDuplicates)
+                    setAvgBedtime(bedDuplicates);
+                    console.log(hourDuplicates)
+                    setAvgHours(hourDuplicates);
+                    setRes("success")
                 }
-                console.log(bedArray)
-                console.log(bedDuplicates)
-                setAvgBedtime(bedDuplicates);
-                console.log(hourDuplicates)
-                setAvgHours(hourDuplicates);
-                setRes("success")
-            }})
-        
+            })
+
     }
 
     if (!userRes) {
@@ -77,24 +80,52 @@ function Chart() {
         )
     } else if (userRes === "success") {
 
-    return (
-        <div>  
-            <h3>Insights</h3>
-            {avgHours <= 5 ?
-            <h4>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the second section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
-           : <h4>You are sleeping enough hours a night! Great work!</h4>}   
-           {avgBedtime >= 22 || avgBedtime <= 12 ?
-            <h4>Looks like you are going to bed late. Check out the first section of our <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
-            : <h4>Your bedtimes are right on time. Nighty night!</h4>}  
-            <Notes />
-            <Bubble />
-            <LineChart />
-            <Doughnut />
-            <Pie />
-        </div>
-           
-    )
-}
+        return (
+            <>
+                <Form className="insights">
+                <Form.Group className="insights-section">
+                    <Row>
+                        <Col sm={12}>
+                            {avgHours <= 5 ?
+                                <h4>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the second section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
+                                : <h4>You are sleeping enough hours a night! Great work!</h4>}
+                            {avgBedtime >= 22 || avgBedtime <= 12 ?
+                                <h4>Looks like you are going to bed late. Check out the first section of our <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
+                                : <h4>Your bedtimes are right on time. Nighty night!</h4>}
+                        </Col>
+                    </Row>
+                </Form.Group>
+                <MDBContainer className="chart-section">
+                    <Row>
+                        <Col sm={6}>
+                            <Bubble />
+                        </Col>
+                        <Col sm={6}>
+                            <LineChart />
+                        </Col>
+                    </Row>
+                </MDBContainer>
+                <MDBContainer className="chart-section">
+                    <Row>
+                        <Col sm={6}>
+                            <Doughnut />
+                        </Col>
+                        <Col sm={6}>
+                            <Pie />
+                        </Col>
+                    </Row>
+                </MDBContainer>
+                <Container className="notes-section">
+                    <Row>
+                        <Col sm={12}>
+                            <Notes />
+                        </Col>
+                    </Row>
+                </Container>
+                </Form>
+            </>
+        )
+    }
 };
 
 export default Chart;

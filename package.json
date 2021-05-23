@@ -40,6 +40,7 @@
     "if-env": "^1.0.4",
     "jquery": "^3.6.0",
     "jsonwebtoken": "^8.5.1",
+    "mdbreact": "^5.0.2",
     "moment": "^2.29.1",
     "mongoose": "^5.3.16",
     "popper.js": "^1.16.1",

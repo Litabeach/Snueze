@@ -4,12 +4,12 @@ const auth = require("../../utils/auth")
 
 // Matches with "/api/journal"
 router.route("/")
-  .get(auth, journalController.findAll)
+  .get(auth, journalController.findById)
   .post(auth, journalController.create);
 
 // Matches with "/api/journal/:id"
 router
-  .route("/user")
+  .route("/user:id")
   .get(auth, journalController.findById)
   .put(auth, journalController.update)
   .delete(auth, journalController.remove);

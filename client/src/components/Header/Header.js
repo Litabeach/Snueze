@@ -33,20 +33,20 @@ function Header() {
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link href="/journal" title="Dream">
+                  <Nav.Link href="/journal" title="Dreams">
                     Dream
               </Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link href="/stats" title="Analyze">
-                    Analyze
+                  <Nav.Link href="/stats" title="Insights">
+                    Insights
               </Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link href="/tools" title="Reflect">
-                    Reflect
+                  <Nav.Link href="/tools" title="Meditate">
+                    Meditate
               </Nav.Link>
                 </Nav.Item>
 
