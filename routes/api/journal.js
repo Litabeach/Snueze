@@ -9,7 +9,7 @@ router.route("/")
 
 // Matches with "/api/journal/:id"
 router
-  .route("/user")
+  .route("/user:id")
   .get(auth, journalController.findById)
   .put(auth, journalController.update)
   .delete(auth, journalController.remove);
