@@ -21,43 +21,43 @@ function Header() {
           <Nav className="mx-auto">
         
                 <Nav.Item>
-                  <Nav.Link href="/mybed" title="My Bed">
+                  <Nav.Link className ="navitem"  href="/mybed" title="My Bed">
                     My Bed
               </Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link href="/survey" title="Sleep">
+                  <Nav.Link className ="navitem" href="/survey" title="Sleep">
                     Sleep
               </Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link href="/journal" title="Dreams">
+                  <Nav.Link className ="navitem" href="/journal" title="Dreams">
                     Dream
               </Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link href="/stats" title="Insights">
+                  <Nav.Link className ="navitem"  href="/stats" title="Insights">
                     Insights
               </Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link href="/tools" title="Meditate">
+                  <Nav.Link className ="navitem"  href="/tools" title="Meditate">
                     Meditate
               </Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link href="/resources" title="Resources">
+                  <Nav.Link className ="navitem"  href="/resources" title="Resources">
                     Resources
               </Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link href="/community" title="Community">
+                  <Nav.Link className ="navitem"  href="/community" title="Community">
                     Community
               </Nav.Link>
                 </Nav.Item>

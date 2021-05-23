@@ -10,6 +10,10 @@
     color: #ebe264 !important;
 }
 
+.navitem {
+  font-weight: 600;
+}
+
 .material-icons.yellow { color: #ebe264; }
 
 @font-face {

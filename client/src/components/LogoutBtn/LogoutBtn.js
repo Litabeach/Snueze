@@ -18,7 +18,7 @@ function LogOutBtn() {
 
   return (
     <Nav.Item>
-      <Nav.Link title="Logout">
+      <Nav.Link className ="navitem"  title="Logout">
         <p onClick={logOut}>Logout</p>
       </Nav.Link>
     </Nav.Item>

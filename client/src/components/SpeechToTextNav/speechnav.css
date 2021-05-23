@@ -6,6 +6,7 @@
 
 .mircophone-container-nav {
   display: flex;
+  margin-left:10px;
 }
 
 .microphone-icon-container-nav {
@@ -45,6 +46,14 @@
   height:  20px;
   margin-bottom: 10px;
 }
+
+.microphone-icon-nav:hover {
+  width: 20px;
+  height:  20px;
+  margin-bottom: 10px;
+}
+
+
 .microphone-status-nav {
   font-size: 22px;
   margin-right: 20px;
@@ -77,3 +86,5 @@
 .speech-transcript {
   color:black
 }
+
+
