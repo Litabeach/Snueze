@@ -11,7 +11,7 @@ export default {
   },
   // Deletes the journal entry with the given id
   deleteEntry: function(id) {
-    return axios.delete("/api/journal/" + id);
+    return axios.delete("/api/journal/user" + id);
   },
   // Saves a journal entry to the database
   saveEntry: function(journalData) {

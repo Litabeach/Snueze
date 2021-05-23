@@ -12,7 +12,7 @@ import Quote from "../../components/Quote"
 
 function Journal() {
   // Setting our component's initial state
-  let [entries, setEntries] = useState([""])
+  const [entries, setEntries] = useState([""])
   const [formObject, setFormObject] = useState({
     date: "",
     title: "",

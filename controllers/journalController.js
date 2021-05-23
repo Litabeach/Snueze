@@ -11,37 +11,22 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-      const authHeader = req.headers.cookie;
-      if (authHeader) {
-          const token = authHeader.split('=')[1];
-          jwt.verify(token, process.env.JWT_SECRET, (err, { journals }) => {
-            console.log(journals[2])
-              if (err) {
-                  return res.sendStatus(403);
-              }
-              res.json(journals);
-          });
-      } else {
-          res.sendStatus(401);
-      }
+    if (req.cookies.userId) {
+      db.User.find({"_id": req.cookies.userId}).then(data => db.Journal.find({"_id": {$in: data[0].journals}})
+      .sort({ date: 1 })
+      .then(data => res.json(data)))
+  } else {
+      res.sendStatus(401);
+  }
     },
 
 create: function(req, res) {
   // console.log(req.body);
-  const authHeader = req.headers.cookie;
-  if (authHeader) {
-      const token = authHeader.split('=')[1];
-      jwt.verify(token, process.env.JWT_SECRET, (err, {user}) => {
-        // console.log({user})
-          if (err) {
-              return res.sendStatus(403);
-          }
-          db.Journal
-          .create(req.body)
-          .then(({id}) => db.User.findByIdAndUpdate(user, {$push: {journals: id}}))
-          .then(userDoc =>  res.json(userDoc))
-          .catch(err => {console.log(err); res.status(422).json(err)});
-      });
+  if (req.cookies.userId) {
+    db.Journal.create(req.body)
+    .then(({id}) => db.User.findByIdAndUpdate(req.cookies.userId, {$push: {journals: id}}))
+    .then(userDoc => res.json(userDoc))
+    .catch(err => {console.log(err); res.status(422).json(err)});  
   } else {
       res.sendStatus(401);
   }
