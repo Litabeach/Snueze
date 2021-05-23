@@ -1,0 +1,31 @@
+.insights-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    margin: auto;
+}
+
+.chart-section {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.notes-section {
+    padding: 25px;
+}
+
+.search-notes {
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+   
+}
+
+.insights {
+    margin: auto;
+    display: block;
+}

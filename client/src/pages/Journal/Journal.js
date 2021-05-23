@@ -8,6 +8,7 @@ import dateFormat from 'dateformat';
 import microphoneicon from './microphone.png';
 import micstopicon from './stopbutton.png';
 import { Container, Form, Col, Row, InputGroup, Button, FormControl } from "react-bootstrap";
+import Quote from "../../components/Quote"
 
 function Journal() {
   // Setting our component's initial state
@@ -107,16 +108,18 @@ function Journal() {
 
   return (
     <Container fluid>
-      <h1> Dream Journal </h1>
-      <Row>
+      <Quote />
+      <h1>Dream Journal</h1>
+      <Form className="journal-form">
+        <Row>
         <Col sm={4}>
-          <h4 className="dream-journal-header">Write a Dream</h4>
+          <h3 className="dream-journal-header">Write a Dream</h3>
           
           <Form.Group as={Row} controlId="formHorizontalDate">
-            <Form.Label column sm={8}>
+            <Form.Label column sm={12}>
               <h4>Date</h4>
             </Form.Label>
-            <Col sm={8}>
+            <Col sm={12}>
               <Form.Control required type="date" className="dreamform journal-date" name="date" onChange={handleInputChange} value={formObject.date} />
             </Col>
           </Form.Group>
@@ -142,7 +145,6 @@ function Journal() {
             <Col sm={6}>
               <div className="microphone-wrapper-nav popup">
                 <div className="mircophone-container-journal">
-                  <p className="microphone-label">Record Dream</p>
                   <span className="popuptext" id="myPopup">{transcript}</span>
                   <div
                     className="microphone-icon-container-nav"
@@ -150,7 +152,6 @@ function Journal() {
                     onClick={handleListing} >
                     <img src={microphoneicon} className="microphone-icon-nav" />
                   </div>
-
                   {isListening && (
                     <img src={micstopicon} className="microphone-stop-nav" onClick={stopHandle} />
                   )}
@@ -171,7 +172,7 @@ function Journal() {
           {entries.length ? (
             <Form.Group className="dream-list">
                 <List>
-              <h4 className="dream-list-header">Past Dreams</h4>
+              <h3 className="dream-list-header">Past Dreams</h3>
               {entries.map(entry => (
                 <ListItem key={entry._id}>
                   <h5>{entry.title}</h5>
@@ -191,6 +192,8 @@ function Journal() {
           
         </Col>
       </Row>
+      
+      </Form>
     </Container>
   )
 };
