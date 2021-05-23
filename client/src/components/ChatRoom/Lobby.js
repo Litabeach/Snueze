@@ -27,11 +27,17 @@ const Lobby = ({
     <Form.Group>
         <label htmlFor="room">Room name:</label>
         <select id="room" value={roomName} onChange={handleRoomNameChange} required>
-            <option selected> Select</option>
-            <option value="Room One">Room One</option>
-            <option value="Room Two">Room Two</option>
-            <option value="Room Three">Room Three</option>
-            <option value="Room Four">Room Four</option>
+            <option selected> Select Room</option>
+            <option value="Dream Team">Dream Team</option>
+            <option value="Insomniacs">Insomniacs</option>
+            <option value="Pillow Talk">Pillow Talk</option>
+            <option value="Pregnancy and Sleep">Pregnancy and Sleep</option>
+            <option value="Restless Leg Syndrome">Restless Leg Syndrome</option>
+            <option value="Sleep Aids">Sleep Aids</option>
+            <option value="Sleep Apnea">Sleep Apnea</option>
+            <option value="Sleep for Kids">Sleep for Kids</option>
+            <option value="Sleep Walking">Sleep Walking</option>
+            <option value="Too Much Sleep">Too Much Sleep</option>
           </select>
         {/* <input
           type="text"
