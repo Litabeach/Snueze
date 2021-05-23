@@ -69,13 +69,15 @@ router.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;
         //validate 
-        if (!email || !password)
+        if (!email || !password){
+            console.log(res)
             return res
                 .status(400)
-                .json({
+                .send({
                     errorMessage: "Please enter all required fields."
                 });
-
+              
+            }
         const existingUser = await (await User.findOne({ email }).populate("journals").populate("surveys"))
         if (!existingUser){
     
