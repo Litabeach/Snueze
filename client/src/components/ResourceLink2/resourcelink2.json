@@ -1,24 +1,24 @@
 [
     {
         "id": 11,
-        "title": "Narcolepsy Network",
-        "description": "Patient network for those who may be experiencing narcolepsy",
+        "title": "Mayo Clinic Sleep Medicine",
+        "description": "The Mayo Clinic is a trusted leader in worldwide healthcare, and sleep care is no different. If you are working hard, and your sleep isn't getting better, navigate here to get help from the best, including at home tests, sleep therapy, and nationwide sleep centers.",
         "image1": "https://cdn2.iconfinder.com/data/icons/people-79/100/Snore-01-512.png",
         "alt1": "icon of a person sleeping",
-        "link": "https://narcolepsynetwork.org/"
+        "link": "https://www.mayoclinic.org/departments-centers/sleep-medicine/sections/overview/ovc-20407454"
     },
     {
         "id": 9,
         "title": "Sleep Apnea Self-Evaluation",
-        "description": "This Harvard self-evaluation can be the first step to getting diagnosed with obstructive sleep apnea.",
+        "description": "Waking up multiple times a night and consistent isomnia are both signs of sleep apnea. If you think you might be suffering from sleep apnea, navigate here to take a Harvard created self-evaluation. Be sure to follow up with a medical professional afterwards.",
         "image1": "https://cdn2.iconfinder.com/data/icons/people-79/100/Snore-01-512.png",
         "alt1": "icon of a person sleeping",
         "link": "https://healthysleep.med.harvard.edu/sleep-apnea/diagnosing-osa/self-evaluation"
     },
     {
         "id": 9,
-        "title": "Sleep Disorders",
-        "description": "Resource from the American Academy of Sleep Medicine for the latest sleep disorder news and info",
+        "title": "AASM Sleep Disorders",
+        "description": "Sleep disorders come in all shapes and sizes. The American Academy of Sleep Medicine has compiled a comprehensive list of disorders, their causes, and their treatments. If you think your sleep is being affected by more than just personal habits, navigate here to follow your symptoms to an answer that works for you.",
         "image1": "https://cdn2.iconfinder.com/data/icons/people-79/100/Snore-01-512.png",
         "alt1": "icon of a person sleeping",
         "link": "https://sleepeducation.org/sleep-disorders/"

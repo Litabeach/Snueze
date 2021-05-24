@@ -18,7 +18,7 @@ class Resources extends Component {
       {/* <h1 className="resourceh1">Resources</h1> */}
       <Jumbotron>Resources</Jumbotron>
       <div className="resourcecontainer">
-        <h3 className="resourceh3">Resource Type #1</h3>
+        <h3 className="resourceh3">When You Can't Get To Sleep</h3>
         {this.state.resources.map(resources => (
           <div key={resources.id}>
             <br></br>
@@ -37,7 +37,7 @@ class Resources extends Component {
       </div>
 
       <div className="resourcecontainer">
-        <h3 className="resourceh3">Resource Type #2</h3>
+        <h3 className="resourceh3">When You Aren't Sleeping Enough Hours</h3>
         {this.state.resources2.map(resources2 => (
           <div key={resources2.id}>
             <br></br>

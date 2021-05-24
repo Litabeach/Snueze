@@ -101,10 +101,10 @@ function Chart() {
                         <Col sm={12}>
                             <h3>Based on your sleep statistics...</h3>
                             {avgHours <= 5 ?
-                                <h4>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the second section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
+                                <h4>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the "When You Aren't Sleeping Enough Hours" section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
                                 : <h4>You are sleeping enough hours a night! Great work!</h4>}
                             {avgBedtime >= 23 || avgBedtime <= 12 ?
-                                <h4>Looks like you are going to bed late. Check out the first section of our <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
+                                <h4>Looks like you are going to bed late. Check out the "When You Can't Get To Sleep" section of our <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
                                 : <h4>Your bedtimes are right on time. Nighty night!</h4>}
                         </Col>
                     </Row>
