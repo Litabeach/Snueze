@@ -1,7 +1,7 @@
 import { CollectionsBookmarkRounded, FormatBoldRounded } from "@material-ui/icons";
 import React, { useState } from "react";
 import surveyAPI from "../../utils/surveyAPI";
-import {Form, Button, Col} from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 
 function Notes() {
 
@@ -52,17 +52,17 @@ function Notes() {
 
 
     return (
-        <Form className="search-notes">
+        <>
             <h3>Search Past Notes</h3>
-            <Col sm={6}>
             <Form.Group className="form-group">
-            <Form.Control type="date" name="date" onChange={handleInputChange}></Form.Control>
+                <Form.Control type="date" name="date" onChange={handleInputChange}></Form.Control>
             </Form.Group>
-            </Col>
-            <Button className="submitBtn" onClick={() => handleNoteSearch(searchDate)}>Submit</Button>
-            <h5>{note}</h5>
-        </Form>
-    );
+                <Button className="btn" onClick={() => handleNoteSearch(searchDate)}>Search</Button>
+            <Form.Text>
+                {note}
+            </Form.Text>
+        </>
+    )
 }
 
 

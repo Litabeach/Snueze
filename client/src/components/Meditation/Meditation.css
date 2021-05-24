@@ -48,7 +48,7 @@ medBtn:hover {
   font-size: 17px;
 }
 
-medBtn .active {
+medBtn:active {
   box-shadow: none;
   color: #000;
   background-color: #ffffffcc;

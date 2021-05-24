@@ -6,7 +6,7 @@ import Bubble from "./Bubble"
 import surveyAPI from "../../utils/surveyAPI";
 import Notes from "../Notes"
 import { Link } from "react-router-dom"
-import { Form, Container, Row, Col } from 'react-bootstrap'
+import { Form, Row, Col } from 'react-bootstrap'
 import { MDBContainer } from 'mdbreact'
 import "./style.css"
 
@@ -26,7 +26,7 @@ function Chart() {
 
         surveyAPI.getSurveys()
             .then(res => {
-                
+
                 if (res.data.length === 0) {
                     setRes("none")
                 } else {
@@ -68,19 +68,18 @@ function Chart() {
                     if (bedDuplicates.length === 0) {
                         setAvgBedtime(bedArray)
                     } else {
-                        setAvgBedtime(bedDuplicates); 
+                        setAvgBedtime(bedDuplicates);
                     }
 
                     if (hourDuplicates.length === 0) {
                         setAvgHours(hoursArray)
                     } else {
-                        setAvgHours(hourDuplicates); 
+                        setAvgHours(hourDuplicates);
                     }
-                    
+
                     setRes("success")
                 }
             })
-
     }
 
     if (!userRes) {
@@ -89,53 +88,57 @@ function Chart() {
         )
     } else if (userRes === "none") {
         return (
-            <h3>No data to show yet! Keep tracking your sleep to see your patterns and insights to your sleep behavior.</h3>
+            <h5>No data to show yet! Keep tracking your sleep to see your patterns and insights to your sleep behavior.</h5>
         )
     } else if (userRes === "success") {
 
         return (
             <>
-                <Form className="insights">
-                <Form.Group className="insights-section">
-                    <Row>
-                        <Col sm={12}>
-                            {avgHours <= 5 ?
-                                <h4>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the second section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
-                                : <h4>You are sleeping enough hours a night! Great work!</h4>}
-                            {avgBedtime >= 23 || avgBedtime <= 12 ?
-                                <h4>Looks like you are going to bed late. Check out the first section of our <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
-                                : <h4>Your bedtimes are right on time. Nighty night!</h4>}
-                        </Col>
-                    </Row>
-                </Form.Group>
-                <MDBContainer className="chart-section">
-                    <Row>
-                        <Col sm={6}>
-                            <Bubble />
-                        </Col>
-                        <Col sm={6}>
-                            <LineChart />
-                        </Col>
-                    </Row>
-                </MDBContainer>
-                <MDBContainer className="chart-section">
-                    <Row>
-                        <Col sm={6}>
-                            <Doughnut />
-                        </Col>
-                        <Col sm={6}>
-                            <Pie />
-                        </Col>
-                    </Row>
-                </MDBContainer>
-                <Container className="notes-section">
-                    <Row>
-                        <Col sm={12}>
-                            <Notes />
-                        </Col>
-                    </Row>
-                </Container>
-                </Form>
+            <Form className="insights">
+                <Row>
+                    <Col sm={12}>
+                        <Form.Group as={Row} className="insights-section">
+                            <Col sm={6}>
+                                <Form.Text>
+                                {avgHours <= 5 ?
+                                    <p>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the second section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</p>
+                                    : <p>You are sleeping enough hours a night! Great work!</p>}
+                                {avgBedtime >= 23 || avgBedtime <= 12 ?
+                                    <p>Looks like you are going to bed late. Check out the first section of our <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</p>
+                                    : <p>Your bedtimes are right on time. Nighty night!</p>}
+                                </Form.Text>
+                            </Col>
+                        </Form.Group>
+                        <Form.Group className="search-section">
+                            <Col sm={6}>
+                                <Notes />
+                            </Col>
+                        </Form.Group>
+                    </Col>
+                    <Col sm={12}>
+                        <MDBContainer  className="charts-top-section">
+                            <Row>
+                                <Col sm={12}>
+                                    <Bubble />
+                                </Col>
+                                <Col sm={12}>
+                                    <LineChart />
+                                </Col>
+                            </Row>
+                        </MDBContainer>
+                        <MDBContainer className="charts-bottom-section">
+                            <Row>
+                                <Col sm={6}>
+                                    <Doughnut />
+                                </Col>
+                                <Col sm={6}>
+                                    <Pie />
+                                </Col>
+                            </Row>
+                        </MDBContainer>
+                    </Col>
+                </Row>
+            </Form>
             </>
         )
     }
