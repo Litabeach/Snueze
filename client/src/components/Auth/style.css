@@ -9,3 +9,39 @@
     flex-direction: column;
     align-items: center;
 }
+
+#formBasicEmail{
+    width: 250px;
+}
+
+#formBasicPassword{
+    width: 250px;
+}
+
+#login-to-register{
+    margin-top: 15px;
+}
+
+/* iPhone X and Xs Max */
+@media only screen 
+    and (min-device-width: 375px) 
+    and (min-device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+    /* styles */
+    #login-phrase{
+        margin-left: 10px;
+        text-align: center;
+    }
+}
+
+/*  iPhone 6, 6S, 7 and 8  */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    #login-phrase{
+        margin-left: 10px;
+        text-align: center;
+    }
+}
