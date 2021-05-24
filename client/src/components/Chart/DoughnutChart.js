@@ -84,6 +84,19 @@ function DoughnutChart() {
     }]
   };
 
+  const options = {
+    plugins: {
+      title: {
+          display: true,
+          text: "Your Sleep Quality",
+          fullSize: true,
+          font: {
+            size: 30,
+          }
+        }
+    },
+  }
+
   if (userRes === "none") {
     return (
        <p></p>
@@ -92,7 +105,7 @@ function DoughnutChart() {
 
   return (
     <MDBContainer style={{ marginTop: "200px" }}>
-      <Doughnut data={data} />
+      <Doughnut data={data} options={options}/>
     </MDBContainer>
   );
 }
