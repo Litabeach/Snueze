@@ -10,15 +10,11 @@
     align-items: center;
 }
 
-#formBasicEmail{
+#formBasicName, #formBasicEmail, #formBasicPassword, #formBasicCreatePassword, #formBasicVerifyPassword{
     width: 250px;
 }
 
-#formBasicPassword{
-    width: 250px;
-}
-
-#login-to-register{
+#register-to-login, #login-to-register{
     margin-top: 15px;
 }
 

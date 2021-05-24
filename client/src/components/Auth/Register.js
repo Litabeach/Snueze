@@ -71,7 +71,7 @@ function Register() {
                     Register
         </Button>
 
-                <Form.Text className="text-muted">
+                <Form.Text className="text-muted" id="register-to-login">
                     Already registered? Click <a href="/">here</a> to login.
         </Form.Text>
             </Form>
