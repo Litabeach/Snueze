@@ -139,6 +139,16 @@ const data =
 // }
 
 const options = {
+  plugins: {
+    title: {
+        display: true,
+        text: "Your Hours Slept",
+        fullSize: true,
+        font: {
+          size: 30
+        }
+      }
+  },
   scales: {
     x: {
       title: {

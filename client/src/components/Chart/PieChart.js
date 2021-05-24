@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
 import {MDBContainer} from "mdbreact"
+import { PlayCircleFilledWhite } from "@material-ui/icons";
 
 function PieChart() {
     const [mood, setMood] = useState([]);
@@ -69,15 +70,28 @@ function PieChart() {
           label: 'My First Dataset',
           data: mood,
           backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)',
-            'rgb(72, 151, 33)',
-            'rgb(209, 20, 10)',
+            'rgb(223, 134, 153)',
+            'rgb(55, 126, 173)',
+            'rgb(87, 110, 202)',
+            'rgb(107, 75, 163)',
+            'rgb(165, 84, 116)',
           ],
           hoverOffset: 4
         }]
       };
+
+      const options = {
+        plugins: {
+          title: {
+              display: true,
+              text: "Your Mood Patterns",
+              fullSize: true,
+              font: {
+                size: 30,
+              }
+            }
+        },
+      }
 
       if (userRes === "none") {
         return (
@@ -87,7 +101,9 @@ function PieChart() {
 
   return (
     <MDBContainer style={{ marginTop: "200px" }}>
-      <Pie  id="chart4" data={data} />
+
+      <Pie  id="chart4" data={data} options={options} />
+
     </MDBContainer>
   );
     }

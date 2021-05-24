@@ -94,12 +94,15 @@ function Chart() {
 
         return (
             <>
+
+    
             <Form className="insights">
                 <Row>
                     <Col sm={12}>
                         <Form.Group as={Row} className="insights-section">
                             <Col sm={6}>
                                 <Form.Text>
+                               <h3>Based on your sleep statistics...</h3>
                                 {avgHours <= 5 ?
                                     <p>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the second section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</p>
                                     : <p>You are sleeping enough hours a night! Great work!</p>}
@@ -139,6 +142,7 @@ function Chart() {
                     </Col>
                 </Row>
             </Form>
+
             </>
         )
     }

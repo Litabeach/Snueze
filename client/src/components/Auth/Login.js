@@ -43,6 +43,8 @@ function Login() {
     
     <Container>
         <Form className="login-form mx-auto" onSubmit={login}>
+        <h1 className="d-inline-block snuzeshade" style={{margin: "0 auto", textAlign: "center"}}>Snüze</h1>
+        <h3>Your best bet for better sleep.</h3>
         <h5>Log into Snüze</h5>
     <Form.Group controlId="formBasicEmail">
         <Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />

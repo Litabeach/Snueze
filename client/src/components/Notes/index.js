@@ -54,6 +54,10 @@ function Notes() {
     return (
         <>
             <h3>Search Past Notes</h3>
+
+            <h4>Wondering what else might have happened to you on a particular day? Search below to see notes you've kept.</h4>
+           
+
             <Form.Group className="form-group">
                 <Form.Control type="date" name="date" onChange={handleInputChange}></Form.Control>
             </Form.Group>

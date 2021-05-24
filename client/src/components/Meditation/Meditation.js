@@ -4,6 +4,7 @@ import StyledProgressbar from './StyledProgressbar'
 import Sound from 'react-sound'
 import SoundComponent from './playSound'
 import StyledSlider from './StyledSlider';
+import { Container} from "react-bootstrap";
 import 'react-circular-progressbar/dist/styles.css'
 import './Meditation.css'
 
@@ -150,6 +151,11 @@ class Meditation extends Component {
     );
 
     return (
+      <div>
+        <Container>
+      <h1>Meditate</h1>
+      <h4>Sometimes we need a little help drifting off to dreamland. Choose your duration on the left, and your sleep sounds on the right, then hit play to drift off into a comfortable sleep.</h4>
+      </Container>
       <div className="App">
         <div className="bg-overlay"></div>
         <div className="bg" style={{ backgroundImage: `url(${this.state.bgImg})` }} />
@@ -176,6 +182,7 @@ class Meditation extends Component {
         <div className="audio-menu">
           {audioOptions}
         </div>
+      </div>
       </div>
     )
   }
