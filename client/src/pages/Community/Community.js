@@ -5,9 +5,11 @@ const Community = () => {
   return (
    
      
-      <main>
+      <main className="container">
         <h1>Community Chat Rooms</h1> 
+        <div className="chatCopyDiv">
         <h4>Sometimes all we're really looking for is a person to connect with over our problems or someone to go to for advice. Utilize our collection of chat rooms to talk to real people who are going through the same thing as you.</h4>
+        </div>
         <ChatRoom />
         <h3>Chat Rooms</h3>
           <h4>Dream Team</h4>

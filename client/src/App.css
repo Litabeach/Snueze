@@ -37,6 +37,13 @@ body {
   color: white;
 } */
 
+.chatCopyDiv {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .container {
   width: 100%;
 }
