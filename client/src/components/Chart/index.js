@@ -26,8 +26,8 @@ function Chart() {
 
         surveyAPI.getSurveys()
             .then(res => {
-
-                if (!res.data) {
+                
+                if (res.data.length === 0) {
                     setRes("none")
                 } else {
 
@@ -59,11 +59,24 @@ function Chart() {
                             hourDuplicates.push(tempArray[i])
                         }
                     }
-                    console.log(bedArray)
-                    console.log(bedDuplicates)
-                    setAvgBedtime(bedDuplicates);
-                    console.log(hourDuplicates)
-                    setAvgHours(hourDuplicates);
+
+                    console.log("bed array" + bedArray)
+                    console.log("bed duplicates" + bedDuplicates)
+                    console.log("hours array" + hoursArray)
+                    console.log("hours duplicates" + hourDuplicates)
+
+                    if (bedDuplicates.length === 0) {
+                        setAvgBedtime(bedArray)
+                    } else {
+                        setAvgBedtime(bedDuplicates); 
+                    }
+
+                    if (hourDuplicates.length === 0) {
+                        setAvgHours(hoursArray)
+                    } else {
+                        setAvgHours(hourDuplicates); 
+                    }
+                    
                     setRes("success")
                 }
             })
@@ -89,7 +102,7 @@ function Chart() {
                             {avgHours <= 5 ?
                                 <h4>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the second section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
                                 : <h4>You are sleeping enough hours a night! Great work!</h4>}
-                            {avgBedtime >= 22 || avgBedtime <= 12 ?
+                            {avgBedtime >= 23 || avgBedtime <= 12 ?
                                 <h4>Looks like you are going to bed late. Check out the first section of our <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h4>
                                 : <h4>Your bedtimes are right on time. Nighty night!</h4>}
                         </Col>
