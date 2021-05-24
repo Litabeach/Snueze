@@ -6,12 +6,21 @@
     font-family: Pattaya !important;
     font-size: 4rem !important;
     padding: 7px 14px;
-    text-align: center;
+    text-align: left;
     color: #ebe264 !important;
 }
 
-.navitem {
+.navbar {
+  padding: 10px 15px 10px 15px;
+}
+
+.basic-navbar-nav {
+  align-items: right;
+}
+
+.nav-item {
   font-weight: 600;
+  text-align: right;
 }
 
 .material-icons.yellow { color: #ebe264; }

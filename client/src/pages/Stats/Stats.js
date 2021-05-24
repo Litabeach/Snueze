@@ -7,7 +7,7 @@ function Stats() {
 
 
     return (
-        <Container>
+        <Container fluid>
             <Quote />
             <h1>Insights</h1>
                 <Chart />

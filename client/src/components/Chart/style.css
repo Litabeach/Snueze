@@ -1,31 +1,41 @@
+.insights {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
 .insights-section {
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding: 25px;
     margin: auto;
+
 }
 
-.chart-section {
-    margin: auto;
+.search-section {
     display: flex;
     flex-direction: column;
-    position: relative;
+    margin: auto;
+    align-items: center;
+
 }
 
-.notes-section {
-    padding: 25px;
-}
-
-.search-notes {
-    text-align: center !important;
+.charts-top-section {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center !important;
-   
+    margin-top: 40px;
+    
 }
 
-.insights {
+.charts-bottom-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     margin: auto;
-    display: block;
+}
+
+#chart2 {
+    margin-top: 45px;
 }
