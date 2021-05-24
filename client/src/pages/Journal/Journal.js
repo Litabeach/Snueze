@@ -8,7 +8,8 @@ import dateFormat from 'dateformat';
 import microphoneicon from './microphone.png';
 import micstopicon from './stopbutton.png';
 import { Container, Form, Col, Row, ListGroup, Button } from "react-bootstrap";
-import Quote from "../../components/Quote"
+import Quote from "../../components/Quote";
+import ReactTooltip2 from 'react-tooltip';
 
 function Journal() {
   // Setting our component's initial state
@@ -110,7 +111,7 @@ function Journal() {
     <Container fluid>
       <Quote />
       <h1>Dream Journal</h1>
-      <h4>Dreams are direct links to our emotional and mental health. Keep and review your dream journal here. We promise we won't peek.</h4>
+      <h4 className="dream-h4">Dreams are direct links to our emotional and mental health. Keep and review your dream journal here. We promise we won't peek.</h4>
       <Form className="journal-form">
         <Row>
           <Col sm={12} className="journalCol">
@@ -142,6 +143,7 @@ function Journal() {
             <Row>
               <Col sm={5}>
                 <Form.Group as={Row} className="microphone">
+                <span data-tip="Click me to use speech to text. Say 'reset' to clear your thoughts, or hit the stop button when you are finished">
                   <div className="microphone-wrapper-nav popup">
                     <div className="mircophone-container-journal">
                       <span className="popuptext" id="myPopup">{transcript}</span>
@@ -156,6 +158,7 @@ function Journal() {
                       )}
                     </div>
                   </div>
+                  </span>
                 </Form.Group>
               </Col>
               <Col sm={6}>

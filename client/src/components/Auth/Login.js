@@ -22,13 +22,13 @@ function Login() {
       };
 
 
-      // if (!email){
-      //   alert("Please enter you email address")
-      // }
+      if (!email){
+        alert("Please enter you email address")
+      }
 
-      // if (!password){
-      //   alert("Please enter you password")
-      // }
+      if (!password){
+        alert("Please enter you password")
+      }
       
       await axios.post("http://localhost:3001/auth/login", loginData);
       // await axios.post("https://snueze.herokuapp.com/auth/login", loginData);
@@ -42,10 +42,10 @@ function Login() {
 
   return (
     
-    <Container>
+    <Container className="login">
         <Form className="login-form mx-auto" onSubmit={login}>
         <h1 className="d-inline-block snuzeshade" style={{margin: "0 auto", textAlign: "center"}}>Snüze</h1>
-        <h3>Your best bet for better sleep.</h3>
+        <h3 id="login-phrase">Your best bet for better sleep.</h3>
         <h5>Log into Snüze</h5>
     <Form.Group controlId="formBasicEmail">
         <Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />
@@ -56,7 +56,7 @@ function Login() {
     <Button type="submit">
         Login
     </Button>
-    <Form.Text className="text-muted">
+    <Form.Text className="text-muted" id="login-to-register">
         Don't have a login? Click <a href="/register">here</a> to register.
         </Form.Text>
     </Form>

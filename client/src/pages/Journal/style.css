@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+.dream-h4 {
+  margin-left:20%;
+  margin-bottom: 2%;
+  width: 60%;
+  text-align: center;
+}
+
 .journal-form {
   align-items: center;
   display: flex;
@@ -94,6 +101,10 @@
   display: none;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
+}
+
+#formBody{
+  height:200px
 }
 
 /* Add animation (fade in the popup) */
