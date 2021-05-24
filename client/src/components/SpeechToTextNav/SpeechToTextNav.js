@@ -43,9 +43,8 @@ function SpeechToTextNav() {
 
   };
   return (
-
     <div className="microphone-wrapper-nav">
-      <p data-tip="Click me to navigate with speech. Say 'open community' to try it out!">
+      <span data-tip="Click me to navigate with speech. Say 'open community' to try it out!">
         <div className="mircophone-container-nav">
           <div
             className="microphone-icon-container-nav"
@@ -54,16 +53,12 @@ function SpeechToTextNav() {
           >
             <img src="img/microphone.png" className="microphone-icon-nav" />
           </div>
-
           {isListening && (
-
             <img src="img/stopbutton.png" className="microphone-stop-nav" onClick={stopHandle} />
-
           )}
         </div>
-      </p>
       <ReactTooltip />
-
+      </span>
     </div>
   );
 }

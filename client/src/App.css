@@ -5,11 +5,6 @@ body {
   /* background-color: black;
   background-image: url(/img/gradient.jpg); */
   font-family: KoHo;
-  color: white;
-}
-
-.wrapper {
-  padding: 20px;
   color: #dfdfdf;
   display: flex;
   flex-direction: column;
@@ -81,6 +76,8 @@ a:active {
   background-color: #ebe264;
   border: 1px solid grey;
   color: rgb(0, 51, 44);
+  padding: 10px 20px 10px 20px;
+  font-size: 1.5rem;
 }
 
 .btn:hover {
@@ -141,6 +138,7 @@ min-width: 100vw;
 min-height: 100vh; 
 display:block;
 z-index: 3;
+width: 100%;
 }
 
 .stars {
