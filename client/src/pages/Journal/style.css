@@ -4,15 +4,10 @@
   box-sizing: border-box;
 }
 
-.container-fluid {
+.journal-form {
   align-items: center;
   display: flex;
-  flex-direction: column;
-}
-
-.journal-form {
-  margin: auto;
-  padding: 20px;
+  flex-direction: column;  
 }
 
 .mircophone-container-journal {
@@ -27,18 +22,16 @@
   margin-bottom: 30px;
 }
 
-.dream-list-header {
+.formSubmit {
+  margin: 15px 0px 15px 0px;
+  align-items: center;
   text-align: center;
 }
 
-.dream-list {
-  display: flex;
-  flex-direction: column;
-  min-width: 400px !important;
-}
-
-.dream-submit {
-  margin: 15px 0px 15px 0px;
+.dream-list-header {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 100px;
 }
 
 .speech-transcript {
@@ -51,6 +44,7 @@
   width: 50%;
   height: 150px;
 }
+
 
 
 /* Popup container */
