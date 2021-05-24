@@ -176,7 +176,7 @@ const options = {
   return (
     <MDBContainer style={{ backgroundColor: "white" }}>
      
-      <Line data={ data } options={ options }/>
+      <Line id="chart2" data={ data } options={ options }/>
       
     </MDBContainer>
   );

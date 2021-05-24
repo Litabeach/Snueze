@@ -105,7 +105,9 @@ function DoughnutChart() {
 
   return (
     <MDBContainer style={{ marginTop: "200px" }}>
-      <Doughnut data={data} options={options}/>
+
+      <Doughnut  id="chart3" data={data} options={options} />
+
     </MDBContainer>
   );
 }

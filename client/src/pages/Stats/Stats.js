@@ -7,7 +7,7 @@ function Stats() {
 
 
     return (
-        <Container>
+        <Container fluid>
             <Quote />
             <h1>Insights</h1>
             <h4>Remember that questionnaire you've been filling out? Here you can look at your sleep patterns and statistics, revisit notes from previous days, and find insights to stop whatever's in the way of you getting your good night's rest.</h4>

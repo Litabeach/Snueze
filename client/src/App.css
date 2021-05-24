@@ -37,6 +37,10 @@ body {
   color: white;
 } */
 
+.container {
+  width: 100%;
+}
+
 a {
   background-color: transparent;
   color: #ebe264 !important;

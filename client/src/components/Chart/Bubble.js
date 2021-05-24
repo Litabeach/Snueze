@@ -107,7 +107,7 @@ function BubbleChart() {
 
   return (
     <MDBContainer style={{ backgroundColor: "white" }}>
-      <Bubble data={data} options={options} />
+      <Bubble id="chart1" data={data} options={options} />
     </MDBContainer>
   );
 }

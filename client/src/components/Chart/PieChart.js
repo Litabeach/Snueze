@@ -101,7 +101,9 @@ function PieChart() {
 
   return (
     <MDBContainer style={{ marginTop: "200px" }}>
-      <Pie data={data} options={options}/>
+
+      <Pie  id="chart4" data={data} options={options} />
+
     </MDBContainer>
   );
     }
