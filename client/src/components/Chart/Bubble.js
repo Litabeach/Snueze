@@ -72,11 +72,13 @@ function BubbleChart() {
       },
 
       y: {
+        beginAtZero: true,
         title: {
           display: true,
           text: "Bed Time in Military Time",
         },
         ticks: {
+          stepSize: 1,
           callback: function (value, index, values) {
 
             return yLabels[value];
