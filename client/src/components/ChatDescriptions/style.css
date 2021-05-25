@@ -1,0 +1,32 @@
+.chatTitle {
+    background-color: transparent;
+    border: transparent;
+    color: white;
+    cursor:pointer;
+    margin-bottom: -15px;
+    margin-top: -15px;
+}
+
+.chatBody{
+    margin-bottom: -5px;
+    margin-top: -5px;
+}
+
+.chat-desc-div {
+   margin-left: 700px;
+   margin-top:-220px;
+   height: 300px;
+   overflow: move;
+   overflow-x: hidden;
+   width: 400px;
+   padding-left:5px;
+}
+
+
+.chat-h3 {
+    margin-left: 410px;
+}
+/* .chat-desc-item{
+    display:inline-block;
+
+} */
