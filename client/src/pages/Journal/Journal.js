@@ -134,33 +134,30 @@ function Journal() {
             </Form.Group>
             <Form.Group as={Row} controlId="formBody">
               <Form.Label column sm={12}>
-                <h4>What was your dream about?</h4>
+                <h4>What was your dream about?   
+                  <span data-tip="Click me to use speech to text. Say 'reset' to clear your thoughts, or hit the stop button when you are finished">
+                    <div className="microphone-wrapper-nav popup">
+                      <div className="mircophone-container-journal">
+                        <span className="popuptext" id="myPopup">{transcript}</span>
+                        <div
+                          className="microphone-icon-container-nav"
+                          ref={microphoneRef}
+                          onClick={handleListing} >
+                          <img src={microphoneicon} className="microphone-icon-nav" />
+                        </div>
+                        {isListening && (
+                          <img src={micstopicon} className="microphone-stop-nav" onClick={stopHandle} />
+                        )}
+                      </div>
+                    </div>
+                  </span>
+                </h4>
               </Form.Label>
               <Col sm={12}>
                 <Form.Control required as="textarea" type="text" name="body" className="dreamform journal-body" onChange={handleInputChange} value={formObject.body} />
               </Col>
             </Form.Group>
             <Row>
-              <Col sm={5}>
-                <Form.Group as={Row} className="microphone">
-                <span data-tip="Click me to use speech to text. Say 'reset' to clear your thoughts, or hit the stop button when you are finished">
-                  <div className="microphone-wrapper-nav popup">
-                    <div className="mircophone-container-journal">
-                      <span className="popuptext" id="myPopup">{transcript}</span>
-                      <div
-                        className="microphone-icon-container-nav"
-                        ref={microphoneRef}
-                        onClick={handleListing} >
-                        <img src={microphoneicon} className="microphone-icon-nav" />
-                      </div>
-                      {isListening && (
-                        <img src={micstopicon} className="microphone-stop-nav" onClick={stopHandle} />
-                      )}
-                    </div>
-                  </div>
-                  </span>
-                </Form.Group>
-              </Col>
               <Col sm={6}>
                 <Form.Group as={Row} className="formSubmit">
                   <Button type="submit"
@@ -171,31 +168,31 @@ function Journal() {
               </Col>
             </Row>
           </Col>
-      
+
           <Col sm={4} className="dreamsCol">
-              <h3 className="dream-list-header">Past Dreams</h3>
-                {entries.length ? (
-                 <List>
-                 <Accordion>
-                 {entries.map((entry, index) => (
-                   <ListGroup.Item key={entry.id}>
-                   <Accordion.Toggle as={ListGroup} eventKey={index +1}>
-                     <h6 className="list-title"> {entry.title} </h6>
-                     </Accordion.Toggle>
-                     <Accordion.Collapse eventKey={index +1}>
-                     <p className="list-date">{dateFormat(entry.date).slice(0, 16)}</p>
-                     </Accordion.Collapse>
-                     <Accordion.Collapse eventKey={index +1}>
-                     <p className="list-body">{entry.body} 
-                     <DeleteBtn onClick={() => deleteEntry(entry._id)} /></p>
-                     </Accordion.Collapse>
-                   </ListGroup.Item>
-                 ))}
-                 </Accordion>
-                 </List>
-                ) : (
-                  <h4>No dreams have been recorded yet</h4>
-                )}
+            <h3 className="dream-list-header">Past Dreams</h3>
+            {entries.length ? (
+              <List>
+                <Accordion>
+                  {entries.map((entry, index) => (
+                    <ListGroup.Item key={entry.id}>
+                      <Accordion.Toggle as={ListGroup} eventKey={index + 1}>
+                        <h6 className="list-title"> {entry.title} </h6>
+                      </Accordion.Toggle>
+                      <Accordion.Collapse eventKey={index + 1}>
+                        <p className="list-date">{dateFormat(entry.date).slice(0, 16)}</p>
+                      </Accordion.Collapse>
+                      <Accordion.Collapse eventKey={index + 1}>
+                        <p className="list-body">{entry.body}
+                          <DeleteBtn onClick={() => deleteEntry(entry._id)} /></p>
+                      </Accordion.Collapse>
+                    </ListGroup.Item>
+                  ))}
+                </Accordion>
+              </List>
+            ) : (
+              <h4>No dreams have been recorded yet</h4>
+            )}
           </Col>
         </Row>
       </Form>
