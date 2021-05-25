@@ -184,7 +184,7 @@ function Journal() {
                         <h6 className="list-title">{entry.title}</h6>
                         <p className="list-body">{entry.body}</p>
                         <p className="list-date">{dateFormat(entry.date).slice(0, 16)}</p>
-                        <DeleteBtn onClick={() => deleteEntry(entry.id)} />
+                        <DeleteBtn onClick={() => deleteEntry(entry._id)} />
                       </ListGroup.Item>
                     ))}
                   </List>
