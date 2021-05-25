@@ -85,6 +85,7 @@ function DoughnutChart() {
 
   //customization for chart
   const options = {
+    mainAspectRatio: false,
     plugins: {
       title: {
           display: true,
@@ -107,7 +108,7 @@ function DoughnutChart() {
   return (
     <MDBContainer style={{ marginTop: "200px" }}>
 
-      <Doughnut  id="chart3" data={data} options={options} />
+      <Doughnut  id="chart3" data={data} width={"500%"} options={options} />
 
     </MDBContainer>
   );

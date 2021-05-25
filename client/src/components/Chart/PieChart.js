@@ -75,10 +75,12 @@ function PieChart() {
             'rgb(165, 84, 116)',
           ],
           hoverOffset: 4
-        }]
+        }],
+        borderWidth: 20
       };
 
       const options = {
+        mainAspectRatio: false,
         plugins: {
           title: {
               display: true,
@@ -101,7 +103,7 @@ function PieChart() {
   return (
     <MDBContainer style={{ marginTop: "200px" }}>
 
-      <Pie  id="chart4" data={data} options={options} />
+      <Pie  id="chart4" data={data} width={"500%"} options={options} />
 
     </MDBContainer>
   );

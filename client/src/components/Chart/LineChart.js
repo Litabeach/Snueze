@@ -98,7 +98,7 @@ const options = {
   }
 
   //conditional render logic
-  if (userRes == "none") {
+  if (userRes === "none") {
     return (
         <p></p>
     )
