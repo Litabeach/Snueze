@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 .dream-h4 {
   margin-left:20%;
@@ -50,6 +46,17 @@
   line-height: 1em;
   width: 50%;
   height: 150px;
+}
+
+.dreamsCol{
+  width:600px;
+  margin-left:8%;
+  bottom: 100px;
+}
+
+.list-title{
+  text-align: center;
+  cursor: pointer;
 }
 
 

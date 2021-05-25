@@ -9,7 +9,7 @@ import microphoneicon from './microphone.png';
 import micstopicon from './stopbutton.png';
 import { Container, Form, Col, Row, ListGroup, Button } from "react-bootstrap";
 import Quote from "../../components/Quote";
-import ReactTooltip2 from 'react-tooltip';
+import Accordion from 'react-bootstrap/Accordion';
 
 function Journal() {
   // Setting our component's initial state
@@ -114,7 +114,7 @@ function Journal() {
       <h4 className="dream-h4">Dreams are direct links to our emotional and mental health. Keep and review your dream journal here. We promise we won't peek.</h4>
       <Form className="journal-form">
         <Row>
-          <Col sm={12} className="journalCol">
+          <Col sm={7} className="journalCol">
 
             <Form.Group as={Row} controlId="formDate">
               <Form.Label column sm={12}>
@@ -171,28 +171,31 @@ function Journal() {
               </Col>
             </Row>
           </Col>
-        </Row>
-        <Row>
-          <Col sm={12} className="dreamsCol">
-            <Form.Group>
+      
+          <Col sm={4} className="dreamsCol">
               <h3 className="dream-list-header">Past Dreams</h3>
-              <Col sm={12}>
                 {entries.length ? (
-                  <List>
-                    {entries.map(entry => (
-                      <ListGroup.Item key={entry.id}>
-                        <h6 className="list-title">{entry.title}</h6>
-                        <p className="list-body">{entry.body}</p>
-                        <p className="list-date">{dateFormat(entry.date).slice(0, 16)}</p>
-                        <DeleteBtn onClick={() => deleteEntry(entry._id)} />
-                      </ListGroup.Item>
-                    ))}
-                  </List>
+                 <List>
+                 <Accordion>
+                 {entries.map((entry, index) => (
+                   <ListGroup.Item key={entry.id}>
+                   <Accordion.Toggle as={ListGroup} eventKey={index +1}>
+                     <h6 className="list-title"> {entry.title} </h6>
+                     </Accordion.Toggle>
+                     <Accordion.Collapse eventKey={index +1}>
+                     <p className="list-date">{dateFormat(entry.date).slice(0, 16)}</p>
+                     </Accordion.Collapse>
+                     <Accordion.Collapse eventKey={index +1}>
+                     <p className="list-body">{entry.body} 
+                     <DeleteBtn onClick={() => deleteEntry(entry._id)} /></p>
+                     </Accordion.Collapse>
+                   </ListGroup.Item>
+                 ))}
+                 </Accordion>
+                 </List>
                 ) : (
                   <h4>No dreams have been recorded yet</h4>
                 )}
-              </Col>
-            </Form.Group>
           </Col>
         </Row>
       </Form>
