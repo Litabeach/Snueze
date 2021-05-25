@@ -2,7 +2,7 @@
   max-height: 545px;
   border: 1px #DDDDDD solid;
   border-radius: 4px;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 
