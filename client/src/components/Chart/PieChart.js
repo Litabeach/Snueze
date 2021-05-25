@@ -12,7 +12,7 @@ function PieChart() {
       getChartData();
     }, [])
   
-  
+  // gets user surveys and saves to array for chart
     function getChartData() {
       let moodArray = []
 
@@ -24,9 +24,8 @@ function PieChart() {
 
       surveyAPI.getSurveys()
       .then(res => {
-        console.log(res.data)
-
-        if (!res.data) {
+        
+      if (!res.data) {
           setRes("none")
        } else {
   
@@ -53,7 +52,6 @@ function PieChart() {
         })
   
         moodArray.push(one, two, three, four, five);
-        console.log(moodArray)
         setMood(moodArray)
       }})
         .catch(err => console.log(err));
@@ -93,6 +91,7 @@ function PieChart() {
         },
       }
 
+//Conditional render logic
       if (userRes === "none") {
         return (
            <p></p>

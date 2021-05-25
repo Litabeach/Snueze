@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
-import { MDBContainer } from "mdbreact"
+import { MDBContainer } from "mdbreact";
 
 function LineChart() {
   const [hours, setHours] = useState([]);
@@ -13,6 +13,7 @@ function LineChart() {
     getChartData();
   }, [])
 
+  // finds user surveys from db and saves relative values to arrays
   function getChartData() {
     let hoursArray = []
     let dateArray = [];
@@ -20,9 +21,8 @@ function LineChart() {
 
     surveyAPI.getSurveys()
     .then(res => {
-      console.log(res.data)
-
-      if (!res.data) {
+      
+    if (!res.data) {
         setRes("none")
      } else {
 
@@ -36,8 +36,6 @@ function LineChart() {
         hoursArray.push(entry.hoursslept)
       })
 
-      console.log(hoursArray)
-      console.log(eightArray)
       setHours(hoursArray);
       setDates(dateArray);
       setRec(eightArray);
@@ -45,7 +43,7 @@ function LineChart() {
       .catch(err => console.log(err));
   }
 
-  
+//set data for chart
 const data = 
 { 
   labels: dates,
@@ -69,75 +67,7 @@ const data =
   
 };
 
-//attempts to customize. Keeping until charts are finalized.
-
-// const testLine = new Chart (React.createRef(), {
-//   type: "line",
-//   data: data,
-//   options: options,
-//   legend: legend,
-// })
-
-// const yLabels = {
-//   0 : 'newb', 2 : 'codecademy', 4 : 'code-school', 6 : 'bootcamp', 8 : 'junior-dev',
-//   10 : 'mid-level', 12 : 'senior-dev', 14 : 'full-stack-dev', 16 : 'famous-speaker',
-//   18 : 'unicorn', 20 : 'harambe'
-// }
-
-// const options = {
-//   scales: {
-//       yAxes: [{
-//           ticks: {
-//               callback: function(value, index, values ) {
-//                   // for a value (tick) equals to 8
-//                   return yLabels[value];
-//                   // 'junior-dev' will be returned instead and displayed on your chart
-//               }
-//           }
-//       }]
-//   }
-// }
-// const legend = {
-//   display: true,
-//   position: "bottom",
-//   labels: {
-//     fontColor: "#323130",
-//     fontSize: 14
-//   }
-// };
-
-// const options = {
-//   title: {
-//     display: true,
-//     text: "Chart Title"
-//   },
-//   scales: {
-//     yAxes: [
-//       {
-//         ticks: {
-//           suggestedMin: 0,
-//           suggestedMax: 100
-//         }
-//       }
-//     ]
-//   }
-// };
-// const options = {
-//   scales: {
-//     xAxes: [{
-//       scaleLabel: {
-//         display: true,
-//         labelString: 'Years'
-//       }
-//     }],
-//     yAxes: [{
-//       ticks: {
-//           beginAtZero: true,
-//       }
-//     }],
-//   }     
-// }
-
+// chart customization
 const options = {
   plugins: {
     title: {
@@ -167,6 +97,7 @@ const options = {
     }
   }
 
+  //conditional render logic
   if (userRes == "none") {
     return (
         <p></p>
@@ -174,7 +105,7 @@ const options = {
 } else {
 
   return (
-    <MDBContainer style={{ backgroundColor: "white" }}>
+    <MDBContainer>
      
       <Line id="chart2" data={ data } options={ options }/>
       

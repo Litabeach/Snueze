@@ -3,7 +3,7 @@ import { Doughnut } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
 import { MDBContainer } from "mdbreact"
 
-// sleep quality = 1)I was up all night 2) I tossed and turned 3) I wokeup a couple of times 4) I got a decent night's sleep 5) I slept like a baby.
+
 
 function DoughnutChart() {
 
@@ -15,6 +15,7 @@ function DoughnutChart() {
     getChartData();
   }, [])
 
+  // gets user surveys and saves to array
   function getChartData() {
     let qualityArray = []
 
@@ -26,8 +27,7 @@ function DoughnutChart() {
 
     surveyAPI.getSurveys()
       .then(res => {
-        console.log(res.data)
-
+      
         if (!res.data) {
           setRes("none")
        } else {
@@ -55,13 +55,12 @@ function DoughnutChart() {
         })
 
         qualityArray.push(one, two, three, four, five);
-        console.log(qualityArray)
         setQuality(qualityArray)
       }})
       .catch(err => console.log(err));
   }
 
-
+// data for chart
   const data = {
     labels: [
       "I was up all night",
@@ -84,6 +83,7 @@ function DoughnutChart() {
     }]
   };
 
+  //customization for chart
   const options = {
     plugins: {
       title: {
@@ -97,6 +97,7 @@ function DoughnutChart() {
     },
   }
 
+  //conditional render
   if (userRes === "none") {
     return (
        <p></p>

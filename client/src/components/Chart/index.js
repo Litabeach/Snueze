@@ -17,7 +17,6 @@ function Chart() {
 
     useEffect(() => {
         getHourData();
-        // getBedData();
     }, [])
 
     function getHourData() {
@@ -81,6 +80,32 @@ function Chart() {
                 }
             })
     }
+    // function mostFrequent(arr, n)
+    // {
+           
+    //     // Sort the array
+    //     arr.sort();
+           
+    //     // find the max frequency using linear
+    //     // traversal
+    //     let max_count = 1, res = arr[0];
+    //     let curr_count = 1;
+           
+    //     for (let i = 1; i < n; i++)
+    //     {
+    //         if (arr[i] == arr[i - 1])
+    //             curr_count++;
+    //         else
+    //         {
+    //             if (curr_count > max_count)
+    //             {
+    //                 max_count = curr_count;
+    //                 res = arr[i - 1];
+    //             }
+    //             curr_count = 1;
+    //         }
+    //     }
+
 
     if (!userRes) {
         return (
@@ -118,7 +143,7 @@ function Chart() {
                             </Col>
                         </Form.Group>
                     </Col>
-                    <Col sm={12}>
+                    <Col sm={12} style={{ backgroundColor: "white" }}>
                         <MDBContainer  className="charts-top-section">
                             <Row>
                                 <Col sm={12}>
