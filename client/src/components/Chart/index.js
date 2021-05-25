@@ -39,36 +39,13 @@ function Chart() {
                     })
 
                     let maxHour = mostFrequent(hoursArray, hoursArray.length)
-                    console.log(maxHour)
+                    console.log("maxhour" + maxHour)
 
                     let maxBed= mostFrequent(bedArray, bedArray.length)
-                    console.log(maxBed)
-
-                    let bedDuplicates = []
-
-                    const tempBedArray = [...bedArray].sort()
-
-                    for (let i = 0; i < tempBedArray.length; i++) {
-                        if (tempBedArray[i + 1] === tempBedArray[i]) {
-                            bedDuplicates.push(tempBedArray[i])
-                        }
-                    }
-
-
-                    let hourDuplicates = []
-
-                    const tempArray = [...hoursArray].sort()
-
-                    for (let i = 0; i < tempArray.length; i++) {
-                        if (tempArray[i + 1] === tempArray[i]) {
-                            hourDuplicates.push(tempArray[i])
-                        }
-                    }
+                    console.log("maxbed" + maxBed)
 
                     console.log("bed array" + bedArray)
-                    console.log("bed duplicates" + bedDuplicates)
                     console.log("hours array" + hoursArray)
-                    console.log("hours duplicates" + hourDuplicates)
 
                     if (!maxBed) {
                         setAvgBedtime(bedArray)
@@ -169,8 +146,6 @@ function Chart() {
                                     <LineChart />
                                 </Col>
                             </Row>
-                        {/* </MDBContainer>
-                        <MDBContainer className="charts-bottom-section"> */}
                             <Row>
                                 <Col sm={6}>
                                     <Doughnut />
