@@ -1,4 +1,4 @@
-import { CollectionsBookmarkRounded, FormatBoldRounded } from "@material-ui/icons";
+
 import React, { useState } from "react";
 import surveyAPI from "../../utils/surveyAPI";
 import { Form, Button } from 'react-bootstrap'
@@ -63,7 +63,7 @@ function Notes() {
             </Form.Group>
                 <Button className="btn" onClick={() => handleNoteSearch(searchDate)}>Search</Button>
             <Form.Text>
-                {note}
+                <h5>{note}</h5>
             </Form.Text>
         </>
     )

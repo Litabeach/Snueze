@@ -12,7 +12,7 @@ function PieChart() {
       getChartData();
     }, [])
   
-  
+  // gets user surveys and saves to array for chart
     function getChartData() {
       let moodArray = []
 
@@ -24,9 +24,8 @@ function PieChart() {
 
       surveyAPI.getSurveys()
       .then(res => {
-        console.log(res.data)
-
-        if (!res.data) {
+        
+      if (!res.data) {
           setRes("none")
        } else {
   
@@ -53,7 +52,6 @@ function PieChart() {
         })
   
         moodArray.push(one, two, three, four, five);
-        console.log(moodArray)
         setMood(moodArray)
       }})
         .catch(err => console.log(err));
@@ -77,10 +75,12 @@ function PieChart() {
             'rgb(165, 84, 116)',
           ],
           hoverOffset: 4
-        }]
+        }],
+        borderWidth: 20
       };
 
       const options = {
+        mainAspectRatio: false,
         plugins: {
           title: {
               display: true,
@@ -93,6 +93,7 @@ function PieChart() {
         },
       }
 
+//Conditional render logic
       if (userRes === "none") {
         return (
            <p></p>
@@ -102,7 +103,7 @@ function PieChart() {
   return (
     <MDBContainer style={{ marginTop: "200px" }}>
 
-      <Pie  id="chart4" data={data} options={options} />
+      <Pie  id="chart4" data={data} width={"500%"} options={options} />
 
     </MDBContainer>
   );
