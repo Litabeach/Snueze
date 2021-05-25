@@ -10,9 +10,9 @@ const Lobby = ({
   handleSubmit,
 }) => {
   return (
-    <Form onSubmit={handleSubmit}>
-    <Form.Group>
-    <h2>Enter a room</h2>
+    <Form className="chatForm" onSubmit={handleSubmit}>
+    <Form.Group className="chatForm">
+    <h2 className="chatH2">Enter a room</h2>
       <div>
         <label htmlFor="name">Name:</label>
         <input
@@ -24,7 +24,7 @@ const Lobby = ({
         />
       </div>
     </Form.Group>
-    <Form.Group>
+    <Form.Group className="chatForm">
         <label htmlFor="room">Room name:</label>
         <select id="room" value={roomName} onChange={handleRoomNameChange} required>
             <option selected> Select Room</option>
@@ -47,8 +47,8 @@ const Lobby = ({
           required
         /> */}
       </Form.Group>
-      <Form.Group>
-      <button type="submit">Submit</button>
+      <Form.Group className="chatForm">
+      <button className="chatButton" type="submit">Submit</button>
       </Form.Group>  
     </Form>
   );
