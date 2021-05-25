@@ -134,3 +134,55 @@
     opacity: 1;
   }
 }
+
+
+@media screen and (max-width: 375px){
+  .dreamsCol, .journalCol {
+    width:325px;
+    margin-left:25px;
+  }
+
+  .dreamsCol{
+    margin-top:10px;
+  }
+
+  .dream-h4{
+    width:300px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 414px){
+  .dreamsCol, .journalCol {
+    width:350px;
+    margin-left:35px;
+  }
+
+  .dreamsCol{
+    margin-top:10px;
+  }
+
+  .dream-h4{
+    width:325px;
+    margin-left: 25px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 375px), (max-height: 667){
+  .dreamsCol, .journalCol {
+    width:325px;
+    margin-left:25px;
+  }
+
+  .dreamsCol{
+    margin-top:10px;
+  }
+
+  .dream-h4{
+    width:300px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+}

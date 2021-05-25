@@ -1,0 +1,54 @@
+[
+  
+    {
+        "id": 1,
+        "title": "Dream Team",
+        "description": "Dying to know why you keep dreaming about bees? Did you have a crazy dream and just need to share it? Head to this room to share all your stories from Dreamland. "
+    },
+    {
+        "id": 2,
+        "title": "Insomniacs",
+        "description": "A general chat room for those who just can't get to sleep. "
+    },
+    {
+        "id": 3,
+        "title": "Pillow Talk",
+        "description": "Is your pillow not working for you? Do you have a pillow you LOVE that has made all the difference in your sleep? Share it here!"
+    },
+    {
+        "id": 4,
+        "title": "Pregnancy and Sleep",
+        "description": "Preganancy affects your whole life. Including your sleep cycle. This room is for mamas who want a good night's sleep. "
+    },
+    {
+        "id": 5,
+        "title": "Restless Leg Syndrome",
+        "description": "Enter this room to connect with others suffering from Restless Leg Syndrome."
+    },
+    {
+        "id": 6,
+        "title": "Sleep Aids",
+        "description": "Melatonin? Unisom? Herbal teas? Enter this room to chat about which sleep aids work for you."
+    },
+    {
+        "id": 7,
+        "title": "Sleep Apnea",
+        "description": "Suffering from sleep apnea? Enter here to chat about equipment, struggles, and successes. "
+    },
+    {
+        "id": 8,
+        "title": "Sleep for Kids",
+        "description": "Enter this room to chat about the challenges of our little ones' sleep schedules. "
+    },
+    {
+        "id": 9,
+        "title": "Sleep Walking ",
+        "description": "A chat room for those suffering from sleepwalking and its possible remedies."
+    },
+    {
+        "id": 10,
+        "title": "Too Much Sleep ",
+        "description": "Are you sleeping too long at night? Enter here to chat with others who find it hard to get out of bed. "
+    }
+
+]
