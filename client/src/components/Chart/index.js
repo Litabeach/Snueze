@@ -17,7 +17,6 @@ function Chart() {
 
     useEffect(() => {
         getHourData();
-        // getBedData();
     }, [])
 
     function getHourData() {
@@ -39,48 +38,64 @@ function Chart() {
                         bedArray.push(timeInt)
                     })
 
-                    let bedDuplicates = []
+                    let maxHour = mostFrequent(hoursArray, hoursArray.length)
+                    console.log("maxhour" + maxHour)
 
-                    const tempBedArray = [...bedArray].sort()
-
-                    for (let i = 0; i < tempBedArray.length; i++) {
-                        if (tempBedArray[i + 1] === tempBedArray[i]) {
-                            bedDuplicates.push(tempBedArray[i])
-                        }
-                    }
-
-
-                    let hourDuplicates = []
-
-                    const tempArray = [...hoursArray].sort()
-
-                    for (let i = 0; i < tempArray.length; i++) {
-                        if (tempArray[i + 1] === tempArray[i]) {
-                            hourDuplicates.push(tempArray[i])
-                        }
-                    }
+                    let maxBed= mostFrequent(bedArray, bedArray.length)
+                    console.log("maxbed" + maxBed)
 
                     console.log("bed array" + bedArray)
-                    console.log("bed duplicates" + bedDuplicates)
                     console.log("hours array" + hoursArray)
-                    console.log("hours duplicates" + hourDuplicates)
 
-                    if (bedDuplicates.length === 0) {
+                    if (!maxBed) {
                         setAvgBedtime(bedArray)
                     } else {
-                        setAvgBedtime(bedDuplicates);
+                        setAvgBedtime(maxBed);
                     }
 
-                    if (hourDuplicates.length === 0) {
+                    if (!maxHour) {
                         setAvgHours(hoursArray)
                     } else {
-                        setAvgHours(hourDuplicates);
+                        setAvgHours(maxHour);
                     }
 
                     setRes("success")
                 }
             })
     }
+
+    function mostFrequent(arr, n)
+    {
+           
+        // Sort the array
+        arr.sort();
+           
+        // find the max frequency using linear
+        // traversal
+        let max_count = 1, res = arr[0];
+        let curr_count = 1;
+           
+        for (let i = 1; i < n; i++)
+        {
+            if (arr[i] == arr[i - 1])
+                curr_count++;
+            else
+            {
+                if (curr_count > max_count)
+                {
+                    max_count = curr_count;
+                    res = arr[i - 1];
+                }
+                curr_count = 1;
+            }
+        }
+    if (curr_count > max_count)
+    {
+        max_count = curr_count;
+        res = arr[n - 1];
+    }
+    return res;
+}
 
     if (!userRes) {
         return (
@@ -103,15 +118,18 @@ function Chart() {
                             <Col sm={6}>
                                 <Form.Text>
                                <h3>Based on your sleep statistics...</h3>
+                               <div className="returnInsights">
                                 {avgHours <= 5 ?
-                                    <p>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the second section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</p>
-                                    : <p>You are sleeping enough hours a night! Great work!</p>}
+                                    <h5>Tossing and turning? Your stats indicate you aren't sleeping enough hours. Check out the "When You Aren't Sleeping Enough Hours" section of our  <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h5>
+                                    : <h5>You are sleeping enough hours a night! Great work!</h5>}
                                 {avgBedtime >= 23 || avgBedtime <= 12 ?
-                                    <p>Looks like you are going to bed late. Check out the first section of our <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</p>
-                                    : <p>Your bedtimes are right on time. Nighty night!</p>}
+                                    <h5>Looks like you are going to bed late. Check out the "When You Can't Get To Sleep" section of our <Link to="/resources">Resource</Link> page for some helpful links for your sleep health!</h5>
+                                    : <h5>Your bedtimes are right on time. Nighty night!</h5>}
+                                </div>
                                 </Form.Text>
                             </Col>
                         </Form.Group>
+                        <br></br>
                         <Form.Group className="search-section">
                             <Col sm={6}>
                                 <Notes />
@@ -128,8 +146,6 @@ function Chart() {
                                     <LineChart />
                                 </Col>
                             </Row>
-                        </MDBContainer>
-                        <MDBContainer className="charts-bottom-section">
                             <Row>
                                 <Col sm={6}>
                                     <Doughnut />

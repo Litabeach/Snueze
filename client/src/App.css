@@ -64,12 +64,14 @@ a:visited {
 
 a:hover {
   background-color: transparent !important;
-  color: #fa6e6ee5 !important;
+  /* color: #fa6e6ee5 !important; */
+  color: #614bc5e5 !important
 }
 
 a:active {
   background-color: transparent !important;
-  color: #fa6e6ee5 !important;
+  /* color: #fa6e6ee5 !important; */
+  color: #614bc5e5 !important
 
 }
 
@@ -92,7 +94,8 @@ a:active {
 }
 
 .btn:hover {
-  background-color: #fa6e6ee5;
+  /* background-color: #fa6e6ee5; */
+  background-color: #614bc5e5; 
   color: black;
 }
 

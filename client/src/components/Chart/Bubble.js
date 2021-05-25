@@ -13,12 +13,12 @@ function BubbleChart() {
     getChartData();
   }, [])
 
+  //get user surveys and save to arrays
   function getChartData() {
     let bubbleArray = []
 
     surveyAPI.getSurveys()
       .then(res => {
-        console.log(res.data)
 
         if (!res.data) {
           setRes("none")
@@ -29,18 +29,16 @@ function BubbleChart() {
         data.forEach(entry => {
           let time = entry.bedtime.replace(":", ".")
           let timeFloat = parseFloat(time)
-
           bubbleArray.push({ x: entry.hoursslept, y: timeFloat, r: 15 })
         })
 
-        console.log(bubbleArray)
         setBedtime(bubbleArray);
       }})
       .catch(err => console.log(err));
   }
 
 
-
+// data for chart
   const data = {
     datasets: [
       {
@@ -51,6 +49,7 @@ function BubbleChart() {
     ],
   };
 
+  //object for y axis labels
   const yLabels = {
     1: '01:00', 2: '02:00', 3: '03:00', 4: '04:00',
     5: '05:00', 6: '06:00', 7: '07:00', 8: '08:00',
@@ -60,7 +59,7 @@ function BubbleChart() {
   }
 
 
-
+//chart customization
   const options = {
     plugins: {
       title: {
@@ -100,7 +99,7 @@ function BubbleChart() {
   }
 
 
-
+//conditional rendering
   if (userRes === "none") {
     return (
         <p></p>
@@ -108,7 +107,7 @@ function BubbleChart() {
 } else {
 
   return (
-    <MDBContainer style={{ backgroundColor: "white" }}>
+    <MDBContainer>
       <Bubble id="chart1" data={data} options={options} />
     </MDBContainer>
   );
