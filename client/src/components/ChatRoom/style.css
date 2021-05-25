@@ -29,7 +29,7 @@
     min-height: 100vh;
   }
   
-  .app {
+  .chatApp {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -39,26 +39,26 @@
     flex-grow: 1;
   }
   
-  form {
+  .chatForm {
     max-width: 300px;
     margin: 0 auto;
   }
   
-  h2 {
+  .chatH2 {
     font-weight: 300;
     margin-bottom: 1em;
     text-align: center;
   }
   
-  form > div {
+  .chatForm > div {
     width: 100%;
     margin-bottom: 1em;
   }
-  form > div > label {
+  .chatForm > div > label {
     display: block;
     margin-bottom: 0.3em;
   }
-  form > div > input {
+  .chatForm > div > input {
     display: block;
     width: 100%;
     font-size: 16px;
@@ -67,7 +67,7 @@
     border: 1px solid #333e5a;
   }
   
-  button {
+  .chatButton {
     background: #333e5a;
     color: #fff;
     font-size: 16px;
@@ -75,11 +75,12 @@
     border-radius: 6px;
     border: 1px solid transparent;
   }
-  button:hover {
+
+  /* button:hover {
     filter: brightness(150%);
-  }
+  } */
   
-  .room {
+  .chatRoom {
     position: relative;
   }
   .room button {
@@ -127,7 +128,7 @@
     border-radius: 6px;
   }
   
-  footer {
+  /* footer {
     background: #333e5a;
     color: #fff;
     text-align: center;
@@ -137,4 +138,4 @@
   
   footer a {
     color: #fff;
-  }
+  } */

@@ -4,7 +4,7 @@ import './style.css'
 
 const ChatRoom = () => {
   return (
-    <div className="app">
+    <div className="chatApp">
      
       <main>
         <VideoChat />
