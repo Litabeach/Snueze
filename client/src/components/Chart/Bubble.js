@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Bubble } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
-import { MDBContainer } from "mdbreact"
+import { Container } from "react-bootstrap"
 
 function BubbleChart() {
 
@@ -44,7 +44,7 @@ function BubbleChart() {
       {
         label: 'Bed Time Vs Hours Slept',
         data: bedtime,
-        backgroundColor: 'rgb(255, 99, 132)'
+        backgroundColor: 'rgb(255, 99, 132)',
       },
     ],
   };
@@ -66,6 +66,7 @@ function BubbleChart() {
           display: true,
           text: "Your Hours Slept Vs Bed Time",
           fullSize: true,
+          color: "grey",
           font: {
             size: 30
           }
@@ -76,7 +77,8 @@ function BubbleChart() {
         title: {
           beginAtZero: true,
           display: true,
-          text: "Hours of Sleep"
+          text: "Hours of Sleep",
+          color: "grey",
         }
       },
 
@@ -84,7 +86,11 @@ function BubbleChart() {
         beginAtZero: true,
         title: {
           display: true,
-          text: "Bed Time in Military Time",
+          text: "Bedtime",
+          color: "grey",
+          font: { 
+            size: 14
+          }
         },
         ticks: {
           stepSize: 1,
@@ -107,9 +113,9 @@ function BubbleChart() {
 } else {
 
   return (
-    <MDBContainer>
+    <>
       <Bubble id="chart1" data={data} options={options} />
-    </MDBContainer>
+    </>
   );
 }
 }

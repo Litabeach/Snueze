@@ -16,24 +16,17 @@
     align-items: center;
 }
 
-.charts-top-section {
+.charts-section {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
-    background-color: rgba(255, 255, 255, 0.818);
-    
-    
 }
 
-.charts-bottom-section {
+.insights-chart {
+    margin: 40px 0px 40px 0px !important;   
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
 }
-
-#chart2 {
-    margin-top: 45px;
-}
-

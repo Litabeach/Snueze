@@ -27,6 +27,14 @@ body {
   }
 }
 
+.container-fluid {
+  max-width: 920px !important;
+  display: flex;
+  flex-direction: column;
+  margin: auto; 
+  align-items: center;
+}
+
 .form-label {
   font-family: KoHo;
 }
@@ -122,6 +130,7 @@ a:active {
 .form-text {
   font-family: KoHo;
 }
+
 h1, h2, h3, h4, h5 {
   font-family: KoHo;
 }
