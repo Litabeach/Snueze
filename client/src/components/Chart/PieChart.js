@@ -104,7 +104,7 @@ function PieChart() {
 
     return (
       <>
-        <Pie id="chart4" data={data} options={options} />
+        <Pie id="chart4" data={data} width={"500%"} options={options} />
       </>
     );
   }

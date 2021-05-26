@@ -98,8 +98,8 @@ router.post("/login", async (req, res) => {
         const token = jwt.sign(
             {
                 user: existingUser._id,
-                surveys: existingUser.surveys,
-                journals: existingUser.journals
+                // surveys: existingUser.surveys,
+                // journals: existingUser.journals
             },
             process.env.JWT_SECRET,
             {

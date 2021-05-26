@@ -3,12 +3,13 @@ import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./style.css";
 import AuthContext from "../../context/AuthContext";
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Alert } from "react-bootstrap";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState();
   const { getLoggedIn } = useContext(AuthContext);
   const history = useHistory();
 
@@ -20,22 +21,14 @@ function Login() {
         email,
         password,
       };
-
-
-      if (!email){
-        alert("Please enter you email address")
-      }
-
-      if (!password){
-        alert("Please enter you password")
-      }
       
       await axios.post("/auth/login", loginData);
       await getLoggedIn();
       history.push("/");
     } catch (err) {
       console.error(err);
-      alert("Invalid email or password. Please try again or regiser for an account.")
+      setError(true)
+      setErrorMsg("Invalid email or password. Please try again or regiser for an account.")
     }
   }
 
@@ -45,6 +38,7 @@ function Login() {
         <Form className="login-form mx-auto" onSubmit={login}>
         <h1 className="d-inline-block snuzeshade auth-logo" style={{margin: "0 auto", textAlign: "center"}}>Snüze</h1>
         <h3 id="login-phrase">Your best bet for better sleep.</h3>
+        {error ? <Alert className="dangerAlert" variant="warning" onClose={() => setError(false)} dismissible><p>{errorMsg}</p></Alert> : null} 
         <h5>Log into Snüze</h5>
     <Form.Group controlId="formBasicEmail">
         <Form.Control required type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />
