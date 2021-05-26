@@ -4,33 +4,12 @@
     background-color: #ebe264;
 }
 
-.resource-links {
-    color:white
-}
-
-.resourceh1{
-    margin: 20px;
-    text-align: center;
-}
-
-.resourceh3{
-    text-align: center;
-    margin-top:2%;
-}
-
-.resource-card{
-    background-color: black;
-    width:75%;
-    margin-left: 14%;
-    padding:3%;
-    border-radius:5%
-}
-
-.resourcecontainer {
-    background-color: rgb(124, 156, 129);
-    width:75%;
-    margin-left: 14%;
-    margin-bottom: 10%;
-    padding:3%;
-    border-radius:5%
+.resource-card {
+    width: 30rem;
+    text-align: left;
+    align-self: center;
+    padding: 30px;  
+    background-color: rgba(255, 255, 255, 0.304);
+    border-radius: 10%;
+    overflow: hidden;
 }

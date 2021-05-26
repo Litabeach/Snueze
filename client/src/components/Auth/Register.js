@@ -3,7 +3,7 @@ import axios from 'axios';
 import AuthContext from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
 import "./style.css";
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Alert } from "react-bootstrap";
 
 function Register() {
 
@@ -11,6 +11,8 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordVerify, setPasswordVerify] = useState("");
+    const [error, setError] = useState(false);
+    const [errorMsg, setErrorMsg] = useState();
 
     const { getLoggedIn } = useContext(AuthContext);
     const history = useHistory();
@@ -26,24 +28,15 @@ function Register() {
                 passwordVerify,
             };
 
-            if (password.length < 8){
-                alert("password needs to be at least 8 characters")
-            }
-            if (password !== passwordVerify){
-                alert("passwords do not match")
-            }
-
-            if (!username || !email || !password || !passwordVerify){
-                alert("Please enter all fields")
-            }
-
             await axios.post("/auth", registerData);
             await getLoggedIn();
             history.push("/");
 
         } catch (err) {
-            alert("Something went wrong. Please try again or register using different inputs.")
             console.error(err);
+            setError(true)
+          setErrorMsg("Account already exists. Please chose a different e-mail address.")
+            
         }
     }
 
@@ -52,6 +45,7 @@ function Register() {
             <Form className="register-form" onSubmit={register}>
             <h1 className="d-inline-block snuzeshade auth-logo" style={{margin: "0 auto", textAlign: "center"}}>Snüze</h1>
             <h3 id="login-phrase">Your best bet for better sleep.</h3>
+            {error ? <Alert className="dangerAlert" variant="warning" onClose={() => setError(false)} dismissible><p>{errorMsg}</p></Alert> : null} 
                 <h5>Register with Snüze</h5>
                 <Form.Group controlId="formBasicName">
                     <Form.Control required type="text" placeholder="What's your name?" onChange={(e) => setUserName(e.target.value)} value={username} />

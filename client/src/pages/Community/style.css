@@ -6,20 +6,13 @@
     align-items: center;
 }
 
-.survey-form {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+.chatTitle {
+    background-color: transparent;
+    border: transparent;
+    color: white;
 }
 
-.surveyCol {
-    margin: auto;
-    padding: 20px;
-    align-self: center;
-    display: block;
-}
-
-.survey-h4 {
+.community-h4 {
     margin-left: 20%;
     margin-bottom: 2%;
     width: 60%;

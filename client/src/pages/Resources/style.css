@@ -1,3 +1,25 @@
+.container-fluid {
+    max-width: 920px !important;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
 .resourcecontainer {
-    background-color: rgba(255, 255, 255, 0.304);
+    margin: auto;
+    padding: 75px;
+    align-self: center;
+    display: block;
+}
+
+.resource {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 20px;
+}
+
+.resourcecontainer h3 {
+    text-align: center;
 }

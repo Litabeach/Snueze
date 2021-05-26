@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const surveySchema = new Schema({
-  date: { type: Date, required: true, index: { unique: true }},
+  date: { type: Date, required: true },
   hoursslept: { type: Number, required: true },
   sleepquality: { type: String, required: true },
   mood: { type: String, required: true },
