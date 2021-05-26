@@ -1,24 +1,21 @@
 .chatTitle {
     background-color: transparent;
     border: transparent;
-    color: white;
+    color: black;
     cursor:pointer;
     margin-bottom: -15px;
     margin-top: -15px;
-}
-
-.chatBody{
-    margin-bottom: -5px;
-    margin-top: -5px;
+    width:300px;
+    text-align: center;
 }
 
 .chat-desc-div {
    margin-left: 700px;
    margin-top:-220px;
-   height: 300px;
+   height: 270px;
    overflow: move;
    overflow-x: hidden;
-   width: 400px;
+   width: 325px;
    padding-left:5px;
 }
 
@@ -26,7 +23,11 @@
 .chat-h3 {
     margin-left: 410px;
 }
-/* .chat-desc-item{
-    display:inline-block;
 
-} */
+
+.chat-title {
+    /* border:solid thin black; */
+    padding:5px 10px 0px 10px;    
+}
+
+

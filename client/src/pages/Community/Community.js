@@ -3,7 +3,6 @@ import ChatRoom from '../../components/ChatRoom';
 import ChatDescription from '../../components/ChatDescriptions/ChatDescriptions';
 import chatDesc from '../../components/ChatDescriptions/chat-description.json';
 import { Row } from "react-bootstrap";
-import "./style.css"
 
 
 class Community extends Component {
@@ -29,14 +28,14 @@ class Community extends Component {
         <div className="chat-desc-div">
         {this.state.chatDesc.map(chatDesc => (
           <div key={chatDesc.id}>
-            <br></br>
+        
            
             <ChatDescription
               id={chatDesc.id}
               title={chatDesc.title}
               description={chatDesc.description}
             />
-            <br></br>
+           
            
           </div>
         ))}
