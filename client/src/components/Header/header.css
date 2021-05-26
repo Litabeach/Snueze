@@ -10,12 +10,12 @@
     color: #ebe264 !important;
 }
 
-.navbar {
-  padding: 10px 15px 10px 15px;
+.navbar-nav {
+  padding: 0;
 }
 
 .basic-navbar-nav {
-  align-items: right;
+  float: right;
 }
 
 .nav-item {
