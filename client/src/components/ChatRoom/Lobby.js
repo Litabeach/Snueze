@@ -48,7 +48,7 @@ const Lobby = ({
         /> */}
       </Form.Group>
       <Form.Group className="chatForm">
-      <button className="chatButton" type="submit">Submit</button>
+      <button className="chatButton" type="submit">Enter Video Chat</button>
       </Form.Group>  
     </Form>
   );
