@@ -10,8 +10,8 @@ function SpeechToTextNav() {
     {
       command: "open *",
       callback: (website) => {
-        window.location.replace("http://localhost:3000/" + website.split(" ").join(""));
-        // window.location.replace("https://snueze.herokuapp.com/" + website.split(" ").join(""));
+        // window.location.replace("http://localhost:3000/" + website.split(" ").join(""));
+        window.location.replace("https://snueze.herokuapp.com/" + website.split(" ").join(""));
       },
     },
 

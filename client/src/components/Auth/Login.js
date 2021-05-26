@@ -30,8 +30,7 @@ function Login() {
         alert("Please enter you password")
       }
       
-      await axios.post("http://localhost:3001/auth/login", loginData);
-      // await axios.post("https://snueze.herokuapp.com/auth/login", loginData);
+      await axios.post("/auth/login", loginData);
       await getLoggedIn();
       history.push("/");
     } catch (err) {
