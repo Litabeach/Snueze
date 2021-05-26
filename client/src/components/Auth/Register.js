@@ -37,8 +37,8 @@ function Register() {
                 alert("Please enter all fields")
             }
 
-            await axios.post("http://localhost:3001/auth", registerData);
-            // await axios.post("https://snueze.herokuapp.com/auth", registerData);
+            // await axios.post("http://localhost:3001/auth", registerData);
+            await axios.post("https://snueze.herokuapp.com/auth", registerData);
             await getLoggedIn();
             history.push("/");
 
