@@ -111,6 +111,7 @@ router.post("/login", async (req, res) => {
         res.cookie("token", token, {
             httpOnly: true
         })
+    
         res.cookie("userId", existingUser._id)
         res.send();
     } catch (err) {
@@ -126,12 +127,15 @@ router.get("/logout", (req, res) => {
     })
         .send();
 });
+
 router.get("/loggedIn", (req, res) => {
     try {
+        console.log(req.cookies.token)
       const token = req.cookies.token;
       if (!token) return res.json(false);
       jwt.verify(token, process.env.JWT_SECRET);
       res.send(true);
+      console.log("got here")
     } catch (err) {
       res.json(false);
     }
