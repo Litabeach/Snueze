@@ -1,12 +1,13 @@
 import surveyAPI from "../../utils/surveyAPI";
 import React, { useEffect, useState } from 'react';
-import { Container, Form, Col, fieldset, Row, InputGroup, Button, FormControl } from "react-bootstrap";
+import { Container, Form, Col, fieldset, Row, InputGroup, Button, FormControl, Alert } from "react-bootstrap";
 import "./style.css";
 import Quote from "../../components/Quote"
 import { MDBContainer } from 'mdbreact'
 
 function Survey() {
   // Setting our component's initial state
+  const [show, setShow] = useState(false)
   const [survey, setSurveys] = useState([]);
   const [formObject, setFormObject] = useState({
     date: "",
@@ -19,21 +20,22 @@ function Survey() {
 
   // Load all surveys and store them with setSurveys
   useEffect(() => {
-    loadSurveys();
+    // loadSurveys();
   }, []);
 
   // Loads all surveys and sets them to surveys
-  function loadSurveys() {
-    surveyAPI.getSurveys()
-      .then(res =>
-        setSurveys(res.data)
-      )
-      .catch(err => console.log(err));
-  }
+  // function loadSurveys() {
+  //   surveyAPI.getSurveys()
+  //     .then(res =>
+  //       setSurveys(res.data)
+  //     )
+  //     .catch(err => console.log(err));
+  // }
 
   // When the form is submitted, use the API.saveSurvey method to save the survey data
   // Then reload surveys from the database
   function handleFormSubmit(event) {
+    event.preventDefault();
     console.log("formObject-START");
     if (formObject.date && formObject.hoursslept && formObject.sleepquality && formObject.mood && formObject.bedtime) {
       surveyAPI.saveSurvey({
@@ -52,7 +54,8 @@ function Survey() {
           notes: "",
           bedtime: "",
         }))
-        .then(() => loadSurveys(), alert("Sleep recorded!"))
+     // .then(() => loadSurveys()) 
+        .then(() => setShow(true))
         .catch(err => console.log(err));
     }
   }
@@ -207,6 +210,7 @@ function Survey() {
             <Form.Group as={Row} className="formSubmit">
               <Col sm={{ span: 12 }}>
                 <Button type="submit" onClick={handleFormSubmit}>Submit</Button>
+                {show ? <Alert variant="success" onClose={() => setShow(false)} dismissible><p>Recorded successfully!</p></Alert> : null} 
               </Col>
             </Form.Group>
           </Col>
