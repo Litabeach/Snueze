@@ -76,7 +76,7 @@ function Survey() {
       <Form className="survey-form">
         <Row>
           <Col sm={6} className="surveyCol">
-            <Form.Group as={Row} controlId="formDate">
+            <Form.Group as={Row} controlId="recordDate">
               <Form.Label column sm={12}>
                 <h4>Date</h4>
               </Form.Label>
