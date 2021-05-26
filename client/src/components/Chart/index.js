@@ -108,9 +108,6 @@ function Chart() {
     } else if (userRes === "success") {
 
         return (
-            <>
-
-    
             <Form className="insights">
                 <Row>
                     <Col sm={12}>
@@ -158,8 +155,6 @@ function Chart() {
                     </Col>
                 </Row>
             </Form>
-
-            </>
         )
     }
 };
