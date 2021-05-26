@@ -74,9 +74,9 @@ function Survey() {
 
     <Container fluid>
       <Quote />
-      <MDBContainer style={{ width: "50%"}}>
+      <MDBContainer>
       <h1>Record Your Sleep</h1>
-      <h4>Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h4>
+      <h4 className="survey-h4">Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h4>
       </MDBContainer>
       <Form className="survey-form">
         <Row>
