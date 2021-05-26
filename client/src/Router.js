@@ -55,7 +55,7 @@ function ReactRouter() {
                         </Route>
                     }
                     {loggedIn === true &&
-                        <Route exact path="/dream">
+                        <Route exact path="/dreams">
                         <Header />
                         <Journal />
                         </Route>

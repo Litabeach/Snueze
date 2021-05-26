@@ -28,25 +28,25 @@ function Header() {
               </Nav.Item>
 
               <Nav.Item>
-                <Nav.Link className="navitem" href="/survey" title="Record">
+                <Nav.Link className="navitem" href="/record" title="Record">
                   Record
               </Nav.Link>
               </Nav.Item>
 
               <Nav.Item>
-                <Nav.Link className="navitem" href="/journal" title="Dreams">
+                <Nav.Link className="navitem" href="/dreams" title="Dreams">
                   Dream
               </Nav.Link>
               </Nav.Item>
 
               <Nav.Item>
-                <Nav.Link className="navitem" href="/stats" title="Insights">
+                <Nav.Link className="navitem" href="/insights" title="Insights">
                   Insights
               </Nav.Link>
               </Nav.Item>
 
               <Nav.Item>
-                <Nav.Link className="navitem" href="/tools" title="Meditate">
+                <Nav.Link className="navitem" href="/meditate" title="Meditate">
                   Meditate
               </Nav.Link>
               </Nav.Item>
