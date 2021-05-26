@@ -10,3 +10,10 @@
     align-self: center;
     display: block;
 }
+
+.survey-h4 {
+    margin-left:20%;
+    margin-bottom: 2%;
+    width: 60%;
+    text-align: center;
+  }

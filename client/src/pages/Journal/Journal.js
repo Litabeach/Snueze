@@ -69,6 +69,10 @@ function Journal() {
 
         });
     }
+    else {
+    event.preventDefault()
+    alert("Please make sure you fill out all fields before you submit!")
+    }
   };
   console.log("entries", entries.id);
 

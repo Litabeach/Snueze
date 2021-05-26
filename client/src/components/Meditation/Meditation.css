@@ -3,6 +3,13 @@
   padding: 0;
 }
 
+.meditate-h4 {
+  margin-left:20%;
+  margin-bottom: 2%;
+  width: 60%;
+  text-align: center;
+}
+
 .bg {
   width: 100%;
   height: 100%;
@@ -26,7 +33,7 @@
   background-position: center bottom;
 }
 
-medBtn {
+.medBtn {
   background: none;
   border: 2px #ffffffcc solid;
   padding: 16px;
@@ -38,7 +45,7 @@ medBtn {
   transition: all 0.3s ease;
 }
 
-medBtn:hover {
+.medBtn:hover {
   box-shadow: none;
   color: #000;
   background-color: #ffffffcc;
@@ -48,7 +55,7 @@ medBtn:hover {
   font-size: 17px;
 }
 
-medBtn:active {
+.medBtn:active {
   box-shadow: none;
   color: #000;
   background-color: #ffffffcc;
@@ -58,7 +65,7 @@ medBtn:active {
   font-size: 17px;
 }
 
-.active {
+/* .active {
   box-shadow: none;
   color: #000;
   background-color: #ffffffcc;
@@ -66,7 +73,7 @@ medBtn:active {
   width: 140px;
   padding: 24px;
   font-size: 17px;
-}
+} */
 
 .App {
   height: 100vh;
