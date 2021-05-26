@@ -45,7 +45,9 @@ body {
 }
 
 .container {
-  width: 100%;
+  align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -61,18 +63,17 @@ a:visited {
   background-color: transparent !important;
 }
 
-
 a:hover {
   background-color: transparent !important;
   /* color: #fa6e6ee5 !important; */
-  color: #614bc5e5 !important
+  color: #7462c9 !important;
+  border: none;
 }
 
 a:active {
   background-color: transparent !important;
   /* color: #fa6e6ee5 !important; */
-  color: #614bc5e5 !important
-
+  color: #7462c9 !important
 }
 
 @keyframes App-logo-spin {
@@ -95,8 +96,18 @@ a:active {
 
 .btn:hover {
   /* background-color: #fa6e6ee5; */
-  background-color: #614bc5e5; 
-  color: black;
+  background-color: #7462c9; 
+  color: white;
+}
+
+.btn:visited {
+  background-color: #7462c9;
+  color: white;
+}
+
+.btn:active {
+  background-color: silver;
+  color: #7462c9;
 }
 
 .form-text {
