@@ -213,8 +213,8 @@ function Survey() {
           <Col sm={12} className="surveyCol">
             <Form.Group as={Row} className="formSubmit">
               <Col sm={{ span: 12 }}>
+              {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Recorded successfully!</p></Alert> : null} 
                 <Button type="submit" onClick={handleFormSubmit}>Submit</Button>
-                {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Recorded successfully!</p></Alert> : null} 
               </Col>
             </Form.Group>
           </Col>
