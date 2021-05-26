@@ -170,8 +170,9 @@ function Journal() {
                   <Button type="submit"
                     onClick={handleFormSubmit} >
                     Submit
+                    {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Entry saved successfully!</p></Alert> : null} 
                   </Button>
-                  {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Entry saved successfully!</p></Alert> : null} 
+                  
                 </Form.Group>
               </Col>
             </Row>

@@ -34,7 +34,7 @@ function Survey() {
   // When the form is submitted, use the API.saveSurvey method to save the survey data
   // Then reload surveys from the database
   function handleFormSubmit(event) {
-
+    event.preventDefault()
     console.log("formObject-START");
     if (formObject.date && formObject.hoursslept && formObject.sleepquality && formObject.mood && formObject.bedtime) {
       surveyAPI.saveSurvey({
@@ -56,11 +56,14 @@ function Survey() {
 
      // .then(() => loadSurveys()) 
         .then(() => setShow(true))
-        .catch(err => console.log(err));
+        .catch(err => {
+          console.log(err.response)
+          alert("Oops! " + err.response.data.msg)
+          
+        });
 
       }    
    else {
-      event.preventDefault()
       alert("Please make sure you fill out all fields before you submit!")
 
     }
