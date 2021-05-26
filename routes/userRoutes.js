@@ -108,21 +108,18 @@ router.post("/login", async (req, res) => {
             }
         );
         //send the token in an HTTP only cookie
-        res.cookie("token", token, {
-            httpOnly: true
-        })
+        res.cookie("token", token)
     
         res.cookie("userId", existingUser._id)
         res.send();
     } catch (err) {
         console.error(err)
-        res.status(500).send()
+        res.status(500).send("error")
     }
 });
 //logout
 router.get("/logout", (req, res) => {
     res.cookie("token", "", {
-        httpOnly: true,
         expires: new Date(0)
     })
         .send();
