@@ -36,7 +36,7 @@ function quote () {
 
   function change() {
     var quote = sleepQuotes[randomize()];
-    console.log(sleepQuotes);
+    
     counter++;
     if (counter >= sleepQuotes.length) {
       counter = 0;

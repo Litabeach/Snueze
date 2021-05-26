@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardGroup, Image, Container } from "react-bootstrap";
 import "./MyBed.css";
+import Quote from "../../components/Quote"
 
 function MyBed() {
 
   return (
-      <Container className ="myBedContainer">
+      <Container fluid className ="myBedContainer">
+      <Quote />
         <CardGroup>
           <Card className="card">
             <Link to="/survey">

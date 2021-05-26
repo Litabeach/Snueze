@@ -4,8 +4,8 @@
     border: none;
     background-color: transparent !important;
     text-align: center;
-    margin: 10px;
-    
+    margin: 50px;
+
 }
 
 .card-title {
@@ -16,9 +16,7 @@
 .myBedContainer{
     /* padding: 20px; */
     border-radius: 30px;
-    /* background-color: white; */
-  
-   
+    /* background-color: white; */   
 }
 
 

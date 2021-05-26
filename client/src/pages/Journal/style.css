@@ -17,9 +17,16 @@
 }
 
 .formSubmit {
-  margin: 15px 0px 15px 0px;
-  align-items: center;
-  text-align: center;
+  display: flex;
+  padding: 10px;
+  margin: auto;
+  align-items: center !important;
+}
+
+.journalCol {
+  align-items: left;
+  display: flex;
+  flex-direction: column; 
 }
 
 .noDreams {
