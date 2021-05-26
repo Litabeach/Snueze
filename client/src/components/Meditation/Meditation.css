@@ -33,7 +33,7 @@
   background-position: center bottom;
 }
 
-.medBtn {
+button {
   background: none;
   border: 2px #ffffffcc solid;
   padding: 16px;
@@ -45,7 +45,7 @@
   transition: all 0.3s ease;
 }
 
-.medBtn:hover {
+button:hover {
   box-shadow: none;
   color: #000;
   background-color: #ffffffcc;
@@ -55,7 +55,7 @@
   font-size: 17px;
 }
 
-.medBtn:active {
+button .active {
   box-shadow: none;
   color: #000;
   background-color: #ffffffcc;
@@ -65,7 +65,7 @@
   font-size: 17px;
 }
 
-/* .active {
+.active {
   box-shadow: none;
   color: #000;
   background-color: #ffffffcc;
@@ -73,7 +73,7 @@
   width: 140px;
   padding: 24px;
   font-size: 17px;
-} */
+}
 
 .App {
   height: 100vh;

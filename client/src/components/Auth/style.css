@@ -10,6 +10,18 @@
     align-items: center;
 }
 
+.auth-logo {
+    font-family: Pattaya !important;
+    font-size: 5rem !important;
+    padding: 20px 20px;
+    text-align: left;
+    color: #ebe264 !important;
+}
+
+.text-muted {
+    font-size: 1rem;
+}
+
 #formBasicName, #formBasicEmail, #formBasicPassword, #formBasicCreatePassword, #formBasicVerifyPassword{
     width: 250px;
 }

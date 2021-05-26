@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { Container, Form, Col, fieldset, Row, InputGroup, Button, FormControl, Alert } from "react-bootstrap";
 import "./style.css";
 import Quote from "../../components/Quote"
-import alertSuccess from '../../components/Alert'
 
 function Survey() {
   // Setting our component's initial state
@@ -72,10 +71,6 @@ function Survey() {
     console.log(value);
     setFormObject({ ...formObject, [name]: value });
   }
-
-  // function alert(){
-  //   alertSuccess();
-  // }
 
   return (
 

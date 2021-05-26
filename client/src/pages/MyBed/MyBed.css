@@ -5,12 +5,22 @@
     background-color: transparent !important;
     text-align: center;
     margin: 10px;
+    
 }
 
 .card-title {
     color: white;
     font-size: 1.5rem;
 }
+
+.myBedContainer{
+    /* padding: 20px; */
+    border-radius: 30px;
+    /* background-color: white; */
+  
+   
+}
+
 
 /* @media screen and (min-width: 992px) {
     .card-group {
@@ -24,12 +34,22 @@
   .cardImg{
       height: 300px;
       width: 300px;
-      padding: 10px
+      padding: 10px;
+      border-radius: 30px !important;
+      overflow: hidden;
+     
     
   }
+/* 
+  .cardPadding{
+      padding-bottom: 100px;
+  } */
 
   .cardImg:hover{
-
-opacity: .3;
-border: 1px solid #eee
+opacity: .33;
   }
+
+  /* .cardImg:active{
+      opacity: .33;
+      border: 2px solid white;
+  } */
