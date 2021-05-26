@@ -27,14 +27,6 @@ body {
   }
 }
 
-.container-fluid {
-  max-width: 920px !important;
-  display: flex;
-  flex-direction: column;
-  margin: auto; 
-  align-items: center;
-}
-
 .form-label {
   font-family: KoHo;
 }
