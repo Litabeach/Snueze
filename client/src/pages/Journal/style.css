@@ -47,7 +47,8 @@
   margin: auto;
   padding: 20px;
   display: block;
-  width: 500px;
+  width: 400px;
+  margin-top: -115px;
 }
 
 .list-title{
@@ -55,6 +56,16 @@
   cursor: pointer;
 }
 
+.micSpan {
+  width:30px;
+  height:60px;
+  margin-left:300px;
+  margin-top:-50px;
+}
+
+#dreamh4{
+  margin:0;
+}
 
 
 /* Popup container */

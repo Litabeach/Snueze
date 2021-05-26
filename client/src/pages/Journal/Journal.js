@@ -71,7 +71,6 @@ function Journal() {
     }
     else {
     event.preventDefault()
-    alert("Please make sure you fill out all fields before you submit!")
     }
   };
   console.log("entries", entries.id);
@@ -124,13 +123,13 @@ function Journal() {
       <h5 className="subheading">Dreams are direct links to our emotional and mental health. Keep and review your dream journal here. We promise we won't peek.</h5>
       <Form className="journal-form">
         <Row>
-          <Col sm={6} className="journalCol">
+          <Col sm={7} className="journalCol">
             <Form.Group as={Row} controlId="formDate">
               <Form.Label column sm={12}>
                 <h4>Date</h4>
               </Form.Label>
-              <Col sm={6}>
-                <Form.Control required type="date" name="date" onChange={handleInputChange} />
+              <Col sm={7}>
+                <Form.Control required type="date" name="date" value={formObject.date} onChange={handleInputChange} />
               </Col>
             </Form.Group>
             <Form.Group as={Row} className="formTitle">
@@ -138,13 +137,13 @@ function Journal() {
                 <h4>Title</h4>
               </Form.Label>
               <Col sm={12}>
-                <Form.Control required type="text" name="title" type="text" onChange={handleInputChange} />
+                <Form.Control required type="text" name="title" type="text" value={formObject.title} onChange={handleInputChange} />
               </Col>
             </Form.Group>
-            <Form.Group as={Row} className="formBody">
+            <Form.Group as={Row} controlId="formBody">
               <Form.Label column sm={12}>
-                <h4>What was your dream about?
-                  <span data-tip="Click me to use speech to text. Say 'reset' to clear your thoughts, or hit the stop button when you are finished">
+                <h4 id="dreamh4">What was your dream about?   
+                  <span className="micSpan" data-tip="Click me to use speech to text. Say 'reset' to clear your thoughts, or hit the stop button when you are finished">
                     <div className="microphone-wrapper-nav popup">
                       <div className="mircophone-container-journal">
                         <span className="popuptext" id="myPopup">{transcript}</span>
@@ -163,11 +162,11 @@ function Journal() {
                 </h4>
               </Form.Label>
               <Col sm={12}>
-                <Form.Control required as="textarea" type="text" name="body" className="dreamform journal-body" onChange={handleInputChange} />
+                <Form.Control required as="textarea" type="text" name="body" className="dreamform journal-body" id="formBody" value={formObject.body} onChange={handleInputChange} />
               </Col>
             </Form.Group>
             <Row>
-              <Col sm={6} className="journalCol">
+              <Col sm={7} className="journalCol">
                 <Form.Group as={Row} className="formSubmit">
                   <Button type="submit"
                     onClick={handleFormSubmit} >
@@ -178,7 +177,7 @@ function Journal() {
               </Col>
             </Row>
           </Col>
-          <Col sm={6} className="dreamsCol">
+          <Col sm={5} className="dreamsCol">
             <h3 className="dream-list-header">Past Dreams</h3>
             {entries.length ? (
               <List>
