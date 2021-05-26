@@ -103,7 +103,7 @@ function Chart() {
         )
     } else if (userRes === "none") {
         return (
-            <h5 className="spacer">No data to show yet! Keep tracking your sleep to see your patterns and insights to your sleep behavior.</h5>
+            <h5 className="insights-section">No data to show yet! Keep tracking your sleep to see your patterns and insights to your sleep behavior.</h5>
         )
     } else if (userRes === "success") {
 
