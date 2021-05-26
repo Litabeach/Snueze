@@ -1,18 +1,21 @@
 import React from "react";
 import "./style.css";
+import { Card } from "react-bootstrap"
 
 function ResourceLink(props) {
     return (
-        <div className="resource-card">
-            <h5><a href={props.link} className="resource-links"><img src={props.image1} className="img-fluid resource-img"
-                alt={props.alt1} />
-            {props.title} </a> </h5>
-            <p>{props.description} </p>
-            {/* <p><a href={props.link} className="links">Visit {props.title} <br />
-            </a></p> */}
-        </div>
-
-
+        <>
+            <Card className="resource">
+                <Card.Body className="resource-card">
+                <Card.Title><span><a href={props.link} className="resource-links"><img src={props.image1} className="img-fluid resource-img"
+                    alt={props.alt1} />
+                    {props.title}</a></span></Card.Title>
+                    <Card.Text>
+                        {props.description}
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        </>
     );
 }
 

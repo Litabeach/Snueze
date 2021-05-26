@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
-import { MDBContainer } from "mdbreact";
+import { Container } from "react-bootstrap"
 
 
 function LineChart() {
@@ -54,7 +54,8 @@ const data =
       data: hours,
       fill: true,
       backgroundColor: "rgba(75,192,192,0.2)",
-      borderColor: "rgba(75,192,192,1)"
+      borderColor: "rgba(75,192,192,1)",
+      color: "white",
     },
     
   //get an array of 8's for each day
@@ -77,26 +78,41 @@ const options = {
         fullSize: true,
         font: {
           size: 30
-        }
+        },
+        color: "grey"
       }
   },
   scales: {
-    x: {
+    x: [{
       title: {
         display: true,
-        text: "Dates"
-      }
-  },
+        text: "Dates",
+        color: "grey",
+        gridLines: [null, "white"]
+      }, 
+      gridLines: [null, "white"], 
+  }],
 
       y: {
           beginAtZero: true,
           title: {
             display: true,
-            text: "Hours"
-          }
+            text: "Hours",
+            color: "grey",
+            gridLines: [null, "white"]
+          },
+          gridLines: [null, "white"]
       }
-    }
-  }
+    },
+    // elements: { 
+    //   line: { 
+    //     color: "yellow",
+    //     borderColor: "yellow",
+    //     backgroundColor: "yellow",
+    //     borderWidth: "3px"
+    //   }
+    // }
+}
 
   //conditional render logic
   if (userRes === "none") {
@@ -106,11 +122,9 @@ const options = {
 } else {
 
   return (
-    <MDBContainer>
-     
+    <>
       <Line id="chart2" data={ data } options={ options }/>
-      
-    </MDBContainer>
+    </>
   );
 }
 }

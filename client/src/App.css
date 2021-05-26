@@ -27,6 +27,14 @@ body {
   }
 }
 
+.container-fluid {
+  max-width: 920px !important;
+  display: flex;
+  flex-direction: column;
+  margin: auto; 
+  align-items: center;
+}
+
 .form-label {
   font-family: KoHo;
 }
@@ -96,8 +104,8 @@ a:active {
   background-color: #ebe264;
   border: none;
   color: black;
-  padding: 10px 20px 10px 20px;
-  font-size: 1.5rem;
+  padding: 7px 15px 7px 15px;
+  font-size: 1rem;
 }
 
 .btn:hover {
@@ -119,9 +127,17 @@ a:active {
   border: none !important;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active {
+  background-color: #7462c9 !important;
+  color: white !important;
+  border: none !important;
+}
+
+
 .form-text {
   font-family: KoHo;
 }
+
 h1, h2, h3, h4, h5 {
   font-family: KoHo;
 }

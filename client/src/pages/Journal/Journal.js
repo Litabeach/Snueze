@@ -165,11 +165,11 @@ function Journal() {
               </Col>
             </Form.Group>
             <Row>
-              <Col sm={7} className="journalCol">
+              <Col sm={12} className="journalCol">
                 <Form.Group as={Row} className="formSubmit">
                   <Button type="submit"
                     onClick={handleFormSubmit} >
-                    Save
+                    Submit
                   </Button>
                   {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Entry saved successfully!</p></Alert> : null} 
                 </Form.Group>
