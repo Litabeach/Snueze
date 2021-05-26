@@ -49,25 +49,25 @@ function ReactRouter() {
                         </Route>
                     }
                     {loggedIn === true &&
-                        <Route exact path="/survey">
+                        <Route exact path="/record">
                             <Header />
                             <Survey />
                         </Route>
                     }
                     {loggedIn === true &&
-                        <Route exact path="/journal">
+                        <Route exact path="/dream">
                         <Header />
                         <Journal />
                         </Route>
                     }
                     {loggedIn === true &&
-                        <Route exact path="/stats">
+                        <Route exact path="/insights">
                             <Header />
                             <Stats />
                         </Route>
                     }
                     {loggedIn === true &&
-                        <Route exact path="/tools">
+                        <Route exact path="/meditate">
                             <Header />
                             <Tools />
                         </Route>
