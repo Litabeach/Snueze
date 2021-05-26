@@ -111,7 +111,7 @@ function Journal() {
     <Container fluid>
       <Quote />
       <h1>Dream Journal</h1>
-      <h5>Dreams are direct links to our emotional and mental health. Keep and review your dream journal here. We promise we won't peek.</h5>
+      <h5 className="subheading">Dreams are direct links to our emotional and mental health. Keep and review your dream journal here. We promise we won't peek.</h5>
       <Form className="journal-form">
         <Row>
           <Col sm={6} className="journalCol">

@@ -17,7 +17,7 @@ class Community extends Component {
       <main className="container">
         <h1>Community Chat Rooms</h1>
         <div className="chatCopyDiv">
-          <h4>Sometimes all we're really looking for is a person to connect with over our problems or someone to go to for advice. Utilize our collection of chat rooms to talk to real people who are going through the same thing as you.</h4>
+          <h5 className="subheading">Sometimes all we're really looking for is a person to connect with over our problems or someone to go to for advice. Utilize our collection of chat rooms to talk to real people who are going through the same thing as you.</h5>
         </div>
         <Row>
         <div className="enter-chat">
