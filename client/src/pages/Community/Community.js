@@ -3,6 +3,7 @@ import ChatRoom from '../../components/ChatRoom';
 import ChatDescription from '../../components/ChatDescriptions/ChatDescriptions';
 import chatDesc from '../../components/ChatDescriptions/chat-description.json';
 import { Row } from "react-bootstrap";
+import "./style.css"
 
 
 class Community extends Component {

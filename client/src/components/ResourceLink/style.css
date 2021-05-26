@@ -1,6 +1,7 @@
 .resource-img {
     width:40px;
-    margin: 10px
+    margin: 10px;
+    background-color: #ebe264;
 }
 
 .resource-links {
@@ -18,7 +19,7 @@
 }
 
 .resource-card{
-    background-color: rgb(56, 72, 58);
+    background-color: black;
     width:75%;
     margin-left: 14%;
     padding:3%;

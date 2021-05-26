@@ -7,12 +7,14 @@ import "./style.css"
 import dateFormat from 'dateformat';
 import microphoneicon from './microphone.png';
 import micstopicon from './stopbutton.png';
-import { Container, Form, Col, Row, ListGroup, Button } from "react-bootstrap";
+import { Container, Form, Col, Row, ListGroup, Button, Alert } from "react-bootstrap";
 import Quote from "../../components/Quote";
 import Accordion from 'react-bootstrap/Accordion';
 
 function Journal() {
   // Setting our component's initial state
+  const [show, setShow] = useState(false)
+  // const [error, setError] = useState(false)
   const [entries, setEntries] = useState([""])
   const [formObject, setFormObject] = useState({
     date: "",
@@ -60,8 +62,16 @@ function Journal() {
           body: "",
           date: ""
         }))
-        .then(() => loadEntries(alert("Dream saved!")))
-        .catch(err => console.log(err));
+        .then(() => loadEntries())
+        .then(() => setShow(true))
+        .catch(err => {
+          console.log(err)
+
+        });
+    }
+    else {
+    event.preventDefault()
+    alert("Please make sure you fill out all fields before you submit!")
     }
   };
   console.log("entries", entries.id);
@@ -159,9 +169,11 @@ function Journal() {
             <Row>
               <Col sm={6} className="journalCol">
                 <Form.Group as={Row} className="formSubmit">
-                <Col sm={{ span: 12}}>
-                  <Button type="submit" onClick={handleFormSubmit}>Save</Button>
-                  </Col>
+                  <Button type="submit"
+                    onClick={handleFormSubmit} >
+                    Save
+                  </Button>
+                  {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Entry saved successfully!</p></Alert> : null} 
                 </Form.Group>
               </Col>
             </Row>

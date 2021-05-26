@@ -18,7 +18,7 @@ function Header() {
         menu
         </span></Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto">
+          <Nav className="ml-auto">
         
                 <Nav.Item>
                   <Nav.Link className ="navitem"  href="/mybed" title="My Bed">

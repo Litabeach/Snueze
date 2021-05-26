@@ -43,6 +43,7 @@ function Register() {
             history.push("/");
 
         } catch (err) {
+            alert("Something went wrong. Please try again or register using different inputs.")
             console.error(err);
         }
     }
