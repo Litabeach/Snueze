@@ -43,7 +43,7 @@ function Login() {
     
     <Container className="login">
         <Form className="login-form mx-auto" onSubmit={login}>
-        <h1 className="d-inline-block snuzeshade" style={{margin: "0 auto", textAlign: "center"}}>Snüze</h1>
+        <h1 className="d-inline-block snuzeshade auth-logo" style={{margin: "0 auto", textAlign: "center"}}>Snüze</h1>
         <h3 id="login-phrase">Your best bet for better sleep.</h3>
         <h5>Log into Snüze</h5>
     <Form.Group controlId="formBasicEmail">
@@ -56,7 +56,7 @@ function Login() {
         Login
     </Button>
     <Form.Text className="text-muted" id="login-to-register">
-        Don't have a login? Click <a href="/register">here</a> to register.
+        Not registered? Click <a href="/register">here</a> to register.
         </Form.Text>
     </Form>
     </Container>
