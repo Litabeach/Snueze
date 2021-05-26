@@ -50,7 +50,7 @@ function Journal() {
   // When the form is submitted, use the API.saveEntry method to save the journal entry data
   // Then reload entries from the database
   function handleFormSubmit(event) {
-    event.preventDefault();
+   
     if (formObject.title && formObject.body) {
       journalAPI.saveEntry({
         title: formObject.title,
