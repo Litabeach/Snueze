@@ -37,11 +37,9 @@ function Register() {
                 alert("Please enter all fields")
             }
 
-            // await axios.post("http://localhost:3001/auth", registerData);
             await axios.post("/auth", registerData);
             await getLoggedIn();
             history.push("/");
-            console.log("register route")
 
         } catch (err) {
             console.error(err);

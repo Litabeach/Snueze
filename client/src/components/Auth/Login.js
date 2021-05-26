@@ -30,11 +30,9 @@ function Login() {
         alert("Please enter you password")
       }
       
-      // await axios.post("http://localhost:3001/auth/login", loginData);
       await axios.post("/auth/login", loginData);
       await getLoggedIn();
       history.push("/");
-      console.log("login route complete")
     } catch (err) {
       console.error(err);
       alert("Invalid email or password. Please try again or regiser for an account.")
