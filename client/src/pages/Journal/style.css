@@ -1,7 +1,15 @@
+.container-fluid {
+  max-width: 920px !important;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
 .journal-form {
   align-items: center;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 .mircophone-container-journal {
@@ -26,7 +34,7 @@
 .journalCol {
   align-items: left;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .noDreams {
@@ -50,7 +58,7 @@
   height: 150px;
 }
 
-.dreamsCol{
+.dreamsCol {
   margin: auto;
   padding: 20px;
   display: block;
@@ -58,20 +66,20 @@
   margin-top: -115px;
 }
 
-.list-title{
+.list-title {
   text-align: center;
   cursor: pointer;
 }
 
 .micSpan {
-  width:30px;
-  height:60px;
-  margin-left:300px;
-  margin-top:-50px;
+  width: 30px;
+  height: 60px;
+  margin-left: 300px;
+  margin-top: -50px;
 }
 
-#dreamh4{
-  margin:0;
+#dreamh4 {
+  margin: 0;
 }
 
 
@@ -124,8 +132,8 @@
   animation: fadeIn 1s
 }
 
-#formBody{
-  height:200px
+#formBody {
+  height: 200px
 }
 
 /* Add animation (fade in the popup) */
@@ -150,53 +158,63 @@
 }
 
 
-@media screen and (max-width: 375px){
-  .dreamsCol, .journalCol, .journal-form {
-    width:325px;
-    margin-left:25px;
+@media screen and (max-width: 375px) {
+
+  .dreamsCol,
+  .journalCol,
+  .journal-form {
+    width: 325px;
+    margin-left: 25px;
   }
 
-  .dreamsCol{
-    margin-top:10px;
+  .dreamsCol {
+    margin-top: 10px;
   }
 
-  .dream-h4{
-    width:300px;
+  .dream-h4 {
+    width: 300px;
     margin-left: 15px;
     margin-bottom: 15px;
   }
 }
 
-@media screen and (max-width: 414px){
-  .dreamsCol, .journalCol, .journal-form {
-    width:325px;
-    margin-left:20px;
+@media screen and (max-width: 414px) {
+
+  .dreamsCol,
+  .journalCol,
+  .journal-form {
+    width: 325px;
+    margin-left: 20px;
   }
 
-  .dreamsCol{
-    margin-top:10px;
+  .dreamsCol {
+    margin-top: 10px;
   }
 
-  .dream-h4{
-    width:325px;
+  .dream-h4 {
+    width: 325px;
     margin-left: 25px;
     margin-bottom: 15px;
   }
 
 }
 
-@media screen and (max-width: 375px), (max-height: 667){
-  .dreamsCol, .journalCol, .journal-form{
-    width:280px;
-    margin-left:25px;
+@media screen and (max-width: 375px),
+(max-height: 667) {
+
+  .dreamsCol,
+  .journalCol,
+  .journal-form {
+    width: 280px;
+    margin-left: 25px;
   }
 
-  .dreamsCol{
-    margin-top:10px;
+  .dreamsCol {
+    margin-top: 10px;
   }
 
-  .dream-h4{
-    width:300px;
+  .dream-h4 {
+    width: 300px;
     margin-left: 15px;
     margin-bottom: 15px;
   }

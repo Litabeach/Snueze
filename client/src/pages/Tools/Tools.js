@@ -3,6 +3,7 @@ import React from "react";
 import Meditation from "../../components/Meditation"
 import { Container } from 'react-bootstrap'
 import Quote from "../../components/Quote"
+import "./style.css"
 
 function Tools() {
 
