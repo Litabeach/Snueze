@@ -41,6 +41,7 @@ function Register() {
             await axios.post("https://snueze.herokuapp.com/auth", registerData);
             await getLoggedIn();
             history.push("/");
+            console.log("register route")
 
         } catch (err) {
             console.error(err);
