@@ -27,14 +27,14 @@ class Community extends Component {
         <div className="chat-desc-div">
         {this.state.chatDesc.map(chatDesc => (
           <div key={chatDesc.id}>
-            <br></br>
+        
            
             <ChatDescription
               id={chatDesc.id}
               title={chatDesc.title}
               description={chatDesc.description}
             />
-            <br></br>
+           
            
           </div>
         ))}
