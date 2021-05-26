@@ -1,3 +1,11 @@
+.container-fluid {
+    max-width: 920px !important;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
 .card {
     height: 300px;
     width: 300px;
@@ -13,10 +21,10 @@
     font-size: 1.5rem;
 }
 
-.myBedContainer{
+.myBedContainer {
     /* padding: 20px; */
     border-radius: 30px;
-    /* background-color: white; */   
+    /* background-color: white; */
 }
 
 
@@ -29,25 +37,26 @@
     }
   } */
 
-  .cardImg{
-      height: 300px;
-      width: 300px;
-      padding: 10px;
-      border-radius: 30px !important;
-      overflow: hidden;
-     
-    
-  }
+.cardImg {
+    height: 300px;
+    width: 300px;
+    padding: 10px;
+    border-radius: 30px !important;
+    overflow: hidden;
+
+
+}
+
 /* 
   .cardPadding{
       padding-bottom: 100px;
   } */
 
-  .cardImg:hover{
-opacity: .33;
-  }
+.cardImg:hover {
+    opacity: .33;
+}
 
-  /* .cardImg:active{
+/* .cardImg:active{
       opacity: .33;
       border: 2px solid white;
   } */

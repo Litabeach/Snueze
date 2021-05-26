@@ -1,11 +1,12 @@
 import React from "react";
-import Jumbotron from "../../components/Jumbotron";
+import {Container} from 'react-bootstrap'
+import "./style.css"
 
 function NoMatch() {
   return (
-    <Jumbotron>
+    <Container fluid>
     <h1>404 Page Not Found</h1>
-    </Jumbotron>
+    </Container>
   );
 }
 
