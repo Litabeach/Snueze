@@ -42,6 +42,7 @@ function Register() {
             history.push("/");
 
         } catch (err) {
+            alert("Something went wrong. Please try again or register using different inputs.")
             console.error(err);
         }
     }
@@ -51,19 +52,19 @@ function Register() {
             <Form className="register-form" onSubmit={register}>
                 <h5>Register with Snüze</h5>
                 <Form.Group controlId="formBasicName">
-                    <Form.Control type="text" placeholder="What's your name?" onChange={(e) => setUserName(e.target.value)} value={username} />
+                    <Form.Control required type="text" placeholder="What's your name?" onChange={(e) => setUserName(e.target.value)} value={username} />
                 </Form.Group>
 
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Control type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} value={email} />
+                    <Form.Control required type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} value={email} />
                 </Form.Group>
 
                 <Form.Group controlId="formBasicCreatePassword">
-                    <Form.Control type="password" placeholder="Create a password" onChange={(e) => setPassword(e.target.value)} value={password} />
+                    <Form.Control required type="password" placeholder="Create a password" onChange={(e) => setPassword(e.target.value)} value={password} />
                 </Form.Group>
 
                 <Form.Group controlId="formBasicVerifyPassword">
-                    <Form.Control type="password" placeholder="Re-enter your password" onChange={(e) => setPasswordVerify(e.target.value)} value={passwordVerify} />
+                    <Form.Control required type="password" placeholder="Re-enter your password" onChange={(e) => setPasswordVerify(e.target.value)} value={passwordVerify} />
                 </Form.Group>
 
                 <Button type="submit">

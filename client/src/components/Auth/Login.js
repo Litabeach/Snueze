@@ -47,10 +47,10 @@ function Login() {
         <h3 id="login-phrase">Your best bet for better sleep.</h3>
         <h5>Log into Snüze</h5>
     <Form.Group controlId="formBasicEmail">
-        <Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />
+        <Form.Control required type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />
     </Form.Group>
     <Form.Group controlId="formBasicPassword">
-        <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} />
+        <Form.Control required type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} />
     </Form.Group>
     <Button type="submit">
         Login

@@ -2,8 +2,9 @@ import React from 'react';
 import {Alert} from 'react-bootstrap';
 
 function alertSuccess() {
+  const [show, setShow] = React.useState(flase)
   return (
-      <Alert variant="success">
+      <Alert show={show} variant="success">
       Sleep recorded successfully!
     </Alert>
   )

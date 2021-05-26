@@ -1,12 +1,15 @@
 import surveyAPI from "../../utils/surveyAPI";
 import React, { useEffect, useState } from 'react';
-import { Container, Form, Col, fieldset, Row, InputGroup, Button, FormControl } from "react-bootstrap";
+import { Container, Form, Col, fieldset, Row, InputGroup, Button, FormControl, Alert } from "react-bootstrap";
 import "./style.css";
 import Quote from "../../components/Quote"
+import alertSuccess from '../../components/Alert'
 import { MDBContainer } from 'mdbreact'
+
 
 function Survey() {
   // Setting our component's initial state
+  const [show, setShow] = useState(false)
   const [survey, setSurveys] = useState([]);
   const [formObject, setFormObject] = useState({
     date: "",
@@ -19,21 +22,22 @@ function Survey() {
 
   // Load all surveys and store them with setSurveys
   useEffect(() => {
-    loadSurveys();
+    // loadSurveys();
   }, []);
 
   // Loads all surveys and sets them to surveys
-  function loadSurveys() {
-    surveyAPI.getSurveys()
-      .then(res =>
-        setSurveys(res.data)
-      )
-      .catch(err => console.log(err));
-  }
+  // function loadSurveys() {
+  //   surveyAPI.getSurveys()
+  //     .then(res =>
+  //       setSurveys(res.data)
+  //     )
+  //     .catch(err => console.log(err));
+  // }
 
   // When the form is submitted, use the API.saveSurvey method to save the survey data
   // Then reload surveys from the database
   function handleFormSubmit(event) {
+
     console.log("formObject-START");
     if (formObject.date && formObject.hoursslept && formObject.sleepquality && formObject.mood && formObject.bedtime) {
       surveyAPI.saveSurvey({
@@ -52,9 +56,17 @@ function Survey() {
           notes: "",
           bedtime: "",
         }))
-        .then(() => loadSurveys(), alert("Sleep recorded!"))
+
+     // .then(() => loadSurveys()) 
+        .then(() => setShow(true))
         .catch(err => console.log(err));
-    }
+
+        
+   // else {
+      //event.preventDefault()
+      //alert("Please make sure you fill out all fields before you submit!")
+
+    //}
   }
 
   function changeHandler(event) {
@@ -63,13 +75,17 @@ function Survey() {
     setFormObject({ ...formObject, [name]: value });
   }
 
+  function alert(){
+    alertSuccess();
+  }
+
   return (
 
     <Container fluid>
       <Quote />
-      <MDBContainer style={{ width: "50%"}}>
+      <MDBContainer>
       <h1>Record Your Sleep</h1>
-      <h4>Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h4>
+      <h4 className="survey-h4">Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h4>
       </MDBContainer>
       <Form className="survey-form">
         <Row>
@@ -207,6 +223,7 @@ function Survey() {
             <Form.Group as={Row} className="formSubmit">
               <Col sm={{ span: 12 }}>
                 <Button type="submit" onClick={handleFormSubmit}>Submit</Button>
+                {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Recorded successfully!</p></Alert> : null} 
               </Col>
             </Form.Group>
           </Col>
