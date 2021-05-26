@@ -72,7 +72,7 @@ function Survey() {
     <Container fluid>
       <Quote />
       <h1>Record Your Sleep</h1>
-      <h4>Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h4>
+      <h5>Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h5>
       <Form className="survey-form">
         <Row>
           <Col sm={6} className="surveyCol">

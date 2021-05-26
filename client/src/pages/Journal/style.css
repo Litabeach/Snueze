@@ -49,9 +49,10 @@
 }
 
 .dreamsCol{
-  width:600px;
-  margin-left:8%;
-  bottom: 100px;
+  margin: auto;
+  padding: 20px;
+  display: block;
+  width: 500px;
 }
 
 .list-title{
