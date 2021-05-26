@@ -63,6 +63,10 @@ function Journal() {
         .then(() => loadEntries(alert("Dream saved!")))
         .catch(err => console.log(err));
     }
+    else {
+    event.preventDefault()
+    alert("Please make sure you fill out all fields before you submit!")
+    }
   };
   console.log("entries", entries.id);
 
