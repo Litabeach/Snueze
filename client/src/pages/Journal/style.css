@@ -1,12 +1,3 @@
-
-
-.dream-h4 {
-  margin-left:20%;
-  margin-bottom: 2%;
-  width: 60%;
-  text-align: center;
-}
-
 .journal-form {
   align-items: center;
   display: flex;
@@ -31,6 +22,10 @@
   text-align: center;
 }
 
+.noDreams {
+  text-align: center;
+}
+
 .dream-list-header {
   text-align: center;
   margin-bottom: 30px;
@@ -49,9 +44,10 @@
 }
 
 .dreamsCol{
-  width:600px;
-  margin-left:8%;
-  bottom: 100px;
+  margin: auto;
+  padding: 20px;
+  display: block;
+  width: 500px;
 }
 
 .list-title{

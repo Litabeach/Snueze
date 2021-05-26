@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import surveyAPI from "../../utils/surveyAPI";
-import { Form, Button } from 'react-bootstrap'
+import { Form, Row, Col, Button } from 'react-bootstrap'
 
 function Notes() {
 
@@ -53,11 +53,10 @@ function Notes() {
 
     return (
         <>
+        <Row>
+            <Col sm={12}>    
             <h3>Search Past Notes</h3>
-
-            <h4>Wondering what else might have happened to you on a particular day? Search below to see notes you've kept.</h4>
-           
-
+            <h5>Wondering what else might have happened to you on a particular day? Search below to see notes you've kept.</h5>
             <Form.Group className="form-group">
                 <Form.Control type="date" name="date" onChange={handleInputChange}></Form.Control>
             </Form.Group>
@@ -65,6 +64,8 @@ function Notes() {
             <Form.Text>
                 <h5>{note}</h5>
             </Form.Text>
+            </Col>
+        </Row>
         </>
     )
 }
