@@ -19,7 +19,7 @@ class Resources extends Component {
       <Quote />
         <h1>Resources</h1>
         <Row>
-          <Col sm={12} className="resourcecontainer">
+          <Col sm={6} className="resourcecontainer">
             <h3 className="subheading">Having trouble falling asleep?</h3>
             {this.state.resources.map(resources => (
               <div key={resources.id}>
@@ -35,7 +35,7 @@ class Resources extends Component {
             ))}
           </Col>
 
-          <Col sm={12} className="resourcecontainer">
+          <Col sm={6} className="resourcecontainer">
             <h3 className="subheading">Not sleeping enough hours?</h3>
             {this.state.resources2.map(resources2 => (
               <div key={resources2.id}>

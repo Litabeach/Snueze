@@ -1,33 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html {
-    height: 100%;
-  }
-  
-  body {
-    font-family: Helvetica, Arial, sans-serif;
-    color: #333e5a;
-    min-height: 100%;
-  }
-  
-  header {
-    text-align: center;
-    flex-grow: 0;
-    margin-bottom: 2em;
-  }
-  
-  h1 {
-    font-weight: 300;
-    padding: 0.4em 0;
-  }
-  
-  #root {
-    min-height: 100vh;
-  }
+
   
   .chatApp {
     min-height: 40vh;
@@ -35,48 +6,68 @@
     display: flex;
     flex-direction: column;
   }
-  
-  main {
-    flex-grow: 1;
+
+  #dropdown-basic {
+    color: black !important;
+    background-color: white;
+    text-align: left;
   }
-  
-  .chatForm {
-    max-width: 300px;
-    margin: 0 auto;
-    margin-left:90px
+ 
+
+.form-label {
+  font-size: 18px;
+}
+
+  .room-dropdown {
+    color: black !important;
   }
-  
+
+  .room-item {
+    color: black !important;
+  }
+
+  .room-item:hover {
+    background-color: purple !important;
+    color: white !important;
+  }
+ 
+.join-btn {
+  text-align: center;
+}
+
   .chatH2 {
     font-weight: 300;
     margin-bottom: 1em;
     text-align: center;
   }
   
-  .chatForm > div {
-    width: 100%;
-    margin-bottom: 1em;
+  .chatForm {
+    display: flex;
+    flex-direction: column;
+    margin: auto;  
   }
+
   .chatForm > div > label {
     display: block;
     margin-bottom: 0.3em;
   }
-  .chatForm > div > input {
+  /* .chatForm > div > input {
     display: block;
     width: 100%;
     font-size: 16px;
     padding: 0.4em;
     border-radius: 6px;
     border: 1px solid #333e5a;
-  }
+  } */
   
-  .chatButton {
+  /* .chatButton {
     background: #333e5a;
     color: #fff;
     font-size: 16px;
     padding: 0.4em;
     border-radius: 6px;
     border: 1px solid transparent;
-  }
+  } */
 
   /* button:hover {
     filter: brightness(150%);

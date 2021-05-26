@@ -2,31 +2,29 @@
     background-color: transparent;
     border: transparent;
     color: white;
-    cursor:pointer;
-    margin-bottom: -15px;
-    margin-top: -15px;
+    cursor: pointer;
+    width: 350px;
+    text-align: left;
 }
 
-.chatBody{
+.chatBody {
     margin-bottom: -5px;
     margin-top: -5px;
 }
 
 .chat-desc-div {
-   margin-left: 700px;
-   margin-top:-220px;
-   height: 300px;
-   overflow: move;
-   overflow-x: hidden;
-   width: 400px;
-   padding-left:5px;
+    /* margin-left: 700px;
+   margin-top:-220px; */
+    /* height: 300px; */
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    overflow: move;
+    overflow-x: hidden;
+        /* width: 400px; */
 }
 
-
-.chat-h3 {
-    margin-left: 410px;
+.room-desc-title {
+    padding: 10px;
+    margin: -5px;
 }
-/* .chat-desc-item{
-    display:inline-block;
-
-} */

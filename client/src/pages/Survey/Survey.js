@@ -81,11 +81,11 @@ function Survey() {
       <Form className="survey-form">
         <Row>
           <Col sm={6} className="surveyCol">
-            <Form.Group as={Row} controlId="recordDate">
+            <Form.Group as={Row}>
               <Form.Label column sm={12}>
                 <h4>Date</h4>
               </Form.Label>
-              <Col sm={12}>
+              <Col sm={6}>
                 <Form.Control required type="date" name="date" onChange={changeHandler} />
               </Col>
             </Form.Group>
@@ -93,7 +93,7 @@ function Survey() {
               <Form.Label column sm={12}>
                 <h4>Bedtime</h4>
               </Form.Label>
-              <Col sm={12}>
+              <Col sm={6}>
                 <Form.Control required type="time" name="bedtime" onChange={changeHandler} />
               </Col>
             </Form.Group>
@@ -101,7 +101,7 @@ function Survey() {
               <Form.Label column sm={12}>
                 <h4>Hours slept</h4>
               </Form.Label>
-              <Col sm={12}>
+              <Col sm={6}>
                 <Form.Control min={0} max={24} name="hoursslept" required type="number" maxLength="2" onChange={changeHandler} />
               </Col>
             </Form.Group>
@@ -199,7 +199,7 @@ function Survey() {
         </Row>
         <Row>
           <Col sm={12} className="surveyCol">
-            <Form.Group as={Row} controlId="formNotes">
+            <Form.Group as={Row}>
               <Form.Label column sm={12}>
                 <h4>Was there anything about your day that may have affected your sleep? (optional)</h4>
               </Form.Label>
@@ -210,7 +210,7 @@ function Survey() {
           </Col>
         </Row>
         <Row>
-          <Col sm={12} className="surveyCol">
+          <Col sm={12} className="submitBtn surveyCol">
             <Form.Group as={Row}>
               <Col sm={{ span: 12 }}>
               {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Recorded successfully!</p></Alert> : null} 

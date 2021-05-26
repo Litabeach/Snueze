@@ -42,14 +42,14 @@ function Login() {
   return (
     
     <Container className="login">
-        <Form className="login-form mx-auto" onSubmit={login}>
-        <h1 className="d-inline-block snuzeshade auth-logo" style={{margin: "0 auto", textAlign: "center"}}>Snüze</h1>
+        <Form className="login-form" onSubmit={login}>
+        <h1 className="d-inline-block snuzeshade auth-logo">Snüze</h1>
         <h3 id="login-phrase">Your best bet for better sleep.</h3>
         <h5>Log into Snüze</h5>
-    <Form.Group controlId="formBasicEmail">
+    <Form.Group>
         <Form.Control required type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} />
     </Form.Group>
-    <Form.Group controlId="formBasicPassword">
+    <Form.Group>
         <Form.Control required type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} />
     </Form.Group>
     <Button type="submit">

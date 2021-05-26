@@ -53,19 +53,19 @@ function Register() {
             <h1 className="d-inline-block snuzeshade auth-logo" style={{margin: "0 auto", textAlign: "center"}}>Snüze</h1>
             <h3 id="login-phrase">Your best bet for better sleep.</h3>
                 <h5>Register with Snüze</h5>
-                <Form.Group controlId="formBasicName">
+                <Form.Group>
                     <Form.Control required type="text" placeholder="What's your name?" onChange={(e) => setUserName(e.target.value)} value={username} />
                 </Form.Group>
 
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group>
                     <Form.Control required type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} value={email} />
                 </Form.Group>
 
-                <Form.Group controlId="formBasicCreatePassword">
+                <Form.Group>
                     <Form.Control required type="password" placeholder="Create a password" onChange={(e) => setPassword(e.target.value)} value={password} />
                 </Form.Group>
 
-                <Form.Group controlId="formBasicVerifyPassword">
+                <Form.Group>
                     <Form.Control required type="password" placeholder="Re-enter your password" onChange={(e) => setPasswordVerify(e.target.value)} value={passwordVerify} />
                 </Form.Group>
 

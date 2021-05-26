@@ -8,10 +8,10 @@ function ChatDescription(props) {
         <div className="chat-desc-item">
             <Accordion>
                 <Accordion.Toggle className="chatTitle" eventKey={props.id}>
-                    <h4>{props.title}</h4>
+                    <h4 className="room-desc-title">{props.title}</h4>
                 </Accordion.Toggle> <br />
                 <Accordion.Collapse className="chatBody" eventKey={props.id}>
-                    <h5>{props.description}</h5>
+                    <h5 className="room-desc-body">{props.description}</h5>
                 </Accordion.Collapse>
             </Accordion>
 
