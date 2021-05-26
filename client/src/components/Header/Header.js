@@ -34,7 +34,7 @@ function Header() {
               </Nav.Item>
 
               <Nav.Item>
-                <Nav.Link className="navitem" href="/dreams" title="Dreams">
+                <Nav.Link className="navitem" href="/dream" title="Dreams">
                   Dream
               </Nav.Link>
               </Nav.Item>
