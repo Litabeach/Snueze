@@ -59,12 +59,12 @@ function Survey() {
         .then(() => setShow(true))
         .catch(err => console.log(err));
 
-        
-   // else {
-      //event.preventDefault()
-      //alert("Please make sure you fill out all fields before you submit!")
+      }    
+   else {
+      event.preventDefault()
+      alert("Please make sure you fill out all fields before you submit!")
 
-    //}
+    }
   }
 
   function changeHandler(event) {
@@ -229,6 +229,7 @@ function Survey() {
   )
 
 }
+
 
 export default Survey;
 
