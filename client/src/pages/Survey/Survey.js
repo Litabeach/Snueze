@@ -1,6 +1,6 @@
 import surveyAPI from "../../utils/surveyAPI";
-import React, { useEffect, useState } from 'react';
-import { Container, Form, Col, fieldset, Row, InputGroup, Button, FormControl, Alert } from "react-bootstrap";
+import React, { useState } from 'react';
+import { Container, Form, Col, Row, Button, Alert } from "react-bootstrap";
 import "./style.css";
 import Quote from "../../components/Quote"
 
@@ -18,19 +18,7 @@ function Survey() {
     bedtime: "",
   });
 
-  // Load all surveys and store them with setSurveys
-  useEffect(() => {
-    // loadSurveys();
-  }, []);
-
-  // Loads all surveys and sets them to surveys
-  // function loadSurveys() {
-  //   surveyAPI.getSurveys()
-  //     .then(res =>
-  //       setSurveys(res.data)
-  //     )
-  //     .catch(err => console.log(err));
-  // }
+ 
 
   // When the form is submitted, use the API.saveSurvey method to save the survey data
   // Then reload surveys from the database
@@ -84,8 +72,8 @@ function Survey() {
       <Quote />
       <h1>Record Your Sleep</h1>
       <h5 className="subheading">Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h5>
-      {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Recorded successfully!</p></Alert> : null} 
-      {error ? <Alert className="dangerAlert" variant="danger" onClose={() => setError(false)} dismissible><p>{errorMsg}</p></Alert> : null} 
+      {show ? <Alert className="successAlert" variant="success" onClose={() => {setShow(false); window.location.reload()}} dismissible><p>Recorded successfully!</p></Alert> : null} 
+      {error ? <Alert className="dangerAlert" variant="warning" onClose={() => setError(false)} dismissible><p>{errorMsg}</p></Alert> : null} 
       <Form className="survey-form">
         <Row>
           <Col sm={6} className="surveyCol">
