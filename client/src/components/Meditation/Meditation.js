@@ -141,19 +141,16 @@ class Meditation extends Component {
 
     console.log(this.state.timeBtnClass);
     const timeOptions = this.state.timeValues.map((duration) =>
-      <button className="medBtn" key={duration} onMouseEnter={this.handleTimeHover.bind(this)} onMouseLeave={this.handleTimeHover.bind(this)} className={ !this.state.timeHovered && duration === this.state.desiredTime ? "active" : "" } onClick={ () => {this.timeSelect({duration})} }>{duration/60} Minutes</button>
+      <button key={duration} onMouseEnter={this.handleTimeHover.bind(this)} onMouseLeave={this.handleTimeHover.bind(this)} className={ !this.state.timeHovered && duration === this.state.desiredTime 
+                                          ? "active" : "" } onClick={ () => {this.timeSelect({duration})} }>{duration/60} Minutes</button>
     );
 
     const audioOptions = this.state.audioNames.map((audioName) =>
-      <button className="medBtn" key={audioName} onMouseEnter={this.handleAudioHover.bind(this)} onMouseLeave={this.handleAudioHover.bind(this)} className={ !this.state.audioHovered && this.state.audioUrl === "audio/" + audioName.toLowerCase() + ".mp3" ? "active" : "" } onClick={ () => {this.audioSelect({audioName})} }>{audioName}</button>
+      <button key={audioName} onMouseEnter={this.handleAudioHover.bind(this)} onMouseLeave={this.handleAudioHover.bind(this)} className={ !this.state.audioHovered && this.state.audioUrl === "audio/" + audioName.toLowerCase() + ".mp3" 
+                                          ? "active" : "" } onClick={ () => {this.audioSelect({audioName})} }>{audioName}</button>
     );
 
     return (
-      <div>
-        <Container>
-      <h1>Meditate</h1>
-      <h4>Sometimes we need a little help drifting off to dreamland. Choose your duration on the left, and your sleep sounds on the right, then hit play to drift off into a comfortable sleep.</h4>
-      </Container>
       <div className="App">
         <div className="bg-overlay"></div>
         <div className="bg" style={{ backgroundImage: `url(${this.state.bgImg})` }} />
@@ -180,7 +177,6 @@ class Meditation extends Component {
         <div className="audio-menu">
           {audioOptions}
         </div>
-      </div>
       </div>
     )
   }
