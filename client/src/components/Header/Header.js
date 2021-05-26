@@ -11,67 +11,68 @@ function Header() {
 
   return (
     <Navbar bg="#EB6864" expand="lg" sticky="top-0">
-        <Navbar.Brand href="/" className="d-inline-block snuzeshade">Snüze</Navbar.Brand>
-        {loggedIn === true && (
-          <>
-        <Navbar.Toggle aria-controls="navbar-nav"><span className="material-icons yellow">
-        menu
+
+      {loggedIn === true && (
+        <>
+          <Navbar.Brand href="/" className="d-inline-block snuzeshade">Snüze</Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbar-nav"><span className="material-icons yellow">
+            menu
         </span></Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-        
-                <Nav.Item>
-                  <Nav.Link className ="navitem"  href="/mybed" title="My Bed">
-                    My Bed
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ml-auto">
+
+              <Nav.Item>
+                <Nav.Link className="navitem" href="/mybed" title="My Bed">
+                  My Bed
               </Nav.Link>
-                </Nav.Item>
+              </Nav.Item>
 
-                <Nav.Item>
-                  <Nav.Link className ="navitem" href="/survey" title="Record">
-                    Record
+              <Nav.Item>
+                <Nav.Link className="navitem" href="/survey" title="Record">
+                  Record
               </Nav.Link>
-                </Nav.Item>
+              </Nav.Item>
 
-                <Nav.Item>
-                  <Nav.Link className ="navitem" href="/journal" title="Dreams">
-                    Dream
+              <Nav.Item>
+                <Nav.Link className="navitem" href="/journal" title="Dreams">
+                  Dream
               </Nav.Link>
-                </Nav.Item>
+              </Nav.Item>
 
-                <Nav.Item>
-                  <Nav.Link className ="navitem"  href="/stats" title="Insights">
-                    Insights
+              <Nav.Item>
+                <Nav.Link className="navitem" href="/stats" title="Insights">
+                  Insights
               </Nav.Link>
-                </Nav.Item>
+              </Nav.Item>
 
-                <Nav.Item>
-                  <Nav.Link className ="navitem"  href="/tools" title="Meditate">
-                    Meditate
+              <Nav.Item>
+                <Nav.Link className="navitem" href="/tools" title="Meditate">
+                  Meditate
               </Nav.Link>
-                </Nav.Item>
+              </Nav.Item>
 
-                <Nav.Item>
-                  <Nav.Link className ="navitem"  href="/resources" title="Resources">
-                    Resources
+              <Nav.Item>
+                <Nav.Link className="navitem" href="/resources" title="Resources">
+                  Resources
               </Nav.Link>
-                </Nav.Item>
+              </Nav.Item>
 
-                <Nav.Item>
-                  <Nav.Link className ="navitem"  href="/community" title="Community">
-                    Community
+              <Nav.Item>
+                <Nav.Link className="navitem" href="/community" title="Community">
+                  Community
               </Nav.Link>
-                </Nav.Item>
+              </Nav.Item>
 
-                <LogoutBtn />
+              <LogoutBtn />
 
-                <Nav.Item>
-                  <SpeechToTextNav />
-                </Nav.Item>
+              <Nav.Item>
+                <SpeechToTextNav />
+              </Nav.Item>
 
-          </Nav>
-        </Navbar.Collapse>
+            </Nav>
+          </Navbar.Collapse>
         </>
-        )}
+      )}
     </Navbar>
   )
 }

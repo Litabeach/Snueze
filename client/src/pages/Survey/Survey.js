@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { Container, Form, Col, fieldset, Row, InputGroup, Button, FormControl, Alert } from "react-bootstrap";
 import "./style.css";
 import Quote from "../../components/Quote"
-import alertSuccess from '../../components/Alert'
 
 function Survey() {
   // Setting our component's initial state
@@ -71,10 +70,6 @@ function Survey() {
     const { name, value } = event.target;
     console.log(value);
     setFormObject({ ...formObject, [name]: value });
-  }
-
-  function alert(){
-    alertSuccess();
   }
 
   return (
@@ -218,8 +213,8 @@ function Survey() {
           <Col sm={12} className="surveyCol">
             <Form.Group as={Row} className="formSubmit">
               <Col sm={{ span: 12 }}>
+              {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Recorded successfully!</p></Alert> : null} 
                 <Button type="submit" onClick={handleFormSubmit}>Submit</Button>
-                {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Recorded successfully!</p></Alert> : null} 
               </Col>
             </Form.Group>
           </Col>

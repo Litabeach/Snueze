@@ -50,6 +50,8 @@ function Register() {
     return (
         <Container>
             <Form className="register-form" onSubmit={register}>
+            <h1 className="d-inline-block snuzeshade auth-logo" style={{margin: "0 auto", textAlign: "center"}}>Snüze</h1>
+            <h3 id="login-phrase">Your best bet for better sleep.</h3>
                 <h5>Register with Snüze</h5>
                 <Form.Group controlId="formBasicName">
                     <Form.Control required type="text" placeholder="What's your name?" onChange={(e) => setUserName(e.target.value)} value={username} />
