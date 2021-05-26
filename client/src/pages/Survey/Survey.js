@@ -4,8 +4,6 @@ import { Container, Form, Col, fieldset, Row, InputGroup, Button, FormControl, A
 import "./style.css";
 import Quote from "../../components/Quote"
 import alertSuccess from '../../components/Alert'
-import { MDBContainer } from 'mdbreact'
-
 
 function Survey() {
   // Setting our component's initial state
@@ -83,14 +81,12 @@ function Survey() {
 
     <Container fluid>
       <Quote />
-      <MDBContainer>
       <h1>Record Your Sleep</h1>
-      <h4 className="survey-h4">Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h4>
-      </MDBContainer>
+      <h5 className="subheading">Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h5>
       <Form className="survey-form">
         <Row>
           <Col sm={6} className="surveyCol">
-            <Form.Group as={Row} controlId="formDate">
+            <Form.Group as={Row} controlId="recordDate">
               <Form.Label column sm={12}>
                 <h4>Date</h4>
               </Form.Label>

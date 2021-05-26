@@ -27,8 +27,8 @@ function Header() {
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link className ="navitem" href="/survey" title="Sleep">
-                    Sleep
+                  <Nav.Link className ="navitem" href="/survey" title="Record">
+                    Record
               </Nav.Link>
                 </Nav.Item>
 

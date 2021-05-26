@@ -18,7 +18,7 @@ class Resources extends Component {
       <div>
       <Jumbotron>Resources</Jumbotron>
       <div className="resourcecontainer">
-        <h3 className="resourceh3">When You Can't Get To Sleep</h3>
+        <h5 className="subheading">When You Can't Get To Sleep</h5>
         {this.state.resources.map(resources => (
           <div key={resources.id}>
             <br></br>
