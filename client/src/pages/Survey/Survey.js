@@ -7,7 +7,8 @@ import Quote from "../../components/Quote"
 function Survey() {
   // Setting our component's initial state
   const [show, setShow] = useState(false)
-  const [survey, setSurveys] = useState([]);
+  const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState();
   const [formObject, setFormObject] = useState({
     date: "",
     hoursslept: "",
@@ -58,13 +59,15 @@ function Survey() {
         .then(() => setShow(true))
         .catch(err => {
           console.log(err.response)
-          alert("Oops! " + err.response.data.msg)
+          setError(true)
+          setErrorMsg("Oops! " + err.response.data.msg + ". Please fill out another date.")
           
         });
 
       }    
    else {
-      alert("Please make sure you fill out all fields before you submit!")
+     setError(true)
+     setErrorMsg("Please make sure you fill out all fields before you submit!")
 
     }
   }
@@ -81,6 +84,8 @@ function Survey() {
       <Quote />
       <h1>Record Your Sleep</h1>
       <h5 className="subheading">Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h5>
+      {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Recorded successfully!</p></Alert> : null} 
+      {error ? <Alert className="dangerAlert" variant="danger" onClose={() => setError(false)} dismissible><p>{errorMsg}</p></Alert> : null} 
       <Form className="survey-form">
         <Row>
           <Col sm={6} className="surveyCol">
@@ -216,7 +221,7 @@ function Survey() {
           <Col sm={12} className="surveyCol">
             <Form.Group as={Row}>
               <Col sm={{ span: 12 }}>
-              {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Recorded successfully!</p></Alert> : null} 
+              
                 <Button type="submit" onClick={handleFormSubmit}>Submit</Button>
               </Col>
             </Form.Group>
