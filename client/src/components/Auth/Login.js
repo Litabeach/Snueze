@@ -21,15 +21,6 @@ function Login() {
         email,
         password,
       };
-
-
-      // if (!email){
-      //   alert("Please enter you email address")
-      // }
-
-      // if (!password){
-      //   alert("Please enter you password")
-      // }
       
       await axios.post("/auth/login", loginData);
       await getLoggedIn();
