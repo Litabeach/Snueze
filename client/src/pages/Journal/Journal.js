@@ -50,7 +50,7 @@ function Journal() {
   // When the form is submitted, use the API.saveEntry method to save the journal entry data
   // Then reload entries from the database
   function handleFormSubmit(event) {
-   
+    event.preventDefault();
     if (formObject.title && formObject.body) {
       journalAPI.saveEntry({
         title: formObject.title,
@@ -142,7 +142,7 @@ function Journal() {
             </Form.Group>
             <Form.Group as={Row} controlId="formBody">
               <Form.Label column sm={12}>
-                <h4 id="dreamh4">What was your dream about?   
+                <h4>What was your dream about?   
                   <span className="micSpan" data-tip="Click me to use speech to text. Say 'reset' to clear your thoughts, or hit the stop button when you are finished">
                     <div className="microphone-wrapper-nav popup">
                       <div className="mircophone-container-journal">

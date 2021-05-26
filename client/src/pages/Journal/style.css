@@ -144,7 +144,7 @@
 
 
 @media screen and (max-width: 375px){
-  .dreamsCol, .journalCol {
+  .dreamsCol, .journalCol, .journal-form {
     width:325px;
     margin-left:25px;
   }
@@ -161,9 +161,9 @@
 }
 
 @media screen and (max-width: 414px){
-  .dreamsCol, .journalCol {
-    width:350px;
-    margin-left:35px;
+  .dreamsCol, .journalCol, .journal-form {
+    width:325px;
+    margin-left:20px;
   }
 
   .dreamsCol{
@@ -175,11 +175,12 @@
     margin-left: 25px;
     margin-bottom: 15px;
   }
+
 }
 
 @media screen and (max-width: 375px), (max-height: 667){
-  .dreamsCol, .journalCol {
-    width:325px;
+  .dreamsCol, .journalCol, .journal-form{
+    width:280px;
     margin-left:25px;
   }
 
@@ -192,4 +193,6 @@
     margin-left: 15px;
     margin-bottom: 15px;
   }
+
+
 }
