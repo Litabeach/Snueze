@@ -12,6 +12,10 @@ body {
   margin: auto;
 }
 
+.successAlert {
+  margin: 15px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -44,10 +48,12 @@ body {
   margin-bottom: 40px;
 }
 
-.container {
+.subheading {
+  display: flex;
+  flex-direction: column;
+  margin: auto; 
   align-items: center;
-    display: flex;
-    flex-direction: column;
+  max-width: 920px;
 }
 
 a {
@@ -88,8 +94,8 @@ a:active {
 .btn {
   font-family: KoHo;
   background-color: #ebe264;
-  border: 1px solid grey;
-  color: rgb(0, 51, 44);
+  border: none;
+  color: black;
   padding: 10px 20px 10px 20px;
   font-size: 1.5rem;
 }
@@ -98,16 +104,19 @@ a:active {
   /* background-color: #fa6e6ee5; */
   background-color: #7462c9; 
   color: white;
+  border: none;
 }
 
 .btn:visited {
-  background-color: #7462c9;
-  color: white;
+  background-color: #7462c9 !important;
+  color: white !important;
+  border: none !important;
 }
 
 .btn:active {
-  background-color: silver;
-  color: #7462c9;
+  background-color: silver !important;
+  color: #7462c9 !important;
+  border: none !important;
 }
 
 .form-text {
@@ -126,6 +135,12 @@ h1 {
 
 h3 {
   color: #ebe264;
+}
+
+h4 {
+  display: flex;
+  flex-direction: column;
+  margin: auto; 
 }
 
 h5 {

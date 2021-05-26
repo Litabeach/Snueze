@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken")
-// export const userId = React.createContext
+
 //register
 router.post("/", async (req, res) => {
     try {
@@ -70,7 +70,6 @@ router.post("/login", async (req, res) => {
         const { email, password } = req.body;
         //validate 
         if (!email || !password){
-            console.log(res)
             return res
                 .status(400)
                 .send({
@@ -111,6 +110,7 @@ router.post("/login", async (req, res) => {
         res.cookie("token", token, {
             httpOnly: true
         })
+    
         res.cookie("userId", existingUser._id)
         res.send();
     } catch (err) {
@@ -126,6 +126,7 @@ router.get("/logout", (req, res) => {
     })
         .send();
 });
+
 router.get("/loggedIn", (req, res) => {
     try {
       const token = req.cookies.token;

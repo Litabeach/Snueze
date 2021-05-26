@@ -7,12 +7,14 @@ import "./style.css"
 import dateFormat from 'dateformat';
 import microphoneicon from './microphone.png';
 import micstopicon from './stopbutton.png';
-import { Container, Form, Col, Row, ListGroup, Button } from "react-bootstrap";
+import { Container, Form, Col, Row, ListGroup, Button, Alert } from "react-bootstrap";
 import Quote from "../../components/Quote";
 import Accordion from 'react-bootstrap/Accordion';
 
 function Journal() {
   // Setting our component's initial state
+  const [show, setShow] = useState(false)
+  // const [error, setError] = useState(false)
   const [entries, setEntries] = useState([""])
   const [formObject, setFormObject] = useState({
     date: "",
@@ -60,8 +62,16 @@ function Journal() {
           body: "",
           date: ""
         }))
-        .then(() => loadEntries(alert("Dream saved!")))
-        .catch(err => console.log(err));
+        .then(() => loadEntries())
+        .then(() => setShow(true))
+        .catch(err => {
+          console.log(err)
+
+        });
+    }
+    else {
+    event.preventDefault()
+    alert("Please make sure you fill out all fields before you submit!")
     }
   };
   console.log("entries", entries.id);
@@ -110,31 +120,30 @@ function Journal() {
   return (
     <Container fluid>
       <Quote />
-      <h1 classNname="dream-h1">Dream Journal</h1>
-      <h4 className="dream-h4">Dreams are direct links to our emotional and mental health. Keep and review your dream journal here. We promise we won't peek.</h4>
+      <h1>Dream Journal</h1>
+      <h5 className="subheading">Dreams are direct links to our emotional and mental health. Keep and review your dream journal here. We promise we won't peek.</h5>
       <Form className="journal-form">
         <Row>
-          <Col sm={7} className="journalCol">
-
+          <Col sm={6} className="journalCol">
             <Form.Group as={Row} controlId="formDate">
               <Form.Label column sm={12}>
                 <h4>Date</h4>
               </Form.Label>
               <Col sm={6}>
-                <Form.Control required type="date" className="dreamform journal-date" name="date" onChange={handleInputChange} value={formObject.date} />
+                <Form.Control required type="date" name="date" onChange={handleInputChange} />
               </Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="formTitle">
+            <Form.Group as={Row} className="formTitle">
               <Form.Label column sm={12}>
                 <h4>Title</h4>
               </Form.Label>
               <Col sm={12}>
-                <Form.Control required type="text" className="dreamform journal-title" name="title" required type="text" onChange={handleInputChange} value={formObject.title} />
+                <Form.Control required type="text" name="title" type="text" onChange={handleInputChange} />
               </Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="formBody">
+            <Form.Group as={Row} className="formBody">
               <Form.Label column sm={12}>
-                <h4>What was your dream about?   
+                <h4>What was your dream about?
                   <span data-tip="Click me to use speech to text. Say 'reset' to clear your thoughts, or hit the stop button when you are finished">
                     <div className="microphone-wrapper-nav popup">
                       <div className="mircophone-container-journal">
@@ -154,22 +163,22 @@ function Journal() {
                 </h4>
               </Form.Label>
               <Col sm={12}>
-                <Form.Control required as="textarea" type="text" name="body" className="dreamform journal-body" onChange={handleInputChange} value={formObject.body} />
+                <Form.Control required as="textarea" type="text" name="body" className="dreamform journal-body" onChange={handleInputChange} />
               </Col>
             </Form.Group>
             <Row>
-              <Col sm={6}>
+              <Col sm={6} className="journalCol">
                 <Form.Group as={Row} className="formSubmit">
                   <Button type="submit"
                     onClick={handleFormSubmit} >
                     Save
                   </Button>
+                  {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Entry saved successfully!</p></Alert> : null} 
                 </Form.Group>
               </Col>
             </Row>
           </Col>
-
-          <Col sm={4} className="dreamsCol">
+          <Col sm={6} className="dreamsCol">
             <h3 className="dream-list-header">Past Dreams</h3>
             {entries.length ? (
               <List>
@@ -191,7 +200,7 @@ function Journal() {
                 </Accordion>
               </List>
             ) : (
-              <h4>No dreams have been recorded yet</h4>
+              <h4 className="noDreams">No dreams have been recorded yet</h4>
             )}
           </Col>
         </Row>

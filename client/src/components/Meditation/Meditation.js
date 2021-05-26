@@ -152,6 +152,8 @@ class Meditation extends Component {
 
     return (
       <div className="App">
+            <h1>Meditate</h1>
+      <h4 className="subheading">Sometimes we need a little help drifting off to dreamland. Choose your duration on the left, and your sleep sounds on the right, then hit play to drift off into a comfortable sleep.</h4>
         <div className="bg-overlay"></div>
         <div className="bg" style={{ backgroundImage: `url(${this.state.bgImg})` }} />
         <div className="time-menu">{timeOptions}</div>
