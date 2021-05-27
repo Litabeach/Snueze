@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import Lobby from "./Lobby";
 import Room from "./Room";
+import ChatRoomDescriptionDiv from './ChatRoomDescDiv';
 
 const VideoChat = () => {
   const [username, setUsername] = useState("");
@@ -46,6 +47,7 @@ let render;
     );
   } else {
     render = (
+      <div>
       <Lobby
          username={username}
          roomName={roomName}
@@ -53,6 +55,9 @@ let render;
          handleRoomNameChange={handleRoomNameChange}
          handleSubmit={handleSubmit}
       />
+      
+      <ChatRoomDescriptionDiv />
+    </div>
     );
   }
   return render;
