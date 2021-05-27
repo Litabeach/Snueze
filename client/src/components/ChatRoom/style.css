@@ -9,13 +9,6 @@
     align-items: center;
   }
 
-  #dropdown-basic {
-    color: black !important;
-    background-color: white;
-    text-align: left;
-  }
- 
-
 .form-label {
   font-size: 18px;
 }
@@ -38,9 +31,9 @@
 }
   
 .lobby-form {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  margin: auto; */
+  margin: auto;
 }
 
 .lobby-header {
@@ -51,7 +44,11 @@
 .lobbyCol {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  width: 400px;
+}
+
+.list-heading {
+  text-align: center;
 }
 
   /* .chatForm > div > input {

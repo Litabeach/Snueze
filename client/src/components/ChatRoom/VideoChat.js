@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import Lobby from "./Lobby";
 import Room from "./Room";
 import ChatRoomDescriptionDiv from './ChatRoomDescDiv';
+import { Row, Col } from 'react-bootstrap'
 
 const VideoChat = () => {
   const [username, setUsername] = useState("");
@@ -47,7 +48,8 @@ let render;
     );
   } else {
     render = (
-      <div>
+      <Row>
+      <Col sm={6} className="lobbyCol">
       <Lobby
          username={username}
          roomName={roomName}
@@ -55,9 +57,11 @@ let render;
          handleRoomNameChange={handleRoomNameChange}
          handleSubmit={handleSubmit}
       />
-      
+      </Col>
+      <Col sm={6}>
       <ChatRoomDescriptionDiv />
-    </div>
+      </Col>
+    </Row>
     );
   }
   return render;

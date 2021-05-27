@@ -11,10 +11,3 @@
     border: transparent;
     color: white;
 }
-
-.chatRoomCol {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    align-items: center;
-}
