@@ -16,7 +16,7 @@ class Resources extends Component {
   render() {
     return (
       <Container fluid>
-      <Quote />
+      <p id="quoteDisplay1" className="quoteDisplay">No civilized person goes to bed the same day he gets up. — Richard Harding Davis, American Journalist</p>
         <h1>Resources</h1>
         <Row>
           <Col sm={6} className="resourcecontainer">
