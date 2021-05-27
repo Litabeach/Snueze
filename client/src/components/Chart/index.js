@@ -134,10 +134,10 @@ function Chart() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col sm={6} className="insights-chart">
+                                <Col sm={6} id="chart3" className="insights-chart">
                                     <Doughnut />
                                 </Col>
-                                <Col sm={6} className="insights-chart">
+                                <Col sm={6} id="chart4" className="insights-chart">
                                     <Pie />
                                 </Col>
                             </Row>
