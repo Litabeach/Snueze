@@ -1,4 +1,4 @@
-  
+
 import React, { Component } from "react";
 import ChatRoom from '../../components/ChatRoom';
 import ChatDescription from '../../components/ChatDescriptions/ChatDescriptions';
@@ -16,37 +16,30 @@ class Community extends Component {
     return (
       <Container fluid>
         <h1>Community Chat Rooms</h1>
-        
-          <h5 className="subheading">Sometimes all we're really looking for is a person to connect with over our problems or someone to go to for advice. Utilize our collection of video chat rooms to talk to real people who are going through the same thing as you.</h5>
-          <div className ="communtiychatroomdiv">
-        <Row>
-        <div className="enter-chat">
-        <ChatRoom />
-        </div>
-    
-        <h3 className="chat-h3">Video Chat Rooms</h3>
-        <div className="chat-desc-div">
-        {this.state.chatDesc.map(chatDesc => (
-          <div key={chatDesc.id}>
-        
-           
-            <ChatDescription
-              id={chatDesc.id}
-              title={chatDesc.title}
-              description={chatDesc.description}
-            />
-           
-           
-          </div>
-          
-        ))}
-        
-        </div>
-        
-        </Row>
-        </div>
+        <h5 className="subheading">Sometimes all we're really looking for is a person to connect with over our problems or someone to go to for advice. Utilize our collection of video chat rooms to talk to real people who are going through the same thing as you.</h5>
+          <Col sm={12} className="chatRoomCol">
+            <div className="communtiychatroomdiv">
+              <div className="enter-chat">
+                <ChatRoom />
+              </div>
+              <Col sm={6}>
+                <h3 className="list-title">Video Chat Rooms</h3>
+                <div className="chat-desc-div">
+                  {this.state.chatDesc.map(chatDesc => (
+                    <div key={chatDesc.id}>
+                      <ChatDescription
+                        id={chatDesc.id}
+                        title={chatDesc.title}
+                        description={chatDesc.description}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </Col>
+            </div>
+          </Col>
       </Container>
-      
+
     );
 
   }
