@@ -6,20 +6,15 @@
     align-items: center;
 }
 
-.chatTitle {
+.chat-title {
     background-color: transparent;
     border: transparent;
     color: white;
 }
 
-.community-h4 {
-    margin-left: 20%;
-    margin-bottom: 2%;
-    width: 60%;
-    text-align: center;
-}
-
-.communtiychatroomdiv{
-    margin-left:25px;
-    margin-top:20px;
+.chatRoomCol {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
 }
