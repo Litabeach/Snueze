@@ -15,12 +15,20 @@ class Resources extends Component {
 
   render() {
     return (
-      <Container fluid>
+
+    <div>
       <p id="quoteDisplay1" className="quoteDisplay">No civilized person goes to bed the same day he gets up. — Richard Harding Davis, American Journalist</p>
         <h1>Resources</h1>
+
+
+      
+      <h1>Resources</h1>
+      <Container>
+
         <Row>
-          <Col sm={6} className="resourcecontainer">
-            <h3 className="subheading">Having trouble falling asleep?</h3>
+          <Col sm={12} className="resourcecontainer">
+            <h3 className="sectionHeader">Having trouble falling asleep?</h3>
+            <div className="section">
             {this.state.resources.map(resources => (
               <div key={resources.id}>
                 <ResourceLink
@@ -33,10 +41,13 @@ class Resources extends Component {
                 />
               </div>
             ))}
+            </div>
           </Col>
-
-          <Col sm={6} className="resourcecontainer">
-            <h3 className="subheading">Not sleeping enough hours?</h3>
+            
+          </Row>
+          <Row>
+          <Col sm={12} className="resourcecontainer">
+            <h3 className="sectionHeader">Not sleeping enough hours?</h3>
             {this.state.resources2.map(resources2 => (
               <div key={resources2.id}>
                 <ResourceLink2
@@ -52,6 +63,7 @@ class Resources extends Component {
           </Col>
         </Row>
       </Container>
+      </div>
     );
   }
 }
