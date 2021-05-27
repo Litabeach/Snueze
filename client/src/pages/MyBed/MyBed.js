@@ -8,7 +8,7 @@ function MyBed() {
 
   return (
       <Container fluid className ="myBedContainer">
-      <Quote />
+      <p id="quoteDisplay1" className="quoteDisplay">I love sleep. My life has the tendency to fall apart when I'm awake, you know? — Ernest Hemingway, American Author</p>
         <CardGroup>
           <Card className="card">
             <Link to="/record">
