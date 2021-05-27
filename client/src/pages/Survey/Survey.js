@@ -65,9 +65,9 @@ function Survey() {
   }
 
   return (
-
-    <Container fluid>
-      <p id="quoteDisplay1" className="quoteDisplay">I always say ‘morning' instead of ‘good morning,' because if it was a good morning, I'd still be asleep. — Anonymous</p>
+    <div>
+    <p id="quoteDisplay1" className="quoteDisplay">I always say ‘morning' instead of ‘good morning,' because if it was a good morning, I'd still be asleep. — Anonymous</p>
+    <Container className ="myBedContainer" fluid>
       <h1>Record Your Sleep</h1>
       <h5 className="subheading">Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h5>
     
@@ -215,6 +215,7 @@ function Survey() {
         </Row>
       </Form>
     </Container>
+    </div>
   )
 
 }

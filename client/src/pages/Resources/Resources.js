@@ -18,8 +18,9 @@ class Resources extends Component {
 
     <div>
       <p id="quoteDisplay1" className="quoteDisplay">No civilized person goes to bed the same day he gets up. — Richard Harding Davis, American Journalist</p>
+      
+      <Container className ="myBedContainer">
       <h1>Resources</h1>
-      <Container>
         <Row>
           <Col sm={12} className="resourcecontainer">
             <h3 className="sectionHeader">Having trouble falling asleep?</h3>
