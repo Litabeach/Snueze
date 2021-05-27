@@ -14,7 +14,8 @@ import Accordion from 'react-bootstrap/Accordion';
 function Journal() {
   // Setting our component's initial state
   const [show, setShow] = useState(false)
-  // const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState();
   const [entries, setEntries] = useState([""])
   const [formObject, setFormObject] = useState({
     date: "",
@@ -50,6 +51,9 @@ function Journal() {
   // When the form is submitted, use the API.saveEntry method to save the journal entry data
   // Then reload entries from the database
   function handleFormSubmit(event) {
+
+    event.preventDefault();
+
     if (formObject.title && formObject.body) {
       journalAPI.saveEntry({
         title: formObject.title,
@@ -65,12 +69,14 @@ function Journal() {
         .then(() => setShow(true))
         .catch(err => {
           console.log(err)
-
+          setError(true)
+          setErrorMsg("Oops! Something went wrong. Please double check you are logged in and try again!.")
         });
+    } else {
+      setError(true)
+          setErrorMsg("Please fill out all fields before submitting!")
     }
-    else {
-    event.preventDefault()
-    }
+   
   };
   console.log("entries", entries.id);
 
@@ -120,6 +126,8 @@ function Journal() {
       <Quote />
       <h1>Dream Journal</h1>
       <h5 className="subheading">Dreams are direct links to our emotional and mental health. Keep and review your dream journal here. We promise we won't peek.</h5>
+      {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Entry saved successfully!</p></Alert> : null} 
+      {error ? <Alert className="dangerAlert" variant="warning" onClose={() => setError(false)} dismissible><p>{errorMsg}</p></Alert> : null} 
       <Form className="journal-form">
         <Row>
           <Col sm={7} className="journalCol">
@@ -142,7 +150,7 @@ function Journal() {
             <Form.Group as={Row}>
               <Form.Label column sm={11}>
                 <h4>What was your dream about?   
-                  <span className="micSpan" data-tip="Click me to use speech to text. Say 'reset' to clear your thoughts, or hit the stop button when you are finished">
+                  <span className="micSpan"data-tip="Click me to use speech to text. Say 'reset' to clear your thoughts, or hit the stop button when you are finished">
                     <div className="microphone-wrapper-nav popup">
                       <div className="mircophone-container-journal">
                         <span className="popuptext" id="myPopup">{transcript}</span>
@@ -170,8 +178,9 @@ function Journal() {
                   <Button type="submit"
                     onClick={handleFormSubmit} >
                     Submit
+                    
                   </Button>
-                  {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Entry saved successfully!</p></Alert> : null} 
+                  
                 </Form.Group>
               </Col>
             </Row>

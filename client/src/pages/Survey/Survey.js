@@ -1,13 +1,14 @@
 import surveyAPI from "../../utils/surveyAPI";
-import React, { useEffect, useState } from 'react';
-import { Container, Form, Col, fieldset, Row, InputGroup, Button, FormControl, Alert } from "react-bootstrap";
+import React, { useState } from 'react';
+import { Container, Form, Col, Row, Button, Alert } from "react-bootstrap";
 import "./style.css";
 import Quote from "../../components/Quote"
 
 function Survey() {
   // Setting our component's initial state
   const [show, setShow] = useState(false)
-  const [survey, setSurveys] = useState([]);
+  const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState();
   const [formObject, setFormObject] = useState({
     date: "",
     hoursslept: "",
@@ -17,24 +18,12 @@ function Survey() {
     bedtime: "",
   });
 
-  // Load all surveys and store them with setSurveys
-  useEffect(() => {
-    // loadSurveys();
-  }, []);
-
-  // Loads all surveys and sets them to surveys
-  // function loadSurveys() {
-  //   surveyAPI.getSurveys()
-  //     .then(res =>
-  //       setSurveys(res.data)
-  //     )
-  //     .catch(err => console.log(err));
-  // }
+ 
 
   // When the form is submitted, use the API.saveSurvey method to save the survey data
   // Then reload surveys from the database
   function handleFormSubmit(event) {
-
+    event.preventDefault()
     console.log("formObject-START");
     if (formObject.date && formObject.hoursslept && formObject.sleepquality && formObject.mood && formObject.bedtime) {
       surveyAPI.saveSurvey({
@@ -56,12 +45,17 @@ function Survey() {
 
      // .then(() => loadSurveys()) 
         .then(() => setShow(true))
-        .catch(err => console.log(err));
+        .catch(err => {
+          console.log(err.response)
+          setError(true)
+          setErrorMsg("Oops! " + err.response.data.msg + ". Please fill out another date.")
+          
+        });
 
       }    
    else {
-      event.preventDefault()
-      alert("Please make sure you fill out all fields before you submit!")
+     setError(true)
+     setErrorMsg("Please make sure you fill out all fields before you submit!")
 
     }
   }
@@ -78,6 +72,8 @@ function Survey() {
       <Quote />
       <h1>Record Your Sleep</h1>
       <h5 className="subheading">Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h5>
+      {show ? <Alert className="successAlert" variant="success" onClose={() => {setShow(false); window.location.reload()}} dismissible><p>Recorded successfully!</p></Alert> : null} 
+      {error ? <Alert className="dangerAlert" variant="warning" onClose={() => setError(false)} dismissible><p>{errorMsg}</p></Alert> : null} 
       <Form className="survey-form">
         <Row>
           <Col sm={6} className="surveyCol">
@@ -213,7 +209,7 @@ function Survey() {
           <Col sm={12} className="submitBtn surveyCol">
             <Form.Group as={Row}>
               <Col sm={{ span: 12 }}>
-              {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Recorded successfully!</p></Alert> : null} 
+              
                 <Button type="submit" onClick={handleFormSubmit}>Submit</Button>
               </Col>
             </Form.Group>

@@ -108,7 +108,7 @@ function DoughnutChart() {
 
   return (
     <>
-      <Doughnut  id="chart3" data={data} options={options} />
+      <Doughnut  id="chart3" data={data} width={"500%"} options={options} />
     </>
   );
 }

@@ -15,9 +15,9 @@ class Community extends Component {
     return (
       <Container fluid>
         <h1>Community Chat Rooms</h1>
-        <h5 className="subheading">Sometimes all we're really looking for is a person to connect with over our problems or someone to go to for advice. Utilize our collection of chat rooms to talk to real people who are going through the same thing as you.</h5>
+        <h5 className="sub-heading">Sometimes all we're really looking for is a person to connect with over our problems or someone to go to for advice. Utilize our collection of chat rooms to talk to real people who are going through the same thing as you.</h5>
         <Row>
-          <Col sm={6} className="lobbyCol">
+          <Col sm={6} className="enter-chat lobbyCol">
             <ChatRoom />
           </Col>
           <Col sm={6} className="lobbyCol">

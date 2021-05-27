@@ -11,6 +11,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
   findById: function(req, res) {
     if (req.cookies.userId) {
         db.User.find({"_id": req.cookies.userId}).then(data => db.Survey.find({"_id": {$in: data[0].surveys}})
@@ -20,14 +21,26 @@ module.exports = {
         res.sendStatus(401);
     }
   },
+
   create: function(req, res) {
 
     if (req.cookies.userId) {
-        db.Survey.create(req.body)
-        .then(({_id}) => db.User.findByIdAndUpdate(req.cookies.userId, {$push: {surveys: _id}}))
-        .then(userDoc => res.json(userDoc))
-        .catch(err => {console.log(err); res.status(422).json(err)});
-
+      console.log(req.body)
+        db.User.find({"_id": req.cookies.userId}).populate("surveys").then(data => {
+        
+          const completedSurveyArray = data[0].surveys.filter(survey => req.body.date === survey.date.toISOString().split('T')[0] )
+          console.log(completedSurveyArray)
+          if (completedSurveyArray.length === 0) {
+            console.log("added survey")
+            db.Survey.create(req.body)
+            .then(({_id}) => db.User.findByIdAndUpdate(req.cookies.userId, {$push: {surveys: _id}}))
+            .then(userDoc => res.json(userDoc))
+            .catch(err => {console.log(err); res.status(422).json(err)});
+          } else {
+            res.status(409).json({msg:"Duplicate Found"});
+            console.log("duplicate found")
+          }
+        })
     } else {
         res.sendStatus(401);
     }
