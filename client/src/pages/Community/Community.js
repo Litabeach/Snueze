@@ -22,20 +22,6 @@ class Community extends Component {
               <div className="enter-chat">
                 <ChatRoom />
               </div>
-              <Col sm={6}>
-                <h3 className="list-title">Video Chat Rooms</h3>
-                <div className="chat-desc-div">
-                  {this.state.chatDesc.map(chatDesc => (
-                    <div key={chatDesc.id}>
-                      <ChatDescription
-                        id={chatDesc.id}
-                        title={chatDesc.title}
-                        description={chatDesc.description}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </Col>
             </div>
           </Col>
       </Container>
