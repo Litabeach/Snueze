@@ -31,7 +31,10 @@ function LineChart() {
 
       data.forEach(entry => {
         let date = entry.date
-        let newDate = new Date(date).toLocaleDateString()
+        let year = date.split('T')[0].split("-")[0]
+        let month = date.split('T')[0].split("-")[1]
+        let day = date.split('T')[0].split("-")[2]
+        let newDate = month + "/" + day + "/" + year
         eightArray.push(8)
         dateArray.push(newDate)
         hoursArray.push(entry.hoursslept)
