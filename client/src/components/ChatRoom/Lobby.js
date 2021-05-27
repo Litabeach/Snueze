@@ -36,7 +36,8 @@ const Lobby = ({
         </Col>
         <Col sm={12}>
           <Form.Control className="room-menu" as="select" value={roomName} onChange={handleRoomNameChange}>
-            <option value="Dream Team">Dream Team</option>
+          <option selected>Select a room</option>  
+          <option value="Dream Team">Dream Team</option>
             <option value="Insomniacs">Insomniacs</option>
             <option value="Pillow Talk">Pillow Talk</option>
             <option value="Pregnancy and Sleep">Pregnancy and Sleep</option>
