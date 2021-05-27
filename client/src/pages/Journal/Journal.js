@@ -121,8 +121,9 @@ function Journal() {
   };
 
   return (
-    <Container fluid>
+    <div>
       <p id="quoteDisplay1" className="quoteDisplay">My mother told me to follow my dreams, so I took a nap. — Unknown</p>
+    <Container className ="myBedContainer" fluid>
       <h1>Dream Journal</h1>
       <h5 className="subheading">Dreams are direct links to our emotional and mental health. Keep and review your dream journal here. We promise we won't peek.</h5>
       
@@ -212,6 +213,7 @@ function Journal() {
         </Row>
       </Form>
     </Container>
+    </div>
   )
 };
 export default Journal;
