@@ -29,11 +29,24 @@
 .resource-card {
     text-align: left;
     align-self: center;
-    
-    margin-top: -25px;
-    margin-bottom: -25px;
+    border-radius: 10px;
+    padding-bottom: 30px;
+    margin: auto;
+    margin-bottom: 30px;
     background-color: rgba(255, 255, 255, 0.304);
     overflow: hidden;
     width: 55vw;
     flex: none;
 }
+
+@media screen and (max-width: 375px) {
+    .resource-card{
+        width: 90%;
+    }
+  }
+
+@media screen and (max-width: 414px) {
+    .resource-card{
+        width: 90%;
+    }
+  }
