@@ -131,7 +131,7 @@ function Journal() {
       <Form className="journal-form">
         <Row>
           <Col sm={7} className="journalCol">
-            <Form.Group as={Row} controlId="formDate">
+            <Form.Group as={Row}>
               <Form.Label column sm={12}>
                 <h4>Date</h4>
               </Form.Label>
@@ -140,15 +140,15 @@ function Journal() {
               </Col>
             </Form.Group>
             <Form.Group as={Row} className="formTitle">
-              <Form.Label column sm={12}>
+              <Form.Label column sm={11}>
                 <h4>Title</h4>
               </Form.Label>
               <Col sm={12}>
-                <Form.Control required type="text" name="title" type="text" value={formObject.title} onChange={handleInputChange} />
+                <Form.Control required name="title" type="text" value={formObject.title} onChange={handleInputChange} />
               </Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="formBody">
-              <Form.Label column sm={12}>
+            <Form.Group as={Row}>
+              <Form.Label column sm={11}>
                 <h4>What was your dream about?   
                   <span className="micSpan"data-tip="Click me to use speech to text. Say 'reset' to clear your thoughts, or hit the stop button when you are finished">
                     <div className="microphone-wrapper-nav popup">
@@ -173,8 +173,8 @@ function Journal() {
               </Col>
             </Form.Group>
             <Row>
-              <Col sm={12} className="journalCol">
-                <Form.Group as={Row} className="formSubmit">
+              <Col sm={12}>
+                <Form.Group as={Row} className="journalSubmit">
                   <Button type="submit"
                     onClick={handleFormSubmit} >
                     Submit

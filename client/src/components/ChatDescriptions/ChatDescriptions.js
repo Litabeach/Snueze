@@ -12,10 +12,10 @@ function ChatDescription(props) {
             <Accordion>
             <ListGroup.Item key={props.id} className="chat-title">
                 <Accordion.Toggle as={ListGroup}  eventKey={props.id}>
-                    <h6 className="list-title">{props.title}</h6>
+                    <h6 className="room-desc-titlelist-title">{props.title}</h6>
                 </Accordion.Toggle> <br />
                 <Accordion.Collapse eventKey={props.id}>
-                    <p className="list-body">{props.description}</p>
+                    <p className="room-desc-body list-body">{props.description}</p>
                 </Accordion.Collapse>
                 </ListGroup.Item>
             </Accordion>

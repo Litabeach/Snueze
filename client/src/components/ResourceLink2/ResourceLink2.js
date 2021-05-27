@@ -1,9 +1,9 @@
 import React from "react";
-import {Card} from "react-bootstrap";
+import {Card, Col} from "react-bootstrap";
 
 function ResourceLink2(props) {
     return (
-        <>
+        <Col sm={12}>
             <Card className="resource">
                 <Card.Body className="resource-card">
                 <Card.Title><span><a href={props.link} className="resource-links"><img src={props.image1} className="img-fluid resource-img"
@@ -14,7 +14,7 @@ function ResourceLink2(props) {
                     </Card.Text>
                 </Card.Body>
             </Card>
-        </>
+        </Col>
     );
 }
 

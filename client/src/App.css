@@ -6,10 +6,6 @@ body {
   background-image: url(/img/gradient.jpg); */
   font-family: KoHo;
   color: #dfdfdf;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
 }
 
 .successAlert {
