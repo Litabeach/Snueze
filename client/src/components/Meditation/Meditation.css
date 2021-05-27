@@ -3,7 +3,6 @@
   padding: 0;
 }
 
-
 .bg {
   width: 100%;
   height: 100%;
@@ -27,7 +26,22 @@
   background-position: center bottom;
 }
 
-/* .active {
+#medButton {
+  background: none;
+  border: 2px #ffffffcc solid;
+  padding: 16px;
+  width: 130px;
+  /* box-shadow: #000000fa 1px 1px 2px 0; */
+  border-radius: 2%;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  margin-left:150px;
+  margin-right:150px;
+}
+
+
+.medButton:hover {
   box-shadow: none;
   color: #000;
   background-color: #ffffffcc;
@@ -35,20 +49,32 @@
   width: 140px;
   padding: 24px;
   font-size: 17px;
-} */
+}
+
+.medButton .activeMed {
+  box-shadow: none;
+  color: #000;
+  background-color: #ffffffcc;
+  border: none;
+  width: 140px;
+  padding: 24px;
+  font-size: 17px;
+}
+
+.activeMed{
+  box-shadow: none;
+  color: #000;
+  background-color: #ffffffcc;
+  border: none;
+  width: 140px;
+  padding: 24px;
+  font-size: 17px;
+}
 
 .App {
   height: 100vh;
   display: flex;
   justify-content: space-evenly;
-  max-width: 992px;
-}
-
-.meditate-form {
-  display: block;
-  text-align: center;
-  padding: 40px;
-  margin: auto; 
   align-items: center;
 }
 
@@ -57,15 +83,34 @@
 .audio-menu {
   flex: 1;
   height: 90%;
+  width: 275px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
 }
 
+.time-menu {
+  /* background-color: #ffafaf;  */
+}
 
 .player-container {
   /* background-color: #afafff; */
-  padding: 60px;
+  position: relative;
+}
+
+.player-container .play,
+.player-container .audioSeek {
+  position: absolute;
+}
+
+.player-container .timer {
+  position: absolute;
+  bottom: 10%;
+}
+
+.audio-menu {
+  /* background-color: #afffaf;  */
 }
 
 .playPause {
@@ -73,13 +118,18 @@
   z-index: 10;
 }
 
+.audioSeek {
+  width: 60%;
+}
+
 .volume-control {
-  width: 20%;
+  width: 50%;
   display: flex;
   align-items: center;
-  
+  position: absolute;
   bottom: 0%;
-  font-family: KoHo;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 32px;
   color: white;
 }
@@ -93,7 +143,7 @@
 }
 
 .timer {
-  font-family: KoHo;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 32px;
   color: white;
 }
