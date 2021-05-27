@@ -8,8 +8,8 @@
 
 .chat-desc-div {
    /* margin-left: 550px;
-   margin-top:-220px;
-   height: 270px; */
+   margin-top:-220px; */
+   height: 280px;
    overflow: move;
    overflow-x: hidden;
    display: flex;
