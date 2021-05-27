@@ -51,10 +51,10 @@ function SpeechToTextNav() {
             ref={microphoneRef}
             onClick={handleListing}
           >
-            <img src="img/microphone.png" className="microphone-icon-nav" />
+            <img src="img/microphone.png" className="microphone-icon-nav" alt="microphoneNav" />
           </div>
           {isListening && (
-            <img src="img/stopbutton.png" className="microphone-stop-nav" onClick={stopHandle} />
+            <img src="img/stopbutton.png" className="microphone-stop-nav" alt="microphoneStop" onClick={stopHandle} />
           )}
         </div>
       <ReactTooltip />

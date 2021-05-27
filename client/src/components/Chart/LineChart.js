@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
-import { Container } from "react-bootstrap"
 
 
 function LineChart() {

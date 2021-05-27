@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
-import { Container } from "react-bootstrap"
-
-
 
 function DoughnutChart() {
 
@@ -51,6 +48,8 @@ function DoughnutChart() {
             case "5":
               five++;
               break;
+            default:
+              console.log("broken")
           }
         })
 

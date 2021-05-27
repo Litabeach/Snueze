@@ -74,7 +74,7 @@ function Chart() {
         let curr_count = 1;
 
         for (let i = 1; i < n; i++) {
-            if (arr[i] == arr[i - 1])
+            if (arr[i] === arr[i - 1])
                 curr_count++;
             else {
                 if (curr_count > max_count) {
