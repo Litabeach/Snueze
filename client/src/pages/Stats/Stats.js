@@ -2,7 +2,6 @@ import React from "react"
 import Chart from "../../components/Chart"
 import Quote from "../../components/Quote"
 import { Container } from 'react-bootstrap'
-import { MDBContainer } from 'mdbreact'
 import "./style.css"
 
 function Stats() {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import journalAPI from "../../utils/journalAPI";
 import DeleteBtn from "../../components/DeleteBtn";
-import { List, ListItem } from "../../components/List";
+import { List } from "../../components/List";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import "./style.css"
 import dateFormat from 'dateformat';
@@ -158,10 +158,10 @@ function Journal() {
                           className="microphone-icon-container-nav"
                           ref={microphoneRef}
                           onClick={handleListing} >
-                          <img src={microphoneicon} className="microphone-icon-nav" />
+                          <img src={microphoneicon} className="microphone-icon-nav" alt="microphoneJournal" />
                         </div>
                         {isListening && (
-                          <img src={micstopicon} className="microphone-stop-nav" onClick={stopHandle} />
+                          <img src={micstopicon} className="microphone-stop-nav" alt="microphoneStop" onClick={stopHandle} />
                         )}
                       </div>
                     </div>

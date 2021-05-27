@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-// import logo from './logo.svg';
 import StyledProgressbar from './StyledProgressbar'
 import Sound from 'react-sound'
 import SoundComponent from './playSound'
 import StyledSlider from './StyledSlider';
-import { Container } from "react-bootstrap";
 import 'react-circular-progressbar/dist/styles.css'
 import './Meditation.css'
 import { Form, Row, Col, Button } from 'react-bootstrap'

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import surveyAPI from "../../utils/surveyAPI";
-import { Container } from 'react-bootstrap'
-import { PlayCircleFilledWhite } from "@material-ui/icons";
 
 function PieChart() {
   const [mood, setMood] = useState([]);
@@ -48,6 +46,8 @@ function PieChart() {
               case "5":
                 five++;
                 break;
+              default:
+                console.log("broken")
             }
           })
 
