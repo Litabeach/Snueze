@@ -54,7 +54,6 @@ class Meditation extends Component {
   }
 
   playPause() {
-    console.log('plaPayse')
     if (this.state.pbuttonUrl === playButton) {
       this.setState({
         pbuttonUrl: pauseButton,

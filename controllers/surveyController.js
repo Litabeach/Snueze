@@ -25,13 +25,10 @@ module.exports = {
   create: function(req, res) {
 
     if (req.cookies.userId) {
-      console.log(req.body)
         db.User.find({"_id": req.cookies.userId}).populate("surveys").then(data => {
         
           const completedSurveyArray = data[0].surveys.filter(survey => req.body.date === survey.date.toISOString().split('T')[0] )
-          console.log(completedSurveyArray)
           if (completedSurveyArray.length === 0) {
-            console.log("added survey")
             db.Survey.create(req.body)
             .then(({_id}) => db.User.findByIdAndUpdate(req.cookies.userId, {$push: {surveys: _id}}))
             .then(userDoc => res.json(userDoc))

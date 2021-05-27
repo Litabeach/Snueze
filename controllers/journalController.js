@@ -21,7 +21,6 @@ module.exports = {
     },
 
 create: function(req, res) {
-  // console.log(req.body);
   if (req.cookies.userId) {
     db.Journal.create(req.body)
     .then(({id}) => db.User.findByIdAndUpdate(req.cookies.userId, {$push: {journals: id}}))

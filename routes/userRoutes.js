@@ -28,7 +28,6 @@ router.post("/", async (req, res) => {
                 });
         const existingUser = await User.findOne({ email });
         if (existingUser) {
-            // console.log(res)
             return res
                 .status(400)
                 .json({

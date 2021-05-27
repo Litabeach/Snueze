@@ -31,7 +31,6 @@ function Journal() {
     journalAPI.getEntries()
       .then(res => {
         setEntries(res.data)
-        console.log("entries", res.data)
       }
         // setEntries(res.data)
       )
@@ -78,7 +77,7 @@ function Journal() {
     }
    
   };
-  console.log("entries", entries.id);
+
 
   //speech to text
 
