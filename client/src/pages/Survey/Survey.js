@@ -70,8 +70,7 @@ function Survey() {
       <p id="quoteDisplay1" className="quoteDisplay">I always say ‘morning' instead of ‘good morning,' because if it was a good morning, I'd still be asleep. — Anonymous</p>
       <h1>Record Your Sleep</h1>
       <h5 className="subheading">Tracking your sleep behavior is the first step to better sleep health. Fill out this short, daily questionnaire to get to know your sleep better. You can track your patterns and habits on the Insights page.</h5>
-      {show ? <Alert className="successAlert" variant="success" onClose={() => {setShow(false); window.location.reload()}} dismissible><p>Recorded successfully!</p></Alert> : null} 
-      {error ? <Alert className="dangerAlert" variant="warning" onClose={() => setError(false)} dismissible><p>{errorMsg}</p></Alert> : null} 
+    
       <Form className="survey-form">
         <Row>
           <Col sm={6} className="surveyCol">
@@ -207,7 +206,8 @@ function Survey() {
           <Col sm={12} className="submitBtn surveyCol">
             <Form.Group as={Row}>
               <Col sm={{ span: 12 }}>
-              
+              {show ? <Alert className="successAlert" variant="success" onClose={() => {setShow(false); window.location.reload()}} dismissible><p>Recorded successfully!</p></Alert> : null} 
+      {error ? <Alert className="dangerAlert" variant="warning" onClose={() => setError(false)} dismissible><p>{errorMsg}</p></Alert> : null} 
                 <Button type="submit" onClick={handleFormSubmit}>Submit</Button>
               </Col>
             </Form.Group>
