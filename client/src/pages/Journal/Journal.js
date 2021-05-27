@@ -125,8 +125,7 @@ function Journal() {
       <p id="quoteDisplay1" className="quoteDisplay">My mother told me to follow my dreams, so I took a nap. — Unknown</p>
       <h1>Dream Journal</h1>
       <h5 className="subheading">Dreams are direct links to our emotional and mental health. Keep and review your dream journal here. We promise we won't peek.</h5>
-      {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Entry saved successfully!</p></Alert> : null} 
-      {error ? <Alert className="dangerAlert" variant="warning" onClose={() => setError(false)} dismissible><p>{errorMsg}</p></Alert> : null} 
+      
       <Form className="journal-form">
         <Row>
           <Col sm={7} className="journalCol">
@@ -174,10 +173,11 @@ function Journal() {
             <Row>
               <Col sm={12}>
                 <Form.Group as={Row} className="journalSubmit">
+                {show ? <Alert className="successAlert" variant="success" onClose={() => setShow(false)} dismissible><p>Entry saved successfully!</p></Alert> : null} 
+      {error ? <Alert className="dangerAlert" variant="warning" onClose={() => setError(false)} dismissible><p>{errorMsg}</p></Alert> : null} 
                   <Button type="submit"
                     onClick={handleFormSubmit} >
                     Submit
-                    
                   </Button>
                   
                 </Form.Group>
