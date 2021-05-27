@@ -1,7 +1,9 @@
 
 .resourcecontainer{
-    margin-bottom: 100px;
-   
+    
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 
 
@@ -15,6 +17,7 @@
 
 .sectionHeader{
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .resource-img {
@@ -23,15 +26,14 @@
     background-color: #ebe264;
 }
 
-
 .resource-card {
     text-align: left;
     align-self: center;
-    display: flex;
-    flex-direction: column;
-    margin: 5px 0px 5px 0px;
+    
+    margin-top: -25px;
+    margin-bottom: -25px;
     background-color: rgba(255, 255, 255, 0.304);
     overflow: hidden;
-   
     width: 55vw;
+    flex: none;
 }
