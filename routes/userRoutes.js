@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
             // console.log(res)
             return res
                 .status(400)
-                .send({
+                .json({
                     errorMessage: "An account with this email already exists."
                 });
             }

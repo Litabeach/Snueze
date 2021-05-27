@@ -33,10 +33,8 @@ function Register() {
             history.push("/");
 
         } catch (err) {
-            console.error(err);
             setError(true)
-          setErrorMsg("Account already exists. Please chose a different e-mail address.")
-            
+            setErrorMsg(err.response.data.errorMessage)    
         }
     }
 
