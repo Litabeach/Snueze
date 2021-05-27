@@ -12,7 +12,6 @@ export default {
   },
   // Saves a survey to the database
   saveSurvey: function(surveyData) {
-    console.log("surveydata", surveyData);
     return axios.post("/api/survey", surveyData);
   }
 };

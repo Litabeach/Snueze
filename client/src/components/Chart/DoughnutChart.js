@@ -49,7 +49,7 @@ function DoughnutChart() {
               five++;
               break;
             default:
-              console.log("broken")
+              console.log("noData")
           }
         })
 

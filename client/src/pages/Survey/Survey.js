@@ -24,7 +24,6 @@ function Survey() {
   // Then reload surveys from the database
   function handleFormSubmit(event) {
     event.preventDefault()
-    console.log("formObject-START");
     if (formObject.date && formObject.hoursslept && formObject.sleepquality && formObject.mood && formObject.bedtime) {
       surveyAPI.saveSurvey({
         date: formObject.date,
@@ -62,7 +61,6 @@ function Survey() {
 
   function changeHandler(event) {
     const { name, value } = event.target;
-    console.log(value);
     setFormObject({ ...formObject, [name]: value });
   }
 
