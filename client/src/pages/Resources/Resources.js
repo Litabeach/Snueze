@@ -18,10 +18,7 @@ class Resources extends Component {
 
     <div>
       <p id="quoteDisplay1" className="quoteDisplay">No civilized person goes to bed the same day he gets up. — Richard Harding Davis, American Journalist</p>
-        <h1>Resources</h1>
-
-
-      
+       
       <h1>Resources</h1>
       <Container>
 

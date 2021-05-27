@@ -47,7 +47,7 @@ function PieChart() {
                 five++;
                 break;
               default:
-                console.log("broken")
+                console.log("noData")
             }
           })
 

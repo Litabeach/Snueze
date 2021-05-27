@@ -38,13 +38,8 @@ function Chart() {
                     })
 
                     let maxHour = mostFrequent(hoursArray, hoursArray.length)
-                    console.log("maxhour" + maxHour)
 
                     let maxBed = mostFrequent(bedArray, bedArray.length)
-                    console.log("maxbed" + maxBed)
-
-                    console.log("bed array" + bedArray)
-                    console.log("hours array" + hoursArray)
 
                     if (!maxBed) {
                         setAvgBedtime(bedArray)
