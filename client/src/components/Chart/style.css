@@ -29,4 +29,13 @@
     flex-direction: column;
     padding: 20px;
     background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+}
+
+#chart3 {
+    border-radius: 6px 0 0 6px;
+}
+
+#chart4 {
+    border-radius: 0 6px 6px 0px;
 }
