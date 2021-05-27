@@ -9,13 +9,6 @@
     align-items: center;
   }
 
-  #dropdown-basic {
-    color: black !important;
-    background-color: white;
-    text-align: left;
-  }
- 
-
 .form-label {
   font-size: 18px;
 }
@@ -37,6 +30,12 @@
   text-align: center;
 }
   
+.lobby-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
 .lobby-header {
   text-align: center;
   padding-right: 75px;
@@ -45,7 +44,11 @@
 .lobbyCol {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  width: 400px;
+}
+
+.list-heading {
+  text-align: center;
 }
 
   /* .chatForm > div > input {
