@@ -6,15 +6,20 @@
     align-items: center;
 }
 
-.lobbyCol {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    align-items: center;
+.chatTitle {
+    background-color: transparent;
+    border: transparent;
+    color: white;
 }
 
-.lobby-header {
+.community-h4 {
+    margin-left: 20%;
+    margin-bottom: 2%;
+    width: 60%;
     text-align: center;
-    margin: auto;
-    padding-bottom: 25px;
-  }
+}
+
+.communtiychatroomdiv{
+    margin-left:25px;
+    margin-top:20px;
+}

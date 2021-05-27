@@ -16,7 +16,7 @@ const Lobby = ({
     <Form.Group className="chatForm">  
       <h3 className="lobby-header">Enter a room</h3>
           <Form.Label htmlFor="name">
-            <h4>Name:</h4>
+            <h4>Your Name:</h4>
           </Form.Label>
           <Form.Control
             type="text"
