@@ -22,9 +22,10 @@
 }
 
 .myBedContainer {
-    /* padding: 20px; */
+    padding-bottom: 45px;
     border-radius: 30px;
-    /* background-color: white; */
+    background-color: rgba(77, 75, 75, 0.301);
+    width:fit-content;
 }
 
 
