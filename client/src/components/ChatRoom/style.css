@@ -85,6 +85,12 @@
   .chatRoom {
     position: relative;
   }
+
+  #room {
+    height: 40px;
+    border-radius: 6px;
+  }
+
   .room button {
     position: absolute;
     top: 0;
