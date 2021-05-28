@@ -43,8 +43,8 @@
     .journalDiv{
         width: 50%;
     }
+    .resource-card{
+        width:90%;
+    }
   }
 
-@media screen and (max-width: 414px) {
- 
-  }
