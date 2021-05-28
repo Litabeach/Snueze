@@ -160,20 +160,24 @@
   .dreamsCol,
   .journalCol,
   .journal-form {
-    width: 325px;
+    width: 250px;
     margin-left: 20px;
   }
-
+  /* .journalContainer{
+    width:250px;
+  } */
   .dreamsCol {
     margin-top: 10px;
   }
 
   .dream-h4 {
-    width: 325px;
+    width: 250px;
     margin-left: 25px;
     margin-bottom: 15px;
   }
-
+  .micSpan {
+    margin-left:160px;
+  }
 }
 
 @media screen and (max-width: 375px),
@@ -182,12 +186,12 @@
   .dreamsCol,
   .journalCol,
   .journal-form {
-    width: 280px;
-    margin-left: 25px;
+    width: 315px;
+    margin-left: 15px;
   }
 
   .dreamsCol {
-    margin-top: 10px;
+    margin-top: -75px;
   }
 
   .dream-h4 {
@@ -195,6 +199,9 @@
     margin-left: 15px;
     margin-bottom: 15px;
   }
-
+  #quoteDisplay1 {
+   width:350px;
+   margin-left: 15px;
+  }
 
 }

@@ -40,13 +40,11 @@
 }
 
 @media screen and (max-width: 375px) {
-    .resource-card{
-        width: 90%;
+    .journalDiv{
+        width: 50%;
     }
   }
 
 @media screen and (max-width: 414px) {
-    .resource-card{
-        width: 90%;
-    }
+ 
   }

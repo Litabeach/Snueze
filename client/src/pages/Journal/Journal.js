@@ -121,7 +121,7 @@ function Journal() {
   };
 
   return (
-    <div>
+    <div className="journalDiv">
       <p id="quoteDisplay1" className="quoteDisplay">My mother told me to follow my dreams, so I took a nap. — Unknown</p>
     <Container className ="myBedContainer" fluid>
       <h1>Dream Journal</h1>
