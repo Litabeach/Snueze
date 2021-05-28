@@ -158,6 +158,10 @@
 .time-menu{
   width:50px;
 }
+
+.timer{
+visibility: hidden;
+}
 }
 
 
