@@ -20,3 +20,47 @@
    max-width: 400px;
    width: 400px;
 }
+
+
+
+@media screen and (max-width: 414px) {
+
+    .chat-desc-div{
+        width:300px;
+    }
+
+    /* .form-group{
+        width:250px;
+    } */
+
+    .lobbyCol {
+        width:300px;
+    }
+
+    /* .col-sm-6 {
+        width:300px;
+    }
+
+    .row {
+        margin-right: -20px;
+    } */
+
+  
+  }
+  
+  
+  @media screen and (max-width: 375px)
+   {
+    .chat-desc-div{
+        width:300px;
+        margin: 0;
+    }
+
+ 
+    .lobbyCol {
+        width:375px;
+        margin-bottom: 20px;
+    }
+ 
+  
+  }
