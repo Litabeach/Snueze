@@ -61,3 +61,16 @@
       opacity: .33;
       border: 2px solid white;
   } */
+
+  @media screen and (max-width: 375px){
+      .card-group{
+        width:300px;
+      }
+
+      .card {
+          width:250px;
+          margin:0px;
+      }
+
+
+  }

@@ -20,3 +20,37 @@
    max-width: 400px;
    width: 400px;
 }
+
+
+
+@media screen and (max-width: 414px) {
+
+    .chat-desc-div{
+        width:300px;
+    }
+
+
+    .lobbyCol {
+        width:300px;
+    }
+
+
+  
+  }
+  
+  
+  @media screen and (max-width: 375px)
+   {
+    .chat-desc-div{
+        width:300px;
+        margin: 0;
+    }
+
+ 
+    .lobbyCol {
+        width:375px;
+        margin-bottom: 20px;
+    }
+ 
+  
+  }

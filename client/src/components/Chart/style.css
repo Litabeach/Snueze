@@ -39,3 +39,24 @@
 #chart4 {
     border-radius: 0 6px 6px 0px;
 }
+
+
+  
+  @media screen and (max-width: 375px)
+   {
+    .insights-chart{
+        width:90%; 
+    }
+
+     /* #chart1{
+       height:300px !important
+    }
+
+   
+    #chart2{
+        height:300px;
+
+    } 
+     */
+  
+  }

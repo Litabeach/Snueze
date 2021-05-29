@@ -142,3 +142,26 @@
   font-size: 32px;
   color: white;
 }
+
+@media screen and (max-width: 375px) {
+  .medButton{
+      width: 25px;
+      margin:10px;
+  }
+  .audio-menu{
+      width:50px;
+  }
+  .player-container{
+    width:250px;
+    margin-top:600px;
+}
+.time-menu{
+  width:50px;
+}
+
+.timer{
+visibility: hidden;
+}
+}
+
+
